@@ -1,0 +1,3438 @@
+  .page-content {
+
+    }
+
+    .shrink-item {
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .shrink-container:hover .shrink-item {
+      transform: scale(0.8); /* Adjust the scaling factor as needed */
+    }
+    .about-banner{
+        width: 100%;
+        height: 100vh;
+        flex-shrink: 0;
+        overflow: hidden;
+    }
+    .colorless-navbar {
+        background: transparent;
+        border-bottom: none;
+    }
+    
+    /* Add the same background as the content */
+    .colorless-navbar::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        z-index: -1; /* Ensure it's behind the navbar content */
+    }
+    
+.header-banner{
+    width: 100%;
+    height: 814px;
+    flex-shrink: 0;
+}
+.service-banner{
+    width: 100%;
+    height: 516px;
+    flex-shrink: 0;
+}
+.contact-banner{
+    width: 100%;
+    height: 516px;
+    flex-shrink: 0;
+}
+footer{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin:auto;
+    flex-direction: column;
+    background: #193155;
+    padding:20px;
+}
+.section-footer{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin:auto;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.header-banner h1{
+    color: #FFF;
+    text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.30);
+    font-family: Eb Garamond;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin: 15% 2% 3% 15%;
+}
+.about-banner h1{
+    color: #FFF;
+    text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.30);
+    font-family: Eb Garamond;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin: 15% 2% 3% 15%;
+}
+.service-banner h1{
+    color: #FFF;
+    text-align: center;
+    text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.30);
+    font-family: Eb Garamond;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.service-banner h4{
+    color: #FFF;
+    font-family: Bodoni;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-top:5%;
+    justify-content: ;
+}
+.contact-banner h1{
+    color: #FFF;
+    text-align: center;
+    text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.30);
+    font-family: Eb Garamond;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.contact-banner h4{
+    color: #FFF;
+    font-family: Bodoni;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-top:170px;
+}
+.about-banner p{
+    color: #FFF;
+    font-family: Bodoni;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+    margin-left:15%;
+    margin-bottom:40px;
+
+}
+
+.header-banner p{
+    color: #FFF;
+    font-family: Bodoni;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-left:15%;
+    margin-bottom:40px;
+
+}
+.header-banner .btn{
+    text-decoration: none;
+    border-radius: 8px;
+    background: #2C96E2;
+    padding:10px 16px;
+    margin-left:15%;
+    color: #FFF;
+    font-family: Eb Garamond;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    border: none;
+
+}
+.header-banner .btn:hover {
+    text-decoration: none;
+    border-radius: 8px;
+    background: #193155;
+    padding: 10px 16px;
+    margin-left: 15%;
+    color: #FFF;
+    font-family: Eb Garamond;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    border: none;
+}
+.section-info .info .btn:hover {
+    text-decoration: none;
+    border-radius: 8px;
+    background: #193155;
+    padding: 10px 16px;
+    color: rgb(255, 255, 255);
+    font-family: "Eb Garamond";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    border: none;
+}
+.section-quote a:hover {
+    margin-bottom: 328px;
+    padding: 10px;
+    border-radius: 8px;
+    background: #193155;
+    text-decoration: none;
+    color: rgb(44, 150, 226);
+    font-family: "Eb Garamond";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.about-banner .btn:hover {
+    text-decoration: none;
+    border-radius: 8px;
+    background: #FFF;
+    padding: 10px 16px;
+    margin-left: 15%;
+    color: #193155;
+    font-family: Eb Garamond;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    border: none;
+}
+.about .section-info button:hover {
+    border-radius: 8px;
+    background: #193155;
+    padding: 10px 16px;
+    color: rgb(255, 255, 255);
+    font-family: "Eb Garamond";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    border: none;
+}
+.service .section-service button:hover {
+    border-radius: 8px;
+    background: #193155;
+    width: 423px;
+    height: 71px;
+    flex-shrink: 0;
+    color: #FFF;
+    font-family: Eb Garamond;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    border: none;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+.contact .section-contact button {
+    color: #fff;
+    font-family: Eb Garamond;
+    text-align: center;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    width: 556px;
+    border-radius: 8px;
+    background: rgb(44, 150, 226);
+}
+.contact .section-contact button:hover {
+    color: #fff;
+    font-family: Eb Garamond;
+    text-align: center;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    width: 556px;
+    border-radius: 8px;
+    background: #193155;
+    border:none;
+}
+.about-banner .aboutImg{
+    position:absolute;
+    width:626px!important;
+    top:60%;
+    left:70%;
+    transform: translate(-50%, -50%);
+}
+.about-banner .btn{
+    text-decoration: none;
+    border-radius: 8px;
+    background: #193155;
+    padding:10px 16px;
+    margin-left:15%;
+    color: #FFF;
+    font-family: Eb Garamond;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    border: none;
+
+}
+.section-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+}
+.about .section-info{
+    width:100%;
+}
+.service .section-service{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin:auto;
+}
+.service .section-more{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin:auto;
+    margin-bottom:150px;
+}
+.service .section-more h2{
+    color: #FFF;
+    font-family: Eb Garamond;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom:20px;
+}
+.service .section-more h2 span{
+    color: #2C96E2;
+    font-family: Eb Garamond;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.service .section-more .custom-card{
+    width: 344px;
+    height: 520px;
+    flex-shrink: 0;
+    border-radius: 22px;
+    padding:0px;
+    margin: 12px 36px;
+}
+.service .section-more .custom-card:hover{
+    width: 344px;
+    height: 520px;
+    flex-shrink: 0;
+    border-radius: 22px;
+    padding:0px;
+    margin: 0px 36px;
+}
+.service .section-more .custom-card .card-body button:hover {
+    border-radius: 8px;
+    border: none ;
+    background: rgb(44, 150, 226);
+    color: rgb(255, 255, 255);
+    font-family: "Eb Garamond";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    padding: 10px 16px;
+}
+.service .section-more .custom-card .card-body{
+    background: #193155;
+    padding:20px;
+    border-radius: 0 0 22px 22px;
+
+}
+.service .section-more .custom-card .card-body h4{
+
+    color: #FFF;
+    font-family: Eb Garamond;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.service .section-more .custom-card .card-body p{
+
+    color: #FFF;
+    font-family: Bodoni;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.mid-banner::before,
+.mid-banner::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    background: radial-gradient(104.85% 104.85% at 50% 0%, rgba(23, 23, 23, 0.00) 61%, #171717 90.5%);
+}
+
+.mid-banner::before {
+    transform: scaleY(-1);
+}
+
+.mid-banner::after {
+    transform: scaleY(1);
+}
+
+.service .section-more .custom-card .card-body button{
+    border-radius: 8px;
+    border: 1px solid #2C96E2;
+    background: rgba(217, 217, 217, 0.00);
+    color: #FFF;
+    font-family: Eb Garamond;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    padding: 10px 16px;
+}
+.service .section-more .custom-card img{
+    width: 100%;
+    height: 174px;
+    flex-shrink: 0;
+    border-radius: 22px 22px 0px 0px;
+
+}
+.service .section-service h5{
+    color: #FFF;
+    text-align: center;
+    font-family: Eb Garamond;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.service .section-service h6{
+    color: #FFF;
+    text-align: center;
+    font-family: Bodoni;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.service .section-service .body{
+    display:flex;
+    flex-direction: column;
+    color: #FFF;
+    font-family: Bodoni;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-top: 100px;
+    margin-left:50px;
+}
+.service .section-service button{
+    border-radius: 8px;
+    background: #2C96E2;
+    width: 423px;
+    height: 71px;
+    flex-shrink: 0;
+    color: #FFF;
+    font-family: Eb Garamond;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    border:none;
+    margin-top: 100px;
+    margin-bottom: 100px;
+
+}
+.section-services{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+
+    margin:auto;
+    flex-direction: column;
+}
+.section-testimonials{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin:auto;
+    flex-direction: column;
+    width:100%;
+}
+.section-prices{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin:auto;
+    flex-direction: column;
+}
+.about .section-info{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin:auto;
+}
+.about .section-info h2{
+    margin-top:275px;
+    color: #FFF;
+    text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.30);
+    font-family: Eb Garamond;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 32px;
+
+}
+.about .section-clients{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin:auto;
+    flex-direction: column;
+}
+.about .section-equip{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin:auto;
+}
+.about .section-equip h2{
+    margin-top:275px;
+    color: #FFF;
+    text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.30);
+    font-family: Eb Garamond;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 32px;
+
+}
+.about .section-equip img{
+
+    width: 527px;
+    height: 790px;
+    margin-top:300px;
+    margin-right:10%;
+}
+.about .section-clients h2{
+    margin-top:275px;
+    color: #FFF;
+    text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.30);
+    font-family: Eb Garamond;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 32px;
+
+}
+.about .section-equip h2 span{
+    color: #2C96E2;
+    font-family: Eb Garamond;
+    font-size: 55px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}
+.about .section-equip h3{
+    color: #FFF;
+    font-family: Bodoni;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-top: 80px;
+    margin-bottom: 40px;
+
+}
+.about .section-equip p{
+    color: #FFF;
+    font-family: Bodoni;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+}
+.about .section-clients h2 span{
+    color: #2C96E2;
+    font-family: Eb Garamond;
+    font-size: 55px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}
+.about .section-info p{
+    color: #FFF;
+    font-family: Bodoni;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-right:30%;
+
+}
+.about .section-info button{
+    border-radius: 8px;
+    background: #2C96E2;
+    padding:10px 16px;
+    color: #FFF;
+    font-family: Eb Garamond;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    border: none;
+
+
+}
+.about .section-info h2 span{
+    color: #2C96E2;
+    font-family: Eb Garamond;
+    font-size: 55px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}
+.about .section-info img{
+    margin-left:20%;
+}
+.section-stats{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin:auto;
+    flex-direction: column;
+}
+.about .section-stats h2{
+    margin-top:275px;
+    color: #FFF;
+    text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.30);
+    font-family: Eb Garamond;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 32px;
+
+}
+.about .section-stats h2 span{
+    color: #2C96E2;
+    font-family: Eb Garamond;
+    font-size: 55px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}
+.section-stats .stat-label{
+    color: #FFF;
+    text-align: center;
+    font-family: Bodoni;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.section-quote{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin:auto;
+    flex-direction: column;
+}
+.section-info .custom-card{
+    width:100%;
+    margin-top:106px;
+}
+.section-info .custom-card .card-body{
+    width: 100%;
+
+    flex-shrink: 0;
+    border-radius: 0px 0px 16px 16px;
+    background: #193155;
+    padding: 10%;
+}
+.section-info .custom-card .card-img-top{
+    width: 100%;
+    height: 162.469px;
+    flex-shrink: 0;
+
+    border-radius:16px 16px 0px 0px;
+
+}
+.section-info .custom-card .card-body h5{
+
+    color: #FFF;
+    font-family: Eb Garamond;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 10px;
+}
+.section-info .custom-card .card-body p{
+
+    color: #FFF;
+    font-family: Bodoni;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.section-info .custom-card1{
+
+    margin-top:206px;
+}
+.section-info .custom-card1 .card-body{
+    width: 100%;
+
+    flex-shrink: 0;
+    border-radius: 0px 0px 16px 16px;
+    background: #193155;
+    padding: 10%;
+}
+.section-info .custom-card1 .card-img-top{
+    width: 100%;
+    height: 162.469px;
+    flex-shrink: 0;
+    border-radius:16px 16px 0px 0px;
+
+}
+.section-info .custom-card1 .card-body h5{
+
+    color: #FFF;
+    font-family: Eb Garamond;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 10px;
+}
+.section-info .custom-card1 .card-body p{
+
+    color: #FFF;
+    font-family: Bodoni;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.section-info .card1 .card-body{
+    width: 27.112px;
+
+
+    flex-shrink: 0;
+    border-radius: 0px 0px 16px 16px;
+    background: #193155;
+}
+.section-info .card1 .card-img-top{
+    width: 276.112px;
+    height: 162.469px;
+    flex-shrink: 0;
+    margin-top:106px;
+}
+.section-info .card1 .card-body h5{
+
+    color: #FFF;
+    font-family: Eb Garamond;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.section-info .card1 .card-body p{
+
+    color: #FFF;
+    font-family: Bodoni;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.section-info .info h2{
+    margin-top:275px;
+    color: #FFF;
+    text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.30);
+    font-family: Eb Garamond;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 32px;
+
+}
+.section-info .info h2 span{
+    color: #2C96E2;
+    font-family: Eb Garamond;
+    font-size: 55px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}
+.section-info .info p{
+    color: #FFF;
+    font-family: Bodoni;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom:24px;
+}
+.section-info .info .btn
+{
+    text-decoration: none;
+    border-radius: 8px;
+    background: #2C96E2;
+    padding:10px 16px;
+    color: #FFF;
+    font-family: Eb Garamond;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    border: none;
+
+}
+.section-services h3{
+    color: #FFF;
+    font-family: Eb Garamond;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top:120px;
+
+}
+.section-services h3 span{
+    color: #2C96E2;
+    font-family: Eb Garamond;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+}
+.section-services .service-box{
+    border-radius: 20px;
+    background: #193155;
+    width: 100%;
+    padding:10%;
+    height:420px;
+    margin-top:100px;
+}
+.section-services .service-box .enter-box:hover .enter-svg{
+    fill:#6884AF;
+}
+.section-services .service-box .enter-box .enter-svg{
+    fill:#6884AF;
+}
+.section-services .service-box:hover{
+    border-radius: 20px;
+    background: #193155;
+    width: 100%;
+    padding:10%;
+    height:420px;
+    margin-top:56px;
+}
+.section-services .service-box .enter-box:hover{
+    background: #AEABAB;
+
+}
+.section-services .service-box .enter-box:hover svg{
+    fill: #171717!important;
+
+}
+.section-services .service-box h4{
+    color: #FFF;
+    font-family: Eb Garamond;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-top:16px;
+}
+.section-services .service-box p{
+    color: #FFF;
+    font-family: Bodoni;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-top: 16px;
+}
+.section-services .service-box .icon-box{
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+    border-radius: 16px;
+    background: #101F37;
+    padding:20px;
+
+}
+.section-services .service-box .enter-box{
+    border: 1px solid #AEABAB;
+    border-radius: 16px;
+    width: 65px;
+    height: 65px;
+    flex-shrink: 0;
+    display:flex;
+    align-items: center;
+    justify-content:center;
+}
+.section-services .service-box .enter-box svg{
+    margin:24px 16px;
+}
+.section-prices .mid-banner{
+    width: 100%!important;
+    height: 814px;
+    flex-shrink: 0;
+}
+    
+.section-prices .sub-head{
+    color: #FFF;
+    font-family: Eb Garamond;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top:120px;
+}
+.section-prices h3{
+    color: #FFF;
+    font-family: Eb Garamond;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top:120px;
+
+}
+.section-prices p{
+    color: #FFF;
+    font-family: Bodoni;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-left:15%;
+    margin-bottom:40px;
+    width:75%;
+
+}
+.section-prices .btn{
+    text-decoration: none;
+    border-radius: 8px;
+    background: #2C96E2;
+    padding:10px 16px;
+    margin-left:15%;
+    color: #FFF;
+    font-family: Eb Garamond;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    border: none;
+
+}
+.section-prices h1{
+    color: #FFF;
+    text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.30);
+    font-family: Eb Garamond;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin: 40% 2% 3% 15%;
+}
+.section-prices h1 span{
+    color: #2C96E2;
+    text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.30);
+    font-family: Eb Garamond;
+    font-size: 90px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}
+.section-prices h3 span{
+    color: #2C96E2;
+    font-family: Eb Garamond;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+}
+.section-prices .price-box{
+    border-radius: 16px;
+    background: #193155;
+    width: 27%;
+    height: 520px;
+    flex-shrink: 0;
+    padding:40px;
+
+}
+.section-prices .price-box h5{
+    color: #FFF;
+    font-family: Eb Garamond;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.section-prices .price-box h4{
+    color: #FFF;
+    font-family: Eb Garamond;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    
+}
+.section-prices .price-box ul li{
+    color: #FFF;
+    font-family: Bodoni;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-left:0px;
+    padding-left:0px;
+}
+.section-prices .price-box a{
+    color: #FFF;
+    font-family: Bodoni;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-left:0px;
+    padding-left:0px;
+    text-decoration: none;
+    border-radius: 8px;
+    border: 1px solid #2C96E2;
+    background: rgba(217, 217, 217, 0.00);
+    padding:7px 70px;
+}
+.section-projects .wrap {
+    display: flex;
+    padding-bottom: var(--spacing-3-rem,  0px);
+    justify-content: center;
+    align-items: flex-end;
+    gap: var(--spacing-2-rem,  32px);
+    align-self: stretch;
+    width:100%;
+}
+.section-projects .wrap .slider-container{
+    max-width: 1500px;
+    width:100%;
+}
+.swiper {
+    width: 100%;
+    height: 100%;
+  }
+.swiper-pagination{
+    margin-top: 220px;
+
+}
+.swiper-slide {
+
+}
+.section-project{
+    width:1600px;
+}
+.swiper-slide{
+    width: 250px!important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.review-wrap, .review-wrap2, .review-wrap4 {
+  }
+  .review-wrap img, .review-wrap1 img,.review-wrap2 img,.review-wrap3 img, .review-wrap4 img{
+    height: 250px;
+    width:150%;
+  }
+
+.section-projects h3{
+    color: #FFF;
+    font-family: Eb Garamond;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top:120px;
+
+}
+.section-projects h3 span{
+    color: #2C96E2;
+    font-family: Eb Garamond;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+}
+.section-projects{
+    width:100%;
+    margin:auto;
+}
+.section-testimonials h3{
+    color: #FFF;
+    font-family: Eb Garamond;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-top:120px;
+
+}
+.section-testimonials .wrap .info{
+    border-radius: 8px;
+    background: #193155;
+    box-shadow: 5px 5px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 400px;
+    margin:auto;
+    height: 281px;
+    flex-shrink: 0;
+    padding:10%;
+}
+.section-testimonials .wrap .testimonial-container{
+    display:flex;
+    padding-top:10rem;
+
+}
+.section-testimonials .wrap .testimonial-container .testimonial-wrap{
+    margin-top:181px;
+
+}
+.section-testimonials .wrap .testimonial-container .testimonial-wrap2{
+    margin-top:181px;
+
+}
+.section-testimonials .wrap .testimonial-container .testimonial-wrap1{
+    margin:0 2%;
+
+}
+
+.section-testimonials .wrap .testimonial-wrap .apostrophe{
+    color: #2C96E2;
+    font-family: Sans serif;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.section-testimonials .wrap .testimonial-wrap1 .info{
+    border-radius: 8px;
+    background: #193155;
+    box-shadow: 5px 5px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 400px;
+    height: 281px;
+    flex-shrink: 0;
+}
+.section-testimonials .wrap .testimonial-wrap1 .info h4{
+    color: #FFF;
+    font-family: Eb Garamond;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.section-testimonials .wrap .testimonial-wrap .info h4{
+    color: #FFF;
+    font-family: Eb Garamond;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.section-testimonials .wrap .testimonial-wrap2 .info h4{
+    color: #FFF;
+    font-family: Eb Garamond;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.section-testimonials .wrap .testimonial-wrap2 .info p{
+
+    color: #FFF;
+    text-align: center;
+    font-family: Bodoni;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.section-testimonials .wrap .testimonial-wrap1 .info p{
+
+    color: #FFF;
+    text-align: center;
+    font-family: Bodoni;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.section-testimonials .wrap .testimonial-wrap .info p{
+
+    color: #FFF;
+    text-align: center;
+    font-family: Bodoni;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.section-testimonials .wrap .testimonial-wrap2 .info{
+    border-radius: 8px;
+    background: #193155;
+    box-shadow: 5px 5px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 400px;
+    height: 281px;
+    flex-shrink: 0;
+}
+.section-testimonials .wrap .testimonial-wrap:hover{
+    margin-top: 150px;
+}
+.section-testimonials .wrap .testimonial-wrap2:hover{
+    margin-top: 150px;
+}
+.section-testimonials .wrap .testimonial-wrap1:hover{
+    margin-top: 56px!important;
+}
+.box .text{
+    position: absolute;
+    z-index: 999;
+    margin: 0;
+    left: 40%;
+    right: 0;
+    top: -17%; /* Adjust this value to move the positioned div up and down */
+    text-align: start;
+    width: 20%;
+     /* Set the width of the positioned div */
+}
+.box{
+    position: relative;
+    display: inline-block; /* Make the width of box same as image */
+}
+.section-quote .rectangle{
+    width: 85%;
+    height: 408px;
+    flex-shrink: 0;
+    border-radius: 32px;
+    background: #2C96E2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.section-quote .rectangle img{
+    width: 50%;
+    height: 636px;
+    padding-top: 80px;
+}
+.section-footer h4{
+    color: #FFF;
+    font-family: Eb Garamond;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.section-footer ul{
+    list-style-type: none;
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 0px;
+}
+.section-footer .social-links{
+    display:flex;
+}
+.section-footer ul li{
+
+    color: #FFF;
+    font-family: Bodoni;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.section-footer span{
+
+    color: #FFF;
+    font-family: Bodoni;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.section-quote img{
+    position: relative;
+    z-index: 999;
+    margin: 0 100;
+    left: 0%;
+    right: 40%;
+    top: 20%; /* Adjust this value to move the positioned div up and down */
+     /* Set the width of the positioned div */
+}
+.section-quote{
+    margin-bottom:328px;
+}
+.section-quote h3{
+    color: #FFF;
+    font-family: Eb Garamond;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-top: 0px;
+}
+.section-quote p{
+    color: #FFF;
+    font-family: Bodoni;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-left: 0%;
+}
+.section-quote a{
+    margin-bottom:328px;
+    padding:10px;
+    border-radius: 8px;
+    background: #FFF;
+    text-decoration: none;
+    color: #2C96E2;
+    font-family: Eb Garamond;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.section-quote .quote-wrap{
+ padding:50px;
+}
+@property --p{
+    syntax: '<number>';
+    inherits: true;
+    initial-value: 1;
+  }
+  
+  .pie {
+    --p:20;
+    --b:22px;
+    --c:darkred;
+    --w:150px;
+  
+    width: var(--w);
+    aspect-ratio: 1;
+    position: relative;
+    display: inline-grid;
+    margin: 5px;
+    place-content: center;
+    font-size: 25px;
+    font-weight: bold;
+    font-family: sans-serif;
+    color: #FFF;
+    font-family: Eb Garamond;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  .pie:before,
+  .pie:after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+  }
+  .pie:before {
+    inset: 0;
+    background:
+      radial-gradient(farthest-side,var(--c) 98%,#0000) top/var(--b) var(--b) no-repeat,
+      conic-gradient(var(--c) calc(var(--p)*1%),#0000 0);
+    -webkit-mask: radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
+            mask: radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
+  }
+  .pie:after {
+    inset: calc(50% - var(--b)/2);
+    background: var(--c);
+    transform: rotate(calc(var(--p)*3.6deg)) translateY(calc(50% - var(--w)/2));
+  }
+  .animate {
+    animation: p 1s .5s both;
+  }
+  .no-round:before {
+    background-size: 0 0, auto;
+  }
+  .no-round:after {
+    content: none;
+  }
+  @keyframes p{
+    from{--p:0}
+  }
+  .contact .section-contact{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+.contact .section-contact .contact-wrap{
+    border:1px solid #AEABAB;
+    padding:32px;
+    border-radius:32px;
+    display:flex; 
+}
+.contact .section-contact .contact-wrap .map{
+    margin-right:64px;
+    padding-right:48px;
+    border-right:1px solid #AEABAB
+}
+
+.contact .section-contact h3{
+    color: #fff;
+    font-family: Eb Garamond;
+    text-align: center;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.contact .section-contact h4{
+    color: #fff;
+    text-align: center;
+    font-family: Averia Serif Libre;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 30px;
+}
+.contact .section-contact .form-group{
+
+    width: 100%;
+}
+.contact .section-contact .name{
+    border-radius: 16px;
+    border: 1px solid #AEABAB;
+    background: rgba(217, 217, 217, 0.00);
+    width: 100%;
+    height: 56px;
+    flex-shrink: 0;
+    margin-bottom: 24px;
+    padding:10px;
+}
+.contact .section-contact .email{
+    border-radius: 16px;
+    border: 1px solid #AEABAB;
+    background: rgba(217, 217, 217, 0.00);
+    width: 100%;
+    height: 56px;
+    flex-shrink: 0;
+    margin-bottom: 24px;
+    padding:10px;
+}
+.contact .section-contact .message{
+    border-radius: 16px;
+    border: 1px solid #AEABAB;
+    background: rgba(217, 217, 217, 0.00);
+    width: 100%;
+    height: 156px;
+    flex-shrink: 0;
+    margin-bottom: 24px;
+    padding:10px;
+}
+.swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    border-radius: 3px;
+    background: var(--border-color-1, rgba(244, 242, 241, 0.20));
+    margin: 0 8px; /* Adjust the spacing between bullets */
+    border-radius: 50%; /* Make the bullets circular */
+    cursor: pointer;
+    height: 6px;
+    flex: 1 0 0;
+  }
+  
+  .swiper-pagination-bullet-active {
+    border-radius: 3px;
+    background: var(--border-color-2, #2C96E2);
+    height: 6px;
+    flex: 1 0 0;
+  }
+  .about .section-stats .stat-wrap{
+    display:flex;align-items:center;justify-content:center;margin:auto;
+  }
+  .about .section-equip .equip-wrap{
+    padding-right:30px;
+    margin-right:0px;
+    width:500px;
+  }
+  .service .header{
+    margin-top:5%;
+  }
+  
+  /** Responsive **/
+@media(max-width:280px){
+    .about .section-stats .stat-wrap{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        margin:auto;
+        flex-direction: column;
+      }
+      .section-info{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width:80%;
+        margin-left:20%;
+        flex-direction: column!important;
+    }
+      .contact .section-contact .contact-wrap ul{
+        flex-direction: column;
+    }
+    .about-banner .aboutImg {
+        display: none;
+    }
+    .about .section-equip img {
+        width: 100%;
+        height: 490px;
+        margin-top: 100px;
+        margin-right: 0px;
+    }
+    .contact .section-contact .contact-wrap ul li{
+        margin-top: 20px;
+    }
+    .contact .section-contact .contact-wrap ul li svg{
+        margin-right: 10px;
+    }
+      .contact-banner h4 {
+        color: #FFF;
+        font-family: Bodoni;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-top: 50px;
+    }
+    .contact .section-contact .contact-wrap{
+        border:1px solid #AEABAB;
+        padding:22px;
+        padding-top:32px;
+        border-radius:32px;
+        display:flex; 
+        flex-direction: column;
+    }
+    .service .section-service .body {
+        display: flex;
+        flex-direction: column;
+        color: #fff;
+        font-family: Bodoni;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-top: 100px;
+        margin-left: 0px;
+    }
+    .contact .section-contact .contact-wrap .map{
+        margin-right:64px;
+        padding-right:20px;
+        border-right:none;
+    }
+    .contact .section-contact h3 {
+        color: #fff;
+        font-family: Eb Garamond;
+        text-align: center;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-top: 20px;
+    }
+    .contact .section-contact .name {
+        border-radius: 16px;
+        border: 1px solid #AEABAB;
+        background: rgba(217, 217, 217, 0.00);
+        width: 100%;
+        height: 56px;
+        flex-shrink: 0;
+        margin-bottom: 24px;
+        padding: 10px;
+    }
+    .contact .section-contact .email {
+        border-radius: 16px;
+        border: 1px solid #AEABAB;
+        background: rgba(217, 217, 217, 0.00);
+        width: 100%;
+        height: 56px;
+        flex-shrink: 0;
+        margin-bottom: 24px;
+        padding: 10px;
+    }
+    .contact .section-contact .message {
+        border-radius: 16px;
+        border: 1px solid #AEABAB;
+        background: rgba(217, 217, 217, 0.00);
+        width: 100%;
+        height: 156px;
+        flex-shrink: 0;
+        margin-bottom: 24px;
+        padding: 10px;
+    }
+    .contact .section-contact .contact-wrap {
+        border: 1px solid #AEABAB;
+        padding: 12px;
+        padding-top: 32px;
+        border-radius: 32px;
+        display: flex;
+        flex-direction: column;
+    }
+    .contact .section-contact button {
+        color: #fff;
+        font-family: Eb Garamond;
+        text-align: center;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        width: 100%;
+        border-radius: 32px;
+    }
+    .contact .section-contact .form-group {
+        width: 100%;
+    }
+      .about .section-stats .stat-wrap .stat-label{
+        margin-top: 40px;
+      }
+      .about .section-stats h2 {
+        margin-top: 100px;
+        color: #FFF;
+        text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.30);
+        font-family: Eb Garamond;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-bottom: 32px;
+    }
+    .about .section-equip h2 {
+        margin-top: 100px;
+        color: #FFF;
+        text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.30);
+        font-family: Eb Garamond;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-bottom: 32px;
+    }
+    .about .section-info img{
+        width:100%
+    }
+
+    .about .section-equip img {
+        width: 100%;
+        height: 490px;
+        margin-top: 100px;
+        margin-right: 0px;
+    }
+    .about .section-info h2 {
+        margin-top: 100px;
+        color: #FFF;
+        text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.30);
+        font-family: Eb Garamond;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-bottom: 32px;
+    }
+    .about .section-info p {
+        color: #FFF;
+        font-family: Bodoni;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-right: 10%;
+    }
+    .about-banner h1 {
+        color: rgb(255, 255, 255);
+        text-shadow: rgba(0, 0, 0, 0.3) 5px 5px 4px;
+        font-family: "Eb Garamond";
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin: 15% 2% 3% 15%;
+    }
+    .about .section-info img{
+        margin-left:0%;
+    }
+    .header-banner p{
+        color: #FFF;
+        font-family: Bodoni;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-left:15%;
+        margin-bottom:40px;
+    
+    }
+    .section-services{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        width:85%;
+    
+        margin:auto;
+        flex-direction: column;
+    }
+    .section-services .service-box{
+        border-radius: 20px;
+        background: #193155;
+        width: 100%;
+        padding:10%;
+        height:520px;
+        margin-top:100px;
+        
+    }
+    .section-services .service-box:hover{
+        border-radius: 20px;
+        background: #193155;
+        width: 100%;
+        padding:10%;
+        height:520px;
+        margin-top:56px;
+    }
+    .section-prices{
+        width: 100%;
+    }
+    .section-prices h1{
+        color: #FFF;
+        text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.30);
+        font-family: Eb Garamond;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin: 40% 2% 3% 15%;
+    }
+    .section-prices h1 span{
+        color: #2C96E2;
+        text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.30);
+        font-family: Eb Garamond;
+        font-size: 60px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: normal;
+    }
+    .section-prices h1{
+        color: #FFF;
+        text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.30);
+        font-family: Eb Garamond;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin: 40% 2% 3% 15%;
+    }
+    .section-prices h1 span{
+        color: #2C96E2;
+        text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.30);
+        font-family: Eb Garamond;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: normal;
+    }
+    .section-testimonials h3{
+        color: #FFF;
+        font-family: Eb Garamond;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-top:120px;
+    
+    }
+    .section-testimonials .wrap .testimonial-container{
+        display:flex;
+        padding-top:5rem;
+        flex-direction: column;
+    
+    }
+    .section-testimonials .wrap .info{
+        border-radius: 8px;
+        background: #193155;
+        box-shadow: 5px 5px 4px 0px rgba(0, 0, 0, 0.25);
+        width: 270px;
+        margin:auto;
+        height: 281px;
+        flex-shrink: 0;
+        padding:10%;
+        margin-left: 10px;
+
+    }
+    .section-testimonials .wrap .testimonial-wrap1 .info{
+        border-radius: 8px;
+        background: #193155;
+        box-shadow: 5px 5px 4px 0px rgba(0, 0, 0, 0.25);
+        width: 270px;
+        height: 281px;
+        flex-shrink: 0;
+        margin-left: 10px;
+    }
+    .section-testimonials .wrap .testimonial-wrap2 .info{
+        border-radius: 8px;
+        background: #193155;
+        box-shadow: 5px 5px 4px 0px rgba(0, 0, 0, 0.25);
+        width: 270px;
+        height: 281px;
+        flex-shrink: 0;
+        margin-left: 10px;
+    }
+    .section-testimonials{
+        width: 100%;
+    }
+    .section-testimonials .wrap .testimonial-container .testimonial-wrap{
+        margin-top:51px;
+    
+    }
+    .box .text{
+        position: absolute;
+        z-index: 999;
+        margin: 0;
+        left: 40%;
+        right: 0;
+        top: -12%; /* Adjust this value to move the positioned div up and down */
+        text-align: start;
+        width: 20%;
+         /* Set the width of the positioned div */
+    }
+    .section-quote .rectangle{
+        width: 90%;
+        height: 800px;
+        flex-shrink: 0;
+        border-radius: 32px;
+        background: #2C96E2;
+        display: flex;
+        flex-direction: column;
+    }
+    .section-quote h3{
+        color: #FFF;
+        font-family: Eb Garamond;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        padding-top: 30px;
+    }
+    .section-quote .rectangle img{
+        width: 100%;
+        height: 636px;
+        padding-top: 5px;
+    }
+    .section-quote img{
+        position: relative;
+        z-index: 999;
+        margin: 0 100;
+        left: 0%;
+        right: 40%;
+        top: 10%; /* Adjust this value to move the positioned div up and down */
+         /* Set the width of the positioned div */
+    }
+    .section-quote .quote-wrap{
+        padding:20px;
+    }
+    .service .section-service button {
+        border-radius: 8px;
+        background: #2C96E2;
+        width: 423px;
+        height: 71px;
+        flex-shrink: 0;
+        color: #FFF;
+        font-family: Eb Garamond;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        border: none;
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+    .service .header{
+        margin-top:80px;
+      }
+      .service-banner h4 {
+        color: #FFF;
+        font-family: Bodoni;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-top: 80px;
+        justify-content: ;
+    }
+    .service .container{
+        width:90%!important;
+    }
+    .service-banner h1 {
+        color: #FFF;
+        text-align: center;
+        text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.30);
+        font-family: Eb Garamond;
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+    .service .section-more .custom-card {
+        width: 90%;
+        height: 395px;
+        flex-shrink: 0;
+        border-radius: 22px;
+        background: #193155;
+        padding: 0px;
+        margin: 12px 36px;
+    }
+    .service .section-more .custom-card img {
+        width: 100%;
+        height: 174px;
+        flex-shrink: 0;
+        border-radius: 22px 22px 0px 0px;
+    }
+    
+    .service .section-service .body {
+        display: flex;
+        flex-direction: column;
+        color: #FFF;
+        font-family: Bodoni;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-top: 100px;
+    }
+
+}
+@media(min-width:281px) and (max-width:450px){
+    .section-info{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width:70%;
+        margin-left:20%;
+        flex-direction: column!important;
+    }
+    .about-banner .aboutImg {
+        display:none;
+    }
+    .section-info .card{
+        width:15rem;
+    }
+    .service .section-service .body {
+        display: flex;
+        flex-direction: column;
+        color: #fff;
+        font-family: Bodoni;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-top: 100px;
+        margin-left: 0px;
+    }
+    .section-testimonials h3 {
+        color: #FFF;
+        font-family: Eb Garamond;
+        font-size: 52px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-top: 120px;
+    }
+    .section-services h3 {
+        color: #FFF;
+        font-family: Eb Garamond;
+        font-size: 52px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        margin-top: 120px;
+    }
+    .section-projects h3 {
+        color: #FFF;
+        font-family: Eb Garamond;
+        font-size: 52px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        margin-top: 120px;
+    }
+    .section-services h3 {
+        color: #FFF;
+        font-family: Eb Garamond;
+        font-size: 64px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        margin-top: 120px;
+    }
+    .section-projects h3 span {
+        color: #2C96E2;
+        font-family: Eb Garamond;
+        font-size: 64px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+    .service .section-service button {
+        border-radius: 8px;
+        background: rgb(44, 150, 226);
+        width: 423px;
+        height: 71px;
+        flex-shrink: 0;
+        color: rgb(255, 255, 255);
+        font-family: "Eb Garamond";
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        border: none;
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+    .service .header{
+        margin-top:80px;
+      }
+      .service-banner h4 {
+        color: #FFF;
+        font-family: Bodoni;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-top: 80px;
+        justify-content: ;
+    }
+    .service-banner h1 {
+        color: #FFF;
+        text-align: center;
+        text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.30);
+        font-family: Eb Garamond;
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+    .contact .section-contact .name {
+        border-radius: 16px;
+        border: 1px solid #AEABAB;
+        background: rgba(217, 217, 217, 0.00);
+        width: 100%;
+        height: 56px;
+        flex-shrink: 0;
+        margin-bottom: 24px;
+        padding: 10px;
+    }
+    .contact .section-contact .contact-wrap{
+        border:1px solid #AEABAB;
+        padding:22px;
+        padding-top:32px;
+        border-radius:32px;
+        display:flex; 
+        flex-direction: column;
+    }
+    .contact .section-contact .contact-wrap .map{
+        margin-right:64px;
+        padding-right:20px;
+        border-right:none;
+    }
+    .contact .section-contact h3 {
+        color: #fff;
+        font-family: Eb Garamond;
+        text-align: center;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-top: 32px;
+    }
+
+    .about .section-info button{
+        border-radius: 8px;
+        background: #2C96E2;
+        padding:10px 16px;
+        color: #FFF;
+        font-family: Eb Garamond;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        border: none;
+        margin-left:10%;
+    
+    
+    }
+    .about .section-info p{
+        color: #FFF;
+        font-family: Bodoni;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-right:10%;
+    
+    }
+    .about .section-info h2 {
+        margin-left:10%;
+    }
+    .about .section-info p{
+        margin-left:10%;
+    }
+    .about .section-equip h2{
+        margin-top:100px;
+        color: #FFF;
+        text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.30);
+        font-family: Eb Garamond;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-bottom: 32px;
+        margin-right: 10%;
+        margin-left: 10%;
+
+    
+    }
+    .about .section-equip img {
+        width: 100%;
+        height: 790px;
+        margin-top: 100px;
+        margin-right: 0px;
+    }
+
+    .about .section-stats h2 {
+        margin-top: 100px;
+        color: #FFF;
+        text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.30);
+        font-family: Eb Garamond;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-bottom: 32px;
+    }
+    .about .section-equip p{
+        color: #FFF;
+        font-family: Bodoni;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-right: 10%;
+        margin-left: 5%;
+
+    
+    }
+    .about .section-equip h3{
+        color: #FFF;
+        font-family: Bodoni;
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-right: 10%;
+        margin-left: 5%;
+        margin-top: 80px;
+        margin-bottom: 40px;
+
+    }
+    .about .section-stats .stat-wrap{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        margin:auto;
+        flex-direction: column;
+      }
+      .about .section-stats .stat-wrap .stat-label{
+        margin-top: 40px;
+      }
+    .about .section-info img{
+        margin-left:1%;
+        width:100%;
+        margin-top: 100px;
+
+    }
+    .about .section-info h2 {
+        margin-top: 100px;
+        color: #FFF;
+        text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.30);
+        font-family: Eb Garamond;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-bottom: 32px;
+    }
+    .section-equip h2 {
+        margin-top: 100px;
+        color: #FFF;
+        text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.30);
+        font-family: Eb Garamond;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-bottom: 32px;
+        margin-right: 10%;
+        margin-left: 10%;
+    }
+    .about-banner h1{
+        color: #FFF;
+        text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.30);
+        font-family: Eb Garamond;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin: 15% 2% 3% 15%;
+    }
+    .header-banner p{
+        color: #FFF;
+        font-family: Bodoni;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-left:15%;
+        margin-right: 10%;
+        margin-bottom:40px;
+    
+    }
+    .about-banner p{
+        color: #FFF;
+        font-family: Bodoni;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-right: 10%;
+
+        margin-left:15%;
+        margin-bottom:40px;
+    
+    }
+    
+    .section-services .service-box .icon-box{
+        width: 85px;
+    }
+    .section-services .service-box{
+        height:500px;
+        width: 100%;
+        margin-left: 4%;
+
+    }
+    .section-services .service-box:hover{
+        border-radius: 20px;
+        background: #193155;
+        width: 110%;
+        padding:10%;
+        height:500px;
+        margin-top:56px;
+    }
+    .section-services .service-box .enter-box{
+        width: 65px;
+    }
+    .section-prices h1{
+        color: #FFF;
+        text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.30);
+        font-family: Eb Garamond;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+    .header-banner .btn {
+        text-decoration: none;
+        border-radius: 8px;
+        background: #193155;
+        padding: 10px 16px;
+        margin-left: 15%;
+        color: #FFF;
+        font-family: Eb Garamond;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        border: none;
+    }
+    
+    .section-prices h1 span{
+        color: #2C96E2;
+        text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.30);
+        font-family: Eb Garamond;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: normal;
+    }
+    .review-wrap img, .review-wrap1 img,.review-wrap2 img,.review-wrap3 img, .review-wrap4 img{
+        height: 250px;
+        width:150%;
+      }
+      .section-testimonials .wrap .testimonial-container{
+        display:flex;
+        flex-direction: column;
+    
+    }
+    .section-testimonials .wrap .testimonial-container {
+        display: flex;
+        padding-top: 0rem;
+    }
+    .wrap .testimonial-container .testimonial-wrap{
+        margin-top:20px;
+    
+    }
+    .section-testimonials .wrap .testimonial-container .testimonial-wrap2 {
+        margin-top: 81px;
+    }
+    .box .text{
+        position: absolute;
+        z-index: 999;
+        margin: 0;
+        left: 40%;
+        right: 0;
+        top: -10%; /* Adjust this value to move the positioned div up and down */
+        text-align: start;
+        width: 20%;
+         /* Set the width of the positioned div */
+    }
+    .section-testimonials .wrap .info{
+        border-radius: 8px;
+        background: #193155;
+        box-shadow: 5px 5px 4px 0px rgba(0, 0, 0, 0.25);
+        width: 100%!important;
+        margin:auto;
+        height: 281px;
+        flex-shrink: 0;
+        padding:10%;
+    }
+    .section-quote .rectangle{
+        width: 90%;
+        height: 800px;
+        flex-shrink: 0;
+        border-radius: 32px;
+        background: #2C96E2;
+        display: flex;
+        flex-direction: column;
+    }
+    .section-quote h3{
+        color: #FFF;
+        font-family: Eb Garamond;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        padding-top: 30px;
+    }
+    .section-quote .rectangle img{
+        width: 100%;
+        height: 636px;
+        padding-top: 5px;
+    }
+    .section-quote img{
+        position: relative;
+        z-index: 999;
+        margin: 0 100;
+        left: 0%;
+        right: 40%;
+        top: 10%; /* Adjust this value to move the positioned div up and down */
+         /* Set the width of the positioned div */
+    }
+    .section-info .custom-card1{
+
+        margin:auto;
+        margin-bottom: 50px;
+
+    }   
+    .section-info .custom-card {
+        margin: auto;
+        margin-bottom: 50px;
+    }
+    .contact .section-contact .email {
+        border-radius: 16px;
+        border: 1px solid #AEABAB;
+        background: rgba(217, 217, 217, 0.00);
+        width: 100%;
+        height: 56px;
+        flex-shrink: 0;
+        margin-bottom: 24px;
+        padding: 10px;
+    }
+    .contact .section-contact .message {
+        border-radius: 16px;
+        border: 1px solid #AEABAB;
+        background: rgba(217, 217, 217, 0.00);
+        width: 100%;;
+        height: 156px;
+        flex-shrink: 0;
+        margin-bottom: 24px;
+        padding: 10px;
+    }
+    .contact .section-contact button {
+        color: #fff;
+        font-family: Eb Garamond;
+        text-align: center;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        width: 100%;
+        border-radius: 32px;
+    }
+    .contact .section-contact .contact-wrap ul{
+        flex-direction: column;
+    }
+    .contact .section-contact .contact-wrap ul li{
+        margin-top: 20px;
+    }
+    .contact .section-contact .contact-wrap ul li svg{
+        margin-right: 10px;
+    }
+    .contact-banner h4 {
+        color: #FFF;
+        font-family: Bodoni;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-top: 150px;
+        margin-bottom: 100px;
+
+    }
+
+}
+@media (min-width: 450px) and (max-width: 575px) {
+    .about .section-info img{
+        margin-left:0%;
+        width:80%;
+    }
+    .about-banner .aboutImg {
+        display: none;
+    }
+    .service .section-service .body {
+        display: flex;
+        flex-direction: column;
+        color: #fff;
+        font-family: Bodoni;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-top: 100px;
+        margin-left: 0px;
+    }
+    .contact .section-contact .form-group{
+        width: 100%;
+    }
+    .service .header{
+        margin-top:120px;
+      }
+      .service-banner h4 {
+        color: #FFF;
+        font-family: Bodoni;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-top: 120px;
+        justify-content: ;
+    }
+
+    .service-banner h1 {
+        color: #FFF;
+        text-align: center;
+        text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.30);
+        font-family: Eb Garamond;
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+    .contact-banner h4 {
+        color: #FFF;
+        font-family: Bodoni;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-top: 10px;
+    }
+    .contact .section-contact .name {
+        border-radius: 16px;
+        border: 1px solid #AEABAB;
+        background: rgba(217, 217, 217, 0.00);
+        width: 100%;
+        height: 56px;
+        flex-shrink: 0;
+        margin-bottom: 24px;
+        padding: 10px;
+    }
+    .contact .section-contact .email {
+        border-radius: 16px;
+        border: 1px solid #AEABAB;
+        background: rgba(217, 217, 217, 0.00);
+        width: 100%;
+        height: 56px;
+        flex-shrink: 0;
+        margin-bottom: 24px;
+        padding: 10px;
+    }
+    .contact .section-contact .message {
+        border-radius: 16px;
+        border: 1px solid #AEABAB;
+        background: rgba(217, 217, 217, 0.00);
+        width: 100%;
+        height: 156px;
+        flex-shrink: 0;
+        margin-bottom: 24px;
+        padding: 10px;
+    }
+    .contact .section-contact .contact-wrap ul{
+        flex-direction: column;
+    }
+
+    .contact .section-contact h3 {
+        margin-top: 32px;
+    }
+    .contact .section-contact .contact-wrap{
+        border:1px solid #AEABAB;
+        padding:22px;
+        padding-top:32px;
+        border-radius:32px;
+        display:flex; 
+        flex-direction: column;
+    }
+    .contact .section-contact .contact-wrap .map{
+        margin-right:64px;
+        padding-right:20px;
+        border-right:none;
+    }
+    .contact .section-contact button {
+        color: #fff;
+        font-family: Eb Garamond;
+        text-align: center;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        width: 100%;
+        border-radius: 32px;
+    }
+
+    .about .section-equip img {
+        width: 100%;
+        height: 790px;
+        margin-top: 100px;
+        margin-right: 0px;
+    }
+    .about .section-equip h2 {
+        margin-top: 100px;
+        color: #FFF;
+        text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.30);
+        font-family: Eb Garamond;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-bottom: 32px;
+    }
+    .about .section-stats .stat-wrap{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        margin:auto;
+        flex-direction: column;
+      }
+    .about .section-info button{
+        border-radius: 8px;
+        background: #2C96E2;
+        padding:10px 16px;
+        color: #FFF;
+        font-family: Eb Garamond;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        border: none;
+        margin-left:10%;
+    
+    
+    }
+    .about .section-info p{
+        color: #FFF;
+        font-family: Bodoni;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-right:10%;
+        margin-left:10%;
+
+    
+    }
+    
+    .about .section-info h2{
+        margin-top:100px;
+        color: #FFF;
+        text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.30);
+        font-family: Eb Garamond;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-bottom: 32px;
+        margin-left:10%;
+
+    }
+    .section-info .custom-card{
+        width: 70%!important;
+        margin: auto;
+        
+    }
+    .section-info .custom-card1{
+        width: 70%!important;
+        margin: auto;
+
+    }
+    .section-testimonials .wrap .testimonial-container{
+        display:flex;
+        padding-top:5rem;
+        flex-direction: column;
+    
+    }
+    .section-testimonials .wrap .testimonial-container .testimonial-wrap{
+        margin-top:81px;
+    
+    }
+    .section-testimonials .wrap .testimonial-container .testimonial-wrap2{
+        margin-top:81px;
+    
+    }
+    .section-quote .rectangle img{
+        width: 50%;
+        height: 536px;
+        padding-top: 80px;
+    }
+    .section-quote h3{
+        color: #FFF;
+        font-family: Eb Garamond;
+        font-size: 38px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }      .about .section-stats .stat-wrap .stat-label{
+        margin-top: 40px;
+      }
+      .about .section-stats h2 {
+        margin-top: 100px;
+        color: #FFF;
+        text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.30);
+        font-family: Eb Garamond;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-bottom: 32px;
+    }
+
+}
+@media(min-width:575px) and (max-width:768px){
+    .about .section-info p{
+        color: #FFF;
+        font-family: Bodoni;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-right:10%;
+    
+    }
+
+    .section-info{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width:70%;
+        margin-left:20%;
+        flex-direction: column!important;
+    }
+    .about-banner .aboutImg {
+        display: none;
+
+    }
+    .about .section-info img{
+        width:80%;
+        margin-left: 22%;
+    }
+    .service .header{
+        margin-top:100px;
+      }
+      .service-banner h4 {
+        color: #FFF;
+        font-family: Bodoni;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-top: 100px;
+        justify-content: ;
+    }
+    .service-banner h1 {
+        color: #FFF;
+        text-align: center;
+        text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.30);
+        font-family: Eb Garamond;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+    .contact .section-contact .contact-wrap{
+        border:1px solid #AEABAB;
+        padding:22px;
+        padding-top:32px;
+        border-radius:32px;
+        display:flex; 
+        flex-direction: column;
+    }
+    .contact .section-contact .contact-wrap .map{
+        margin-right:64px;
+        padding-right:20px;
+        border-right:none;
+    }
+    .contact .section-contact .form-group {
+
+        width: 100%;
+    }
+    .contact .section-contact .name {
+        border-radius: 16px;
+        border: 1px solid #AEABAB;
+        background: rgba(217, 217, 217, 0.00);
+        width: 100%;
+        height: 56px;
+        flex-shrink: 0;
+        margin-bottom: 24px;
+        padding: 10px;
+    }
+    .contact .section-contact .email {
+        border-radius: 16px;
+        border: 1px solid #AEABAB;
+        background: rgba(217, 217, 217, 0.00);
+        width: 100%;
+        height: 56px;
+        flex-shrink: 0;
+        margin-bottom: 24px;
+        padding: 10px;
+    }
+    .contact .section-contact .message {
+        border-radius: 16px;
+        border: 1px solid #AEABAB;
+        background: rgba(217, 217, 217, 0.00);
+        width: 100%;
+        height: 156px;
+        flex-shrink: 0;
+        margin-bottom: 24px;
+        padding: 10px;
+    }
+    .contact .section-contact h3 {
+        color: #fff;
+        font-family: Eb Garamond;
+        text-align: center;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-top: 32px;
+    }
+
+    .about .section-equip img {
+        width: 80%;
+        height: 790px;
+        margin-top: 100px;
+        margin-right: 0px;
+        margin-left:10%;
+
+    }
+    .about .section-equip h2{
+        margin-top:275px;
+        color: #FFF;
+        text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.30);
+        font-family: Eb Garamond;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-bottom: 32px;
+        margin-right: 10%;
+        margin-left: 5%;
+
+    
+    }
+  
+    .about .section-equip p{
+        color: #FFF;
+        font-family: Bodoni;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-right: 10%;
+        margin-left: 5%;
+
+    
+    }
+    .about .section-equip h3{
+        color: #FFF;
+        font-family: Bodoni;
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-right: 10%;
+        margin-left: 5%;
+        margin-top: 80px;
+        margin-bottom: 40px;
+
+    }
+    .about .section-info h2 {
+        margin-left:10%;
+    }
+    .about .section-info p{
+        margin-left:10%;
+    }
+    .about .section-info button{
+        border-radius: 8px;
+        background: #2C96E2;
+        padding:10px 16px;
+        color: #FFF;
+        font-family: Eb Garamond;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        border: none;
+        margin-left:10%;
+    
+    
+    }
+    .section-info .custom-card {
+        width: 80%!important;
+        margin: auto;
+    }
+    .section-info .custom-card1 {
+        width: 80%!important;
+        margin: auto;
+    }
+
+    .section-info .custom-card .card-body {
+        width: 100%;
+        flex-shrink: 0;
+        border-radius: 0px 0px 16px 16px;
+        background: #193155;
+        padding: 10%;
+    }
+    .section-info .custom-card1 .card-img-top {
+        width: 100%!important;
+    }
+
+    .section-info .custom-card1 .card-body {
+        width: 100%;
+        flex-shrink: 0;
+        border-radius: 0px 0px 16px 16px;
+        background: #193155;
+        padding: 10%;
+    }
+    .section-services .service-box .icon-box{
+        width: 39%;
+        height: 80px;
+        flex-shrink: 0;
+        border-radius: 16px;
+        background: #101F37;
+        padding:20px;
+    
+    }
+    .section-services .service-box .enter-box{
+        border: 1px solid #AEABAB;
+        border-radius: 16px;
+        width: 35%;
+        height: 65px;
+        flex-shrink: 0;
+        margin-bottom: 50px;
+    }
+    .section-prices h1{
+        color: #FFF;
+        text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.30);
+        font-family: Eb Garamond;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin: 40% 15% 3% 15%;
+    }
+    .section-prices h1 span{
+        color: #2C96E2;
+        text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.30);
+        font-family: Eb Garamond;
+        font-size: 64px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: normal;
+    }
+    .section-testimonials .wrap .testimonial-container{
+        display:flex;
+        padding-top:5rem;
+        flex-direction: column;
+    
+    }
+    .section-testimonials .wrap .testimonial-container .testimonial-wrap{
+        margin-top:81px;
+    
+    }
+    .section-testimonials .wrap .testimonial-container .testimonial-wrap2{
+        margin-top:81px;
+    
+    }
+    .section-info{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width:100%;
+        margin:auto;
+    }
+    
+}
+@media(min-width:769px) and (max-width:991px){
+    .about .section-info p{
+        color: #FFF;
+        font-family: Bodoni;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-right:10%;
+    
+    }
+    .about-banner .aboutImg {
+        display: none;
+
+    }
+    .service .header{
+        margin-top:7%;
+      }
+      .service-banner h4 {
+        color: #FFF;
+        font-family: Bodoni;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-top: 120px;
+        justify-content: ;
+    }
+
+    .service-banner h1 {
+        color: #FFF;
+        text-align: center;
+        text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.30);
+        font-family: Eb Garamond;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+    .contact .section-contact .name {
+        border-radius: 16px;
+        border: 1px solid #AEABAB;
+        background: rgba(217, 217, 217, 0.00);
+        width: 100%;
+        height: 56px;
+        flex-shrink: 0;
+        margin-bottom: 24px;
+        padding: 10px;
+    }
+    .contact .section-contact .email {
+        border-radius: 16px;
+        border: 1px solid #AEABAB;
+        background: rgba(217, 217, 217, 0.00);
+        width: 100%;
+        height: 56px;
+        flex-shrink: 0;
+        margin-bottom: 24px;
+        padding: 10px;
+    }
+    .contact .section-contact .message {
+        border-radius: 16px;
+        border: 1px solid #AEABAB;
+        background: rgba(217, 217, 217, 0.00);
+        width: 100%;
+        height: 156px;
+        flex-shrink: 0;
+        margin-bottom: 24px;
+        padding: 10px;
+    }
+    .contact .section-contact .form-group {
+        width: 100%;
+    }
+    .contact .section-contact h3 {
+        margin-top: 32px;
+    }
+    .contact .section-contact .contact-wrap{
+        border:1px solid #AEABAB;
+        padding:22px;
+        padding-top:32px;
+        border-radius:32px;
+        display:flex; 
+        flex-direction: column;
+    }
+    .contact .section-contact .contact-wrap .map{
+        margin-right:64px;
+        padding-right:20px;
+        border-right:none;
+    }
+    .about .section-info img{
+        margin-left:10%;
+    }
+    .about .section-equip .equip-wrap{
+        padding-right:30px;
+        margin-right:0px;
+        width:700px;
+      }
+      .about .section-equip img {
+        width: 65%;
+        height: 790px;
+        margin-top: 100px;
+        margin-left: 5%;
+    }
+    .about .section-equip h2{
+        margin-top:100px;
+        color: #FFF;
+        text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.30);
+        font-family: Eb Garamond;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-bottom: 32px;
+        margin-right: 10%;
+        margin-left: 5%;
+
+    
+    }
+  
+    .about .section-equip p{
+        color: #FFF;
+        font-family: Bodoni;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-right: 10%;
+        margin-left: 5%;
+
+    
+    }
+    .about .section-equip h3{
+        color: #FFF;
+        font-family: Bodoni;
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-right: 10%;
+        margin-left: 5%;
+        margin-top: 80px;
+        margin-bottom: 40px;
+
+    }
+    .about .section-info h2 {
+        margin-left:20%;
+        margin-top: 100px;
+    }
+    .about .section-info p{
+        margin-left:20%;
+        margin-right:20%;
+
+    }
+    .about .section-info button{
+        border-radius: 8px;
+        background: #2C96E2;
+        padding:10px 16px;
+        color: #FFF;
+        font-family: Eb Garamond;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        border: none;
+        margin-left:20%;
+    
+    
+    }
+    .section-info .custom-card .card-img-top {
+        width: 100%!important;
+    }
+    .section-info .custom-card .card-img-top {
+        width: 100%!important;
+        height: 162.469px;
+        flex-shrink: 0;
+        margin-top: 106px;
+        border-radius: 16px 16px 0px 0px;
+    }
+    .section-info .custom-card .card-body {
+        width: 100%;
+        flex-shrink: 0;
+        border-radius: 0px 0px 16px 16px;
+        background: #193155;
+        padding: 10%;
+    }
+    .section-testimonials .wrap .testimonial-container{
+        display:flex;
+        padding-top:5rem;
+        flex-direction: column;
+    
+    }
+    .section-testimonials .wrap .testimonial-container .testimonial-wrap{
+        margin-top:81px;
+    
+    }
+    .section-testimonials .wrap .testimonial-container .testimonial-wrap2{
+        margin-top:81px;
+    
+    }
+    .section-quote .rectangle img{
+        width: 50%;
+        height: 536px;
+        padding-top: 80px;
+    }
+    .section-quote .quote-wrap{
+        padding:20px;
+    }
+    .section-services .service-box{
+        border-radius: 20px;
+        background: #193155;
+        width: 100%;
+        padding:10%;
+        height:520px;
+        margin-top:100px;
+    }
+    .section-services .service-box:hover{
+        border-radius: 20px;
+        background: #193155;
+        width: 100%;
+        padding:10%;
+        height:520px;
+        margin-top:56px;
+    }
+    .section-info .custom-card1{
+
+        margin-top:50px;
+    }
+    .section-info{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width:100%;
+        margin:auto;
+    }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+    .section-info{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width:90%;
+        margin:auto;
+    }
+    .service .header{
+        margin-top:7%;
+      }
+      .service-banner h4 {
+        color: #FFF;
+        font-family: Bodoni;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-top: 7%;
+        justify-content: ;
+    }
+
+    .service-banner h1 {
+        color: #FFF;
+        text-align: center;
+        text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.30);
+        font-family: Eb Garamond;
+        font-size: 64px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+    .service .section-service .author img{
+        width: 150px;
+        height: 150px;
+    }
+    .service .section-service h5 {
+        color: #FFF;
+        text-align: center;
+        font-family: Eb Garamond;
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+    .contact .section-contact .name {
+        border-radius: 16px;
+        border: 1px solid #AEABAB;
+        background: rgba(217, 217, 217, 0.00);
+        width: 100%;
+        height: 56px;
+        flex-shrink: 0;
+        margin-bottom: 24px;
+        padding: 10px;
+    }
+    .contact .section-contact .email {
+        border-radius: 16px;
+        border: 1px solid #AEABAB;
+        background: rgba(217, 217, 217, 0.00);
+        width: 100%;
+        height: 56px;
+        flex-shrink: 0;
+        margin-bottom: 24px;
+        padding: 10px;
+    }
+    .contact .section-contact .message {
+        border-radius: 16px;
+        border: 1px solid #AEABAB;
+        background: rgba(217, 217, 217, 0.00);
+        width: 100%;
+        height: 156px;
+        flex-shrink: 0;
+        margin-bottom: 24px;
+        padding: 10px;
+    }
+    .contact .section-contact .form-group {
+        width: 100%;
+    }
+    .contact .section-contact h3 {
+        margin-top: 32px;
+    }
+    .contact .section-contact .contact-wrap{
+        border:1px solid #AEABAB;
+        padding:22px;
+        padding-top:32px;
+        border-radius:32px;
+        display:flex; 
+        flex-direction: column;
+    }
+    .contact .section-contact .contact-wrap .map{
+        margin-right:64px;
+        padding-right:20px;
+        border-right:none;
+    }
+    .about .section-info img{
+        margin-left:10%;
+    }
+    .about .section-info p{
+        color: #FFF;
+        font-family: Bodoni;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-right:5%;
+        margin-left:10%;
+
+    
+    }
+    .about .section-info h2{
+        margin-top:275px;
+        color: #FFF;
+        text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.30);
+        font-family: Eb Garamond;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-bottom: 32px;
+        margin-right:5%;
+        margin-left:10%;
+    
+    }
+    .about .section-info button{
+        border-radius: 8px;
+        background: #2C96E2;
+        padding:10px 16px;
+        color: #FFF;
+        font-family: Eb Garamond;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        border: none;
+        margin-right:5%;
+        margin-left:10%;
+    
+    
+    }
+    .about .section-equip img{
+
+        width: 100%;
+        height: 790px;
+        margin-top:100px;
+        margin-left:0%;
+        margin-right: 0px;
+    }
+    .section-services{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        width:90%;
+    
+        margin:auto;
+        flex-direction: column;
+    }
+    .section-services .service-box{
+        border-radius: 20px;
+        background: #193155;
+        width: 100%;
+        padding:10%;
+        height:520px;
+        margin-top:100px;
+    }
+    .section-services .service-box:hover{
+        border-radius: 20px;
+        background: #193155;
+        width: 100%;
+        padding:10%;
+        height:520px;
+        margin-top:56px;
+    }
+    .section-prices h1{
+        color: #FFF;
+        text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.30);
+        font-family: Eb Garamond;
+        font-size: 52px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin: 40% 2% 3% 15%;
+    }
+    .section-prices h1 span{
+        color: #2C96E2;
+        text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.30);
+        font-family: Eb Garamond;
+        font-size: 80px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: normal;
+    }
+    .section-testimonials .wrap .testimonial-container{
+        display:flex;
+        padding-top:5rem;
+        flex-direction: column;
+    
+    }
+    .section-testimonials .wrap .testimonial-container .testimonial-wrap{
+        margin-top:81px;
+    
+    }
+    .section-testimonials .wrap .testimonial-container .testimonial-wrap2{
+        margin-top:81px;
+    
+    }
+   
+
+}
+@media (min-width: 1200px) and (max-width: 1281px) {
+    .service-banner h1{
+        color: #FFF;
+        text-align: center;
+        text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.30);
+        font-family: Eb Garamond;
+        font-size: 52px!important;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+    .service-banner h4 {
+        color: #FFF;
+        font-family: Bodoni;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-top: 120px;
+    }
+    .service .section-service img{
+        height: 200px;
+        width: 200px;
+    }
+    .service .section-service h5 {
+        color: #FFF;
+        text-align: center;
+        font-family: Eb Garamond;
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+}
+
