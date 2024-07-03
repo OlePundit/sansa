@@ -9,14 +9,10 @@ export default defineConfig({
                 'resources/js/app.js',
                 'resources/css/app.css',
                 'resources/css/animate.css',
-                'resources/js/wow.js'
-
-
+                'resources/js/wow.js',
+                'resources/css/font-awesome.min.css'
             ],
             refresh: true,
         }),
     ],
-
-    
-
 });

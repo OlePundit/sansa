@@ -87,8 +87,8 @@
 
             <div class="row">
                 <div class="col-md-12" style="margin-top:150px;">
-                    <h1 class="text-center">Blogs</h1>
-                    <h4 class="text-center">home >>  blogs</h1>
+                    <h1 class="text-center">Services</h1>
+                    <h4 class="text-center">home >>  services</h1>
 
                 </div>
             </div>
@@ -97,26 +97,25 @@
         
 
     <main class="">
-        <div class="container service">
+        <div class="container ">
             <div class="row justify-content-center">
 
-
-        <div class="container" style="width:70%;margin:auto;">
-  
-        </div>
-        <div class="row mt-5 section-more">
-            @foreach($blogs as $blog)
-            <a href="/blogs/{{$blog->slug}}" style="text-decoration:none;" class="custom-card">
-                <img src="/storage/{{$blog->thumbnail}}" class="card-img-top" alt="thumbnail">
-                <div class="card-body">
-                    <h4>{{$blog->title}}</h4>
-                    <p>{!! Str::limit(strip_tags($blog->body), 120, '...') !!}...</p>
-                    <button>Read more</button>
+                <div class="container" style="width:70%;margin:auto;">
+        
                 </div>
-            </a>
-            @endforeach
-        </div>
+                <div class="row mt-5 section-more">
+                    @foreach($services as $service)
+                    <a href="/services/{{$service->slug}}" style="text-decoration:none;" class="custom-card">
+                        <img src="/storage/{{$service->thumbnail}}" class="card-img-top" alt="thumbnail">
+                        <div class="card-body">
+                            <h4>{{$service->title}}</h4>
+                            <p>{!! Str::limit(strip_tags($service->body), 120, '...') !!}...</p>
+                            <button>Read more</button>
+                        </div>
+                    </a>
+                    @endforeach
+                </div>
 
-    </div>
+            </div>
         </div>
 @endsection

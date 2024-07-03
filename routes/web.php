@@ -21,8 +21,10 @@ Route::get('/about', [App\Http\Controllers\HomeController::class, 'about'])->nam
 Route::get('/services/{slug}', [App\Http\Controllers\ServiceController::class, 'service']);
 Route::get('/contact', [App\Http\Controllers\HomeController::class, 'contact']);
 Route::get('/blogs',[App\Http\Controllers\BlogController::class, 'index']);
-Route::get('/blogs/{slug}', [App\Http\Controllers\BlogController::class, 'blog']);
+Route::get('/services',[App\Http\Controllers\ServiceController::class, 'index']);
 
+Route::get('/blogs/{slug}', [App\Http\Controllers\BlogController::class, 'blog']);
+Route::post('/c', [App\Http\Controllers\ContactController::class, 'store']);
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
