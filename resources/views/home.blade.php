@@ -413,16 +413,16 @@
                                             <img
                                             sizes="(max-width: 1400px) 100vw, 1400px"
                                             srcset="
-                                            author1_k7rrnh_c_scale,w_200.webp 200w,
-                                            author1_k7rrnh_c_scale,w_534.webp 534w,
-                                            author1_k7rrnh_c_scale,w_760.webp 760w,
-                                            author1_k7rrnh_c_scale,w_1001.webp 1001w,
-                                            author1_k7rrnh_c_scale,w_1070.webp 1070w,
-                                            author1_k7rrnh_c_scale,w_1162.webp 1162w,
-                                            author1_k7rrnh_c_scale,w_1309.webp 1309w,
-                                            author1_k7rrnh_c_scale,w_1395.webp 1395w,
-                                            author1_k7rrnh_c_scale,w_1400.webp 1400w"
-                                            src="author1_k7rrnh_c_scale,w_1400.webp"
+                                            /storage/author1_k7rrnh_c_scale,w_200.webp 200w,
+                                            /storage/author1_k7rrnh_c_scale,w_534.webp 534w,
+                                            /storage/author1_k7rrnh_c_scale,w_760.webp 760w,
+                                            /storage/author1_k7rrnh_c_scale,w_1001.webp 1001w,
+                                            /storage/author1_k7rrnh_c_scale,w_1070.webp 1070w,
+                                            /storage/author1_k7rrnh_c_scale,w_1162.webp 1162w,
+                                            /storage/author1_k7rrnh_c_scale,w_1309.webp 1309w,
+                                            /storage/author1_k7rrnh_c_scale,w_1395.webp 1395w,
+                                            /storage/author1_k7rrnh_c_scale,w_1400.webp 1400w"
+                                            src="/storage/author1_k7rrnh_c_scale,w_1400.webp"
                                             alt="client" class="rounded-circle text">
                                             <div class="info">
                                                 <h4 class="text-center pb-3">Augustine Bundi</h4>
@@ -441,13 +441,13 @@
                                             <img
                                             sizes="(max-width: 1400px) 100vw, 1400px"
                                             srcset="
-                                            author2_ytxtus_c_scale,w_200.webp 200w,
-                                            author2_ytxtus_c_scale,w_684.webp 684w,
-                                            author2_ytxtus_c_scale,w_1000.webp 1000w,
-                                            author2_ytxtus_c_scale,w_1250.webp 1250w,
-                                            author2_ytxtus_c_scale,w_1392.webp 1392w,
-                                            author2_ytxtus_c_scale,w_1400.webp 1400w"
-                                            src="author2_ytxtus_c_scale,w_1400.webp"
+                                            /storage/author2_ytxtus_c_scale,w_200.webp 200w,
+                                            /storage/author2_ytxtus_c_scale,w_684.webp 684w,
+                                            /storage/author2_ytxtus_c_scale,w_1000.webp 1000w,
+                                            /storage/author2_ytxtus_c_scale,w_1250.webp 1250w,
+                                            /storage/author2_ytxtus_c_scale,w_1392.webp 1392w,
+                                            /storage/author2_ytxtus_c_scale,w_1400.webp 1400w"
+                                            src="/storage/author2_ytxtus_c_scale,w_1400.webp"
                                             class="rounded-circle text" alt="client">
                                             <div class="info">
                                                 <h4 class="text-center pb-3">Emmanuel Msagha</h4>
