@@ -1197,7 +1197,13 @@ syntax: '<number>';
 inherits: true;
 initial-value: 1;
 }
-
+.section-newsletter{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin:auto;
+    flex-direction: column;
+}
 .pie {
 --p:20;
 --b:22px;

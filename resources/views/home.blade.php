@@ -290,19 +290,19 @@
                     </div>
                     <div class="section-prices" id="section-prices">
 
-                    <div class="row" style="width: 100vw; display: flex; align-items: end; margin-top: 200px; position: relative;">
-                        <div class="col-md-12 mid-banner" style="background: url('{{ url("/storage/mid.png") }}') center center / cover no-repeat; position: relative; z-index: 1;">
-                            <div class="row">
-                                <div id="section-placeholder-3"></div>
-                                <div class="col-lg-6 col-md-7 col-sm-12 ml-auto">
-                                    <h1>We Have <span id="typing-container-3"></span> and skills across different sectors</h1>
+                        <div class="row" style="width: 100vw; display: flex; align-items: end; margin-top: 200px; position: relative;">
+                            <div class="col-md-12 mid-banner" style="background: url('{{ url("/storage/mid.png") }}') center center / cover no-repeat; position: relative; z-index: 1;">
+                                <div class="row">
+                                    <div id="section-placeholder-3"></div>
+                                    <div class="col-lg-6 col-md-7 col-sm-12 ml-auto">
+                                        <h1>We Have <span id="typing-container-3"></span> and skills across different sectors</h1>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
                     <div class="section-projects" id="section-projects">
-                    <div id="section-placeholder-4"></div>
+                        <div id="section-placeholder-4"></div>
 
                         <div class="row d-flex justify-content-center align-items-center">
                             <h3 class="text-center">Our <span id="typing-container-4"></span></h3>
@@ -410,16 +410,23 @@
                             </div>
                         </div>
                     </div>
-                    <div class="section-newsletter">
-                        <div class="row justify-content-center">
-                            <div class="col-12">
-                                <form action='/n>
-
+                    <div class="section-newsletter d-flex align-items-center justify-content-center">
+                        <div class="row d-flex align-items-center justify-content-center" style="width:100%;">
+                            <div class="col-sm-12 d-flex align-items-center justify-content-center" style="margin-top:200px;">
+                                <form action='/n' method="post">
+                                    <h3>Subscribe to our Newsletter</h3>
+                                    @csrf
+                                    <input type="email" name="email" class="form-control" placeholder="Enter your email">
+                                    <button>submit</button>
                                 </form>
                             </div>
+
                         </div>
+
+
+                        
                     </div>
-                </div>
+          
 
             </div>  
         </div>

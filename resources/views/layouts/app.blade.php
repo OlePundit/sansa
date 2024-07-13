@@ -41,6 +41,7 @@
 
 
 <!-- Scripts -->
+
 <link rel="stylesheet" href="{{ asset('build/assets/app-4c80e082.css') }}">
   <link rel="stylesheet" href="{{ asset('build/assets/app-2d4c25b0.css') }}">
   <link rel="stylesheet" href="{{ asset('build/assets/app-184a4e11.css') }}">
@@ -58,8 +59,8 @@
         </main>
         <footer>
           <div class="section-footer">
-            <div class="row">
-              <div class="col-md-4 d-flex justify-content-center pt-5" style="flex-direction:column;">
+            <div class="row footer-wrap">
+              <div class="col-lg-4 col-md-3 d-flex pt-5" style="flex-direction:column;">
                 <h4 class="pb-3">QUICK LINKS</h4>
                 <ul>
                     <li><a style="text-decoration:none;" class="text-white" href="/">Home</a></li>
@@ -72,7 +73,7 @@
 
                 </ul>
               </div>
-              <div class="col-md-4 pt-5">
+              <div class="col-lg-3 col-md-3 pt-5 medium">
                 <h4 class="pb-3">CONTACT US</h4>
                 <ul>
                   <li class="mb-2"><a href="mailto:info@sansa.digital"><i class="fas fa-envelope"></i>info@sansa.digital</a></li>
@@ -82,8 +83,8 @@
 
                 </ul>
               </div>
-              <div class="col-md-3 pt-5 social" style="">
-                <h4 class="pb-3">SOCIAL</h4>
+              <div class="col-lg-4 col-md-5 pt-5 social" style="">
+                <h4 class="">SOCIAL</h4>
                 <div class="d-flex social-links">
                   <a href="https://twitter.com/SansaDigital">
                     <svg class="mx-1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-twitter-x" viewBox="0 0 16 16">
@@ -103,6 +104,13 @@
                   </a>
 
                 </div>
+                <form action='/n' method="post">
+                    <h3>Subscribe to our Newsletter</h3>
+                    @csrf
+                    <input type="email" name="email" class="form-control" placeholder="Enter your email">
+                    <button>submit</button>
+
+                </form>
               </div>
 
             </div>
