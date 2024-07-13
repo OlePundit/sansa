@@ -105,7 +105,16 @@
                             <div class="row">
                                 <div class="col-lg-5 col-md-6 col-sm-10 col-xs-12">
                                     <div class="custom-card animate__animated animate__flipInY animate__duration-2s" style="">
-                                        <img src="/storage/tech.webp" class="card-img-top" alt="cutting-edge">
+                                        <img
+                                        sizes="(max-width: 1400px) 100vw, 1400px"
+                                        srcset="
+                                        /storage/tech_h6w8uf_c_scale,w_200.webp 200w,
+                                        /storage/tech_h6w8uf_c_scale,w_683.webp 683w,
+                                        /storage/tech_h6w8uf_c_scale,w_1102.webp 1102w,
+                                        /storage/tech_h6w8uf_c_scale,w_1332.webp 1332w,
+                                        /storage/tech_h6w8uf_c_scale,w_1400.webp 1400w"
+                                        src="/storage/tech_h6w8uf_c_scale,w_1400.webp"
+                                        class="card-img-top" alt="cutting-edge">
                                         <div class="card-body">
                                             <h5 class="card-title">Cutting edge technology</h5>
                                             <p class="card-text">We employ emerging technologies</p>
@@ -114,7 +123,16 @@
                                 </div>
                                 <div class="col-lg-5 col-md-6 col-sm-10">
                                     <div class="custom-card1 animate__animated animate__flipInX animate__duration-2s" style="">
-                                        <img src="/storage/data.webp" class="card-img-top" alt="data">
+                                        <img
+                                        sizes="(max-width: 1400px) 100vw, 1400px"
+                                        srcset="
+                                        /storage/data_ejenyx_c_scale,w_200.webp 200w,
+                                        /storage/data_ejenyx_c_scale,w_1090.webp 1090w,
+                                        /storage/data_ejenyx_c_scale,w_1182.webp 1182w,
+                                        /storage/data_ejenyx_c_scale,w_1371.webp 1371w,
+                                        /storage/data_ejenyx_c_scale,w_1400.webp 1400w"
+                                        src="/storage/data_ejenyx_c_scale,w_1400.webp"
+                                        alt="data" class="card-img-top">
                                         <div class="card-body">
                                             <h5 class="card-title">Data driven marketing</h5>
                                             <p class="card-text">Our marketing is informed by the data</p>
@@ -125,7 +143,21 @@
                             <div class="row">
                                 <div class="col-lg-5 col-md-6 col-sm-10">
                                     <div class="custom-card animate__animated animate__flipInY animate__duration-2s" style="">
-                                        <img src="/storage/bold.jpg" class="card-img-top" alt="bold">
+                                        <img
+                                        sizes="(max-width: 1400px) 100vw, 1400px"
+                                        srcset="
+                                        /storage/bold_szdjp3_c_scale,w_200.webp 200w,
+                                        /storage/bold_szdjp3_c_scale,w_505.webp 505w,
+                                        /storage/bold_szdjp3_c_scale,w_712.webp 712w,
+                                        /storage/bold_szdjp3_c_scale,w_850.webp 850w,
+                                        /storage/bold_szdjp3_c_scale,w_962.webp 962w,
+                                        /storage/bold_szdjp3_c_scale,w_1103.webp 1103w,
+                                        /storage/bold_szdjp3_c_scale,w_1235.webp 1235w,
+                                        /storage/bold_szdjp3_c_scale,w_1391.webp 1391w,
+                                        /storage/bold_szdjp3_c_scale,w_1395.webp 1395w,
+                                        /storage/bold_szdjp3_c_scale,w_1400.webp 1400w"
+                                        src="/storage/bold_szdjp3_c_scale,w_1400.webp"
+                                        class="card-img-top" alt="bold">
                                         <div class="card-body">
                                             <h5 class="card-title">We are Bold</h5>
                                             <p class="card-text">We are not afraid to try new techniques</p>
@@ -134,7 +166,23 @@
                                 </div>
                                 <div class="col-lg-5 col-md-6 col-sm-10">
                                     <div class="custom-card animate__animated animate__flipInX animate__duration-2s">
-                                        <img src="/storage/limit.webp" class="card-img-top" alt="limits">
+                                        <img
+                                        sizes="(max-width: 1400px) 100vw, 1400px"
+                                        srcset="
+                                        /storage/limit_fmvn5l_c_scale,w_200.webp 200w,
+                                        /storage/limit_fmvn5l_c_scale,w_497.webp 497w,
+                                        /storage/limit_fmvn5l_c_scale,w_648.webp 648w,
+                                        /storage/limit_fmvn5l_c_scale,w_796.webp 796w,
+                                        /storage/limit_fmvn5l_c_scale,w_933.webp 933w,
+                                        /storage/limit_fmvn5l_c_scale,w_1068.webp 1068w,
+                                        /storage/limit_fmvn5l_c_scale,w_1195.webp 1195w,
+                                        /storage/limit_fmvn5l_c_scale,w_1239.webp 1239w,
+                                        /storage/limit_fmvn5l_c_scale,w_1288.webp 1288w,
+                                        /storage/limit_fmvn5l_c_scale,w_1322.webp 1322w,
+                                        /storage/limit_fmvn5l_c_scale,w_1393.webp 1393w,
+                                        /storage/limit_fmvn5l_c_scale,w_1400.webp 1400w"
+                                        src="/storage/limit_fmvn5l_c_scale,w_1400.webp" class="card-img-top"
+                                        alt="limits">
                                         <div class="card-body">
                                             <h5 class="card-title">We Push the limits</h5>
                                             <p class="card-text">We defy the rules and push the limits</p>
@@ -362,7 +410,20 @@
                                     </div>
                                     <div class="testimonial-wrap1 animate__animated animate__bounceInDown animate__duration-2s" style="margin-top:84px;">
                                         <div class="box">
-                                            <img src="/storage/author1.webp" alt="client" class="rounded-circle text" alt="author">
+                                            <img
+                                            sizes="(max-width: 1400px) 100vw, 1400px"
+                                            srcset="
+                                            author1_k7rrnh_c_scale,w_200.webp 200w,
+                                            author1_k7rrnh_c_scale,w_534.webp 534w,
+                                            author1_k7rrnh_c_scale,w_760.webp 760w,
+                                            author1_k7rrnh_c_scale,w_1001.webp 1001w,
+                                            author1_k7rrnh_c_scale,w_1070.webp 1070w,
+                                            author1_k7rrnh_c_scale,w_1162.webp 1162w,
+                                            author1_k7rrnh_c_scale,w_1309.webp 1309w,
+                                            author1_k7rrnh_c_scale,w_1395.webp 1395w,
+                                            author1_k7rrnh_c_scale,w_1400.webp 1400w"
+                                            src="author1_k7rrnh_c_scale,w_1400.webp"
+                                            alt="client" class="rounded-circle text">
                                             <div class="info">
                                                 <h4 class="text-center pb-3">Augustine Bundi</h4>
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="41" height="37" viewBox="0 0 41 37" fill="none">
@@ -377,7 +438,17 @@
                                     </div>
                                     <div class="testimonial-wrap2 animate__animated animate__bounceInRight animate__duration-2s" style="">
                                         <div class="box">
-                                            <img src="/storage/author2.webp" alt="client" class="rounded-circle text">
+                                            <img
+                                            sizes="(max-width: 1400px) 100vw, 1400px"
+                                            srcset="
+                                            author2_ytxtus_c_scale,w_200.webp 200w,
+                                            author2_ytxtus_c_scale,w_684.webp 684w,
+                                            author2_ytxtus_c_scale,w_1000.webp 1000w,
+                                            author2_ytxtus_c_scale,w_1250.webp 1250w,
+                                            author2_ytxtus_c_scale,w_1392.webp 1392w,
+                                            author2_ytxtus_c_scale,w_1400.webp 1400w"
+                                            src="author2_ytxtus_c_scale,w_1400.webp"
+                                            class="rounded-circle text" alt="client">
                                             <div class="info">
                                                 <h4 class="text-center pb-3">Emmanuel Msagha</h4>
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="41" height="37" viewBox="0 0 41 37" fill="none">
