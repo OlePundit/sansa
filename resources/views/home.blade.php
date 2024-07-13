@@ -410,6 +410,15 @@
                             </div>
                         </div>
                     </div>
+                    <div class="section-newsletter">
+                        <div class="row justify-content-center">
+                            <div class="col-12">
+                                <form action='/n>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
             </div>  

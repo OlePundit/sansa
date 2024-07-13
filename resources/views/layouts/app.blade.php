@@ -41,7 +41,7 @@
 
 
 <!-- Scripts -->
-<link rel="stylesheet" href="{{ asset('build/assets/app-62ea8698.css') }}">
+<link rel="stylesheet" href="{{ asset('build/assets/app-4c80e082.css') }}">
   <link rel="stylesheet" href="{{ asset('build/assets/app-2d4c25b0.css') }}">
   <link rel="stylesheet" href="{{ asset('build/assets/app-184a4e11.css') }}">
 
