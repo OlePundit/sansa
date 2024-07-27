@@ -42,7 +42,7 @@
                     <a class="nav-link text-white" href="/blogs">Blog</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="https://wa.me/+254797262808"><i class="fab fa-whatsapp" style="margin-right:10px;"></i>Always online</a>
+                    <a class="nav-link text-white" href="https://wa.me/+254112128055"><i class="fab fa-whatsapp" style="margin-right:10px;"></i>Always online</a>
                 </li>
             </ul>
 

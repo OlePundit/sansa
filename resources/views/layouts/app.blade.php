@@ -42,7 +42,7 @@
 
 <!-- Scripts -->
 
-<link rel="stylesheet" href="{{ asset('build/assets/app-4c80e082.css') }}">
+<link rel="stylesheet" href="{{ asset('build/assets/app-62ea8698.css') }}">
   <link rel="stylesheet" href="{{ asset('build/assets/app-2d4c25b0.css') }}">
   <link rel="stylesheet" href="{{ asset('build/assets/app-184a4e11.css') }}">
 
@@ -77,9 +77,9 @@
                 <h4 class="pb-3">CONTACT US</h4>
                 <ul>
                   <li class="mb-2"><a href="mailto:info@sansa.digital"><i class="fas fa-envelope"></i>info@sansa.digital</a></li>
-                  <li class="mb-2"><a href="https://wa.me/+254797262808"> <i class="fab fa-whatsapp"></i>always online</a></li>
+                  <li class="mb-2"><a href="https://wa.me/+254112128055"> <i class="fab fa-whatsapp"></i>always online</a></li>
 
-                  <li class="mb-2"><a href="tel:+254797262808"> <i class="fas fa-phone"></i>+254797262808</a></li>
+                  <li class="mb-2"><a href="tel:+254112128055"> <i class="fas fa-phone"></i>+254112128055</a></li>
 
                 </ul>
               </div>

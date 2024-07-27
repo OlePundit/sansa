@@ -138,8 +138,8 @@
                                 
                                         <ul style="list-style-type:none;display:flex;margin-top:32px;align-items:center;justify-content:center;">
                                             <li class="text-white text-center">
-                                                <a href="tel:+254797262808"> 
-                                                    <i class="fas fa-phone"></i>07797262808
+                                                <a href="tel:+254112128055"> 
+                                                    <i class="fas fa-phone"></i>+254112128055
                                                 </a>
                                             </li>
                                             <li class="text-white text-center mx-3">
@@ -150,7 +150,7 @@
 
 
                                             <li class="text-white text-center">
-                                                <a class="Ztext-white" href="https://wa.me/+254797262808">
+                                                <a class="Ztext-white" href="https://wa.me/+254112128055">
                                                     <i class="fab fa-whatsapp"></i>
                                                 online
                                                 </a>
