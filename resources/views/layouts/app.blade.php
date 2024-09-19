@@ -76,7 +76,7 @@
               <div class="col-lg-3 col-md-3 pt-5 medium">
                 <h4 class="pb-3">CONTACT US</h4>
                 <ul>
-                  <li class="mb-2"><a href="mailto:info@sansa.digital"><i class="fas fa-envelope"></i>info@sansa.digital</a></li>
+                  <li class="mb-2"><a href="mailto:info@sansadigital.com"><i class="fas fa-envelope"></i>info@sansadigital.com</a></li>
                   <li class="mb-2"><a href="https://wa.me/+254112128055"> <i class="fab fa-whatsapp"></i>always online</a></li>
 
                   <li class="mb-2"><a href="tel:+254112128055"> <i class="fas fa-phone"></i>+254112128055</a></li>

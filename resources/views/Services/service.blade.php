@@ -206,9 +206,10 @@
               <div class="col-md-4 pt-5">
                 <h4 class="pb-3">CONTACT US</h4>
                 <ul>
-                  <li>info@sansa.digital</li>
+                  <li class="mb-2"><a href="mailto:info@sansadigital.com"><i class="fas fa-envelope"></i>info@sansadigital.com</a></li>
+                  <li class="mb-2"><a href="https://wa.me/+254112128055"> <i class="fab fa-whatsapp"></i>always online</a></li>
 
-                  <li>+254797262808</li>
+                  <li class="mb-2"><a href="tel:+254112128055"> <i class="fas fa-phone"></i>+254112128055</a></li>
 
                 </ul>
               </div>

@@ -110,7 +110,7 @@
                                 <div class="col-xl-6 col-lg-12 col-md-12">
                                     <h3>CONTACT US</h3>
                                     <h4>Fill in your contact details</h4>
-                                    <form method="POST" action="https://formsubmit.co/info@sansa.digital">
+                                    <form method="POST" action="https://formsubmit.co/info@sansadigital.com">
                                     @csrf
                                         <div class="row d-flex align-items-center justify-content-center">
                                             <div class="col-xl-12 col-lg-12 col-md-12 d-flex align-items-center justify-content-center" style="display:flex;flex-direction:column;">
@@ -143,8 +143,8 @@
                                                 </a>
                                             </li>
                                             <li class="text-white text-center mx-3">
-                                                <a href="mailto:info@sansa.digital">
-                                                    <i class="fas fa-envelope"></i>info@sansa.digital
+                                                <a href="mailto:info@sansadigital.com">
+                                                    <i class="fas fa-envelope"></i>info@sansadigital.com
                                                 </a>
                                             </li>
 
