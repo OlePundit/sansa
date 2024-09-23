@@ -724,12 +724,13 @@
     },
 
     autoplay: {
-        delay: 12000,
+        delay: 6000,
         disableOnInteraction: true,
     },
-    slidesPerView: 4,
+    slidesPerView: 4
 
     speed: 600,
+    loop:true;
 });
 </script>
 @endsection
