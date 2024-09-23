@@ -21,7 +21,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:title" content="{{ $slug->title }}" />
     <meta property="og:description" content="{{ $slug->description }}" />
-    <meta property="og:image" content="{{ asset('storage/' . $slug->thumbnail) }}" />
+    <meta property="og:image" content="https://sansadigital.com/storage/{{$slug->thumbnail}}" />
     <meta property="og:url" content="{{ url('blogs/' . $slug->slug) }}" />
     <meta property="og:site_name" content="Sansa Digital"/>
 
