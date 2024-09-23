@@ -9835,4 +9835,8 @@
          margin-bottom: 20px;
      }
  }
- 
+ @media (max-width: 767px) {
+    .text-2 {
+        display: none;
+    }
+}
