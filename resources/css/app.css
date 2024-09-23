@@ -6882,6 +6882,12 @@
  .swiper-pagination{
     position:relative!important;
  }
+ .swiper-container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+}
  .shrink-container:hover .shrink-item {
      transform: scale(0.8);
  }
