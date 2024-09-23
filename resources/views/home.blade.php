@@ -430,6 +430,64 @@
 
                         </div>
                     </div>
+
+
+                    <div class="section-portfolio" id="section-portfolio">
+                        <div class="row d-flex justify-content-center align-items-center">
+                            <h3 class="text-center">Portfolio</h3>
+
+                        </div>
+                        <div class="portfolio-items">
+                            <div class="portfolio-item box-2">
+                                <a href="https://allureessencespa.com">
+                                    <img src="/storage/beauty.png" alt="portfolio-item-1" width="100%">
+
+                                </a>  
+                                <div class="text-2">
+                                    <div>
+                                        <h4>Web Design<h4>
+                                        <h5>Allure Essence Spa</h5>
+                                    </div>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                    
+                                    
+                                </div>
+                            </div>
+                            <div class="portfolio-item box-2">
+                                <a href="https://kimuzi.com">
+
+                                    <img src="/storage/blogk.png" alt="portfolio-item-1" width="100%">
+                                </a>
+                                <div class="text-2">
+                                    <div>
+                                        <h4>Web Design</h4>
+                                        <h5>Kimuzi.com</h5>
+                                    </div>
+                                    <i class="fa-solid fa-arrow-right"></i>
+
+                                </div>
+
+                            </div>
+                            <div class="portfolio-item box-2">
+                                <a href="https://tradecraft.co.ke">
+
+                                    <img src="/storage/tradecraft.png" alt="portfolio-item-1" width="100%">
+                                </a>
+                                <div class="text-2">
+                                    <div>
+                                        <h4>Web Design</h4>
+                                        <h5>Tradecraft Printers</h5>
+                                    </div>
+                                    <i class="fa-solid fa-arrow-right"></i>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    
                     <div class="section-testimonials">
                         <div class="row d-flex justify-content-center align-items-center">
                             <h3 class="text-center">Testimonials</h3>
@@ -733,4 +791,5 @@
     loop:true,
 });
 </script>
+
 @endsection

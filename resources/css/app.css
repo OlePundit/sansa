@@ -6892,6 +6892,39 @@
  .shrink-container:hover .shrink-item {
      transform: scale(0.8);
  }
+ .section-portfolio{
+    margin:auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+ }
+ .section-portfolio h3 {
+    color: #fff;
+    font-family: Eb Garamond;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-top: 120px;
+}
+ .section-portfolio .portfolio-items{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10rem;
+ }
+ .section-portfolio .portfolio-items .portfolio-item{
+    width:350px;
+ }
+ .section-portfolio .portfolio-items .portfolio-item:hover{
+    width:450px;
+    border-bottom: 15px solid rgba(44,150,226,0.5);
+    cursor:pointer;
+ }
+ .section-portfolio .portfolio-items .portfolio-item img{
+    width:100%;
+ }
+
  .about-banner {
      width: 100%;
      height: 100vh;
@@ -8060,6 +8093,52 @@
      justify-content: center;
      margin-bottom: 20px;
  }
+.box-2 {
+    position: relative; /* Ensure this container is the reference for the absolute positioning */
+    display: inline-block; /* Ensures the image and text stay together */
+    width: 100%; /* Set the width to match the image */
+}
+    
+    .box-2 img {
+        width: 100%; /* Make sure the image takes the full width of the box */
+    }
+    
+    .text-2 {
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        top: 85%; /* Center vertically */
+        left: 50%; /* Center horizontally */
+        transform: translate(-50%, -50%); /* Offset to fully center the text */
+        z-index: 2; /* Ensure it's on top of the image */
+        color: white; /* Text color, adjust as needed */
+        text-align: start; /* Center the text */
+        width: 100%; /* Make sure the text spans across the width */
+        padding: 0 10px; /* Optional: add padding to avoid text hugging the edges */
+    }
+    .text-2 i{
+        font-size: 25px;
+    }
+    .text-2 h4{
+        color:#fff;
+        font-weight:400;
+        font-size: 18px;
+    }
+    .text-2 h5{
+        font-family: Eb Garamond;
+        font-weight:500;
+        font-size:22px;
+    }
+    .box-2::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 40%; /* Adjust the height of the gradient (30% of the image height) */
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)); /* Dark gradient from black to transparent */
+        z-index: 1; /* Make sure it sits above the image but below the text */
+    }
  @media (max-width: 280px) {
      .about .section-stats .stat-wrap {
          display: flex;
@@ -8322,6 +8401,8 @@
          text-align: start;
          width: 20%;
      }
+
+    
      .section-quote .rectangle {
          width: 90%;
          height: 800px;
