@@ -427,31 +427,6 @@
                                 <div class="swiper-pagination swiper-pagination1"></div>
             
                             </div>
-                            <div class="wrap" style="margin-top:100px;display:flex;flex-direction:column;align-items-center;justify-content-center">           
-                                <div class="row d-flex align-items-center justify-content-center">
-                                    <img src="/storage/gov-logo.webp" alt="logo" class="col-lg-2 col-md-3 col-sm-3 col-4" width="100px">
-                                    <img src="/storage/dcoce.png" alt="logo" class="col-lg-2 col-md-3 mt-5 col-sm-3 col-4" width="100px">
-                                    <img src="/storage/cpa_logo.webp" alt="logo" class="col-lg-2 col-md-3 mt-5 ccol-sm-3 col-4" width="100px">
-                                    <img src="/storage/landscape.svg" class="col-lg-2 col-md-3 mt-5 col-sm-3 col-4" width="100px">
-                                    <img src="/storage/kimuzi-logo.webp" alt="logo" class="col-lg-2 col-md-3 mt-5 col-sm-3 col-4" width="100px">
-
-                                </div>
-                                <div class="row d-flex align-items-center justify-content-center">
-                                    <img src="/storage/ictalogo.webp" alt="logo" class="col-lg-2 col-md-3 mt-5 col-sm-3 col-4" width="100px">
-                                    <img src="/storage/pink-final.webp" alt="logo" class="col-lg-2 col-md-3 mt-5 col-sm-3 col-4" width="100px">
-                                    <img src="/storage/renters.webp" alt="logo" class="col-lg-2 col-md-3 mt-5 col-sm-3 col-4" width="100px">
-                                    <img src="/storage/kfc.webp" alt="logo" class="col-lg-2 col-md-3 mt-5 col-sm-3 col-4" width="100px">
-                                    <img src="/storage/stima.webp" alt="logo" class="col-lg-2 col-md-3 mt-5 col-sm-3 col-4" width="100px">
-                                </div>
-                                <div class="row d-flex align-items-center justify-content-center">
-                                    <img src="/storage/logo.webp" alt="logo" class="col-lg-2 col-md-3 mt-5 col-sm-3 col-4" width="100px">
-                                    <img src="/storage/callapr.png" alt="logo" class="col-lg-2 col-md-3 mt-5 col-sm-3 col-4" width="100px">
-                                    <img src="/storage/tvet.png" alt="logo" class="col-lg-2 col-md-3 mt-5 col-sm-3 col-4" width="100px">
-                                    <img src="/storage/africads.png" alt="logo" class="col-lg-2 col-md-3 mt-5 col-sm-3 col-4" width="100px">
-
-                                </div>
-
-                            </div>
 
                         </div>
                     </div>
@@ -735,6 +710,7 @@
     }
   }
 </script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
     var swiper2 = new Swiper('.swiper1', {
     pagination: {
