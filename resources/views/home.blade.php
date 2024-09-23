@@ -357,6 +357,76 @@
 
                         </div>
                         <div class="row align-items-center justify-content-center">
+                            <div class="swiper-container swiper1">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide" style="width:100%">
+                                        <img src="/storage/gov-logo.webp" alt="logo" class="col-lg-2 col-md-3 col-sm-3 col-4" width="100px">
+
+                                    </div>
+                                    <div class="swiper-slide" style="width:100%">
+                                        <img src="/storage/dcoce.png" alt="logo" class="col-lg-2 col-md-3 mt-5 col-sm-3 col-4" width="100px">
+
+                                    </div>
+                                    <div class="swiper-slide" style="width:100%">
+                                        <img src="/storage/cpa_logo.webp" alt="logo" class="col-lg-2 col-md-3 mt-5 ccol-sm-3 col-4" width="100px">
+
+                                    </div>
+                                    <div class="swiper-slide" style="width:100%">
+                                        <img src="/storage/landscape.svg" class="col-lg-2 col-md-3 mt-5 col-sm-3 col-4" width="100px">
+
+                                    </div>
+                                    <div class="swiper-slide" style="width:100%">
+                                        <img src="/storage/kimuzi-logo.webp" alt="logo" class="col-lg-2 col-md-3 mt-5 col-sm-3 col-4" width="100px">
+
+                                    </div>
+                                    <div class="swiper-slide" style="width:100%">
+                                        <img src="/storage/ictalogo.webp" alt="logo" width="100px">
+
+                                    </div>
+                                    <div class="swiper-slide" style="width:100%">
+                                        <img src="/storage/pink-final.webp" alt="logo" width="100px">
+
+                                    </div>
+                                    <div class="swiper-slide" style="width:100%">
+                                        <img src="/storage/renters.webp" alt="logo" width="100px">
+
+                                    </div>
+                                    <div class="swiper-slide" style="width:100%">
+                                        <img src="/storage/kfc.webp" alt="logo" width="100px">
+
+                                    </div>
+                                    <div class="swiper-slide" style="width:100%">
+                                        <img src="/storage/stima.webp" alt="logo" width="100px">
+
+                                    </div>
+                                    <div class="swiper-slide" style="width:100%">
+                                        <img src="/storage/logo.webp" alt="logo" width="100px">
+
+                                    </div>
+                                    <div class="swiper-slide" style="width:100%">
+                                        <img src="/storage/callapr.png" alt="logo" width="100px">
+
+                                    </div>
+                                    <div class="swiper-slide" style="width:100%">
+                                        <img src="/storage/tvet.png" alt="logo" width="100px">
+
+                                    </div>
+                                    <div class="swiper-slide" style="width:100%">
+                                        <img src="/storage/africads.png" alt="logo" width="100px">
+
+                                    </div>
+                                    <div class="swiper-slide" style="width:100%">
+                                        <img src="/storage/bell-consultants.png" alt="logo" width="100px">
+
+                                    </div>
+                                    <div class="swiper-slide" style="width:100%">
+                                        <img src="/storage/allure.png" alt="logo" width="100px">
+
+                                    </div>
+                                </div>
+                                <div class="swiper-pagination swiper-pagination1"></div>
+            
+                            </div>
                             <div class="wrap" style="margin-top:100px;display:flex;flex-direction:column;align-items-center;justify-content-center">           
                                 <div class="row d-flex align-items-center justify-content-center">
                                     <img src="/storage/gov-logo.webp" alt="logo" class="col-lg-2 col-md-3 col-sm-3 col-4" width="100px">
@@ -664,5 +734,25 @@
       setTimeout(() => typeText4(index + 1), 170);
     }
   }
+</script>
+<script>
+    var swiper2 = new Swiper('.swiper1', {
+    pagination: {
+        el: '.swiper-pagination1',
+        clickable: true,
+    },
+
+    navigation: {
+        nextEl: '.swiper-button-next1',
+        prevEl: '.swiper-button-prev1',
+    },
+
+    autoplay: {
+        delay: 12000,
+        disableOnInteraction: true,
+    },
+
+    speed: 600,
+});
 </script>
 @endsection

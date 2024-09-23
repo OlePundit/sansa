@@ -14,19 +14,19 @@
 
     <meta name="twitter:title" content="Sansa Digital">
     <meta name="twitter:description" content="<p>We are the #1 web development, web design, graphic design, SEO, content and social media marketing company in Kenya.</p>">
-    <meta name="twitter:image" content="https://sansa.digital/storage/twitter.png">
-    <meta name="twitter:site" content="sansa.digital">
+    <meta name="twitter:image" content="https://sansadigital.com/storage/twitter.png">
+    <meta name="twitter:site" content="sansadigital.com">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:creator" content="@salvacar_ke">
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Sansa Digital"/>
     <meta property="og:description" content="We are the #1 web development, web design, graphic design, SEO, content and social media marketing company in Kenya." />
-    <meta property="og:image" content="https://sansa.digital/storage/twitter.png" />
-    <meta property="og:url" content="https://sansa.digital" />
+    <meta property="og:image" content="https://sansadigital.com/storage/twitter.png" />
+    <meta property="og:url" content="https://sansadigital.com" />
     <meta property="og:site_name" content="Sansa Digital"/>
 
     <!-- Fonts -->
-    <link href="https://sansa.digital/storage/icon.png" rel="icon">
+    <link href="https://sansadigital.com/storage/icon.png" rel="icon">
 
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
@@ -42,6 +42,7 @@
 
 <!-- Scripts -->
 
+
 <link rel="stylesheet" href="{{ asset('build/assets/app-62ea8698.css') }}">
   <link rel="stylesheet" href="{{ asset('build/assets/app-2d4c25b0.css') }}">
   <link rel="stylesheet" href="{{ asset('build/assets/app-184a4e11.css') }}">
@@ -49,7 +50,6 @@
 
     <link rel="stylesheet" href="{{ asset('build/assets/animate-64af4c2d.css') }}">
   <link rel="stylesheet" href="{{ asset('build/assets/font-awesome.min-b83accb8.css') }}">
-
 
 
 </head>
@@ -211,18 +211,18 @@ $(document).ready(function () {
   "@type": "WebSite",
   "name": "Sansa Digital",
   "description": "We are the #1 web development, web design, graphic design, SEO, content, and social media marketing company in Kenya.",
-  "image": "https://sansa.digital/storage/header.png",
-  "logo": "https://sansa.digital/whiteai.png",
-  "url": "https://sansa.digital",
+  "image": "https://sansadigital.com/storage/header.png",
+  "logo": "https://sansadigital.com/whiteai.png",
+  "url": "https://sansadigital.com",
   "potentialAction":        
   [
   {
     "@type": "ReadAction",
-    "target":"https://sansa.digital"
+    "target":"https://sansadigital.com"
   }, 
   {
     "@type": "FillAction",
-    "target":"https://sansa.digital/contact"
+    "target":"https://sansadigital.com/contact"
   } 
   ]      
 }
