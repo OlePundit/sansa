@@ -14,8 +14,8 @@
 
     <meta name="twitter:title" content="{{$slug->title}}">
     <meta name="twitter:description" content="<p>{{$slug->title}}</p>">
-    <meta name="twitter:image" content="https://sansa.digital/storage/{{$slug->thumbnail}}">
-    <meta name="twitter:site" content="https://sansa.digital/{{$slug->slug}}">
+    <meta name="twitter:image" content="https://sansadigital.com/storage/{{$slug->thumbnail}}">
+    <meta name="twitter:site" content="https://sansadigital.com/{{$slug->slug}}">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:creator" content="@salvacar_ke">
     <meta property="og:type" content="website" />
@@ -32,7 +32,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="resources/owlcarousel/css/owl.carousel.min.css">
     <link rel="stylesheet" href="resources/owlcarousel/css/owl.theme.default.css">
-    <link href="https://sansa.digital/storage/icon.png" rel="icon">
+    <link href="https://sansadigital.com/storage/icon.png" rel="icon">
 
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
