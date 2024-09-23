@@ -360,23 +360,23 @@
                             <div class="swiper-container swiper1">
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide" style="width:100%">
-                                        <img src="/storage/gov-logo.webp" alt="logo" class="col-lg-2 col-md-3 col-sm-3 col-4" width="100px">
+                                        <img src="/storage/gov-logo.webp" alt="logo" width="100px">
 
                                     </div>
                                     <div class="swiper-slide" style="width:100%">
-                                        <img src="/storage/dcoce.png" alt="logo" class="col-lg-2 col-md-3 mt-5 col-sm-3 col-4" width="100px">
+                                        <img src="/storage/dcoce.png" alt="logo" width="100px">
 
                                     </div>
                                     <div class="swiper-slide" style="width:100%">
-                                        <img src="/storage/cpa_logo.webp" alt="logo" class="col-lg-2 col-md-3 mt-5 ccol-sm-3 col-4" width="100px">
+                                        <img src="/storage/cpa_logo.webp" alt="logo" width="100px">
 
                                     </div>
                                     <div class="swiper-slide" style="width:100%">
-                                        <img src="/storage/landscape.svg" class="col-lg-2 col-md-3 mt-5 col-sm-3 col-4" width="100px">
+                                        <img src="/storage/landscape.svg" width="100px">
 
                                     </div>
                                     <div class="swiper-slide" style="width:100%">
-                                        <img src="/storage/kimuzi-logo.webp" alt="logo" class="col-lg-2 col-md-3 mt-5 col-sm-3 col-4" width="100px">
+                                        <img src="/storage/kimuzi-logo.webp" alt="logo" width="100px">
 
                                     </div>
                                     <div class="swiper-slide" style="width:100%">
