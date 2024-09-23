@@ -724,7 +724,7 @@
     },
 
     autoplay: {
-        delay: 6000,
+        delay: 12000,
         disableOnInteraction: true,
     },
     slidesPerView: 4
