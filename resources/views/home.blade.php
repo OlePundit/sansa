@@ -730,6 +730,7 @@
     slidesPerView: 4,
 
     speed: 600,
+    loop:true,
 });
 </script>
 @endsection
