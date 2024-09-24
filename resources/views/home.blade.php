@@ -493,9 +493,9 @@
                         </div>
                         <div class="row justify-content-center">
                             <h4>Web Design Packages</h4>
-                            <div class="package-items">
+                            <div class="row package-items">
                                 @foreach($webs as $web)
-                                <div class="package-wrap">
+                                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 package-wrap">
                                     <h5>{{ $web->tier }} Package</h5>
                                     <ul>
                                         @foreach(json_decode($web->features, true) as $feature)
@@ -510,9 +510,9 @@
                         </div>
                         <div class="row justify-content-center">
                             <h4>Digital Marketing Packages</h4>
-                            <div class="package-items">
+                            <div class="row package-items">
                                 @foreach($digitals as $digital)
-                                <div class="package-wrap">
+                                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 package-wrap">
                                     <h5>{{ $digital->tier }} Package</h5>
                                     <ul>
                                         @foreach(json_decode($digital->features, true) as $feature)
