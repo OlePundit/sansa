@@ -249,7 +249,7 @@ $(document).ready(function () {
                       name: document.getElementById("name").value,
                       phone: document.getElementById("phone").value,
                       category: document.getElementById("category").value,
-                      tier: document.getElementById("service_name").value,
+                      tier: document.getElementById("tier").value,
                   },
               ]
           },
