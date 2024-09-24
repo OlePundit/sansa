@@ -493,31 +493,37 @@
                         </div>
                         <div class="row justify-content-center">
                             <h4>Web Design Packages</h4>
-                            @foreach($webs as $web)
-                            <div class="package-wrap">
-                                <h5>{{ $web->tier }} Package</h5>
-                                <ul>
-                                    @foreach(json_decode($web->features, true) as $feature)
-                                        <li>{{ $feature }}</li>
-                                    @endforeach
-                                </ul>
-                                <a href="/order/{{ $web->id }}">{{ $web->price }}</a>
+                            <div class="package-items">
+                                @foreach($webs as $web)
+                                <div class="package-wrap">
+                                    <h5>{{ $web->tier }} Package</h5>
+                                    <ul>
+                                        @foreach(json_decode($web->features, true) as $feature)
+                                            <li>{{ $feature }}</li>
+                                        @endforeach
+                                    </ul>
+                                    <a href="/order/{{ $web->id }}">{{ $web->price }}</a>
+                                </div>
+                                @endforeach
                             </div>
-                            @endforeach
+
                         </div>
-                        <div class="row justify-conten-center">
+                        <div class="row justify-content-center">
                             <h4>Digital Marketing Packages</h4>
-                            @foreach($digitals as $digital)
-                            <div class="package-wrap">
-                                <h5>{{ $digital->tier }} Package</h5>
-                                <ul>
-                                    @foreach(json_decode($digital->features, true) as $feature)
-                                        <li>{{ $feature }}</li>
-                                    @endforeach
-                                </ul>
-                                <a href="/order/{{ $digital->id }}">{{ $digital->price }}</a>
+                            <div class="package-items">
+                                @foreach($digitals as $digital)
+                                <div class="package-wrap">
+                                    <h5>{{ $digital->tier }} Package</h5>
+                                    <ul>
+                                        @foreach(json_decode($digital->features, true) as $feature)
+                                            <li>{{ $feature }}</li>
+                                        @endforeach
+                                    </ul>
+                                    <a href="/order/{{ $digital->id }}">{{ $digital->price }}</a>
+                                </div>
+                                 @endforeach
                             </div>
-                             @endforeach
+
                         </div>
                     </div>
 
