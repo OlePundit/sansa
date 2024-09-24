@@ -247,11 +247,9 @@ $(document).ready(function () {
               custom_fields: [
                   {
                       name: document.getElementById("name").value,
-                      booking_date: document.getElementById("datePicker").value,
-                      time: document.getElementById("timePicker").value,
-                      service_name: document.getElementById("service_name").value,
-                      payment_terms: document.getElementById("payment_terms").value,
-                      service_type: document.getElementById("service_type").value
+                      phone: document.getElementById("phone").value,
+                      category: document.getElementById("category").value,
+                      tier: document.getElementById("service_name").value,
                   },
               ]
           },

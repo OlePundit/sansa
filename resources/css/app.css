@@ -8043,7 +8043,7 @@
  .contact .section-contact .phone,
  .contact .section-contact .category,
  .contact .section-contact .tier,
- .contact .section-contact .tier {
+ .contact .section-contact .amount {
      border-radius: 16px;
      border: 1px solid #aeabab;
      background: rgba(217, 217, 217, 0);
@@ -8267,7 +8267,7 @@
      }
      .service .section-service .body {
          display: flex;
-         flex-direction: column;
+         flex-direction: column-reverse;
          margin-left: 0;
      }
      .service .section-service .author img {
@@ -8293,7 +8293,7 @@
      .contact .section-contact .phone,
      .contact .section-contact .category,
      .contact .section-contact .tier,
-     .contact .section-contact .tier {
+     .contact .section-contact .amount {
          border-radius: 16px;
          border: 1px solid #aeabab;
          background: rgba(217, 217, 217, 0);
@@ -8318,7 +8318,7 @@
          padding: 32px 12px 12px;
          border-radius: 32px;
          display: flex;
-         flex-direction: column;
+         flex-direction: column-reverse;
      }
      .section-services .service-box,
      .section-services .service-box:hover {
@@ -8732,7 +8732,7 @@
      .contact .section-contact .phone,
      .contact .section-contact .category,
      .contact .section-contact .tier,
-     .contact .section-contact .tier {
+     .contact .section-contact .amount {
          border-radius: 16px;
          border: 1px solid #aeabab;
          background: rgba(217, 217, 217, 0);
@@ -8747,7 +8747,7 @@
          padding: 32px 22px 22px;
          border-radius: 32px;
          display: flex;
-         flex-direction: column;
+         flex-direction: column-reverse;
      }
      .contact .section-contact .contact-wrap .map {
          margin-right: 64px;
@@ -9133,7 +9133,7 @@
      .contact .section-contact .phone,
      .contact .section-contact .category,
      .contact .section-contact .tier,
-     .contact .section-contact .tier {
+     .contact .section-contact .amount {
          border-radius: 16px;
          border: 1px solid #aeabab;
          background: rgba(217, 217, 217, 0);
@@ -9347,7 +9347,7 @@
          padding: 32px 22px 22px;
          border-radius: 32px;
          display: flex;
-         flex-direction: column;
+         flex-direction: column-reverse;
      }
      .contact .section-contact .contact-wrap .map {
          margin-right: 64px;
@@ -9359,7 +9359,7 @@
      .contact .section-contact .phone,
      .contact .section-contact .category,
      .contact .section-contact .tier,
-     .contact .section-contact .tier {
+     .contact .section-contact .amount {
          border-radius: 16px;
          border: 1px solid #aeabab;
          background: rgba(217, 217, 217, 0);
@@ -9555,7 +9555,7 @@
      .contact .section-contact .phone,
      .contact .section-contact .category,
      .contact .section-contact .tier,
-     .contact .section-contact .tier {
+     .contact .section-contact .amount {
          border-radius: 16px;
          border: 1px solid #aeabab;
          background: rgba(217, 217, 217, 0);
@@ -9587,7 +9587,7 @@
          padding: 32px 22px 22px;
          border-radius: 32px;
          display: flex;
-         flex-direction: column;
+         flex-direction: column-reverse;
      }
      .contact .section-contact .contact-wrap .map {
          margin-right: 64px;
@@ -9769,7 +9769,7 @@
      .contact .section-contact .phone,
      .contact .section-contact .category,
      .contact .section-contact .tier,
-     .contact .section-contact .tier {
+     .contact .section-contact .amount {
          border-radius: 16px;
          border: 1px solid #aeabab;
          background: rgba(217, 217, 217, 0);
@@ -9797,7 +9797,7 @@
          padding: 32px 22px 22px;
          border-radius: 32px;
          display: flex;
-         flex-direction: column;
+         flex-direction: column-reverse;
      }
      .contact .section-contact .contact-wrap .map {
          margin-right: 64px;

@@ -115,27 +115,29 @@
                                             <div class="col-xl-12 col-lg-12 col-md-12 d-flex align-items-center justify-content-center" style="display:flex;flex-direction:column;">
                                                 <div class="form-group">
                                                     <div class="col-md-12">
-                                                        <input type="text" class="name text-white" name="name" placeholder="name">
+                                                        <input type="text" class="name text-white" name="name" id="name" placeholder="name">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <div class="col-sm-12">
-                                                        <input type="text" class="email text-white" name="email" placeholder="email">
+                                                        <input type="text" class="email text-white" name="email" id="email" placeholder="email">
+                                                        <input type="hidden" value="{{$package->id}}" name="orderID">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <div class="col-sm-12">
-                                                        <input type="text" class="phone text-white" name="phone" placeholder="phone">
+                                                        <input type="text" class="phone text-white" name="phone" id="phone" placeholder="phone">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <div class="col-sm-12">
-                                                        <input type="text" class="amount text-white" value="{{$package->price}}" name="amount" placeholder="amount">
+                                                        <input type="text" class="amount text-white" value="{{$package->price}}" id="amount" name="amount" placeholder="amount">
                                                     </div>
+                                                    <label>50% deposit required</label>
                                                 </div>
                                                 <div class="form-group">
                                                     <div class="col-sm-12">
-                                                        <select type="text" class="category text-white" name="category">
+                                                        <select type="text" class="category text-white" name="category" id="category">
                                                             <option value="{{$package->category}}">{{$package->category}}</option>
 
                                                         </select>
@@ -143,7 +145,7 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <div class="col-sm-12">
-                                                        <select type="text" class="tier text-white" name="tier">
+                                                        <select type="text" class="tier text-white" name="tier" id="tier">
                                                             <option value="{{$package->tier}}">{{$package->tier}}</option>
 
                                                         </select>

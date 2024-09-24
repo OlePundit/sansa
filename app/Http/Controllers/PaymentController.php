@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Paystack;
 use Illuminate\Support\Facades\Auth;
-use App\Models\Booking;
+use App\Models\Order;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\BookingConfirmation;
 use App\Mail\BookingConfirmationAdmin;
@@ -56,15 +56,12 @@ class PaymentController extends Controller
         if($response->data->status == 'success')
 
         {
-            $obj = new Booking;
+            $obj = new Order;
             $obj->payment_id = $reference;
             $obj->name = $meta_data->name;
-            $obj->booking_date = $meta_data->booking_date;
-            $obj->time = $meta_data->time;
-            $obj->service_name = $meta_data->service_name;
-            $obj->payment_terms = $meta_data->payment_terms;
-            $obj->service_type = $meta_data->service_type;
-
+            $obj->category = $meta_data->category;
+            $obj->tier = $meta_data->tier;
+            $obj->phone = $meta_data->phone;
             $obj->amount = $response->data->amount / 100;
 
             $obj->email = $response->data->customer->email;
@@ -72,8 +69,7 @@ class PaymentController extends Controller
             $obj->currency = $response->data->currency;
             $obj->save();
 
-            Mail::to($obj->email)->send(new BookingConfirmation($obj));
-            Mail::to('info@allureessencespa.com')->send(new BookingConfirmationAdmin($obj));
+            Mail::to('admin@sansadigital.com')->send(new BookingConfirmationAdmin($obj));
 
             return redirect()->route('success');
         } else {
