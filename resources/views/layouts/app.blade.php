@@ -47,6 +47,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
+    
     <link rel="stylesheet" href="{{ asset('build/assets/app-62ea8698.css') }}">
     <link rel="stylesheet" href="{{ asset('build/assets/app-2d4c25b0.css') }}">
     <link rel="stylesheet" href="{{ asset('build/assets/app-184a4e11.css') }}">
@@ -227,6 +228,42 @@ $(document).ready(function () {
   } 
   ]      
 }
+</script>
+<script src="https://js.paystack.co/v1/inline.js"></script>
+
+<script>
+  const paymentForm = document.getElementById('paymentForm');
+  paymentForm.addEventListener("submit", payWithPaystack, false);
+
+  function payWithPaystack(e) {
+      e.preventDefault();
+      let handler = PaystackPop.setup({
+          key: "{{ env('PAYSTACK_PUBLIC_KEY') }}",
+          email: document.getElementById("email").value,
+          amount: document.getElementById("amount").value * 100 / 2,
+          ref: '' + Math.floor((Math.random() * 10000000000) + 1),
+          currency: 'KES',
+          metadata: {
+              custom_fields: [
+                  {
+                      name: document.getElementById("name").value,
+                      booking_date: document.getElementById("datePicker").value,
+                      time: document.getElementById("timePicker").value,
+                      service_name: document.getElementById("service_name").value,
+                      payment_terms: document.getElementById("payment_terms").value,
+                      service_type: document.getElementById("service_type").value
+                  },
+              ]
+          },
+          onClose: function(){
+              alert('Window closed.');
+          },
+          callback: function(response){
+              window.location.href = "{{ route('callback') }}?trxref=" + response.reference + "&reference=" + response.reference;
+          }
+      });
+      handler.openIframe();
+  }
 </script>
 </body>
 </html>

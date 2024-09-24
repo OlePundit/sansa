@@ -8179,25 +8179,25 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color:#ffff!important;
+    color:#ffff;
 }
 .section-packages .package-items .package-wrap a:hover{
 
     text-decoration: none;
     border-radius: 8px;
-    color: #fff;
+    color: #193155;
     font-family: Eb Garamond;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    background: #193155;
+    background: #fff;
     font-size: 32px;
     padding: 10px 16px;
 }
 .section-packages .package-items .package-wrap h5{
     font-family: Eb Garamond;
     color:#fff;
-    font-size: 20px;
+    font-size: 23px;
 }
 .section-packages .package-items .package-wrap ul{
     text-decoration:none;

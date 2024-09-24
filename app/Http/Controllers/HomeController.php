@@ -34,6 +34,11 @@ class HomeController extends Controller
 
         return view('About.about', compact('services'));
     }
+    public function order(Package $package)
+    {
+
+        return view('Order.order', compact('package'));
+    }
     public function newsletter()
     {
         $data = request()->validate([
