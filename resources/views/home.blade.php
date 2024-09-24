@@ -493,85 +493,31 @@
                         </div>
                         <div class="row justify-content-center">
                             <h4>Web Design Packages</h4>
+                            @foreach($webs as $web)
                             <div class="package-wrap">
-                                <h5>Gold Package</h5>
+                                <h5>{{ $web->tier }} Package</h5>
                                 <ul>
-                                    <li>20+ pages</li>
-                                    <li>Payment integration</li>
-                                    <li>Admin dashboard</li>
-                                    <li>Blog</li>
-                                    <li>Ecommerce functionalities</li>
-                                    <li>SEO</li>
-                                    <li>Web copy</li>
-                                    <li>Frontend Design mockup</li>
-                                    <li>Full stack framework</li>
-                                    <li>3 month maintenance</li>
+                                    @foreach($web->features as $feature)
+                                        <li>{{ $feature }}</li>
+                                    @endforeach
                                 </ul>
-                                <a href="/order">Ksh 80,0000</a>
+                                <a href="/order/{{ $web->id }}">{{ $web->price }}</a>
                             </div>
-                            <div class="package-wrap">
-                                <h5>Silver Package</h5>
-                                <ul>
-                                    <li>5 pages</li>
-                                    <li>Blog</li>
-                                    <li>Admin dashboard</li>
-                                    <li>Web copy</li>
-                                    <li>Frontend Design mockup</li>
-                                    <li>1 month maintenance</li>
-
-                                </ul>
-                                <h6>Ksh 40,0000</h6>
-                            </div>
-                            <div class="package-wrap">
-                                <h5>Bronze Package</h5>
-                                <ul>
-                                    <li>Wordpress Site</li>
-                                    <li>CMS</li>
-                                    <li>Blog</li>
-                                </ul>
-                                <h6>Ksh 15,0000</h6>
-                            </div>
+                            @endforeach
                         </div>
-                        <div class="row justify-content-center">
+                        <div class="row justify-conten-center">
                             <h4>Digital Marketing Packages</h4>
+                            @foreach($digitals as $digital)
                             <div class="package-wrap">
-                                <h5>Gold Package</h5>
+                                <h5>{{ $digital->tier }} Package</h5>
                                 <ul>
-                                    <li>Search Engine Optimization</li>
-                                    <li>Content Development</li>
-                                    <li>Content Calendar</li>
-                                    <li>Google marketing</li>
-                                    <li>Social media marketing</li>
-                                    <li>Social media management</li>
-                                    <li>Email marketing</li>
-                                    <li>Bulk sms</li>
-                                    <li>Strategy Development</li>
-
+                                    @foreach($digital->features as $feature)
+                                        <li>{{ $feature }}</li>
+                                    @endforeach
                                 </ul>
-                                <h6>Ksh 50,0000</h6>
+                                <a href="/order/{{ $digital->id }}">{{ $digital->price }}</a>
                             </div>
-                            <div class="package-wrap">
-                                <h5>Silver Package</h5>
-                                <ul>
-                                    <li>Search Engine Optimization</li>
-                                    <li>Content Development</li>
-                                    <li>Content Calendar</li>
-                                    <li>Google marketing</li>
-                                    <li>Social media marketing</li>
-                                    <li>Strategy Development</li>
-
-                                </ul>
-                                <h6>Ksh 30,0000</h6>
-                            </div>
-                            <div class="package-wrap">
-                                <h5>Bronze Package</h5>
-                                <ul>
-                                    <li>Search Engine Optimization</li>
-                                    <li>Content Development</li>
-                                    <li>Content Calendar</li>
-                                </ul>
-                                <h6>Ksh 20,0000</h6>
-                            </div>
+                             @endforeach
                         </div>
                     </div>
 
