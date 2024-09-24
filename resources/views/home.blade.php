@@ -502,7 +502,7 @@
                                             <li>{{ $feature }}</li>
                                         @endforeach
                                     </ul>
-                                    <a href="/order/{{ $web->id }}">{{ $web->price }}</a>
+                                    <a href="/order/{{ $web->id }}">{{ $web->price }}<i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                                 </div>
                                 @endforeach
                             </div>
@@ -519,7 +519,7 @@
                                             <li>{{ $feature }}</li>
                                         @endforeach
                                     </ul>
-                                    <a href="/order/{{ $digital->id }}">{{ $digital->price }}</a>
+                                    <a href="/order/{{ $digital->id }}">{{ $digital->price }}<i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                                 </div>
                                  @endforeach
                             </div>
