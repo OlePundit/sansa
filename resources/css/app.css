@@ -8185,13 +8185,10 @@
 
     text-decoration: none;
     border-radius: 8px;
-    color: #193155;
+    color: #193155!important;
     font-family: Eb Garamond;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
     background: #fff;
-    font-size: 32px;
+    font-size: 20px;
     padding: 10px 16px;
 }
 .section-packages .package-items .package-wrap h5{

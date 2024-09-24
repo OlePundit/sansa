@@ -36,8 +36,9 @@ class HomeController extends Controller
     }
     public function order(Package $package)
     {
+        $services = Service::all();
 
-        return view('Order.order', compact('package'));
+        return view('Order.order', compact('package','services'));
     }
     public function newsletter()
     {
