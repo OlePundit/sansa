@@ -511,7 +511,7 @@
                             <div class="package-wrap">
                                 <h5>{{ $digital->tier }} Package</h5>
                                 <ul>
-                                    @foreach($digital->features as $feature)
+                                    @foreach(json_decode($digital->features, true) as $feature)
                                         <li>{{ $feature }}</li>
                                     @endforeach
                                 </ul>

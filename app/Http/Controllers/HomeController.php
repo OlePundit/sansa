@@ -25,8 +25,8 @@ class HomeController extends Controller
     {
         $services = Service::all();
         $webs = Package::where('category','web design')->get();
-        $digital = Package::where('category','digital marketing')->get();
-        return view('home',compact('services','webs','digital'));
+        $digitals = Package::where('category','digital marketing')->get();
+        return view('home',compact('services','webs','digitals'));
     }
     public function about()
     {
