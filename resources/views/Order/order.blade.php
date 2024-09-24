@@ -85,7 +85,7 @@
         <div class="col-md-12 contact-banner">
             <div class="row">
                 <div class="col-md-12" style="margin-top:150px;">
-                    <h1 class="text-center">Contact US</h1>
+                    <h1 class="text-center">Service Order</h1>
                     <h4 class="text-center">We are here to respond to your queries around the clock.</h1>
 
                 </div>
@@ -130,7 +130,7 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <div class="col-sm-12">
-                                                        <select type="text" class="text-white" name="category">
+                                                        <select type="text" class="category text-white" name="category">
                                                             <option value="{{$package->category}}">{{$package->category}}</option>
 
                                                         </select>
@@ -138,7 +138,7 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <div class="col-sm-12">
-                                                        <select type="text" class="text-white" name="tier">
+                                                        <select type="text" class="tier text-white" name="tier">
                                                             <option value="{{$package->tier}}">{{$package->tier}}</option>
 
                                                         </select>

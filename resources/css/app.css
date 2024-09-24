@@ -8039,7 +8039,10 @@
      width: 100%;
  }
  .contact .section-contact .email,
- .contact .section-contact .name {
+ .contact .section-contact .name,
+ .contact .section-contact .phone,
+ .contact .section-contact .category,
+ .contact .section-contact .tier {
      border-radius: 16px;
      border: 1px solid #aeabab;
      background: rgba(217, 217, 217, 0);
@@ -8285,7 +8288,10 @@
          margin-top: 20px;
      }
      .contact .section-contact .email,
-     .contact .section-contact .name {
+     .contact .section-contact .name,
+     .contact .section-contact .phone,
+     .contact .section-contact .category,
+     .contact .section-contact .tier {
          border-radius: 16px;
          border: 1px solid #aeabab;
          background: rgba(217, 217, 217, 0);
