@@ -8178,6 +8178,8 @@
     border: none;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    color:#ffff!important;
 }
 .section-packages .package-items .package-wrap a:hover{
 
