@@ -8042,6 +8042,7 @@
  .contact .section-contact .name,
  .contact .section-contact .phone,
  .contact .section-contact .category,
+ .contact .section-contact .tier,
  .contact .section-contact .tier {
      border-radius: 16px;
      border: 1px solid #aeabab;
@@ -8291,6 +8292,7 @@
      .contact .section-contact .name,
      .contact .section-contact .phone,
      .contact .section-contact .category,
+     .contact .section-contact .tier,
      .contact .section-contact .tier {
          border-radius: 16px;
          border: 1px solid #aeabab;
@@ -8726,7 +8728,11 @@
          line-height: normal;
      }
      .contact .section-contact .email,
-     .contact .section-contact .name {
+     .contact .section-contact .name,
+     .contact .section-contact .phone,
+     .contact .section-contact .category,
+     .contact .section-contact .tier,
+     .contact .section-contact .tier {
          border-radius: 16px;
          border: 1px solid #aeabab;
          background: rgba(217, 217, 217, 0);
@@ -9123,7 +9129,11 @@
          margin-top: 10px;
      }
      .contact .section-contact .email,
-     .contact .section-contact .name {
+     .contact .section-contact .name,
+     .contact .section-contact .phone,
+     .contact .section-contact .category,
+     .contact .section-contact .tier,
+     .contact .section-contact .tier {
          border-radius: 16px;
          border: 1px solid #aeabab;
          background: rgba(217, 217, 217, 0);
@@ -9345,7 +9355,11 @@
          border-right: none;
      }
      .contact .section-contact .email,
-     .contact .section-contact .name {
+     .contact .section-contact .name,
+     .contact .section-contact .phone,
+     .contact .section-contact .category,
+     .contact .section-contact .tier,
+     .contact .section-contact .tier {
          border-radius: 16px;
          border: 1px solid #aeabab;
          background: rgba(217, 217, 217, 0);
@@ -9537,7 +9551,11 @@
          font-weight: 600;
      }
      .contact .section-contact .email,
-     .contact .section-contact .name {
+     .contact .section-contact .name,
+     .contact .section-contact .phone,
+     .contact .section-contact .category,
+     .contact .section-contact .tier,
+     .contact .section-contact .tier {
          border-radius: 16px;
          border: 1px solid #aeabab;
          background: rgba(217, 217, 217, 0);
@@ -9747,7 +9765,11 @@
          font-weight: 700;
      }
      .contact .section-contact .email,
-     .contact .section-contact .name {
+     .contact .section-contact .name,
+     .contact .section-contact .phone,
+     .contact .section-contact .category,
+     .contact .section-contact .tier,
+     .contact .section-contact .tier {
          border-radius: 16px;
          border: 1px solid #aeabab;
          background: rgba(217, 217, 217, 0);

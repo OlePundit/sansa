@@ -130,6 +130,11 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <div class="col-sm-12">
+                                                        <input type="text" class="amount text-white" value="{{$package->price}}" name="amount" placeholder="amount">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="col-sm-12">
                                                         <select type="text" class="category text-white" name="category">
                                                             <option value="{{$package->category}}">{{$package->category}}</option>
 
