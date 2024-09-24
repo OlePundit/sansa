@@ -497,7 +497,7 @@
                             <div class="package-wrap">
                                 <h5>{{ $web->tier }} Package</h5>
                                 <ul>
-                                    @foreach($web->features as $feature)
+                                    @foreach(json_decode($web->features, true) as $feature)
                                         <li>{{ $feature }}</li>
                                     @endforeach
                                 </ul>
