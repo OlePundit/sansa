@@ -8160,8 +8160,14 @@
     justify-content: center;
 }
 .section-packages .package-items .package-wrap{
-    color:#193155;
-    padding:10%;
+    background:#193155;
+    padding:5%;
+    margin: 25px;
+    border-radius: 16px;
+}
+.section-packages .package-items .package-wrap h5{
+    font-family: Eb Garamond;
+    color:#fff;
 }
 .section-packages .package-items .package-wrap ul{
     text-decoration:none;
