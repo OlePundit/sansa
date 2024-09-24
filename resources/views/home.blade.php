@@ -486,6 +486,94 @@
                         </div>
 
                     </div>
+                    <div class="section-packages" id="section-packages">
+                        <div class="row d-flex justify-content-center align-items-center">
+                            <h3 class="text-center">Packages</h3>
+
+                        </div>
+                        <div class="row justify-content-center">
+                            <h4>Web Design Packages</h4>
+                            <div class="package-wrap">
+                                <h5>Gold Package</h5>
+                                <ul>
+                                    <li>20+ pages</li>
+                                    <li>Payment integration</li>
+                                    <li>Admin dashboard</li>
+                                    <li>Blog</li>
+                                    <li>Ecommerce functionalities</li>
+                                    <li>SEO</li>
+                                    <li>Web copy</li>
+                                    <li>Frontend Design mockup</li>
+                                    <li>Full stack framework</li>
+                                    <li>3 month maintenance</li>
+                                </ul>
+                                <a href="/order">Ksh 80,0000</a>
+                            </div>
+                            <div class="package-wrap">
+                                <h5>Silver Package</h5>
+                                <ul>
+                                    <li>5 pages</li>
+                                    <li>Blog</li>
+                                    <li>Admin dashboard</li>
+                                    <li>Web copy</li>
+                                    <li>Frontend Design mockup</li>
+                                    <li>1 month maintenance</li>
+
+                                </ul>
+                                <h6>Ksh 40,0000</h6>
+                            </div>
+                            <div class="package-wrap">
+                                <h5>Bronze Package</h5>
+                                <ul>
+                                    <li>Wordpress Site</li>
+                                    <li>CMS</li>
+                                    <li>Blog</li>
+                                </ul>
+                                <h6>Ksh 15,0000</h6>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <h4>Digital Marketing Packages</h4>
+                            <div class="package-wrap">
+                                <h5>Gold Package</h5>
+                                <ul>
+                                    <li>Search Engine Optimization</li>
+                                    <li>Content Development</li>
+                                    <li>Content Calendar</li>
+                                    <li>Google marketing</li>
+                                    <li>Social media marketing</li>
+                                    <li>Social media management</li>
+                                    <li>Email marketing</li>
+                                    <li>Bulk sms</li>
+                                    <li>Strategy Development</li>
+
+                                </ul>
+                                <h6>Ksh 50,0000</h6>
+                            </div>
+                            <div class="package-wrap">
+                                <h5>Silver Package</h5>
+                                <ul>
+                                    <li>Search Engine Optimization</li>
+                                    <li>Content Development</li>
+                                    <li>Content Calendar</li>
+                                    <li>Google marketing</li>
+                                    <li>Social media marketing</li>
+                                    <li>Strategy Development</li>
+
+                                </ul>
+                                <h6>Ksh 30,0000</h6>
+                            </div>
+                            <div class="package-wrap">
+                                <h5>Bronze Package</h5>
+                                <ul>
+                                    <li>Search Engine Optimization</li>
+                                    <li>Content Development</li>
+                                    <li>Content Calendar</li>
+                                </ul>
+                                <h6>Ksh 20,0000</h6>
+                            </div>
+                        </div>
+                    </div>
 
                     
                     <div class="section-testimonials">
