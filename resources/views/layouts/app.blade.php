@@ -11,7 +11,10 @@
     <title>Sansa Digital</title>
     <meta name="description" content="We are the #1 web development, web design, graphic design, SEO, content and social media marketing company in Kenya.">
     <meta name="robots" content="index, follow">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <meta name="twitter:title" content="Sansa Digital">
     <meta name="twitter:description" content="<p>We are the #1 web development, web design, graphic design, SEO, content and social media marketing company in Kenya.</p>">
     <meta name="twitter:image" content="https://sansadigital.com/storage/twitter.png">
@@ -46,13 +49,14 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-    
-    <link rel="stylesheet" href="{{ asset('build/assets/app-62ea8698.css') }}">
-    <link rel="stylesheet" href="{{ asset('build/assets/app-2d4c25b0.css') }}">
-    <link rel="stylesheet" href="{{ asset('build/assets/app-184a4e11.css') }}">
-    <link rel="stylesheet" href="{{ asset('build/assets/animate-64af4c2d.css') }}">
-    <link rel="stylesheet" href="{{ asset('build/assets/font-awesome.min-b83accb8.css') }}">
+@vite([
+  'resources/sass/app.scss',
+  'resources/js/app.js',
+  'resources/css/app.css',
+  'resources/css/animate.css',
+  'resources/js/wow.js',
+  'resources/css/font-awesome.min.css'
+])
 
 </head>
 <body>
@@ -164,33 +168,6 @@
   gtag('js', new Date());
 
   gtag('config', 'AW-10805349205');
-</script>
-    <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    var swiper = new Swiper('.slider-container', {
-      slidesPerView: 1,
-      spaceBetween: 200,
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      breakpoints: {
-          640: {
-            slidesPerView: 2,
-            spaceBetween: 200,
-          },
-          768: {
-            slidesPerView: 3,
-            spaceBetween: 200,
-          },
-        },
-      loop: true,
-    });
-  });
 </script>
 
 <script>

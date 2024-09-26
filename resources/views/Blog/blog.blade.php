@@ -11,7 +11,10 @@
     <title>{{$slug->title}}</title>
     <meta name="description" content="We are the #1 web development, web design, graphic design, SEO, content and social media marketing company in Kenya.">
     <meta name="robots" content="index, follow">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <meta name="twitter:title" content="{{$slug->title}}">
     <meta name="twitter:description" content="<p>{{$slug->title}}</p>">
     <meta name="twitter:image" content="https://sansadigital.com/storage/{{$slug->thumbnail}}">

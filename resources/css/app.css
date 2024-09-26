@@ -6894,7 +6894,8 @@
  }
  .section-packages h3 {
     color: #fff;
-    font-family: Eb Garamond;
+    font-family: "EB Garamond", serif;
+
     font-size: 64px;
     font-style: normal;
     font-weight: 700;
@@ -6906,7 +6907,8 @@
     font-size: 30px;
     font-weight: 500;
     color:#fff;
-    font-family: Montserrat;
+    font-family: "Montserrat", sans-serif;
+
 }
  .section-portfolio{
     margin:auto;
@@ -6916,7 +6918,8 @@
  }
  .section-portfolio h3 {
     color: #fff;
-    font-family: Eb Garamond;
+    font-family: "EB Garamond", serif;
+
     font-size: 64px;
     font-style: normal;
     font-weight: 700;
@@ -6931,12 +6934,48 @@
  }
  .section-portfolio .portfolio-items .portfolio-item{
     width:350px;
+    position: relative; /* Ensure the child elements can be absolutely positioned */
+    overflow: hidden; /* Prevents overflow of child elements */
  }
  .section-portfolio .portfolio-items .portfolio-item:hover{
     width:450px;
-    border-bottom: 15px solid rgba(44,150,226,0.5);
     cursor:pointer;
  }
+ .section-portfolio .portfolio-item {
+    position: relative; /* Positioning context for pseudo-elements */
+    overflow: hidden; /* Prevents overflowing content */
+}
+
+.section-portfolio .portfolio-item::after {
+    content: ''; /* Creates a pseudo-element */
+    position: absolute; /* Position it relative to the portfolio-item */
+    bottom: 0; /* Align it to the bottom */
+    left: 0; /* Align it to the left */
+    height: 15px; /* Height of the colored bar */
+    width: 100%; /* Full width */
+    background-color: rgba(44, 150, 226, 0.7); /* Change to your desired color */
+    transform: translateY(100%); /* Start off-screen */
+    transition: transform 0.3s ease; /* Smooth transition */
+    z-index: 2; /* Ensure it's on top of the gradient */
+}
+
+/* Gradient effect combined with the same pseudo-element */
+.section-portfolio .portfolio-item::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40%; /* Height of the gradient */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)); /* Dark gradient from black to transparent */
+    z-index: 1; /* Below the colored bar */
+}
+
+/* Hover effect to show the colored bar */
+.section-portfolio .portfolio-item:hover::after {
+    transform: translateY(0); /* Bring the colored bar into view on hover */
+}
+
  .section-portfolio .portfolio-items .portfolio-item img{
     width:100%;
  }
@@ -6972,6 +7011,7 @@
  }
  .navbar-light .navbar-toggler {
      border-color: #fff !important;
+     margin-right: 10px;
  }
  .navbar-light .navbar-toggler-icon {
      background-image: url('data:image/svg+xml,%3csvg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"%3e%3cpath stroke="%23ffffff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"/%3e%3c/svg%3e') !important;
@@ -6998,7 +7038,8 @@
      align-items: center;
      flex-direction: column;
      color: #fff;
-     font-family: Eb Garamond;
+    font-family: "EB Garamond", serif;
+
      font-weight: 600;
      font-size: 34px;
      width: 100%;
@@ -7020,7 +7061,8 @@
      padding: 2px 10px;
      border-radius: 8px;
      border: none;
-     font-family: Eb Garamond;
+    font-family: "EB Garamond", serif;
+
      color: #fff;
      margin-top: 15px;
      font-size: 22px;
@@ -7030,12 +7072,14 @@
      background: #193155;
      text-decoration: none;
      color: #2c96e2;
-     font-family: Eb Garamond;
+    font-family: "EB Garamond", serif;
+
  }
  .about-banner h1,
  .header-banner h1 {
      color: #fff;
-     font-family: Eb Garamond;
+    font-family: "EB Garamond", serif;
+
      font-size: 64px;
      font-style: normal;
      font-weight: 700;
@@ -7046,7 +7090,8 @@
  .service-banner h1 {
      color: #fff;
      text-align: center;
-     font-family: Eb Garamond;
+    font-family: "EB Garamond", serif;
+
      font-size: 64px;
      font-style: normal;
      font-weight: 700;
@@ -7056,7 +7101,8 @@
  .contact-banner h4,
  .header-banner p,
  .service-banner h4 {
-     font-family: Montserrat;
+    font-family: "Montserrat", sans-serif;
+
      color: #fff;
      font-style: normal;
      line-height: normal;
@@ -7086,7 +7132,8 @@
      padding: 10px 16px;
      margin-left: 15%;
      color: #fff;
-     font-family: Eb Garamond;
+    font-family: "EB Garamond", serif;
+
      font-size: 32px;
      font-style: normal;
      font-weight: 700;
@@ -7100,7 +7147,8 @@
      text-decoration: none;
      border-radius: 8px;
      color: #fff;
-     font-family: Eb Garamond;
+    font-family: "EB Garamond", serif;
+
      font-style: normal;
      font-weight: 700;
      line-height: normal;
@@ -7120,7 +7168,8 @@
  .about-banner .btn:hover,
  .section-quote a:hover {
      border-radius: 8px;
-     font-family: Eb Garamond;
+    font-family: "EB Garamond", serif;
+
      font-style: normal;
      font-weight: 700;
      line-height: normal;
@@ -7145,7 +7194,8 @@
  .service .section-service button:hover {
      border-radius: 8px;
      color: #fff;
-     font-family: Eb Garamond;
+    font-family: "EB Garamond", serif;
+
      font-size: 32px;
      font-style: normal;
      font-weight: 700;
@@ -7170,7 +7220,8 @@
      font-weight: 700;
      width: 556px;
      border-radius: 8px;
-     font-family: Eb Garamond;
+    font-family: "EB Garamond", serif;
+
      line-height: normal;
      color: #fff;
      font-style: normal;
@@ -7211,7 +7262,8 @@
  }
  .service .section-more h2 {
      color: #fff;
-     font-family: Eb Garamond;
+    font-family: "EB Garamond", serif;
+
      font-size: 64px;
      font-style: normal;
      font-weight: 400;
@@ -7223,7 +7275,8 @@
  .section-services h3 span,
  .service .section-more h2 span {
      color: #2c96e2;
-     font-family: Eb Garamond;
+    font-family: "EB Garamond", serif;
+
      font-size: 64px;
      font-style: normal;
      font-weight: 700;
@@ -7242,7 +7295,8 @@
      border: none;
      background: #2c96e2;
      color: #fff;
-     font-family: Eb Garamond;
+    font-family: "EB Garamond", serif;
+
      font-size: 20px;
      font-style: normal;
      font-weight: 600;
@@ -7256,7 +7310,8 @@
  }
  .service .section-more .custom-card .card-body h4 {
      color: #fff;
-     font-family: Eb Garamond;
+    font-family: "EB Garamond", serif;
+
      font-size: 24px;
      font-style: normal;
      font-weight: 700;
@@ -7265,7 +7320,8 @@
  .section-footer span,
  .service .section-more .custom-card .card-body p {
      color: #fff;
-     font-family: Montserrat;
+    font-family: "Montserrat", sans-serif;
+
      font-size: 17px;
      font-style: normal;
      font-weight: 400;
@@ -7293,7 +7349,8 @@
      border: 1px solid #2c96e2;
      background: rgba(217, 217, 217, 0);
      color: #fff;
-     font-family: Eb Garamond;
+    font-family: "EB Garamond", serif;
+
      font-size: 20px;
      font-style: normal;
      font-weight: 600;
@@ -7309,7 +7366,8 @@
  .service .section-service h5 {
      color: #fff;
      text-align: center;
-     font-family: Eb Garamond;
+    font-family: "EB Garamond", serif;
+
      font-size: 36px;
      font-style: normal;
      font-weight: 700;
@@ -7321,7 +7379,8 @@
  .service .section-service h6 {
      color: #fff;
      text-align: center;
-     font-family: Montserrat;
+    font-family: "Montserrat", sans-serif;
+
      font-size: 17px;
      font-style: normal;
      font-weight: 400;
@@ -7335,7 +7394,8 @@
      display: flex;
      flex-direction: column;
      color: #fff;
-     font-family: Montserrat;
+    font-family: "Montserrat", sans-serif;
+
      font-size: 20px;
      font-style: normal;
      font-weight: 400;
@@ -7358,7 +7418,8 @@
      width: 423px;
      height: 71px;
      flex-shrink: 0;
-     font-family: Eb Garamond;
+    font-family: "EB Garamond", serif;
+
      font-size: 32px;
      border: none;
      margin-top: 100px;
@@ -7381,7 +7442,8 @@
      border-radius: 8px;
      background: #2c96e2;
      padding: 10px 16px;
-     font-family: Eb Garamond;
+    font-family: "EB Garamond", serif;
+
      font-size: 32px;
      border: none;
  }
@@ -7414,7 +7476,8 @@
      margin-top: 275px;
      color: #fff;
      text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.3);
-     font-family: Eb Garamond;
+    font-family: "EB Garamond", serif;
+
      font-size: 48px;
      font-style: normal;
      font-weight: 700;
@@ -7433,14 +7496,16 @@
  .about .section-stats h2 span,
  .section-info .info h2 span {
      color: #2c96e2;
-     font-family: Eb Garamond;
+    font-family: "EB Garamond", serif;
+
      font-size: 55px;
      font-style: normal;
      font-weight: 800;
      line-height: normal;
  }
  .about .section-equip h3 {
-     font-family: Montserrat;
+    font-family: "Montserrat", sans-serif;
+
      font-size: 36px;
      margin-top: 80px;
      margin-bottom: 40px;
@@ -7448,7 +7513,8 @@
  .about .section-equip p,
  .about .section-info p,
  .section-stats .stat-label {
-     font-family: Montserrat;
+    font-family: "Montserrat", sans-serif;
+
      font-weight: 400;
  }
  .about .section-equip p {
@@ -7468,7 +7534,8 @@
  .section-info .custom-card .card-body h5,
  .section-info .custom-card1 .card-body h5,
  .section-newsletter form h3 {
-     font-family: Eb Garamond;
+    font-family: "EB Garamond", serif;
+
      font-weight: 700;
      font-style: normal;
      line-height: normal;
@@ -7536,7 +7603,8 @@
  .section-info .custom-card .card-body p,
  .section-info .custom-card1 .card-body p {
      color: #fff;
-     font-family: Montserrat;
+    font-family: "Montserrat", sans-serif;
+
      font-size: 15px;
      font-style: normal;
      font-weight: 400;
@@ -7561,7 +7629,6 @@
  .section-services .service-box:hover {
      border-radius: 20px;
      width: 100%;
-     height: fit-cotnent;
      background: #193155;
      padding: 10%;
  }
@@ -7570,7 +7637,8 @@
  .section-testimonials .wrap .testimonial-wrap1 .info h4,
  .section-testimonials .wrap .testimonial-wrap2 .info h4 {
      color: #fff;
-     font-family: Eb Garamond;
+    font-family: "EB Garamond", serif;
+
      font-size: 20px;
      font-style: normal;
      font-weight: 700;
@@ -7578,7 +7646,8 @@
  }
  .section-info .card1 .card-body p,
  .section-info .info p {
-     font-family: Montserrat;
+    font-family: "Montserrat", sans-serif;
+
      line-height: normal;
      color: #fff;
      font-style: normal;
@@ -7596,7 +7665,8 @@
  .section-projects h3,
  .section-services h3 {
      color: #fff;
-     font-family: Eb Garamond;
+    font-family: "EB Garamond", serif;
+
      font-size: 64px;
      font-style: normal;
      font-weight: 400;
@@ -7604,15 +7674,21 @@
      margin-top: 120px;
  }
  .section-services .service-box {
-     margin-top: 100px;
+    margin-top: 100px;
+    height:420px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
  }
  .section-services .service-box .enter-box .enter-svg,
  .section-services .service-box .enter-box:hover .enter-svg {
      fill: #6884af;
  }
  .section-services .service-box:hover {
-     margin-top: 56px;
- }
+    transform: translateY(-15px)!important;
+}
+
  .section-services .service-box .enter-box:hover {
      background: #aeabab;
  }
@@ -7621,7 +7697,8 @@
  }
  .section-services .service-box h4 {
      color: #fff;
-     font-family: Eb Garamond;
+    font-family: "EB Garamond", serif;
+
      font-size: 20px;
      font-style: normal;
      font-weight: 700;
@@ -7636,7 +7713,8 @@
      color: #fff;
  }
  .section-services .service-box p {
-     font-family: Montserrat;
+    font-family: "Montserrat", sans-serif;
+
      font-size: 17px;
      margin-top: 16px;
  }
@@ -7665,13 +7743,15 @@
      flex-shrink: 0;
  }
  .section-prices .sub-head {
-     font-family: Eb Garamond;
+    font-family: "EB Garamond", serif;
+
      font-size: 36px;
      margin-top: 120px;
  }
  .section-prices p {
      color: #fff;
-     font-family: Montserrat;
+    font-family: "Montserrat", sans-serif;
+
      font-size: 24px;
      font-style: normal;
      font-weight: 700;
@@ -7682,7 +7762,8 @@
  }
  .section-prices h1 {
      color: #fff;
-     font-family: Eb Garamond;
+    font-family: "EB Garamond", serif;
+
      font-size: 44px;
      font-style: normal;
      font-weight: 700;
@@ -7691,7 +7772,8 @@
  }
  .section-prices h1 span {
      color: #2c96e2;
-     font-family: Eb Garamond;
+    font-family: "EB Garamond", serif;
+
      font-size: 70px;
      font-style: normal;
      font-weight: 800;
@@ -7707,7 +7789,8 @@
  }
  .section-prices .price-box h5 {
      color: #fff;
-     font-family: Eb Garamond;
+    font-family: "EB Garamond", serif;
+
      font-size: 20px;
      font-style: normal;
      font-weight: 500;
@@ -7716,7 +7799,8 @@
  .section-footer h4,
  .section-prices .price-box h4 {
      color: #fff;
-     font-family: Eb Garamond;
+    font-family: "EB Garamond", serif;
+
      font-size: 32px;
      font-style: normal;
      font-weight: 700;
@@ -7725,7 +7809,8 @@
  .section-footer ul li a,
  .section-prices .price-box a,
  .section-prices .price-box ul li {
-     font-family: Montserrat;
+    font-family: "Montserrat", sans-serif;
+
      font-weight: 400;
      line-height: normal;
      font-style: normal;
@@ -7768,7 +7853,7 @@
      height: 100%;
  }
  .swiper-pagination {
-     margin-top: 220px;
+     margin-top: 50px;
  }
  .section-project {
      width: 1600px;
@@ -7779,6 +7864,7 @@
      flex-direction: column;
      align-items: center;
      justify-content: center;
+     margin-right: 0px!important;
  }
  .section-testimonials .wrap .info,
  .section-testimonials .wrap .testimonial-wrap1 .info,
@@ -7804,7 +7890,8 @@
  }
  .section-testimonials h3 {
      color: #fff;
-     font-family: Eb Garamond;
+    font-family: "EB Garamond", serif;
+
      font-size: 64px;
      font-style: normal;
      font-weight: 700;
@@ -7886,7 +7973,8 @@
  }
  .section-footer ul li {
      color: #fff;
-     font-family: Montserrat;
+    font-family: "Montserrat", sans-serif;
+
      font-size: 24px;
      font-style: normal;
      font-weight: 500;
@@ -7918,7 +8006,8 @@
      margin-bottom: 328px;
  }
  .section-quote h3 {
-     font-family: Eb Garamond;
+    font-family: "EB Garamond", serif;
+
      font-style: normal;
      font-weight: 700;
      line-height: normal;
@@ -7926,7 +8015,8 @@
  }
  .section-quote p {
      color: #fff;
-     font-family: Montserrat;
+    font-family: "Montserrat", sans-serif;
+
      font-size: 20px;
      font-style: normal;
      font-weight: 400;
@@ -7936,7 +8026,8 @@
  .contact .section-contact h3,
  .pie,
  .section-quote a {
-     font-family: Eb Garamond;
+    font-family: "EB Garamond", serif;
+
      font-weight: 700;
      font-style: normal;
      line-height: normal;
@@ -8111,7 +8202,6 @@
      display: flex;
      align-items: center;
      justify-content: center;
-     margin-bottom: 20px;
  }
 .box-2 {
     position: relative; /* Ensure this container is the reference for the absolute positioning */
@@ -8145,27 +8235,19 @@
     font-size: 18px;
 }
 .text-2 h5{
-    font-family: Eb Garamond;
+    font-family: "EB Garamond", serif;
+
     font-weight:500;
     font-size:22px;
 }
-.box-2::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 40%; /* Adjust the height of the gradient (30% of the image height) */
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)); /* Dark gradient from black to transparent */
-    z-index: 1; /* Make sure it sits above the image but below the text */
-}
+
 .section-packages .package-items{
     display:flex;
     justify-content: center;
 }
 .section-packages .package-items .package-wrap{
     background:#193155;
-    padding:5%;
+    padding:2.5%;
     margin: 25px;
     border-radius: 16px;
     display: flex;
@@ -8177,7 +8259,8 @@
     border-radius: 8px;
     background: #2c96e2;
     padding: 10px 16px;
-    font-family: Eb Garamond;
+    font-family: "EB Garamond", serif;
+
     font-size: 20px;
     border: none;
     display: flex;
@@ -8190,23 +8273,36 @@
     text-decoration: none;
     border-radius: 8px;
     color: #193155!important;
-    font-family: Eb Garamond;
+    font-family: "EB Garamond", serif;
+
     background: #fff;
     font-size: 20px;
     padding: 10px 16px;
 }
 .section-packages .package-items .package-wrap h5{
-    font-family: Eb Garamond;
+    font-family: "EB Garamond", serif;
+
     color:#fff;
     font-size: 23px;
 }
 .section-packages .package-items .package-wrap ul{
     text-decoration:none;
-    padding-left:0;
+    padding-left:5%;
 
 }
 .section-packages .package-items .package-wrap ul li{
     color:#fff;
+}
+.section-packages .package-items .package-wrap ul li::before {
+    content: ''; /* Required for pseudo-elements */
+    position: absolute; /* Absolute positioning */
+    left: 0; /* Position to the left */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust to center */
+    width: 16px; /* Width of the SVG */
+    height: 16px; /* Height of the SVG */
+    background: url('data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2216%22 height=%2216%22 fill=%22currentColor%22 viewBox=%220 0 16 16%22%3E%3Cpath d=%22M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16%22/%3E%3Cpath d=%22m10.97 4.97-.02.022-3.473 4.425-2.093-2.094a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05%22/%3E%3C/svg%3E') no-repeat center center; /* Inline SVG */
+    background-size: contain; /* Ensure the SVG scales correctly */
 }
  @media (max-width: 280px) {
      .about .section-stats .stat-wrap {
@@ -8223,8 +8319,8 @@
          display: flex;
          justify-content: center;
          align-items: center;
-         width: 80%;
-         margin-left: 20%;
+         width: 100%;
+         margin: auto;
          flex-direction: column !important;
      }
      .contact .section-contact .contact-wrap ul {
@@ -8241,7 +8337,8 @@
      }
      .contact-banner h4 {
          color: #fff;
-         font-family: Montserrat;
+        font-family: "Montserrat", sans-serif;
+
          font-size: 24px;
          font-style: normal;
          font-weight: 700;
@@ -8255,7 +8352,8 @@
      .contact .section-contact button,
      .contact .section-contact h3,
      .service .section-service h5 {
-         font-family: Eb Garamond;
+        font-family: "EB Garamond", serif;
+
          font-style: normal;
          font-weight: 700;
          line-height: normal;
@@ -8324,7 +8422,6 @@
      .section-services .service-box:hover {
          border-radius: 20px;
          padding: 10%;
-         height: fit-content;
          background: #193155;
          width: 100%;
      }
@@ -8362,7 +8459,8 @@
      }
      .about .section-info p {
          color: #fff;
-         font-family: Montserrat;
+        font-family: "Montserrat", sans-serif;
+
          font-size: 20px;
          font-style: normal;
          font-weight: 400;
@@ -8382,7 +8480,8 @@
      }
      .header-banner p {
          color: #fff;
-         font-family: Montserrat;
+        font-family: "Montserrat", sans-serif;
+
          font-size: 20px;
          font-style: normal;
          font-weight: 400;
@@ -8395,7 +8494,8 @@
      .section-quote h3,
      .section-testimonials h3,
      .service .section-service button {
-         font-family: Eb Garamond;
+        font-family: "EB Garamond", serif;
+
          font-style: normal;
      }
      .section-prices h1,
@@ -8416,9 +8516,8 @@
      }
      .section-services .service-box {
          margin-top: 100px;
-     }
-     .section-services .service-box:hover {
-         margin-top: 56px;
+         height:520px;
+
      }
      .section-prices h1 {
          color: #fff;
@@ -8521,7 +8620,8 @@
      .service .section-service .body,
      .service .section-service h6 {
          color: #fff;
-         font-family: Montserrat;
+        font-family: "Montserrat", sans-serif;
+
          font-style: normal;
          font-weight: 400;
      }
@@ -8530,7 +8630,8 @@
      }
      .service-banner h4 {
          color: #fff;
-         font-family: Montserrat;
+        font-family: "Montserrat", sans-serif;
+
          font-size: 24px;
          font-style: normal;
          margin-top: 80px;
@@ -8541,7 +8642,8 @@
      .service-banner h1 {
          color: #fff;
          text-align: center;
-         font-family: Eb Garamond;
+        font-family: "EB Garamond", serif;
+
          font-size: 36px;
          font-style: normal;
          font-weight: 600;
@@ -8578,7 +8680,8 @@
      .section-newsletter form h3,
      .section-services .btn {
          color: #fff;
-         font-family: Eb Garamond;
+        font-family: "EB Garamond", serif;
+
          font-style: normal;
          font-weight: 700;
          line-height: normal;
@@ -8598,7 +8701,8 @@
      }
      .section-info .info h2 span {
          color: #2c96e2;
-         font-family: Eb Garamond;
+        font-family: "EB Garamond", serif;
+
          font-size: 45px;
          font-style: normal;
          font-weight: 800;
@@ -8626,8 +8730,8 @@
          display: flex;
          justify-content: center;
          align-items: center;
-         width: 70%;
-         margin-left: 20%;
+         width: 100%;
+         margin: auto;
          flex-direction: column !important;
      }
      .section-newsletter form {
@@ -8636,7 +8740,8 @@
          padding: 30px 20px;
      }
      .section-newsletter form h3 {
-         font-family: Eb Garamond;
+        font-family: "EB Garamond", serif;
+
          font-size: 30px;
          font-weight: 700;
      }
@@ -8652,14 +8757,16 @@
      .service .section-service .body {
          display: flex;
          flex-direction: column;
-         font-family: Montserrat;
+        font-family: "Montserrat", sans-serif;
+
          font-size: 20px;
          font-weight: 400;
          margin-top: 100px;
          margin-left: 0;
      }
      .section-testimonials h3 {
-         font-family: Eb Garamond;
+        font-family: "EB Garamond", serif;
+
          font-size: 52px;
          font-weight: 700;
          margin-top: 120px;
@@ -8669,7 +8776,8 @@
          font-weight: 400;
          margin-top: 120px;
          color: #fff;
-         font-family: Eb Garamond;
+        font-family: "EB Garamond", serif;
+
          font-size: 52px;
          font-style: normal;
          line-height: normal;
@@ -8677,7 +8785,8 @@
      .section-projects h3 span,
      .section-services h3 {
          font-size: 64px;
-         font-family: Eb Garamond;
+        font-family: "EB Garamond", serif;
+
          font-style: normal;
          line-height: normal;
      }
@@ -8692,7 +8801,8 @@
          height: 71px;
          flex-shrink: 0;
          color: #fff;
-         font-family: Eb Garamond;
+        font-family: "EB Garamond", serif;
+
          font-size: 25px;
          font-style: normal;
          font-weight: 700;
@@ -8706,7 +8816,8 @@
      }
      .service-banner h4 {
          color: #fff;
-         font-family: Montserrat;
+        font-family: "Montserrat", sans-serif;
+
          font-size: 24px;
          font-style: normal;
          font-weight: 700;
@@ -8717,7 +8828,8 @@
      .contact .section-contact h3,
      .service-banner h1 {
          color: #fff;
-         font-family: Eb Garamond;
+        font-family: "EB Garamond", serif;
+
          font-style: normal;
      }
      .service-banner h1 {
@@ -8779,7 +8891,8 @@
          font-style: normal;
      }
      .about .section-info p {
-         font-family: Montserrat;
+        font-family: "Montserrat", sans-serif;
+
          font-size: 20px;
          margin-right: 10%;
      }
@@ -8790,7 +8903,8 @@
      .about .section-equip h2,
      .section-equip h2 {
          margin: 100px 10% 32px;
-         font-family: Eb Garamond;
+        font-family: "EB Garamond", serif;
+
          text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.3);
          font-size: 48px;
      }
@@ -8805,7 +8919,8 @@
          margin-top: 100px;
          color: #fff;
          text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.3);
-         font-family: Eb Garamond;
+        font-family: "EB Garamond", serif;
+
          font-size: 48px;
          font-style: normal;
          font-weight: 700;
@@ -8814,7 +8929,8 @@
      }
      .about .section-equip p {
          color: #fff;
-         font-family: Montserrat;
+        font-family: "Montserrat", sans-serif;
+
          font-size: 20px;
          font-style: normal;
          font-weight: 400;
@@ -8831,7 +8947,8 @@
          line-height: normal;
      }
      .about .section-equip h3 {
-         font-family: Montserrat;
+        font-family: "Montserrat", sans-serif;
+
          font-size: 36px;
          margin: 80px 10% 40px 5%;
      }
@@ -8852,14 +8969,16 @@
      }
      .about-banner h1 {
          text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.3);
-         font-family: Eb Garamond;
+        font-family: "EB Garamond", serif;
+
          font-size: 48px;
          margin: 15% 2% 3% 15%;
      }
      .about-banner p,
      .header-banner p {
          color: #fff;
-         font-family: Montserrat;
+        font-family: "Montserrat", sans-serif;
+
          font-style: normal;
          font-weight: 400;
          margin-right: 10%;
@@ -8879,7 +8998,8 @@
      .section-prices h1,
      .section-quote h3 {
          font-size: 32px;
-         font-family: Eb Garamond;
+        font-family: "EB Garamond", serif;
+
      }
      .contact .section-contact button,
      .contact-banner h4,
@@ -8896,17 +9016,14 @@
          width: 85px;
      }
      .section-services .service-box {
-         height: fit-content;
          width: 100%;
-         margin-left: 4%;
+         height:500px;
      }
      .section-services .service-box:hover {
          border-radius: 20px;
          background: #193155;
          width: 100%;
          padding: 10%;
-         height: fit-content;
-         margin-top: 56px;
      }
      .section-services .service-box .enter-box {
          width: 65px;
@@ -8917,7 +9034,6 @@
      .header-banner .btn {
          text-decoration: none;
          border-radius: 8px;
-         background: #193155;
          padding: 10px 16px;
          margin-left: 15%;
          border: none;
@@ -8925,7 +9041,8 @@
      .section-prices h1 span {
          color: #2c96e2;
          text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.3);
-         font-family: Eb Garamond;
+        font-family: "EB Garamond", serif;
+
          font-size: 48px;
          font-style: normal;
          font-weight: 800;
@@ -9023,7 +9140,8 @@
          margin-right: 10px;
      }
      .contact-banner h4 {
-         font-family: Montserrat;
+        font-family: "Montserrat", sans-serif;
+
          font-size: 24px;
          margin-top: 150px;
          margin-bottom: 100px;
@@ -9034,13 +9152,15 @@
      }
      .service .section-service h5 {
          text-align: center;
-         font-family: Eb Garamond;
+        font-family: "EB Garamond", serif;
+
          font-size: 30px;
      }
      .service .section-service h6 {
          color: #fff;
          text-align: center;
-         font-family: Montserrat;
+        font-family: "Montserrat", sans-serif;
+
          font-size: 15px;
          font-style: normal;
          font-weight: 400;
@@ -9075,7 +9195,8 @@
      .service .section-service .body {
          display: flex;
          flex-direction: column;
-         font-family: Montserrat;
+        font-family: "Montserrat", sans-serif;
+
          font-size: 20px;
          font-weight: 400;
          margin-top: 100px;
@@ -9093,12 +9214,14 @@
          padding: 30px 20px;
      }
      .section-newsletter form h3 {
-         font-family: Eb Garamond;
+        font-family: "EB Garamond", serif;
+
          font-size: 30px;
          font-weight: 700;
      }
      .service-banner h4 {
-         font-family: Montserrat;
+        font-family: "Montserrat", sans-serif;
+
          font-size: 24px;
          font-weight: 700;
          margin-top: 120px;
@@ -9107,7 +9230,8 @@
          color: #fff;
          text-align: center;
          text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.3);
-         font-family: Eb Garamond;
+        font-family: "EB Garamond", serif;
+
          font-size: 36px;
          font-style: normal;
          font-weight: 600;
@@ -9124,7 +9248,8 @@
          font-style: normal;
      }
      .contact-banner h4 {
-         font-family: Montserrat;
+        font-family: "Montserrat", sans-serif;
+
          font-size: 24px;
          margin-top: 10px;
      }
@@ -9172,7 +9297,8 @@
          border-right: none;
      }
      .contact .section-contact button {
-         font-family: Eb Garamond;
+        font-family: "EB Garamond", serif;
+
          text-align: center;
          font-size: 32px;
          width: 100%;
@@ -9186,7 +9312,8 @@
      }
      .about .section-equip h2,
      .about .section-stats h2 {
-         font-family: Eb Garamond;
+        font-family: "EB Garamond", serif;
+
          font-size: 48px;
      }
      .about .section-stats .stat-wrap {
@@ -9200,14 +9327,16 @@
          border-radius: 8px;
          background: #2c96e2;
          padding: 10px 16px;
-         font-family: Eb Garamond;
+        font-family: "EB Garamond", serif;
+
          font-size: 32px;
          border: none;
          margin-left: 10%;
      }
      .about .section-info p {
          color: #fff;
-         font-family: Montserrat;
+        font-family: "Montserrat", sans-serif;
+
          font-size: 20px;
          font-style: normal;
          font-weight: 400;
@@ -9218,7 +9347,8 @@
      .about .section-info h2,
      .section-quote h3,
      .service .section-service h5 {
-         font-family: Eb Garamond;
+        font-family: "EB Garamond", serif;
+
          font-weight: 700;
          color: #fff;
          font-style: normal;
@@ -9264,7 +9394,8 @@
      .service .section-service h6 {
          color: #fff;
          text-align: center;
-         font-family: Montserrat;
+        font-family: "Montserrat", sans-serif;
+
          font-size: 15px;
          font-style: normal;
          font-weight: 400;
@@ -9274,7 +9405,8 @@
  @media (min-width: 575px) and (max-width: 768px) {
      .about .section-info p {
          color: #fff;
-         font-family: Montserrat;
+        font-family: "Montserrat", sans-serif;
+
          font-size: 20px;
          font-style: normal;
          font-weight: 400;
@@ -9291,7 +9423,8 @@
      }
      .section-newsletter form h3 {
          color: #fff;
-         font-family: Eb Garamond;
+        font-family: "EB Garamond", serif;
+
          font-size: 30px;
          font-style: normal;
          font-weight: 600;
@@ -9321,7 +9454,8 @@
      }
      .service-banner h4 {
          color: #fff;
-         font-family: Montserrat;
+        font-family: "Montserrat", sans-serif;
+
          font-size: 24px;
          font-style: normal;
          font-weight: 700;
@@ -9331,7 +9465,8 @@
      .about .section-equip h2,
      .contact .section-contact h3,
      .service-banner h1 {
-         font-family: Eb Garamond;
+        font-family: "EB Garamond", serif;
+
          font-style: normal;
          line-height: normal;
      }
@@ -9405,7 +9540,8 @@
      }
      .about .section-equip p {
          color: #fff;
-         font-family: Montserrat;
+        font-family: "Montserrat", sans-serif;
+
          font-size: 20px;
          font-style: normal;
          font-weight: 400;
@@ -9415,7 +9551,8 @@
      }
      .about .section-equip h3 {
          color: #fff;
-         font-family: Montserrat;
+        font-family: "Montserrat", sans-serif;
+
          font-size: 36px;
          font-style: normal;
          font-weight: 700;
@@ -9425,7 +9562,8 @@
      .about .section-info button,
      .section-prices h1,
      .section-prices h1 span {
-         font-family: Eb Garamond;
+        font-family: "EB Garamond", serif;
+
          font-style: normal;
          line-height: normal;
      }
@@ -9475,7 +9613,6 @@
          width: 35%;
          height: 65px;
          flex-shrink: 0;
-         margin-bottom: 50px;
      }
      .section-prices h1 {
          font-weight: 700;
@@ -9501,8 +9638,9 @@
          background: #193155;
          width: 100%;
          padding: 25px;
-         height: fit-content;
          margin-top: 100px;
+         height:520px;
+
      }
  }
  @media (min-width: 769px) and (max-width: 991px) {
@@ -9511,7 +9649,8 @@
      }
      .about .section-info p {
          color: #fff;
-         font-family: Montserrat;
+        font-family: "Montserrat", sans-serif;
+
          font-size: 20px;
          font-style: normal;
          font-weight: 400;
@@ -9530,7 +9669,8 @@
      }
      .service-banner h4 {
          color: #fff;
-         font-family: Montserrat;
+        font-family: "Montserrat", sans-serif;
+
          font-size: 24px;
          font-style: normal;
          font-weight: 700;
@@ -9540,7 +9680,8 @@
      .about .section-equip h2,
      .service-banner h1 {
          text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.3);
-         font-family: Eb Garamond;
+        font-family: "EB Garamond", serif;
+
          font-size: 48px;
          line-height: normal;
          color: #fff;
@@ -9614,7 +9755,8 @@
      }
      .about .section-equip p {
          color: #fff;
-         font-family: Montserrat;
+        font-family: "Montserrat", sans-serif;
+
          font-size: 20px;
          font-style: normal;
          font-weight: 400;
@@ -9630,7 +9772,8 @@
          line-height: normal;
      }
      .about .section-equip h3 {
-         font-family: Montserrat;
+        font-family: "Montserrat", sans-serif;
+
          font-size: 36px;
          margin: 80px 10% 40px 5%;
      }
@@ -9646,7 +9789,8 @@
          border-radius: 8px;
          background: #2c96e2;
          padding: 10px 16px;
-         font-family: Eb Garamond;
+        font-family: "EB Garamond", serif;
+
          font-size: 32px;
          border: none;
          margin-left: 20%;
@@ -9687,14 +9831,12 @@
          border-radius: 20px;
          background: #193155;
          padding: 10%;
-         height: fit-content;
          width: 100%;
      }
      .section-services .service-box {
          margin-top: 100px;
-     }
-     .section-services .service-box:hover {
-         margin-top: 56px;
+         height:520px;
+
      }
      .section-info .custom-card1 {
          margin-top: 50px;
@@ -9733,7 +9875,8 @@
      }
      .service-banner h4 {
          color: #fff;
-         font-family: Montserrat;
+        font-family: "Montserrat", sans-serif;
+
          font-size: 24px;
          font-style: normal;
          font-weight: 700;
@@ -9743,7 +9886,8 @@
      .service .section-service h5,
      .service-banner h1 {
          text-align: center;
-         font-family: Eb Garamond;
+        font-family: "EB Garamond", serif;
+
          line-height: normal;
          color: #fff;
          font-style: normal;
@@ -9809,7 +9953,8 @@
      }
      .about .section-info p {
          color: #fff;
-         font-family: Montserrat;
+        font-family: "Montserrat", sans-serif;
+
          font-size: 20px;
          font-style: normal;
          font-weight: 400;
@@ -9822,7 +9967,8 @@
      .section-prices h1 {
          color: #fff;
          font-weight: 700;
-         font-family: Eb Garamond;
+        font-family: "EB Garamond", serif;
+
          font-style: normal;
          line-height: normal;
      }
@@ -9845,7 +9991,6 @@
          background: #193155;
          width: 100%;
          padding: 10%;
-         height: fit-content;
      }
      .about .section-equip img {
          width: 100%;
@@ -9861,9 +10006,8 @@
      }
      .section-services .service-box {
          margin-top: 100px;
-     }
-     .section-services .service-box:hover {
-         margin-top: 56px;
+         height:520px;
+
      }
      .section-prices h1 {
          font-size: 52px;
@@ -9871,7 +10015,8 @@
      }
      .section-prices h1 span {
          color: #2c96e2;
-         font-family: Eb Garamond;
+        font-family: "EB Garamond", serif;
+
          font-size: 80px;
          font-style: normal;
          font-weight: 800;
@@ -9899,11 +10044,13 @@
      .service-banner h1 {
          text-align: center;
          text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.3);
-         font-family: Eb Garamond;
+        font-family: "EB Garamond", serif;
+
          font-size: 52px !important;
      }
      .service-banner h4 {
-         font-family: Montserrat;
+        font-family: "Montserrat", sans-serif;
+
          font-size: 20px;
          margin-top: 120px;
      }
@@ -9913,7 +10060,8 @@
      }
      .service .section-service h5 {
          text-align: center;
-         font-family: Eb Garamond;
+        font-family: "EB Garamond", serif;
+
          font-size: 36px;
      }
      .section-services .service-box .enter-box {
@@ -9925,7 +10073,6 @@
          display: flex;
          align-items: center;
          justify-content: center;
-         margin-bottom: 20px;
      }
  }
  @media (max-width: 767px) {
