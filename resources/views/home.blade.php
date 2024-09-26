@@ -87,7 +87,7 @@
             <div class="row">
                 <div class="col-md-6 col-sm-12">
                     <h1>Sansa Digital</h1>
-                    <p>As a leading creative and digital marketing agency, our aim is to help brands tell their stories</p>
+                    <p>As a leading tech and creative agency, our aim is to help brands bring their ideas to life</p>
                     <a href="#section-info" ><button style="border:none;" class="btn">Learn More</button></a>
                 </div>
             </div>
@@ -346,67 +346,67 @@
                         <div class="row align-items-center justify-content-center">
                             <div class="swiper-container swiper1">
                                 <div class="swiper-wrapper">
-                                    <div class="swiper-slide" style="width:100%">
+                                    <div class="swiper-slide">
                                         <img src="/storage/gov-logo.webp" alt="logo" width="100px">
 
                                     </div>
-                                    <div class="swiper-slide" style="width:100%">
+                                    <div class="swiper-slide">
                                         <img src="/storage/dcoce.png" alt="logo" width="100px">
 
                                     </div>
-                                    <div class="swiper-slide" style="width:100%">
+                                    <div class="swiper-slide">
                                         <img src="/storage/cpa_logo.webp" alt="logo" width="100px">
 
                                     </div>
-                                    <div class="swiper-slide" style="width:100%">
+                                    <div class="swiper-slide">
                                         <img src="/storage/landscape.svg" width="100px">
 
                                     </div>
-                                    <div class="swiper-slide" style="width:100%">
+                                    <div class="swiper-slide">
                                         <img src="/storage/kimuzi-logo.webp" alt="logo" width="100px">
 
                                     </div>
-                                    <div class="swiper-slide" style="width:100%">
+                                    <div class="swiper-slide">
                                         <img src="/storage/ictalogo.webp" alt="logo" width="100px">
 
                                     </div>
-                                    <div class="swiper-slide" style="width:100%">
+                                    <div class="swiper-slide">
                                         <img src="/storage/pink-final.webp" alt="logo" width="100px">
 
                                     </div>
-                                    <div class="swiper-slide" style="width:100%">
+                                    <div class="swiper-slide">
                                         <img src="/storage/renters.webp" alt="logo" width="100px">
 
                                     </div>
-                                    <div class="swiper-slide" style="width:100%">
+                                    <div class="swiper-slide">
                                         <img src="/storage/kfc.webp" alt="logo" width="100px">
 
                                     </div>
-                                    <div class="swiper-slide" style="width:100%">
+                                    <div class="swiper-slide">
                                         <img src="/storage/stima.webp" alt="logo" width="100px">
 
                                     </div>
-                                    <div class="swiper-slide" style="width:100%">
+                                    <div class="swiper-slide">
                                         <img src="/storage/logo.webp" alt="logo" width="100px">
 
                                     </div>
-                                    <div class="swiper-slide" style="width:100%">
+                                    <div class="swiper-slide">
                                         <img src="/storage/callapr.png" alt="logo" width="100px">
 
                                     </div>
-                                    <div class="swiper-slide" style="width:100%">
+                                    <div class="swiper-slide">
                                         <img src="/storage/tvet.png" alt="logo" width="100px">
 
                                     </div>
-                                    <div class="swiper-slide" style="width:100%">
+                                    <div class="swiper-slide">
                                         <img src="/storage/africads.png" alt="logo" width="100px">
 
                                     </div>
-                                    <div class="swiper-slide" style="width:100%">
+                                    <div class="swiper-slide">
                                         <img src="/storage/bell-consultants.png" alt="logo" width="100px">
 
                                     </div>
-                                    <div class="swiper-slide" style="width:100%">
+                                    <div class="swiper-slide">
                                         <img src="/storage/allure.png" alt="logo" width="100px">
 
                                     </div>
@@ -805,30 +805,30 @@
     },
 
     autoplay: {
-        delay: 6000,
-        disableOnInteraction: true,
+        delay: 600,
+        disableOnInteraction: false,
     },
     slidesPerView: 4,
+    spaceBetween: 40, // Adjust spacing
     breakpoints: {
         575:{
             slidesPerView:1,
-            spaceBetween:20,
+            spaceBetween:10,
         },
         640: {
             slidesPerView: 2,
-            spaceBetween: 50,
+            spaceBetween: 20,
         },
         768: {
             slidesPerView: 3,
-            spaceBetween: 50,
+            spaceBetween: 30,
         },
         992: {
             slidesPerView:4,
-            spaceBetween:50,
+            spaceBetween:40,
         },
     },
     speed: 600,
-    loop:true,
 });
 </script>
 

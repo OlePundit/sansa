@@ -7059,21 +7059,20 @@
  }
  .section-footer form button,
  .section-newsletter form button {
-     background: #2c96e2;
-     padding: 2px 10px;
-     border-radius: 8px;
-     border: none;
+    background: #2c96e2;
+    padding: 2px 10px;
+    border-radius: 8px;
+    border: none;
     font-family: "EB Garamond", serif;
-
-     color: #fff;
-     margin-top: 15px;
-     font-size: 22px;
+    color: #fff;
+    margin-top: 15px;
+    font-size: 22px;
  }
  .section-footer form button:hover,
  .section-newsletter form button:hover {
-     background: #193155;
+     background: #fff;
      text-decoration: none;
-     color: #2c96e2;
+     color: #193155;
     font-family: "EB Garamond", serif;
 
  }
@@ -7148,13 +7147,13 @@
  .section-services .btn:hover {
      text-decoration: none;
      border-radius: 8px;
-     color: #fff;
+     color: #193155;
     font-family: "EB Garamond", serif;
 
      font-style: normal;
      font-weight: 700;
      line-height: normal;
-     background: #193155;
+     background: #fff;
      font-size: 32px;
      padding: 10px 16px;
  }
@@ -7181,7 +7180,7 @@
      margin-bottom: 328px;
      padding: 10px;
      background: #193155;
-     color: #2c96e2;
+     color: #fff;
      font-size: 24px;
  }
  .about-banner .btn:hover {
@@ -7292,6 +7291,14 @@
      padding: 0;
      margin: 36px;
  }
+ .service .section-more .custom-card:hover {
+    width: 344px;
+    height: 520px;
+    flex-shrink: 0;
+    border-radius: 22px;
+    padding: 0;
+    margin: 36px;
+}
  .service .section-more .custom-card .card-body button:hover {
      border-radius: 8px;
      border: none;
@@ -7577,16 +7584,22 @@
      border-radius: 8px;
 
  }
- .section-newsletter form input::placeholder {
-     color: #fff;
- }
- .section-newsletter form h3 {
-     font-size: 44px;
- }
- .section-info .custom-card {
-     width: 100%;
-     margin-top: 106px;
- }
+.section-newsletter form input::placeholder {
+    color: #fff;
+}
+.section-newsletter form h3 {
+    font-size: 44px;
+}
+.section-info .custom-card {
+    width: 100%;
+    margin-top: 106px;
+}
+.section-info .custom-card:hover {
+    transform: translateY(-15px)!important;
+}
+.section-info .custom-card1:hover {
+    transform: translateY(-15px)!important;
+}
  .section-info .custom-card .card-body,
  .section-info .custom-card1 .card-body {
      width: 100%;
@@ -7908,7 +7921,7 @@
  }
  .pie,
  .section-quote h3 {
-     font-size: 48px;
+     font-size: 45px;
      color: #fff;
  }
  .section-testimonials .info {
@@ -8281,6 +8294,9 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+.section-packages .package-items .package-wrap:hover{
+    transform:translateY(-15px)!important;
 }
 .section-packages .package-items .package-wrap a{
     text-decoration: none;
