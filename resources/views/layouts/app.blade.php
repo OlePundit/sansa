@@ -49,15 +49,13 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-@vite([
-  'resources/sass/app.scss',
-  'resources/js/app.js',
-  'resources/css/app.css',
-  'resources/css/animate.css',
-  'resources/js/wow.js',
-  'resources/css/font-awesome.min.css'
-])
-
+    <link rel="stylesheet" href="{{ asset('build/assets/app-62ea8698.css') }}">
+    <link rel="stylesheet" href="{{ asset('build/assets/app-2d4c25b0.css') }}">
+    <link rel="stylesheet" href="{{ asset('build/assets/app-184a4e11.css') }}">
+  
+  
+      <link rel="stylesheet" href="{{ asset('build/assets/animate-64af4c2d.css') }}">
+    <link rel="stylesheet" href="{{ asset('build/assets/font-awesome.min-b83accb8.css') }}">
 </head>
 <body>
 
