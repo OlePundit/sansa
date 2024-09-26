@@ -520,76 +520,72 @@
                             <h3 class="text-center">Testimonials</h3>
 
                         </div>
-                        <div class="row">
-                            <div class="wrap">           
-                                <div class="testimonial-container" style="">
-                                    <div class="testimonial-wrap animate__animated animate__bounceInLeft animate__duration-2s" style="">
-                                        <div class="box">
-                                            <img src="/storage/author.webp" alt="client" class="rounded-circle text" alt="author">
-                                            <div class="info">
-                                                <h4 class="text-center pb-3">Peter Okata</h4>
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="41" height="37" viewBox="0 0 41 37" fill="none">
-                                                    <rect width="18" height="18" transform="matrix(-1 0 0 1 41 0)" fill="#2C96E2"/>
-                                                    <rect width="18" height="18" transform="matrix(-1 0 0 1 18 0)" fill="#2C96E2"/>
-                                                    <path d="M25.5435 14.8533C25.5435 14.8533 25.5248 20.4916 26.8069 23.7641C28.0811 27.0164 29.1931 28.9041 31.8904 31.1234C34.3999 33.1883 39.4528 34.5962 39.4528 34.5962" stroke="#2C96E2" stroke-width="5"/>
-                                                    <path d="M2.5435 14.8533C2.5435 14.8533 2.5248 20.4916 3.80692 23.7641C5.0811 27.0164 6.1931 28.9041 8.89036 31.1234C11.3999 33.1883 16.4528 34.5962 16.4528 34.5962" stroke="#2C96E2" stroke-width="5"/>
-                                                </svg>
-                                                <p class="text-center">I cannot recommend Sansa Digital enough! Their team has been instrumental in managing my website and social media.</p>
-                                            </div>
-                                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-lg-4 col-md-6 col-sm-6 testimonial-wrap animate__animated animate__bounceInLeft animate__duration-2s" style="">
+                                <div class="box">
+                                    <img src="/storage/author.webp" alt="client" class="rounded-circle text" alt="author">
+                                    <div class="info">
+                                        <h4 class="text-center pb-3">Peter Okata</h4>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="41" height="37" viewBox="0 0 41 37" fill="none">
+                                            <rect width="18" height="18" transform="matrix(-1 0 0 1 41 0)" fill="#2C96E2"/>
+                                            <rect width="18" height="18" transform="matrix(-1 0 0 1 18 0)" fill="#2C96E2"/>
+                                            <path d="M25.5435 14.8533C25.5435 14.8533 25.5248 20.4916 26.8069 23.7641C28.0811 27.0164 29.1931 28.9041 31.8904 31.1234C34.3999 33.1883 39.4528 34.5962 39.4528 34.5962" stroke="#2C96E2" stroke-width="5"/>
+                                            <path d="M2.5435 14.8533C2.5435 14.8533 2.5248 20.4916 3.80692 23.7641C5.0811 27.0164 6.1931 28.9041 8.89036 31.1234C11.3999 33.1883 16.4528 34.5962 16.4528 34.5962" stroke="#2C96E2" stroke-width="5"/>
+                                        </svg>
+                                        <p class="text-center">I cannot recommend Sansa Digital enough! Their team has been instrumental in managing my website and social media.</p>
                                     </div>
-                                    <div class="testimonial-wrap1 animate__animated animate__bounceInDown animate__duration-2s" style="margin-top:84px;">
-                                        <div class="box">
-                                            <img
-                                            sizes="(max-width: 1400px) 100vw, 1400px"
-                                            srcset="
-                                            /storage/author1_k7rrnh_c_scale,w_200.webp 200w,
-                                            /storage/author1_k7rrnh_c_scale,w_534.webp 534w,
-                                            /storage/author1_k7rrnh_c_scale,w_760.webp 760w,
-                                            /storage/author1_k7rrnh_c_scale,w_1001.webp 1001w,
-                                            /storage/author1_k7rrnh_c_scale,w_1070.webp 1070w,
-                                            /storage/author1_k7rrnh_c_scale,w_1162.webp 1162w,
-                                            /storage/author1_k7rrnh_c_scale,w_1309.webp 1309w,
-                                            /storage/author1_k7rrnh_c_scale,w_1395.webp 1395w,
-                                            /storage/author1_k7rrnh_c_scale,w_1400.webp 1400w"
-                                            src="/storage/author1_k7rrnh_c_scale,w_1400.webp"
-                                            alt="client" class="rounded-circle text">
-                                            <div class="info">
-                                                <h4 class="text-center pb-3">Augustine Bundi</h4>
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="41" height="37" viewBox="0 0 41 37" fill="none">
-                                                    <rect width="18" height="18" transform="matrix(-1 0 0 1 41 0)" fill="#2C96E2"/>
-                                                    <rect width="18" height="18" transform="matrix(-1 0 0 1 18 0)" fill="#2C96E2"/>
-                                                    <path d="M25.5435 14.8533C25.5435 14.8533 25.5248 20.4916 26.8069 23.7641C28.0811 27.0164 29.1931 28.9041 31.8904 31.1234C34.3999 33.1883 39.4528 34.5962 39.4528 34.5962" stroke="#2C96E2" stroke-width="5"/>
-                                                    <path d="M2.5435 14.8533C2.5435 14.8533 2.5248 20.4916 3.80692 23.7641C5.0811 27.0164 6.1931 28.9041 8.89036 31.1234C11.3999 33.1883 16.4528 34.5962 16.4528 34.5962" stroke="#2C96E2" stroke-width="5"/>
-                                                </svg>
-                                                <p class="text-center">What they were able to accomplish, four other previous developers had failed</p>
-                                            </div>
-                                        </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6 testimonial-wrap1 animate__animated animate__bounceInDown animate__duration-2s" style="margin-top:84px;">
+                                <div class="box">
+                                    <img
+                                    sizes="(max-width: 1400px) 100vw, 1400px"
+                                    srcset="
+                                    /storage/author1_k7rrnh_c_scale,w_200.webp 200w,
+                                    /storage/author1_k7rrnh_c_scale,w_534.webp 534w,
+                                    /storage/author1_k7rrnh_c_scale,w_760.webp 760w,
+                                    /storage/author1_k7rrnh_c_scale,w_1001.webp 1001w,
+                                    /storage/author1_k7rrnh_c_scale,w_1070.webp 1070w,
+                                    /storage/author1_k7rrnh_c_scale,w_1162.webp 1162w,
+                                    /storage/author1_k7rrnh_c_scale,w_1309.webp 1309w,
+                                    /storage/author1_k7rrnh_c_scale,w_1395.webp 1395w,
+                                    /storage/author1_k7rrnh_c_scale,w_1400.webp 1400w"
+                                    src="/storage/author1_k7rrnh_c_scale,w_1400.webp"
+                                    alt="client" class="rounded-circle text">
+                                    <div class="info">
+                                        <h4 class="text-center pb-3">Augustine Bundi</h4>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="41" height="37" viewBox="0 0 41 37" fill="none">
+                                            <rect width="18" height="18" transform="matrix(-1 0 0 1 41 0)" fill="#2C96E2"/>
+                                            <rect width="18" height="18" transform="matrix(-1 0 0 1 18 0)" fill="#2C96E2"/>
+                                            <path d="M25.5435 14.8533C25.5435 14.8533 25.5248 20.4916 26.8069 23.7641C28.0811 27.0164 29.1931 28.9041 31.8904 31.1234C34.3999 33.1883 39.4528 34.5962 39.4528 34.5962" stroke="#2C96E2" stroke-width="5"/>
+                                            <path d="M2.5435 14.8533C2.5435 14.8533 2.5248 20.4916 3.80692 23.7641C5.0811 27.0164 6.1931 28.9041 8.89036 31.1234C11.3999 33.1883 16.4528 34.5962 16.4528 34.5962" stroke="#2C96E2" stroke-width="5"/>
+                                        </svg>
+                                        <p class="text-center">What they were able to accomplish, four other previous developers had failed</p>
                                     </div>
-                                    <div class="testimonial-wrap2 animate__animated animate__bounceInRight animate__duration-2s" style="">
-                                        <div class="box">
-                                            <img
-                                            sizes="(max-width: 1400px) 100vw, 1400px"
-                                            srcset="
-                                            /storage/author2_ytxtus_c_scale,w_200.webp 200w,
-                                            /storage/author2_ytxtus_c_scale,w_684.webp 684w,
-                                            /storage/author2_ytxtus_c_scale,w_1000.webp 1000w,
-                                            /storage/author2_ytxtus_c_scale,w_1250.webp 1250w,
-                                            /storage/author2_ytxtus_c_scale,w_1392.webp 1392w,
-                                            /storage/author2_ytxtus_c_scale,w_1400.webp 1400w"
-                                            src="/storage/author2_ytxtus_c_scale,w_1400.webp"
-                                            class="rounded-circle text" alt="client">
-                                            <div class="info">
-                                                <h4 class="text-center pb-3">Emmanuel Msagha</h4>
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="41" height="37" viewBox="0 0 41 37" fill="none">
-                                                    <rect width="18" height="18" transform="matrix(-1 0 0 1 41 0)" fill="#2C96E2"/>
-                                                    <rect width="18" height="18" transform="matrix(-1 0 0 1 18 0)" fill="#2C96E2"/>
-                                                    <path d="M25.5435 14.8533C25.5435 14.8533 25.5248 20.4916 26.8069 23.7641C28.0811 27.0164 29.1931 28.9041 31.8904 31.1234C34.3999 33.1883 39.4528 34.5962 39.4528 34.5962" stroke="#2C96E2" stroke-width="5"/>
-                                                    <path d="M2.5435 14.8533C2.5435 14.8533 2.5248 20.4916 3.80692 23.7641C5.0811 27.0164 6.1931 28.9041 8.89036 31.1234C11.3999 33.1883 16.4528 34.5962 16.4528 34.5962" stroke="#2C96E2" stroke-width="5"/>
-                                                </svg>
-                                                <p class="text-center">Working with Sansa Digital was the best decision I could ever make in my journey as an entrepreneur</p>
-                                            </div>
-                                        </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6 testimonial-wrap2 animate__animated animate__bounceInRight animate__duration-2s" style="">
+                                <div class="box">
+                                    <img
+                                    sizes="(max-width: 1400px) 100vw, 1400px"
+                                    srcset="
+                                    /storage/author2_ytxtus_c_scale,w_200.webp 200w,
+                                    /storage/author2_ytxtus_c_scale,w_684.webp 684w,
+                                    /storage/author2_ytxtus_c_scale,w_1000.webp 1000w,
+                                    /storage/author2_ytxtus_c_scale,w_1250.webp 1250w,
+                                    /storage/author2_ytxtus_c_scale,w_1392.webp 1392w,
+                                    /storage/author2_ytxtus_c_scale,w_1400.webp 1400w"
+                                    src="/storage/author2_ytxtus_c_scale,w_1400.webp"
+                                    class="rounded-circle text" alt="client">
+                                    <div class="info">
+                                        <h4 class="text-center pb-3">Emmanuel Msagha</h4>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="41" height="37" viewBox="0 0 41 37" fill="none">
+                                            <rect width="18" height="18" transform="matrix(-1 0 0 1 41 0)" fill="#2C96E2"/>
+                                            <rect width="18" height="18" transform="matrix(-1 0 0 1 18 0)" fill="#2C96E2"/>
+                                            <path d="M25.5435 14.8533C25.5435 14.8533 25.5248 20.4916 26.8069 23.7641C28.0811 27.0164 29.1931 28.9041 31.8904 31.1234C34.3999 33.1883 39.4528 34.5962 39.4528 34.5962" stroke="#2C96E2" stroke-width="5"/>
+                                            <path d="M2.5435 14.8533C2.5435 14.8533 2.5248 20.4916 3.80692 23.7641C5.0811 27.0164 6.1931 28.9041 8.89036 31.1234C11.3999 33.1883 16.4528 34.5962 16.4528 34.5962" stroke="#2C96E2" stroke-width="5"/>
+                                        </svg>
+                                        <p class="text-center">Working with Sansa Digital was the best decision I could ever make in my journey as an entrepreneur</p>
                                     </div>
                                 </div>
                             </div>
