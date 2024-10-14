@@ -4,7 +4,7 @@
 <div id="app">
     <div style="background: radial-gradient(104.85% 104.85% at 50% 0%, rgba(23, 23, 23, 0.00) 61%, #171717 90.5%), url('{{url("/storage/header.png")}}') center center / cover no-repeat;height:100vh;" >
         <div class="self-banner fadeInDown" style="background: #2c96e2;">
-            <div class="d-flex align-items-center justify-content-center fadeInRight" style="padding:15px 0;">
+            <div class="self-banner-wrap align-items-center justify-content-center fadeInRight" style="padding:15px 0;">
                 <h3 class="text-white">Check Out Our New Self-serve Platform</h3>
                 <a href="https://self.sansadigital.com">
                     <img src="/storage/logo-B_0u2T60.png" alt="Sansa Digital 2.0" width="250">
@@ -38,9 +38,6 @@
                         <a class="dropdown-item text-white" href="/services/{{$service->slug}}">{{$service->title}}</a>
                         @endforeach
                     </div>                           
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="/#section-projects">Projects</a>
                 </li>
                 <li class="dropdown nav-item">
                     <a class= "dropdown-toggle nav-link text-white" href="#" style="text-decoration:none;" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

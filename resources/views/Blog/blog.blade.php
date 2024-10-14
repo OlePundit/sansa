@@ -82,9 +82,7 @@
                         @endforeach
                     </div>                           
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="/#section-projects">Projects</a>
-                </li>
+
                 <li class="dropdown nav-item">
                     <a class= "dropdown-toggle nav-link text-white" href="#" style="text-decoration:none;" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Solutions

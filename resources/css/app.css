@@ -6881,6 +6881,9 @@
     animation: fadeInRight 1s ease forwards;
     animation-delay: 1.5s; /* Add a delay of 0.5 seconds */
 }
+.self-banner .self-banner-wrap{
+    display: flex;
+}
  .shrink-item {
      transition: transform 0.3s ease-in-out;
  }
@@ -10208,5 +10211,12 @@
  @media (max-width: 767px) {
     .text-2 {
         display: none;
+    }
+    .self-banner h3{
+        width:100%!important;
+    }
+    .self-banner .self-banner-wrap{
+        display: flex;
+        flex-direction: column;
     }
 }
