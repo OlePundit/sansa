@@ -6876,6 +6876,11 @@
  .navbar .dropdown .dropdown-menu .dropdown-item:hover {
      color: #000 !important;
  }
+ .self-banner .fadeInRight {
+    opacity: 0; /* Ensure it starts invisible */
+    animation: fadeInRight 1s ease forwards;
+    animation-delay: 1.5s; /* Add a delay of 0.5 seconds */
+}
  .shrink-item {
      transition: transform 0.3s ease-in-out;
  }
@@ -8364,6 +8369,9 @@
         margin-right: 10px;
         margin-left: 10px;
     }
+    .section-testimonials .testimonial-wrap2 {
+        margin-top: 81px;
+    }
     .section-packages h3 {
         font-size: 45px;
     }
@@ -8630,10 +8638,7 @@
          height: 281px;
          flex-shrink: 0;
      }
-     .section-testimonials .testimonial-wrap .info{
-         margin-top: 51px;
-         
-     }
+
      .box .text {
          position: absolute;
          z-index: 999;
@@ -9165,7 +9170,7 @@
          margin: 0;
          left: 40%;
          right: 0;
-         top: -10%;
+         top: -15%;
          text-align: start;
          width: 20%;
      }

@@ -85,6 +85,14 @@
                 <li class="nav-item">
                     <a class="nav-link text-white" href="/#section-projects">Projects</a>
                 </li>
+                <li class="dropdown nav-item">
+                    <a class= "dropdown-toggle nav-link text-white" href="#" style="text-decoration:none;" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Solutions
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item text-white" href="https://self.sansadigital.com"> Sansa Digital 2.0</a>
+                    </div>                           
+                </li>
                 <li class="nav-item">
                     <a class="nav-link text-white" href="/contact">Contact</a>
                 </li>
