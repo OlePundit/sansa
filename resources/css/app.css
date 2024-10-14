@@ -10214,6 +10214,7 @@
     }
     .self-banner h3{
         width:100%!important;
+        text-align: center;
     }
     .self-banner .self-banner-wrap{
         display: flex;
