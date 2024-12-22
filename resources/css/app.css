@@ -8564,11 +8564,11 @@
          color: #fff;
         font-family: "Montserrat", sans-serif;
 
-         font-size: 20px;
+         font-size: 18px;
          font-style: normal;
          font-weight: 400;
          line-height: normal;
-         margin-left: 15%;
+         margin-left: 0;
          margin-bottom: 40px;
      }
      .section-prices h1,
@@ -9080,11 +9080,11 @@
          font-style: normal;
          font-weight: 400;
          margin-right: 10%;
-         margin-left: 15%;
+         margin-left: 0%;
          margin-bottom: 40px;
      }
      .header-banner p {
-         font-size: 24px;
+         font-size: 20px;
          line-height: normal;
      }
      .about-banner p {
@@ -9129,13 +9129,7 @@
      .section-prices h1 {
          text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.3);
      }
-     .header-banner .btn {
-         text-decoration: none;
-         border-radius: 8px;
-         padding: 10px 16px;
-         margin-left: 15%;
-         border: none;
-     }
+
      .section-prices h1 span {
          color: #2c96e2;
          text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.3);
@@ -9340,6 +9334,20 @@
          font-weight: 600;
          line-height: normal;
      }
+     .header-banner p {
+        color: #fff;
+       font-family: "Montserrat", sans-serif;
+
+        font-style: normal;
+        font-weight: 400;
+        margin-right: 10%;
+        margin-left: 0%;
+        margin-bottom: 40px;
+    }
+    .header-banner p {
+        font-size: 20px;
+        line-height: normal;
+    }
      .about .section-equip h2,
      .about .section-info button,
      .about .section-stats h2,
@@ -9553,6 +9561,20 @@
          font-weight: 600;
          line-height: normal;
      }
+     .header-banner p {
+        color: #fff;
+       font-family: "Montserrat", sans-serif;
+
+        font-style: normal;
+        font-weight: 400;
+        margin-right: 10%;
+        margin-left: 0%;
+        margin-bottom: 40px;
+    }
+    .header-banner p {
+        font-size: 20px;
+        line-height: normal;
+    }
      .contact .section-contact .form-group,
      .navbar-brand img {
          width: 100%;
@@ -10215,9 +10237,30 @@
     .self-banner h3{
         width:100%!important;
         text-align: center;
+        font-size: 17px;
     }
     .self-banner .self-banner-wrap{
         display: flex;
         flex-direction: column;
+    }
+    .self-banner img{
+        width:150px!important;
+    }
+    .header-banner h1 {
+        font-size: 44px;
+        margin: 0;
+        margin-top: 20px!important;
+    }
+    .header-banner .btn {
+        margin-left: 0;
+        background:#193155!important;
+    }
+    .section-portfolio .portfolio-items{
+        flex-direction: column;
+    }
+    .about-banner .btn,
+    .header-banner .btn:hover {
+        margin-left: 0;
+        border: none;
     }
 }
