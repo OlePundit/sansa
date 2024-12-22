@@ -199,9 +199,13 @@ $(document).ready(function () {
         delay: 600,
         disableOnInteraction: false,
     },
-    slidesPerView: 1,
+    slidesPerView: 4,
     spaceBetween: 40, // Adjust spacing
-    breakpoints: {   
+    breakpoints: {
+        575:{
+            slidesPerView:1,
+            spaceBetween:10,
+        },
         640: {
             slidesPerView: 2,
             spaceBetween: 20,
