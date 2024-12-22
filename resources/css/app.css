@@ -8550,8 +8550,10 @@
      .about-banner h1 {
          text-shadow: rgba(0, 0, 0, 0.3) 5px 5px 4px;
          font-size: 36px;
-         margin: 15% 2% 3% 15%;
-     }
+         margin: 0;
+         margin-top: 20px;
+         margin-bottom: 20px;
+    }
      .section-info .info h2,
      .section-prices h1,
      .section-prices h1 span,
@@ -8602,7 +8604,7 @@
      .section-prices h1 {
          color: #fff;
          font-size: 25px;
-         margin: 40% 2% 3% 15%;
+         margin: 0;
      }
      .section-prices h1 span {
          color: #2c96e2;
@@ -9067,8 +9069,10 @@
          text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.3);
         font-family: "EB Garamond", serif;
 
-         font-size: 48px;
-         margin: 15% 2% 3% 15%;
+        font-size: 44px;
+        margin: 0;
+        margin-top: 20px;
+        margin-bottom: 20px;
      }
      .about-banner p,
      .header-banner p {
@@ -9127,7 +9131,9 @@
      .section-prices h1 {
          text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.3);
      }
-
+     .section-prices h1 {
+        margin: 0;
+    }
      .section-prices h1 span {
          color: #2c96e2;
          text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.3);
@@ -9419,6 +9425,12 @@
          margin-top: 100px;
          margin-right: 0;
      }
+     .about-banner h1 {
+        font-size: 44px;
+        margin: 0;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
      .about .section-equip h2,
      .about .section-stats h2 {
         font-family: "EB Garamond", serif;
@@ -9467,6 +9479,9 @@
          font-size: 48px;
          margin-left: 10%;
      }
+     .section-prices h1 {
+        margin: 0;
+    }
      .section-info .custom-card,
      .section-info .custom-card1 {
          width: 70% !important;
@@ -9568,6 +9583,12 @@
         margin-right: 10%;
         margin-left: 0%;
         margin-bottom: 40px;
+    }
+    .about-banner h1 {
+        font-size: 44px;
+        margin: 0;
+        margin-top: 20px;
+        margin-bottom: 20px;
     }
     .header-banner p {
         font-size: 20px;
@@ -9759,7 +9780,7 @@
      }
      .section-prices h1 {
          font-weight: 700;
-         margin: 40% 15% 3%;
+         margin: 0;
      }
      .section-prices h1 span {
          color: #2c96e2;

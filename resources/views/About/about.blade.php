@@ -143,30 +143,96 @@
                 </div>
                 <div class="section-projects" id="section-projects">
 
-                        <div class="row d-flex justify-content-center align-items-center">
-                            <h3 class="text-center">Our <span>Clients</span></h3>
+                    <div class="row d-flex justify-content-center align-items-center">
+                        <h3 class="text-center">Our <span>Clients</span></h3>
 
-                        </div>
-                        <div class="row align-items-center justify-content-center">
-                            <div class="wrap" style="margin-top:100px;display:flex;flex-direction:column;align-items-center;justify-content-center">           
-                                <div class="row d-flex align-items-center justify-content-center">
-                                    <img src="/storage/gov-logo.png" alt="logo" class="col-lg-2 col-md-3 col-sm-3 col-4" width="100px">
-                                    <img src="/storage/dcoce.png" alt="logo" class="col-lg-2 col-md-3 mt-5 col-sm-3 col-4" width="100px">
-                                    <img src="/storage/cpa_logo.png" alt="logo" class="col-lg-2 col-md-3 mt-5 ccol-sm-3 col-4" width="100px">
-                                    <img src="/storage/landscape.svg" alt="logo" class="col-lg-2 col-md-3 mt-5 col-sm-3 col-4" width="100px">
-                                </div>
-                                <div class="row d-flex align-items-center justify-content-center">
-                                    <img src="/storage/ictalogo.png" alt="logo" class="col-lg-2 col-md-3 mt-5 col-sm-3 col-4" width="100px">
-                                    <img src="/storage/pink-final.png" alt="logo" class="col-lg-2 col-md-3 mt-5 col-sm-3 col-4" width="100px">
-                                    <img src="/storage/renters.png" alt="logo" class="col-lg-2 col-md-3 mt-5 col-sm-3 col-4" width="100px">
-                                    <img src="/storage/kfc.png" alt="logo" class="col-lg-2 col-md-3 mt-5 col-sm-3 col-4" width="100px">
-                                    <img src="/storage/stima.webp" alt="logo" class="col-lg-2 col-md-3 mt-5 col-sm-3 col-4" width="100px">
-                                </div>
-
-                            </div>
-
-                        </div>
                     </div>
+                    <div class="row align-items-center justify-content-center">
+                        <div class="swiper-container swiper1">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="/storage/gov-logo.webp" alt="logo" width="100px">
+
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="/storage/dcoce.png" alt="logo" width="100px">
+
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="/storage/cpa_logo.webp" alt="logo" width="100px">
+
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="/storage/landscape.svg" alt="logo" width="100px">
+
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="/storage/kimuzi-logo.webp" alt="logo" width="100px">
+
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="/storage/ictalogo.webp" alt="logo" width="100px">
+
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="/storage/pink-final.webp" alt="logo" width="100px">
+
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="/storage/renters.webp" alt="logo" width="100px">
+
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="/storage/kfc.webp" alt="logo" width="100px">
+
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="/storage/stima.webp" alt="logo" width="100px">
+
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="/storage/logo.webp" alt="logo" width="100px">
+
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="/storage/callapr.png" alt="logo" width="100px">
+
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="/storage/tvet.png" alt="logo" width="100px">
+
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="/storage/africads.png" alt="logo" width="100px">
+
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="/storage/bell-consultants.png" alt="logo" width="100px">
+
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="/storage/allure.png" alt="logo" width="100px">
+
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="/storage/IPF.png" alt="logo" width="100px">
+
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="/storage/maji.png" alt="logo" width="100px">
+
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="/storage/safari.png" alt="logo" width="100px">
+
+                                </div>
+                            </div>
+                            <div class="swiper-pagination swiper-pagination1"></div>
+        
+                        </div>
+
+                    </div>
+                </div>
                 <div class="section-stats">
                     <h2 class="text-center">Let Our <br> <span>Numbers </span> Do The <span>Talking</span></h2>
                     <div class="stat-wrap mt-5" style="">
