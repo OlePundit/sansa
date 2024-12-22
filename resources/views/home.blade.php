@@ -848,7 +848,6 @@
         delay: 600,
         disableOnInteraction: false,
     },
-    slidesPerView: 4,
     spaceBetween: 40, // Adjust spacing
     breakpoints: {
         575:{
