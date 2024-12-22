@@ -7887,12 +7887,10 @@
      width: 1600px;
  }
  .swiper-slide {
-     width: 250px !important;
      display: flex;
      flex-direction: column;
      align-items: center;
      justify-content: center;
-     margin-right: 0px!important;
  }
  .section-testimonials.info,
  .section-testimonials .testimonial-wrap1 .info,
