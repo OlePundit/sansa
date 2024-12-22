@@ -848,13 +848,9 @@
         delay: 600,
         disableOnInteraction: false,
     },
-    slidesPerView: 4,
+    slidesPerView: 1,
     spaceBetween: 40, // Adjust spacing
     breakpoints: {
-        575:{
-            slidesPerView:1,
-            spaceBetween:10,
-        },
         640: {
             slidesPerView: 2,
             spaceBetween: 20,
@@ -870,5 +866,7 @@
     },
     speed: 600,
 });
+swiper2.initialize();
+
 </script>
 @endsection
