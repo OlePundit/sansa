@@ -494,6 +494,21 @@
                                 </div>
 
                             </div>
+                            <div class="portfolio-item box-2">
+                                <a href="https://ipfglobal.or.ke">
+
+                                    <img src="/storage/ipf-port.png" alt="portfolio-item-1" width="100%">
+                                </a>
+                                <div class="text-2">
+                                    <div>
+                                        <h4>Web Design</h4>
+                                        <h5>Institute of Public Finance</h5>
+                                    </div>
+                                    <i class="fa-solid fa-arrow-right"></i>
+
+                                </div>
+
+                            </div>
                         </div>
 
                     </div>
