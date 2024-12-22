@@ -183,44 +183,47 @@ $(document).ready(function () {
 </script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
+  document.addEventListener('DOMContentLoaded', function () {
     var swiper2 = new Swiper('.swiper1', {
-    loop:true,
-    pagination: {
-        el: '.swiper-pagination1',
-        clickable: true,
-    },
+      loop:true,
+      pagination: {
+          el: '.swiper-pagination1',
+          clickable: true,
+      },
 
-    navigation: {
-        nextEl: '.swiper-button-next1',
-        prevEl: '.swiper-button-prev1',
-    },
+      navigation: {
+          nextEl: '.swiper-button-next1',
+          prevEl: '.swiper-button-prev1',
+      },
 
-    autoplay: {
-        delay: 600,
-        disableOnInteraction: false,
-    },
-    slidesPerView: 4,
-    spaceBetween: 40, // Adjust spacing
-    breakpoints: {
-        575:{
-            slidesPerView:1,
-            spaceBetween:10,
-        },
-        640: {
-            slidesPerView: 2,
-            spaceBetween: 20,
-        },
-        768: {
-            slidesPerView: 3,
-            spaceBetween: 30,
-        },
-        992: {
-            slidesPerView:4,
-            spaceBetween:40,
-        },
-    },
-    speed: 600,
+      autoplay: {
+          delay: 600,
+          disableOnInteraction: false,
+      },
+      slidesPerView: 4,
+      spaceBetween: 40, // Adjust spacing
+      breakpoints: {
+          575:{
+              slidesPerView:1,
+              spaceBetween:10,
+          },
+          640: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+          },
+          768: {
+              slidesPerView: 3,
+              spaceBetween: 30,
+          },
+          992: {
+              slidesPerView:4,
+              spaceBetween:40,
+          },
+      },
+      speed: 600,
+  });
 });
+
 </script>
   <script>
   new WOW().init();

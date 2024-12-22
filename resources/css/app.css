@@ -7891,6 +7891,7 @@
      flex-direction: column;
      align-items: center;
      justify-content: center;
+     flex: 1; /* Allow dynamic sizing of slides */
  }
  .section-testimonials.info,
  .section-testimonials .testimonial-wrap1 .info,
@@ -8533,9 +8534,10 @@
      }
      .about .section-equip img {
          width: 100%;
-         height: 490px;
-         margin-top: 100px;
+         height: 400px;
+         margin-top: 30px;
          margin-right: 0;
+         object-fit: cover;
      }
      .about .section-info p {
          color: #fff;
@@ -9007,11 +9009,12 @@
          font-size: 48px;
      }
      .about .section-equip img {
-         width: 100%;
-         height: 790px;
-         margin-top: 100px;
-         margin-right: 0;
-     }
+        width: 100%;
+        height: 500px;
+        margin-top: 50px;
+        margin-right: 0;
+        object-fit: cover;
+    }
      .about .section-info h2,
      .about .section-stats h2 {
          margin-top: 100px;
@@ -9420,11 +9423,12 @@
          border-radius: 32px;
      }
      .about .section-equip img {
-         width: 100%;
-         height: 790px;
-         margin-top: 100px;
-         margin-right: 0;
-     }
+        width: 100%;
+        height: 500px;
+        margin-top: 50px;
+        margin-right: 0;
+        object-fit: cover;
+    }
      .about-banner h1 {
         font-size: 44px;
         margin: 0;
@@ -9692,12 +9696,12 @@
          text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.3);
      }
      .about .section-equip img {
-         width: 80%;
-         height: 790px;
-         margin-top: 100px;
-         margin-right: 0;
-         margin-left: 10%;
-     }
+        width: 100%;
+        height: 500px;
+        margin-top: 50px;
+        margin-right: 0;
+        object-fit: cover;
+    }
      .about .section-equip h2 {
          font-weight: 700;
          margin: 275px 10% 32px 5%;
