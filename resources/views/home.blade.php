@@ -338,7 +338,7 @@
                     <div class="section-prices" id="section-prices">
 
                         <div class="row" style="width: 100vw; display: flex; align-items: end; margin-top: 200px; position: relative;">
-                            <div class="col-md-12 mid-banner" style="background: url('{{ url("/storage/mid.png") }}') center center / cover no-repeat; position: relative; z-index: 1;">
+                            <div class="col-md-12 mid-banner" style="background: url('{{ url("/storage/mid.webp") }}') center center / cover no-repeat; position: relative; z-index: 1;">
                                 <div class="row">
                                     <div id="section-placeholder-3"></div>
                                     <div class="col-lg-6 col-md-7 col-sm-12 ml-auto">
@@ -363,7 +363,7 @@
 
                                     </div>
                                     <div class="swiper-slide">
-                                        <img src="/storage/dcoce.png" alt="logo" width="100px">
+                                        <img src="/storage/dcoce.webp" alt="logo" width="100px">
 
                                     </div>
                                     <div class="swiper-slide">
@@ -407,7 +407,7 @@
 
                                     </div>
                                     <div class="swiper-slide">
-                                        <img src="/storage/tvet.png" alt="logo" width="100px">
+                                        <img src="/storage/tvet.webp" alt="logo" width="100px">
 
                                     </div>
                                     <div class="swiper-slide">
@@ -415,7 +415,7 @@
 
                                     </div>
                                     <div class="swiper-slide">
-                                        <img src="/storage/bell-consultants.png" alt="logo" width="100px">
+                                        <img src="/storage/bell-consultants.webp" alt="logo" width="100px">
 
                                     </div>
                                     <div class="swiper-slide">
@@ -423,7 +423,7 @@
 
                                     </div>
                                     <div class="swiper-slide">
-                                        <img src="/storage/IPF.png" alt="logo" width="100px">
+                                        <img src="/storage/IPF.webp" alt="logo" width="100px">
 
                                     </div>
                                     <div class="swiper-slide">
@@ -451,7 +451,7 @@
                         <div class="portfolio-items">
                             <div class="portfolio-item box-2">
                                 <a href="https://allureessencespa.com">
-                                    <img src="/storage/beauty.png" alt="portfolio-item-1" width="100%">
+                                    <img src="/storage/beauty.webp" alt="portfolio-item-1" width="100%">
 
                                 </a>  
                                 <div class="text-2">
@@ -467,7 +467,7 @@
                             <div class="portfolio-item box-2">
                                 <a href="https://kimuzi.com">
 
-                                    <img src="/storage/blogk.png" alt="portfolio-item-1" width="100%">
+                                    <img src="/storage/blogk.webp" alt="portfolio-item-1" width="100%">
                                 </a>
                                 <div class="text-2">
                                     <div>
@@ -482,7 +482,7 @@
                             <div class="portfolio-item box-2">
                                 <a href="https://tradecraft.co.ke">
 
-                                    <img src="/storage/tradecraft.png" alt="portfolio-item-1" width="100%">
+                                    <img src="/storage/tradecraft.webp" alt="portfolio-item-1" width="100%">
                                 </a>
                                 <div class="text-2">
                                     <div>
@@ -497,7 +497,7 @@
                             <div class="portfolio-item box-2">
                                 <a href="https://ipfglobal.or.ke">
 
-                                    <img src="/storage/ipf-port.png" alt="portfolio-item-1" width="100%">
+                                    <img src="/storage/ipf-port.webp" alt="portfolio-item-1" width="100%">
                                 </a>
                                 <div class="text-2">
                                     <div>
