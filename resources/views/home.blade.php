@@ -427,7 +427,7 @@
 
                                     </div>
                                     <div class="swiper-slide">
-                                        <img src="/storage/maji.png" alt="logo" width="100px">
+                                        <img src="/storage/maji.webp" alt="logo" width="100px">
 
                                     </div>
                                     <div class="swiper-slide">
