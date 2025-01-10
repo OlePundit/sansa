@@ -99,7 +99,7 @@
             <div class="row">
                 <div class="col-md-6 col-sm-12">
                     <h1>Sansa Digital</h1>
-                    <p>As a leading tech and creative agency, our aim is to help brands bring their ideas to life</p>
+                    <p>As a leading tech and creative agency, our aim is to help brands bring their ideas to life.</p>
                     <a href="#section-info" ><button style="border:none;" class="btn">Learn More</button></a>
                 </div>
             </div>
@@ -203,6 +203,7 @@
                                 </div>
                             </div>
                         </div>
+                        <div id="section-placeholder-1"></div>
 
                         <div class="col-lg-5 col-md-12 col-sm-12 info">
                             <h2>We Provide <span id="typing-container-1"></span> To Your Problems</h2>
