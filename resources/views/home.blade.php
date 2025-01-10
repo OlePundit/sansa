@@ -203,7 +203,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="section-placeholder-1"></div>
 
                         <div class="col-lg-5 col-md-12 col-sm-12 info">
                             <h2>We Provide <span id="typing-container-1"></span> To Your Problems</h2>
