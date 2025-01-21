@@ -2,61 +2,60 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+  <!-- CSRF Token -->
+  <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Sansa Digital</title>
-    <meta name="description" content="We are the #1 web development, web design, graphic design, SEO, content and social media marketing company in Kenya.">
-    <meta name="robots" content="index, follow">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <meta name="twitter:title" content="Sansa Digital">
-    <meta name="twitter:description" content="<p>We are the #1 web development, web design, graphic design, SEO, content and social media marketing company in Kenya.</p>">
-    <meta name="twitter:image" content="https://sansadigital.com/storage/twitter.png">
-    <meta name="twitter:site" content="sansadigital.com">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:creator" content="@salvacar_ke">
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Sansa Digital"/>
-    <meta property="og:description" content="We are the #1 web development, web design, graphic design, SEO, content and social media marketing company in Kenya." />
-    <meta property="og:image" content="https://sansadigital.com/storage/twitter.png" />
-    <meta property="og:url" content="https://sansadigital.com" />
-    <meta property="og:site_name" content="Sansa Digital"/>
+  <title>Sansa Digital</title>
+  <meta name="description" content="We are the #1 web development, web design, graphic design, SEO, content and social media marketing company in Kenya.">
+  <meta name="robots" content="index, follow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <meta name="twitter:title" content="Sansa Digital">
+  <meta name="twitter:description" content="<p>We are the #1 web development, web design, graphic design, SEO, content and social media marketing company in Kenya.</p>">
+  <meta name="twitter:image" content="https://sansadigital.com/storage/twitter.png">
+  <meta name="twitter:site" content="sansadigital.com">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@salvacar_ke">
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Sansa Digital"/>
+  <meta property="og:description" content="We are the #1 web development, web design, graphic design, SEO, content and social media marketing company in Kenya." />
+  <meta property="og:image" content="https://sansadigital.com/storage/twitter.png" />
+  <meta property="og:url" content="https://sansadigital.com" />
+  <meta property="og:site_name" content="Sansa Digital"/>
 
-    <!-- Fonts -->
-    <link href="https://sansadigital.com/storage/icon.png" rel="icon">
+  <!-- Fonts -->
+  <link href="https://sansadigital.com/storage/icon.png" rel="icon">
 
-    <link rel="dns-prefetch" href="//fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="dns-prefetch" href="//fonts.bunny.net">
+  <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-    <link rel="stylesheet" href="resources/owlcarousel/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="resources/owlcarousel/css/owl.theme.default.css">
-
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="resources/owlcarousel/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="resources/owlcarousel/css/owl.theme.default.css">
 
 
-    <!-- Scripts -->
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
-    
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-<!-- Scripts -->
-<link rel="stylesheet" href="{{ asset('build/assets/app-62ea8698.css') }}">
+  <!-- Scripts -->
+
+  
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Scripts -->
+  <link rel="stylesheet" href="{{ asset('build/assets/app-62ea8698.css') }}">
   <link rel="stylesheet" href="{{ asset('build/assets/app-2d4c25b0.css') }}">
   <link rel="stylesheet" href="{{ asset('build/assets/app-184a4e11.css') }}">
-
-
-    <link rel="stylesheet" href="{{ asset('build/assets/animate-64af4c2d.css') }}">
+  <link rel="stylesheet" href="{{ asset('build/assets/animate-64af4c2d.css') }}">
   <link rel="stylesheet" href="{{ asset('build/assets/font-awesome.min-b83accb8.css') }}">
+
 
 </head>
 <body>

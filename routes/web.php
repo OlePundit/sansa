@@ -18,6 +18,7 @@ Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/about', [App\Http\Controllers\HomeController::class, 'about'])->name('about');
+Route::get('/lps/webdesign', [App\Http\Controllers\LPController::class, 'webdesign'])->name('webdesign');
 Route::get('/services/{slug}', [App\Http\Controllers\ServiceController::class, 'service']);
 Route::get('/contact', [App\Http\Controllers\HomeController::class, 'contact']);
 Route::get('/blogs',[App\Http\Controllers\BlogController::class, 'index']);
