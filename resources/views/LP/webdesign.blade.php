@@ -125,7 +125,7 @@
                     <h2>Get Fast and Responsive Web Design in Nairobi</h2>
                     <ul>
                         <li><span>Efficient:</span> We have implemented a robust system that ensures utmost client satisfaction and service delivery</li>
-                        <li><span>Secure:</span> We know the technology space in Kenya is marred by fraud and unscrupulous characters. Which is why we have a policy of 100% refund on the rare occasion that we don't meet the client's needs<li>
+                        <li><span>Secure:</span> We know the technology space in Kenya is marred by fraud and unscrupulous characters. Which is why we have a policy of 100% refund on the rare occasion that we don't meet the client's needs</li>
                         <li><span>Affordable:</span> Our pricing is flexible accomodate clients from all sectors and practices. Most of our clients are SMEs and MSMEs, and our vision is to avail quality ICT services at an affordable price point for all.</li>
                         <li><span>Flexible:</span> We accept 50% deposit at the start of the project. The rest of the payment is usually made once the project is complete</li>
 
