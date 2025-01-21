@@ -141,20 +141,17 @@
             </div>
             <div class="row section-packages justify-content-center">
                 <h4>Web Design Packages</h4>
-                <div class="row package-items">
-                    @foreach($webs as $web)
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 package-wrap">
-                        <h5>{{ $web->tier }} Package</h5>
-                        <ul>
-                            @foreach(json_decode($web->features, true) as $feature)
-                                <li>{{ $feature }}</li>
-                            @endforeach
-                        </ul>
-                        <a href="/order/{{ $web->id }}">Ksh {{ $web->price }}<i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                    @endforeach
+                @foreach($webs as $web)
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 package-wrap">
+                    <h5>{{ $web->tier }} Package</h5>
+                    <ul>
+                        @foreach(json_decode($web->features, true) as $feature)
+                            <li>{{ $feature }}</li>
+                        @endforeach
+                    </ul>
+                    <a href="/order/{{ $web->id }}">Ksh {{ $web->price }}<i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
-
+                @endforeach
             </div>
             <div class="row justify-content-center faq">
                 <h2>FAQs</h2>

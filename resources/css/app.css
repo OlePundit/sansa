@@ -8261,10 +8261,14 @@
     color:#fff;
     margin-bottom: 3%;
  }
- .lp .info,.lp .resp,.lp .faq{
+ .lp .info,.lp .faq{
     display: flex;
     align-items: center;
     margin-bottom: 20%;
+ }
+ .lp .resp{
+    display: flex;
+    align-items: center;
  }
  .lp .info img{
     width:100%;
