@@ -139,7 +139,7 @@
                 </div>
 
             </div>
-            <div class="row justify-content-center">
+            <div class="row section-packages justify-content-center">
                 <h4>Web Design Packages</h4>
                 <div class="row package-items">
                     @foreach($webs as $web)
