@@ -293,22 +293,3 @@ swiper2.initialize();
   <!--End of Tawk.to Script-->
 </body>
 </html>
-
-
-
-
-How to start learning digital marketing?
-
-Is digital marketing a good career?
-
-A digital marketer offers a wide range of services that are supposed to help a business boost its online sales. Such services include; social media marketing, searche engine marketing and content marketing.
-
-
-The seven types of digital marketing include: Search Engine Marketing (SEM), Search Engine Optimization(SEO), Social Media Marketing(SMM), Influencer and affiliate marketing, Content Marketing, Email Marketing and Mobile Marketing, 
-
-
-Before becoming a digital marketer, you first need to evaluate your current skillsets, a, so that you know where to start from. Are you tech savvy? Are you popular on social media? These are just some of the questions that you might ask yourself. Secondly, you need to also assess the tools in your possession. Do you have a laptop or a smart phone? Because these might be important in helping you execute your role as a digital marketer.  After you identify your strenghts and weaknesses, you now need to strengthen your weaknesses, while leveraging on your strengths; look for a good and affordable digital marketing course to help you improve your skills, while concurrentlly you should try to market your already existing skills, like social media marketing.
-
-Some of the common ways to learn digital marketing include: Online courses, certifications, college or university programs, and apprenticeship/
-
-It depends on whether or not you have a passion for digital marketing. If you want a career that gives you the freedom to live anywhere, make your own hours, and be your own boss. Then I would say yes, digital marketing is a good career. But if you are scared of the uncertainty that comes with being your own boss, are unable to work alone, under minimal supervision then I would say no, digital marketing is not a good career
