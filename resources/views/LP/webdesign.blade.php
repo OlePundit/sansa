@@ -109,10 +109,13 @@
                 <div class="col-lg-6 col-md-6 col-sm-12">
                     <h2>Why Choose us as your Web Design and Development Partner?</h2>
                     <ul>
-                        <li><span>Increase traffic to your website:</span> Our digital marketing course is designed to equip online entrepreneurs with essential skills to help you boost traffic to your website.</li>
-                        <li><span>Build a stronger relationship with your audience:</span> Through harenssing the power of social media we are able to help you cultivate longer and lasting relationships with your customers.</li>
-                        <li><span>Generate leads:</span> We will teach you how to generate leads for your business and convert existing leads into sales</li>
-                        <li><span>Boost sales:</span> We will teach you actionable steps on how to convert your increased traffic into sales, thus boosting revenue for your business.</li>
+                        <li><span>Training:</span> We train our customers on how to use different kinds of software including the ones we develop for them, and ones from third parties such as G-suite and Microsoft.</li>
+                        <li><span>Round the clock support:</span> Our IT support technicians are available any time of day or night.</li>
+                        <li><span>IT consultancy:</span> We provide consultation on a wide range of software solutions for clients from different sectors and pracitices</li>
+                        <li><span>Custom IT solutions</span> We provide tailor made soutions to solve bespoke challenges for a wide range of clients.</li>
+                        <li><span>Free Maintenance</span> We provide a free maintenance period for all software installed by us.</li>
+                        <li><span>System installations and configurations</span> We provide on-site support for system installations and configurations.</li>
+
                     </ul>
                     <a href="/contact" class="btn">Learn More</a>
 
@@ -122,10 +125,14 @@
                 <div class="col-lg-6 col-md-6 col-sm-12">
                     <h2>Get Fast and Responsive Web Design in Nairobi</h2>
                     <ul>
-                        <li><span>Fundamentals of digital marketing</span></li>
-                        <li><span>Introduction to Search Engine Optimization</span></li>
-                        <li><span>Introduction to Social Media Marketing</span></li>
-                    <ul>
+                        <li><span>Training:</span> We train our customers on how to use different kinds of software including the ones we develop for them, and ones from third parties such as G-suite and Microsoft.</li>
+                        <li><span>Round the clock support:</span> Our IT support technicians are available any time of day or night.</li>
+                        <li><span>IT consultancy:</span> We provide consultation on a wide range of software solutions for clients from different sectors and pracitices</li>
+                        <li><span>Custom IT solutions</span> We provide tailor made soutions to solve bespoke challenges for a wide range of clients.</li>
+                        <li><span>Free Maintenance</span> We provide a free maintenance period for all software installed by us.</li>
+                        <li><span>System installations and configurations</span> We provide on-site support for system installations and configurations.</li>
+
+                    </ul>
                     <a href="/contact" class="btn">Contact Us</a>
 
                 </div>
