@@ -109,12 +109,10 @@
                 <div class="col-lg-6 col-md-6 col-sm-12">
                     <h2>Why Choose us as your Web Design and Development Partner?</h2>
                     <ul>
-                        <li><span>Fast, Modern and Responsive Websites:</span> Our Websites are lightning ⚡ fast; they pass all key lighthouse metrics, and comply with the latest SEO best practices.</li>
-                        <li><span>24/7 Customer Care:</span> We respond to client queries round the clock and throughout the week. Clients' problems do not only come on weekdays or during the day. Thus, we have implemented a steadfast approach to tackling enquires</li>
-                        <li><span>Transparent:</span> We guide you through the whole journey— from ideation to go-to-market. We break down complex concepts in a manner that even non-technical clients can understand. </li>
-                        <li><span>Cutting edge technology:</span> We leverage on emerging technologies such as Artificial Intelligence to help deliver quality work in a timely and efficient manner. </li>
-                        <li><span>Timely:</span> We ensure that we meet all the client's set deadlines without compromising on quality</li>
-                        <li><span>Free maintenance:</span> We offer anywhere between one to three months of maintenance depending on the complexity of the project</li>
+                        <li><span>Increase traffic to your website:</span> Our digital marketing course is designed to equip online entrepreneurs with essential skills to help you boost traffic to your website.</li>
+                        <li><span>Build a stronger relationship with your audience:</span> Through harenssing the power of social media we are able to help you cultivate longer and lasting relationships with your customers.</li>
+                        <li><span>Generate leads:</span> We will teach you how to generate leads for your business and convert existing leads into sales</li>
+                        <li><span>Boost sales:</span> We will teach you actionable steps on how to convert your increased traffic into sales, thus boosting revenue for your business.</li>
                     </ul>
                     <a href="/contact" class="btn">Learn More</a>
 
@@ -124,11 +122,9 @@
                 <div class="col-lg-6 col-md-6 col-sm-12">
                     <h2>Get Fast and Responsive Web Design in Nairobi</h2>
                     <ul>
-                        <li><span>Efficient:</span> We have implemented a robust system that ensures utmost client satisfaction and service delivery</li>
-                        <li><span>Secure:</span> We know the technology space in Kenya is marred by fraud and unscrupulous characters. Which is why we have a policy of 100% refund on the rare occasion that we don't meet the client's needs</li>
-                        <li><span>Affordable:</span> Our pricing is flexible accomodate clients from all sectors and practices. Most of our clients are SMEs and MSMEs, and our vision is to avail quality ICT services at an affordable price point for all.</li>
-                        <li><span>Flexible:</span> We accept 50% deposit at the start of the project. The rest of the payment is usually made once the project is complete</li>
-
+                        <li><span>Fundamentals of digital marketing</span></li>
+                        <li><span>Introduction to Search Engine Optimization</span></li>
+                        <li><span>Introduction to Social Media Marketing</span></li>
                     <ul>
                     <a href="/contact" class="btn">Contact Us</a>
 
