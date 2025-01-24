@@ -87,12 +87,12 @@
 
             <div class="row" style="overflow:hidden;w">
                 <div class="about-heading col-md-6 col-sm-12">
-                    <h1>{{$designs->title}}</h1>
-                    <p>{{$designs->intro}}
+                    <h1>{{$digitals->title}}</h1>
+                    <p>{{$digitals->intro}}
                     </p>
                     <a href="/contact" class="btn">Get Started</a>
                 </div>
-                <img src="/storage/{{$designs->img1}}" class="aboutImg" height="417px;" alt="hero-img">
+                <img src="/storage/{{$digitals->img1}}" class="aboutImg" height="417px;" alt="hero-img">
 
             </div>
         </div>
@@ -103,44 +103,39 @@
         <div class="container">
             <div class="row justify-content-center info">
                 <div class="col-lg-6 col-md-6 col-sm-12">
-                    <img src="/storage/{{$designs->img2}}" class="" alt="info-img">
+                    <img src="/storage/{{$digitals->img2}}" class="" alt="info-img">
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12">
-                    <h2>{{$designs->title1}}</h2>
+                    <h2>{{$digitals->title1}}</h2>
                     </br>
-                    <p>{{$designs->benefits}}</p>
+                    <p>{{$digitals->benefits}}</p>
                     <a href="/contact" class="btn">Learn More</a>
 
                 </div>
             </div>
             <div class="row justify-content-center resp">
                 <div class="col-lg-6 col-md-6 col-sm-12">
-                    <h2>{{$designs->title2}}</h2>
+                    <h2>{{$digitals->title2}}</h2>
                     </br>
-                    <p>{{$designs->benefits2}}</p>
+                    <p>{{$digitals->benefits2}}</p>
                     <a href="/contact" class="btn">Contact Us</a>
 
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12">
-                    <img src="/storage/{{$designs->img3}}" class="" alt="res-img">
+                    <img src="/storage/{{$digitals->img3}}" class="" alt="res-img">
 
                 </div>
 
             </div>
             <div class="row section-packages justify-content-center">
-                <h2>Web Design Packages</h2>
+                <h2>Who Is Our Digital Marketing Course Tailored For?</h2>
                 <div class="row package-items">
-                    @foreach($webs as $web)
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 package-wrap">
-                        <h5>{{ $web->tier }} Package</h5>
-                        <ul>
-                            @foreach(json_decode($web->features, true) as $feature)
-                                <li>{{ $feature }}</li>
-                            @endforeach
-                        </ul>
-                        <a href="/order/{{ $web->id }}">Ksh {{ $web->price }}<i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                    @endforeach
+                    <ul>
+                        <li>Entrepreneurs</li>
+                        <li>SME and MSME Owners</li>
+                        <li>Budding Digital Marketers</li>
+                        <li>Basically anyone who intends to make an income online</li>
+                    </ul>
                 </div>
 
             </div>
@@ -151,60 +146,60 @@
                         <div class="accordion-item">
                             <h3 class="accordion-header">
                             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                {{$designs->faq1}}
+                                {{$digitals->faq1}}
                             </button>
                             </h3>
                             <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                {{$designs->ans1}}
+                                {{$digitals->ans1}}
                             </div>
                             </div>
                         </div>
                         <div class="accordion-item">
                             <h3 class="accordion-header">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                {{$designs->faq2}}
+                                {{$digitals->faq2}}
                             </button>
                             </h3>
                             <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                {{$designs->ans2}}
+                                {{$digitals->ans2}}
                             </div>
                             </div>
                         </div>
                         <div class="accordion-item">
                             <h3 class="accordion-header">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                {{$designs->faq3}}
+                                {{$digitals->faq3}}
                             </button>
                             </h3>
                             <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                {{$designs->ans3}}
+                                {{$digitals->ans3}}
                             </div>
                             </div>
                         </div>
                         <div class="accordion-item">
                             <h3 class="accordion-header">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                {{$designs->faq4}}
+                                {{$digitals->faq4}}
                             </button>
                             </h3>
                             <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                {{$designs->ans4}}
+                                {{$digitals->ans4}}
                             </div>
                             </div>
                         </div>
                         <div class="accordion-item">
                             <h3 class="accordion-header">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                {{$designs->faq5}}
+                                {{$digitals->faq5}}
                             </button>
                             </h3>
                             <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                {{$designs->ans5}}
+                                {{$digitals->ans5}}
 
                             </div>
                             </div>
