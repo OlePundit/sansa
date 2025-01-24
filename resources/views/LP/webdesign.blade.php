@@ -88,7 +88,7 @@
             <div class="row" style="overflow:hidden;w">
                 <div class="about-heading col-md-6 col-sm-12">
                     <h1>{{$designs->title}}</h1>
-                    <p>{{$designs->intro}}
+                    <p>{!! $designs->intro !!}
                     </p>
                     <a href="/contact" class="btn">Get Started</a>
                 </div>
@@ -108,7 +108,7 @@
                 <div class="col-lg-6 col-md-6 col-sm-12">
                     <h2>{{$designs->title1}}</h2>
                     </br>
-                    <p>{{$designs->benefits}}</p>
+                    <p>{!! $designs->benefits !!}</p>
                     <a href="/contact" class="btn">Learn More</a>
 
                 </div>
@@ -117,7 +117,7 @@
                 <div class="col-lg-6 col-md-6 col-sm-12">
                     <h2>{{$designs->title2}}</h2>
                     </br>
-                    <p>{{$designs->benefits2}}</p>
+                    <p>{!! $designs->benefits2 !!}</p>
                     <a href="/contact" class="btn">Contact Us</a>
 
                 </div>
@@ -156,7 +156,7 @@
                             </h3>
                             <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                {{$designs->ans1}}
+                                {!! $designs->ans1 !!}
                             </div>
                             </div>
                         </div>
@@ -168,7 +168,7 @@
                             </h3>
                             <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                {{$designs->ans2}}
+                                {!! $designs->ans2 !!}
                             </div>
                             </div>
                         </div>
@@ -180,7 +180,7 @@
                             </h3>
                             <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                {{$designs->ans3}}
+                                {!! $designs->ans3 !!}
                             </div>
                             </div>
                         </div>
@@ -192,7 +192,7 @@
                             </h3>
                             <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                {{$designs->ans4}}
+                                {!! $designs->ans4 !!}
                             </div>
                             </div>
                         </div>
@@ -204,7 +204,7 @@
                             </h3>
                             <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                {{$designs->ans5}}
+                                {!! $designs->ans5 !!}
 
                             </div>
                             </div>

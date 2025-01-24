@@ -88,7 +88,7 @@
             <div class="row" style="overflow:hidden;w">
                 <div class="about-heading col-md-6 col-sm-12">
                     <h1>{{$digitals->title}}</h1>
-                    <p>{{$digitals->intro}}
+                    <p>{!! $digitals->intro !!}
                     </p>
                     <a href="/contact" class="btn">Get Started</a>
                 </div>
@@ -108,7 +108,7 @@
                 <div class="col-lg-6 col-md-6 col-sm-12">
                     <h2>{{$digitals->title1}}</h2>
                     </br>
-                    <p>{{$digitals->benefits}}</p>
+                    <p>{!! $digitals->benefits !!}</p>
                     <a href="/contact" class="btn">Learn More</a>
 
                 </div>
@@ -117,7 +117,7 @@
                 <div class="col-lg-6 col-md-6 col-sm-12">
                     <h2>{{$digitals->title2}}</h2>
                     </br>
-                    <p>{{$digitals->benefits2}}</p>
+                    <p>{!! $digitals->benefits2 !!}</p>
                     <a href="/contact" class="btn">Contact Us</a>
 
                 </div>
@@ -151,7 +151,7 @@
                             </h3>
                             <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                {{$digitals->ans1}}
+                                {!! $digitals->ans1 !!}
                             </div>
                             </div>
                         </div>
@@ -163,7 +163,7 @@
                             </h3>
                             <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                {{$digitals->ans2}}
+                                {!! $digitals->ans2 !!}
                             </div>
                             </div>
                         </div>
@@ -175,7 +175,7 @@
                             </h3>
                             <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                {{$digitals->ans3}}
+                                {!! $digitals->ans3 !!}
                             </div>
                             </div>
                         </div>
@@ -187,7 +187,7 @@
                             </h3>
                             <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                {{$digitals->ans4}}
+                                {!! $digitals->ans4 !!}
                             </div>
                             </div>
                         </div>
@@ -199,8 +199,7 @@
                             </h3>
                             <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                {{$digitals->ans5}}
-
+                                {!! $digitals->ans5 !!}
                             </div>
                             </div>
                         </div>

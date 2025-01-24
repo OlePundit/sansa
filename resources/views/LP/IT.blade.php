@@ -88,7 +88,7 @@
             <div class="row" style="overflow:hidden;w">
                 <div class="about-heading col-md-6 col-sm-12">
                     <h1>{{$its->title}}</h1>
-                    <p>{{$its->intro}}
+                    <p>{!! $its->intro !!}
                     </p>
                     <a href="/contact" class="btn">Get Started</a>
                 </div>
@@ -108,7 +108,7 @@
                 <div class="col-lg-6 col-md-6 col-sm-12">
                     <h2>{{$its->title1}}</h2>
                     </br>
-                    <p>{{$its->benefits}}</p>
+                    <p>{!! $its->benefits !!}</p>
                     <a href="/contact" class="btn">Learn More</a>
 
                 </div>
@@ -125,7 +125,7 @@
                             </h3>
                             <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                {{$its->ans1}}
+                                {!! $its->ans1 !!}
                             </div>
                             </div>
                         </div>
@@ -137,7 +137,7 @@
                             </h3>
                             <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                {{$its->ans2}}
+                                {!! $its->ans2 !!}
                             </div>
                             </div>
                         </div>
@@ -149,7 +149,7 @@
                             </h3>
                             <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                {{$its->ans3}}
+                                {!! $its->ans3 !!}
                             </div>
                             </div>
                         </div>
