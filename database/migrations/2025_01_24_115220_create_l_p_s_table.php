@@ -30,6 +30,7 @@ return new class extends Migration
             $table->text('ans3')->nullable();
             $table->text('ans4')->nullable();
             $table->text('ans5')->nullable();
+            $table->string('slug')->nullable();
             $table->text('benefits')->nullable();
             $table->text('benefits2')->nullable();
             $table->timestamps();
