@@ -8319,6 +8319,11 @@
     font-weight: 700;
     font-size:1.9rem;
  }
+ .lp .intro{
+    color:#fff!important;
+    margin:15% 2% 3% 15%;
+    font-size:1rem;
+ }
  .service .header {
      margin-top: 5%;
  }

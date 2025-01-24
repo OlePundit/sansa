@@ -88,7 +88,7 @@
             <div class="row" style="overflow:hidden;w">
                 <div class="about-heading col-md-6 col-sm-12">
                     <h1>{{$designs->title}}</h1>
-                    <p>{!! $designs->intro !!}
+                    <p class="intro">{!! $designs->intro !!}
                     </p>
                     <a href="/contact" class="btn">Get Started</a>
                 </div>
