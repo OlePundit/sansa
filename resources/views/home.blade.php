@@ -247,10 +247,13 @@
                                     <img class="icon-box" src="/storage/seo.webp" alt="seo">
                                     <h4>Digital Marketing</h4>
                                     <div style="display:flex;flex-direction:column;height:65%;justify-content:space-between;">
-                                        <p>SEO</p>
-                                        <p>Content Marketing</p>
-                                        <p>Social Media Marketing</p>
-                                        <p>Search Engine Marketing</p>
+                                        <ul>
+                                            <li>SEO</li>
+                                            <li>Content Marketing</li>
+                                            <li>Social Media Marketing</li>
+                                            <li>Search Engine Marketing</li>
+                                        </ul>
+
 
                                         <a href="https://sansadigital.com/services/social-media-marketing-in-kenya">
                                             <div class="enter-box">
@@ -283,10 +286,12 @@
                                     <img class="icon-box" src="/storage/seo.webp" alt="seo">
                                     <h4>IT Support & Help Desk</h4>
                                     <div style="display:flex;flex-direction:column;height:65%;justify-content:space-between;">
-                                        <p>System installation and configuration</p>
-                                        <p>System Maintenance</p>
-                                        <p>Consultancy</p>
-                                        <p>Training</p>
+                                        <ul>
+                                        <li>System installation and configuration</li>
+                                        <li>System Maintenance</li>
+                                        <li>Consultancy</li>
+                                        <li>Training</li>
+                                        <ul>
 
                                         <a href="https://sansadigital.com/lps/it-support-and-help-desk">
                                             <div class="enter-box">
@@ -298,9 +303,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="/services" class="btn col-lg-4 col-3 mt-5">More Services</a>
                         </div>
-                        
+                        <a href="/services" class="btn">More Services</a>
+
                     </div>
                     <div class="section-prices" id="section-prices">
 
