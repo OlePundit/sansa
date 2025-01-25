@@ -291,7 +291,7 @@
                                         <li>System Maintenance</li>
                                         <li>Consultancy</li>
                                         <li>Training</li>
-                                        <ul>
+                                        </ul>
 
                                         <a href="https://sansadigital.com/lps/it-support-and-help-desk">
                                             <div class="enter-box">

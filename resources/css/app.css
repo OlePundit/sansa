@@ -7469,6 +7469,9 @@
     font-size: 32px;
     border: none;
 }
+.section-services .btn {
+    margin-top:5%;
+}
  .section-testimonials {
      align-items: center;
      flex-direction: column;
@@ -7738,6 +7741,12 @@
  }
  .section-prices .sub-head,
  .section-services .service-box p {
+     font-weight: 400;
+     line-height: normal;
+     font-style: normal;
+     color: #fff;
+ }
+  .section-services .service-box ul li {
      font-weight: 400;
      line-height: normal;
      font-style: normal;
