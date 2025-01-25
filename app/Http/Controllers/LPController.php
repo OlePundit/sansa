@@ -12,9 +12,10 @@ class LPController extends Controller
     public function webdesign(){
         $webs = Package::where('category','web design')->get();
         $services = Service::all();
+        $serviceL = Service::where('title','WEB DESIGN IN KENYA: FAST & RESPONSIVE WEBSITES')->first();
         $designs = LP::where('category','web design')->first();
 
-        return view('LP.webdesign', compact('webs','designs','services'));
+        return view('LP.webdesign', compact('webs','designs','services','serviceL'));
     }
 
     public function digitalmarketing(){

@@ -85,7 +85,7 @@
         <div class="col-md-12 about-banner" >
 
 
-            <div class="row" style="overflow:hidden;w">
+            <div class="row" style="overflow:hidden;">
                 <div class="about-heading col-md-6 col-sm-12">
                     <h1>{{$designs->title}}</h1>
                     <p class="intro">{!! $designs->intro !!}
@@ -211,6 +211,17 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="row justify-content-center">
+                <h3>More Content</h3>
+                <a href="/services/{{$serviceL->slug}}" style="text-decoration:none;" class="custom-card">
+                    <img src="/storage/{{$serviceL->thumbnail}}" class="card-img-top" alt="thumbnail">
+                    <div class="card-body">
+                        <h4>{{$serviceL->title}}</h4>
+                        <p>{!! Str::limit(strip_tags($serviceL->body), 120, '...') !!}...</p>
+                        <button>Read more</button>
+                    </div>
+                </a>
             </div>
         </div>
 @endsection

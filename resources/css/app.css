@@ -8230,7 +8230,9 @@
      margin-right: 0;
      width: 500px;
  }
- 
+ .lp p{
+    font-size:1.1rem;
+ }
  .lp ul {
     list-style: none; /* Remove default bullets */
     padding: 0;
@@ -8260,6 +8262,7 @@
  .lp ul li{
     color:#fff;
     margin-bottom: 3%;
+    font-size: 1rem;
  }
  .lp .info,.lp .faq{
     display: flex;
@@ -8322,13 +8325,13 @@
  .lp .about-heading{
     color:#fff!important;
     margin:15% 3% 0%!important;
-    font-size:1rem;
+    font-size:1.1rem;
  }
 .lp .about-banner .btn {
     margin-left: 0%;
 }
  .lp .about-heading h1{
-    margin:15% 0% 0%!important;
+    margin:0%!important;
  }
  .service .header {
      margin-top: 5%;
@@ -8468,6 +8471,11 @@
          margin: auto;
          flex-direction: column;
      }
+     .lp .about-heading {
+        color: #fff !important;
+        margin: 1% 3% 0% !important;
+        font-size: 1.1rem;
+    }
      .navbar-light .navbar-toggler {
         border-color: #fff !important;
         margin-right: 10px;
@@ -8905,6 +8913,11 @@
     .section-quote .rectangle img {
         top: 67%!important;
     }
+    .lp .about-heading {
+        color: #fff !important;
+        margin: 2% 3% 0% !important;
+        font-size: 1.1rem;
+    }
 }
  @media (min-width: 281px) and (max-width: 450px) {
      .section-newsletter form h3,
@@ -8916,6 +8929,11 @@
      }
      .section-footer, footer {
         padding: 0px;
+    }
+    .lp .about-heading {
+        color: #fff !important;
+        margin: 3% 3% 0% !important;
+        font-size: 1.1rem;
     }
      .section-info {
          display: flex;
@@ -9378,6 +9396,11 @@
          color: #fff;
          font-style: normal;
      }
+     .lp .about-heading {
+        color: #fff !important;
+        margin: 3% 3% 0% !important;
+        font-size: 1.1rem;
+    }
      .about .section-equip h2,
      .about .section-info h2,
      .about .section-stats h2 {
@@ -9639,6 +9662,11 @@
         width: 60%;
         padding-top: 140px;
     }
+    .lp .about-heading {
+        color: #fff !important;
+        margin: 3% 3% 0% !important;
+        font-size: 1.1rem;
+    }
  }
  @media (min-width: 575px) and (max-width: 768px) {
      .about .section-info p {
@@ -9651,6 +9679,11 @@
          line-height: normal;
          margin-right: 10%;
      }
+     .lp .about-heading {
+        color: #fff !important;
+        margin: 5% 3% 0% !important;
+        font-size: 1.1rem;
+    }
      .section-quote .rectangle img {
         width: 50%;
         height: auto;
@@ -9924,6 +9957,11 @@
      .section-footer .social {
          margin-left: 0 !important;
      }
+     .lp .about-heading {
+        color: #fff !important;
+        margin: 5% 3% 0% !important;
+        font-size: 1.1rem;
+    }
      .about .section-info p {
          color: #fff;
         font-family: "Montserrat", sans-serif;

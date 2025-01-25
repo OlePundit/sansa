@@ -850,7 +850,7 @@
     },
     slidesPerView: 1,
     spaceBetween: 40, // Adjust spacing
-    breakpoints: {
+    breakpoints: {π
         640: {
             slidesPerView: 2,
             spaceBetween: 20,
