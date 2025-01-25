@@ -212,8 +212,8 @@
                     </div>
                 </div>
             </div>
-            <div class="row section-more justify-content-center">
-                <h3>More Content</h3>
+            <div class="row section-more">
+                <h2>More Content</h2>
                 <div class="col-lg-3">
                     <a href="/services/{{$serviceL->slug}}" style="text-decoration:none;" class="custom-card">
                         <img src="/storage/{{$serviceL->thumbnail}}" class="card-img-top" alt="thumbnail">
