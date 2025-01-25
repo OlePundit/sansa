@@ -212,7 +212,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row section-more">
+            <div class="row section-more mb-5">
                 <h2>More Content</h2>
                 <div class="col-lg-3">
                     <a href="/services/{{$serviceL->slug}}" style="text-decoration:none;" class="custom-card">

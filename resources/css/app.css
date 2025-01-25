@@ -8353,12 +8353,14 @@
 }
 .lp .section-more .custom-card .card-body h4 {
     color: #fff;
-   font-family: "EB Garamond", serif;
-
+    font-family: "EB Garamond", serif;
     font-size: 24px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+}
+.lp .section-more .custom-card .card-img-top {
+    border-radius: 22px 22px 0 0;
 }
 .lp .section-more .custom-card .card-body p {
     color: #fff;
