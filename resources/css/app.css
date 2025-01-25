@@ -8324,7 +8324,7 @@
  }
  .lp .about-heading{
     color:#fff!important;
-    margin:15% 3% 0%!important;
+    margin:2% 3% 0%!important;
     font-size:1.1rem;
  }
 .lp .about-banner .btn {
@@ -8333,6 +8333,56 @@
  .lp .about-heading h1{
     margin:0%!important;
  }
+ .lp .section-more .custom-card .card-body button:hover {
+    border-radius: 8px;
+    border: none;
+    background: #2c96e2;
+    color: #fff;
+   font-family: "EB Garamond", serif;
+
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    padding: 10px 16px;
+}
+.lp .section-more .custom-card .card-body {
+    background: #193155;
+    padding: 20px;
+    border-radius: 0 0 22px 22px;
+}
+.lp .section-more .custom-card .card-body h4 {
+    color: #fff;
+   font-family: "EB Garamond", serif;
+
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.lp .section-more .custom-card .card-body p {
+    color: #fff;
+   font-family: "Nunito", sans-serif;
+
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.lp .section-more .custom-card .card-body button {
+    border-radius: 8px;
+    border: 1px solid #2c96e2;
+    background: rgba(217, 217, 217, 0);
+    color: #fff;
+   font-family: "EB Garamond", serif;
+
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    padding: 10px 16px;
+}
  .service .header {
      margin-top: 5%;
  }
