@@ -20,7 +20,7 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 Route::get('/about', [App\Http\Controllers\HomeController::class, 'about'])->name('about');
 Route::get('/lps/webdesign', [App\Http\Controllers\LPController::class, 'webdesign'])->name('webdesign');
 Route::get('/lps/digitalmarketing', [App\Http\Controllers\LPController::class, 'digitalmarketing'])->name('digitalmarketing');
-Route::get('/lps/it', [App\Http\Controllers\LPController::class, 'IT'])->name('IT');
+Route::get('/lps/it-support-and-help-desk', [App\Http\Controllers\LPController::class, 'IT'])->name('IT');
 Route::get('/services/{slug}', [App\Http\Controllers\ServiceController::class, 'service']);
 Route::get('/contact', [App\Http\Controllers\HomeController::class, 'contact']);
 Route::get('/blogs',[App\Http\Controllers\BlogController::class, 'index']);

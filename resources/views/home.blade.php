@@ -245,10 +245,14 @@
                             <div class="col-lg-4 col-md-6 col-sm-6">
                                 <div class="service-box wow fadeInDown">
                                     <img class="icon-box" src="/storage/seo.webp" alt="seo">
-                                    <h4>SEO</h4>
+                                    <h4>Digital Marketing</h4>
                                     <div style="display:flex;flex-direction:column;height:65%;justify-content:space-between;">
-                                        <p>We will optimize your page for different search engines to improve your page traffic, and click through rate.</p>
-                                        <a href="https://sansa.digital/services/seo-in-kenya">
+                                        <p>SEO</p>
+                                        <p>Content Marketing</p>
+                                        <p>Social Media Marketing</p>
+                                        <p>Search Engine Marketing</p>
+
+                                        <a href="https://sansa.digital/services/social-media-marketing-in-kenya">
                                             <div class="enter-box">
                                                 <svg class="enter-svg d-flex align-items-center justify-content-center" xmlns="http://www.w3.org/2000/svg" width="30" height="16" viewBox="0 0 30 16" fill="none">
                                                     <path d="M29.7071 8.70711C30.0976 8.31658 30.0976 7.68342 29.7071 7.29289L23.3431 0.928932C22.9526 0.538408 22.3195 0.538408 21.9289 0.928932C21.5384 1.31946 21.5384 1.95262 21.9289 2.34315L27.5858 8L21.9289 13.6569C21.5384 14.0474 21.5384 14.6805 21.9289 15.0711C22.3195 15.4616 22.9526 15.4616 23.3431 15.0711L29.7071 8.70711ZM0 9L29 9V7L0 7L0 9Z"/>
@@ -275,61 +279,24 @@
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-6 col-sm-6">
-                                <div class="service-box wow fadeInLeft">
-                                    <img class="icon-box" src="/storage/social.webp" alt="digital">
-
-                                    <h4>Digital and social media marketing</h4>
+                                <div class="service-box wow fadeInDown">
+                                    <img class="icon-box" src="/storage/seo.webp" alt="seo">
+                                    <h4>IT Support & Help Desk</h4>
                                     <div style="display:flex;flex-direction:column;height:65%;justify-content:space-between;">
-                                        <p>We shall create a responsive and modern website for your business to help you interact with prospective online customers.</p>
-                                        <a href="https://sansa.digital/services/social-media-marketing-in-kenya">
+                                        <p>System installation and configuration</p>
+                                        <p>System Maintenance</p>
+                                        <p>Consultancy</p>
+                                        <p>Training</p>
+
+                                        <a href="https://sansa.digital/lps/social-media-marketing-in-kenya">
                                             <div class="enter-box">
                                                 <svg class="enter-svg d-flex align-items-center justify-content-center" xmlns="http://www.w3.org/2000/svg" width="30" height="16" viewBox="0 0 30 16" fill="none">
-                                                <path d="M29.7071 8.70711C30.0976 8.31658 30.0976 7.68342 29.7071 7.29289L23.3431 0.928932C22.9526 0.538408 22.3195 0.538408 21.9289 0.928932C21.5384 1.31946 21.5384 1.95262 21.9289 2.34315L27.5858 8L21.9289 13.6569C21.5384 14.0474 21.5384 14.6805 21.9289 15.0711C22.3195 15.4616 22.9526 15.4616 23.3431 15.0711L29.7071 8.70711ZM0 9L29 9V7L0 7L0 9Z" />
+                                                    <path d="M29.7071 8.70711C30.0976 8.31658 30.0976 7.68342 29.7071 7.29289L23.3431 0.928932C22.9526 0.538408 22.3195 0.538408 21.9289 0.928932C21.5384 1.31946 21.5384 1.95262 21.9289 2.34315L27.5858 8L21.9289 13.6569C21.5384 14.0474 21.5384 14.6805 21.9289 15.0711C22.3195 15.4616 22.9526 15.4616 23.3431 15.0711L29.7071 8.70711ZM0 9L29 9V7L0 7L0 9Z"/>
                                                 </svg>
-                                            
                                             </div>
                                         </a>
                                     </div>
                                 </div>
-
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-sm-6">
-                                <div class="service-box wow fadeInUp">
-                                    <img class="icon-box" src="/storage/video.webp" alt="video">
-
-                                    <h4>Videography & Photography</h4>
-                                    <div style="display:flex;flex-direction:column;height:65%;justify-content:space-between;">
-                                        <p>We are masters of visual storytelling. Let our team of videographers, photographers and script writers help you tell your story</p>
-                                        <a href="https://sansa.digital/services/social-listening-services">
-                                            <div class="enter-box">
-                                                <svg class="enter-svg d-flex align-items-center justify-content-center" xmlns="http://www.w3.org/2000/svg" width="30" height="16" viewBox="0 0 30 16" fill="none">
-                                                <path d="M29.7071 8.70711C30.0976 8.31658 30.0976 7.68342 29.7071 7.29289L23.3431 0.928932C22.9526 0.538408 22.3195 0.538408 21.9289 0.928932C21.5384 1.31946 21.5384 1.95262 21.9289 2.34315L27.5858 8L21.9289 13.6569C21.5384 14.0474 21.5384 14.6805 21.9289 15.0711C22.3195 15.4616 22.9526 15.4616 23.3431 15.0711L29.7071 8.70711ZM0 9L29 9V7L0 7L0 9Z" />
-                                                </svg>
-                                            
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-sm-6">
-                                <div class="service-box wow fadeInRight">
-                                    <img class="icon-box" src="/storage/content.webp" alt="content">
-
-                                    <h4>Content Writing</h4>
-                                    <div style="display:flex;flex-direction:column;height:65%;justify-content:space-between;">
-                                        <p>We shall help you with all your content Writing needs. Blog and articles, email marketing, business proposals, newsletters, strategy documents, concept notes and much more .</p>
-                                        <a href="https://sansa.digital/services/content-marketing-and-writing-services">
-                                            <div class="enter-box">
-                                                <svg class="enter-svg d-flex align-items-center justify-content-center" xmlns="http://www.w3.org/2000/svg" width="30" height="16" viewBox="0 0 30 16" fill="none">
-                                                <path d="M29.7071 8.70711C30.0976 8.31658 30.0976 7.68342 29.7071 7.29289L23.3431 0.928932C22.9526 0.538408 22.3195 0.538408 21.9289 0.928932C21.5384 1.31946 21.5384 1.95262 21.9289 2.34315L27.5858 8L21.9289 13.6569C21.5384 14.0474 21.5384 14.6805 21.9289 15.0711C22.3195 15.4616 22.9526 15.4616 23.3431 15.0711L29.7071 8.70711ZM0 9L29 9V7L0 7L0 9Z" />
-                                                </svg>
-                                            
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-
                             </div>
                             <a href="/services" class="btn col-lg-4 col-3 mt-5">More Services</a>
                         </div>
@@ -850,7 +817,7 @@
     },
     slidesPerView: 1,
     spaceBetween: 40, // Adjust spacing
-    breakpoints: {π
+    breakpoints: {
         640: {
             slidesPerView: 2,
             spaceBetween: 20,
