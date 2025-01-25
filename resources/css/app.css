@@ -8371,7 +8371,9 @@
     font-weight: 400;
     line-height: normal;
 }
-
+.lp .section-more{
+    margin-bottom: 15%;
+}
 .lp .section-more .custom-card .card-body button {
     border-radius: 8px;
     border: 1px solid #2c96e2;
