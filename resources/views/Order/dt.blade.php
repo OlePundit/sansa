@@ -102,7 +102,7 @@
                     <div class="col-lg-8 col-md-12">
                         <div class="row justify-content-center">
                             <div class="contact-wrap" style="">
-                                <div class="col-lg-8 col-md-12">
+                                <div class="col-md-12">
                                     <h3>Place your order</h3>
                                     <h4>Which service do you want to order?</h4>
                                     <form id="paymentForm">
