@@ -147,7 +147,7 @@
                 </div>
 
             </div>
-            <div class="row section-packages justify-content-center">
+            <div class="row section-who justify-content-center">
                 <h2>Who Is Our Digital Marketing Course Tailored For?</h2>
                 <div class="row package-items">
                     <ul>

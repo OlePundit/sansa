@@ -8249,7 +8249,7 @@
     list-style: none; /* Remove default bullets */
     padding: 0;
   }
-  .lp .info ul li::before,  .lp .resp ul li::before {
+  .lp .info ul li::before,  .lp .resp ul li::before,  .lp .section-who ul li::before  {
     font-family: 'Material Icons';
     vertical-align: middle; /* Align with the text */
     content: '\e2e6'; /* Unicode character or text */
@@ -8271,7 +8271,7 @@
     padding: 10px 16px;
     margin-top: 5%;
 }
- .lp ul li{
+ .lp ul li,  .lp ol li{
     color:#fff;
     margin-bottom: 3%;
     font-size: 1rem;
