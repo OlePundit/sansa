@@ -82,7 +82,7 @@
             </div>
         </div>
         </nav>
-        <div class="col-md-12 about-banner" >
+        <div class="col-md-12 about-banner" style="height:auto;">
 
 
             <div class="row">
