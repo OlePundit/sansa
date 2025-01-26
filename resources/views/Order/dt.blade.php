@@ -99,8 +99,8 @@
         <div class="order row justify-content-center">
             <div class=" contact" style="width:90%;margin:auto;">
                 <div class="row justify-content-center section-contact" >
-                    <div class="col-md-10 col-sm-12">
-                        <div class="row">
+                    <div class="col-lg-8 col-md-12">
+                        <div class="row justify-content-center">
                             <div class="contact-wrap" style="">
                                 <div class="col-lg-8 col-md-12">
                                     <h3>Place your order</h3>
