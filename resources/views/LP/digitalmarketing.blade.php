@@ -132,7 +132,7 @@
             </div>
             <div class="row justify-content-center how">
                 <div class="col-lg-6 col-md-6 col-sm-12">
-                    <img src="/storage/{{$digitals->img3}}" class="" alt="res-img">
+                    <img src="/storage/digital-woman.webp" class="" alt="res-img">
 
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12">
