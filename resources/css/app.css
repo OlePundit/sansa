@@ -8344,6 +8344,10 @@
  }
 .lp .about-banner .btn {
     margin-left: 0%;
+    width:fit-content;
+}
+.lp .about-banner p {
+    margin-left: 0%;
 }
  .lp .about-heading h1{
     margin:0%!important;
@@ -8351,9 +8355,13 @@
   .lp .digital-heading{
     color:#fff!important;
     font-size:1.1rem;
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
  }
  .lp .about-banner .digitalImg{
     width:100%;
+    margin-bottom: 10%;
  }
 .lp .digital-banner .btn {
     margin-left: 0%;
