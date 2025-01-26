@@ -22,7 +22,7 @@ class LPController extends Controller
         $services = Service::all();
         $digitals = LP::where('category','digital training')->first();
 
-        return view('LP.digitalmarketing', compact('digital','services'));
+        return view('LP.digitalmarketing', compact('digitals','services'));
     }
 
     public function IT(){
