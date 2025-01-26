@@ -85,8 +85,8 @@
         <div class="col-md-12 about-banner" style="height:auto;">
 
 
-            <div class="row">
-                <div class="digital-heading col-md-8 mt-3 col-sm-12">
+            <div class="row justify-content-center">
+                <div class="digital-heading col-lg-6 col-md-8 mt-3 col-sm-12">
                     <h1>{{$digitals->title}}</h1>
                     <p>{!! $digitals->intro !!}
                     </p>

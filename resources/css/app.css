@@ -8258,7 +8258,7 @@
     color: #2c96e2;
     margin-right: 8px; /* Add spacing */
   }
-  .lp .info .btn, .lp .resp .btn{
+  .lp .info .btn, .lp .resp .btn, .lp .how .btn{
     text-decoration: none;
     border-radius: 8px;
     background: #2c96e2;
@@ -8368,8 +8368,11 @@
     .lp .info, .lp .how {
         flex-direction: column-reverse;
     }
-    .lp .info .btn,.lp .resp .btn {
+    .lp .info .btn,.lp .resp .btn,.lp .how .btn {
         margin-bottom: 5%;
+    }
+    .lp .section-who h2{
+        margin-top: 5%;
     }
  }
  .lp .section-more .custom-card .card-body button:hover {
