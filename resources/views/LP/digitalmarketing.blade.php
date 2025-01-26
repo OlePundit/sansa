@@ -92,7 +92,7 @@
                     </p>
                     <a href="/dt/order" class="btn">Book a Spot</a>
                 </div>
-                <img src="/storage/{{$digitals->img1}}" class="aboutImg" height="417px;" alt="hero-img">
+                <img src="/storage/{{$digitals->img1}}" class="aboutImg" alt="hero-img">
 
             </div>
         </div>
