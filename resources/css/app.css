@@ -8358,6 +8358,17 @@
  .lp .digital-heading h1{
     margin:0%!important;
  }
+ @media(max-width:768px){
+    .lp .digitalImg{
+        margin-bottom: 50px;
+    }
+    .lp .info, .lp .how {
+        flex-direction: column-reverse;
+    }
+    .lp .info .btn,.lp .resp .btn {
+        margin-bottom: 5%;
+    }
+ }
  .lp .section-more .custom-card .card-body button:hover {
     border-radius: 8px;
     border: none;
