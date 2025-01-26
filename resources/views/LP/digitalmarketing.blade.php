@@ -85,14 +85,14 @@
         <div class="col-md-12 about-banner" >
 
 
-            <div class="row" style="overflow:hidden;w">
-                <div class="about-heading col-md-6 col-sm-12">
+            <div class="row">
+                <div class="digital-heading col-md-8 mt-3 col-sm-12">
                     <h1>{{$digitals->title}}</h1>
                     <p>{!! $digitals->intro !!}
                     </p>
                     <a href="/dt/order" class="btn">Book a Spot</a>
                 </div>
-                <div class="col-md-6 ">
+                <div class="col-md-4 mt-3">
                     <img src="/storage/{{$digitals->img1}}" class="aboutImg" alt="hero-img">
 
                 </div>

@@ -8345,6 +8345,16 @@
  .lp .about-heading h1{
     margin:0%!important;
  }
+  .lp .digital-heading{
+    color:#fff!important;
+    font-size:1.1rem;
+ }
+.lp .digital-banner .btn {
+    margin-left: 0%;
+}
+ .lp .digital-heading h1{
+    margin:0%!important;
+ }
  .lp .section-more .custom-card .card-body button:hover {
     border-radius: 8px;
     border: none;
