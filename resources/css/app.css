@@ -7472,6 +7472,9 @@
 .section-services .btn {
     margin-top:5%;
 }
+.order label{
+    color:#fff;
+}
  .section-testimonials {
      align-items: center;
      flex-direction: column;

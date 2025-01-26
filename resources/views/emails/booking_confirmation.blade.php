@@ -59,8 +59,8 @@
 
         <div class="row justify-content-center">
             <div class="py-5 col-lg-8 col-md-12">
-                <h1>New Order</h1>
-                <h4>You just received a new order</h4>
+                <h1>Congratulations</h1>
+                <h4>Your order was successful!</h4>
 
                 <p>Name: {{ $booking->name }},</p>
                 <p>Email: {{ $booking->email }},</p>
@@ -73,8 +73,6 @@
                 </br>
 
                 <div style="display:flex;flex-direction:column;">
-                    <a href="/https://sansadigital.com/admin"><button>View Booking</button></a>
-
                     <h5>Regards,</h5>
                     <h5><strong>Sansa Digital Team</strong></h5>
                 </div>

@@ -31,4 +31,7 @@ class LPController extends Controller
 
         return view('LP.IT', compact('its','services'));
     }
+    public function order(){
+        return view('Order.dt')
+    }
 }

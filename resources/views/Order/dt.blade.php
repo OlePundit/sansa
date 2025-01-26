@@ -102,12 +102,7 @@
                     <div class="col-md-10 col-sm-12">
                         <div class="row">
                             <div class="contact-wrap" style="">
-                                <div class="col-xl-4 col-lg-12 col-md-12 map" style="">
-                                    <div id="map">
-                                        <iframe src="https://maps.google.com/maps?q=Kahawa%20Sukari&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="670px" frameborder="0" style="border:0; border-radius: 23px;" allowfullscreen="" alt="google-maps"></iframe>
-                                    </div>
-                                </div>
-                                <div class="col-xl-6 col-lg-12 col-md-12">
+                                <div class="col-lg-8 col-md-12">
                                     <h3>Place your order</h3>
                                     <h4>Which service do you want to order?</h4>
                                     <form id="paymentForm">
@@ -121,7 +116,7 @@
                                                 <div class="form-group">
                                                     <div class="col-sm-12">
                                                         <input type="text" class="email text-white" name="email" id="email" placeholder="email">
-                                                        <input type="hidden" value="{{$package->id}}" name="orderID">
+                                                        <input type="hidden" id="orderID" name="orderID">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
@@ -131,24 +126,17 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <div class="col-sm-12">
-                                                        <input type="text" class="amount text-white" value="{{$package->price}}" id="amount" name="amount" placeholder="amount">
-                                                    </div>
-                                                    <label>50% deposit required</label>
-                                                </div>
-                                                <div class="form-group">
-                                                    <div class="col-sm-12">
-                                                        <select type="text" class="category text-white" name="category" id="category">
-                                                            <option value="{{$package->category}}">{{$package->category}}</option>
-
-                                                        </select>
+                                                        <input type="text" class="amount text-white" value="1500" id="amount" name="amount" placeholder="amount">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <div class="col-sm-12">
-                                                        <select type="text" class="tier text-white" name="tier" id="tier">
-                                                            <option value="{{$package->tier}}">{{$package->tier}}</option>
-
-                                                        </select>
+                                                        <input type="text" class="category text-white" value="Digital training" id="category" name="category" placeholder="service">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="col-sm-12">
+                                                        <input type="hidden" value="N/A" name="tier">
                                                     </div>
                                                 </div>
 
@@ -188,4 +176,19 @@
             </div>
         </div>
     </div>
+@endsection
+@section('scripts')
+<script>
+    function generateRandomString(length) {
+        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        let result = '';
+        for (let i = 0; i < length; i++) {
+        result += characters.charAt(Math.floor(Math.random() * characters.length));
+        }
+        return result;
+    }
+
+    // Set the value of the hidden input
+    document.getElementById('orderID').value = generateRandomString(10); // Change '10' to the desired string length
+</script>
 @endsection

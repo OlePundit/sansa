@@ -68,7 +68,8 @@ class PaymentController extends Controller
 
             $obj->currency = $response->data->currency;
             $obj->save();
-
+            
+            Mail::to($obj->email)->send(new BookingConfirmation($obj));
             Mail::to('admin@sansadigital.com')->send(new BookingConfirmationAdmin($obj));
 
             return redirect()->route('success');

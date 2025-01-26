@@ -90,7 +90,7 @@
                     <h1>{{$digitals->title}}</h1>
                     <p>{!! $digitals->intro !!}
                     </p>
-                    <a href="/contact" class="btn">Get Started</a>
+                    <a href="/dt/order" class="btn">Book a Spot</a>
                 </div>
                 <img src="/storage/{{$digitals->img1}}" class="aboutImg" height="417px;" alt="hero-img">
 
@@ -109,7 +109,7 @@
                     <h2>{{$digitals->title1}}</h2>
                     </br>
                     <p>{!! $digitals->benefits !!}</p>
-                    <a href="/contact" class="btn">Learn More</a>
+                    <a href="/dt/order" class="btn">Sign up Today!</a>
 
                 </div>
             </div>
@@ -118,11 +118,31 @@
                     <h2>{{$digitals->title2}}</h2>
                     </br>
                     <p>{!! $digitals->benefits2 !!}</p>
-                    <a href="/contact" class="btn">Contact Us</a>
+                    <a href="/dt/order" class="btn">Get Started</a>
 
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12">
                     <img src="/storage/{{$digitals->img3}}" class="" alt="res-img">
+
+                </div>
+
+            </div>
+            <div class="row justify-content-center resp">
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <img src="/storage/{{$digitals->img3}}" class="" alt="res-img">
+
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <h2>How to sign up</h2>
+                    </br>
+                    <ol>
+                        <li>Click on the <a href="/dt/order">payment link</a></li>
+                        <li>Fill in your payment details and make your payment to secure your slot</li>
+                        <li>You will receive an email from Sansa Digital confirming your booking details</li>
+                        <li>Once we verify your payment, we will send you an email containing a secure link for the digital marketing class, and any other useful information on the online course</li>
+                        <li>After the class, we will send all participants an ebook containing useful notes for further practise, alongside other key learning resources to help you in sharpening your skills</li>
+                    </ol>
+                    <a href="/dt/order" class="btn">Get Started</a>
 
                 </div>
 
