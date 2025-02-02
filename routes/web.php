@@ -19,7 +19,7 @@ Auth::routes();
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/about', [App\Http\Controllers\HomeController::class, 'about'])->name('about');
 Route::get('/lps/webdesign', [App\Http\Controllers\LPController::class, 'webdesign'])->name('webdesign');
-Route::get('/lps/digitalmarketing', [App\Http\Controllers\LPController::class, 'digitalmarketing'])->name('digitalmarketing');
+Route::get('/lps/digital-training', [App\Http\Controllers\LPController::class, 'digitalmarketing'])->name('digitalmarketing');
 Route::get('/lps/it-support-and-help-desk', [App\Http\Controllers\LPController::class, 'IT'])->name('IT');
 Route::get('/dt/order', [App\Http\Controllers\LPController::class, 'order'])->name('dtorder');
 Route::get('/services/{slug}', [App\Http\Controllers\ServiceController::class, 'service']);
