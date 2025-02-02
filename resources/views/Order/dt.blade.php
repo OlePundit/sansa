@@ -136,7 +136,7 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <div class="col-sm-12">
-                                                        <input type="hidden" value="N/A" name="tier">
+                                                        <input type="hidden" value="N/A" name="tier" id="tier">
                                                     </div>
                                                 </div>
 
