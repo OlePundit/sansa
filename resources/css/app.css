@@ -8346,6 +8346,7 @@
     margin-left: 0%;
     width:fit-content;
 }
+
 .lp .about-banner p {
     margin-left: 0%;
 }
@@ -8384,6 +8385,17 @@
     }
     .lp .mobileBack{
         background:#2c96e2!important;
+    }
+    .lp h2{
+        margin-top: 5%;
+    }
+    .lp .aboutImg2{
+        width:100%
+    }
+ }
+ @media(min-width:769px){
+    .lp .aboutImg2{
+        display:none;   
     }
  }
  .lp .section-more .custom-card .card-body button:hover {
@@ -9025,6 +9037,9 @@
         margin: 2% 3% 0% !important;
         font-size: 1.1rem;
     }
+    .lp .about-banner h1{
+        font-size: 36px;
+    }
 }
  @media (min-width: 281px) and (max-width: 450px) {
      .section-newsletter form h3,
@@ -9090,6 +9105,9 @@
          margin-top: 100px;
          margin-left: 0;
      }
+     .lp .about-banner h1{
+        font-size: 36px;
+    }
      .section-testimonials h3 {
         font-family: "EB Garamond", serif;
 
@@ -9276,9 +9294,8 @@
      }
      .about .section-equip h3 {
         font-family: "Montserrat", sans-serif;
-
-         font-size: 36px;
-         margin: 80px 10% 40px 5%;
+        font-size: 36px;
+        margin: 80px 10% 40px 5%;
      }
      .about .section-stats .stat-wrap {
          display: flex;
@@ -9295,7 +9312,7 @@
          width: 100%;
          margin-top: 100px;
      }
-     .about-banner h1 {
+     . h1 {
          text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.3);
         font-family: "EB Garamond", serif;
 

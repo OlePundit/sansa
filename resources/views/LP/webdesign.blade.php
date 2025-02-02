@@ -90,6 +90,8 @@
                     <h1>{{$designs->title}}</h1>
                     <p class="intro">{!! $designs->intro !!}
                     </p>
+                    <img src="/storage/{{$designs->img1}}" class="aboutImg2" alt="hero-img">
+
                     <a href="/contact" class="btn">Get Started</a>
                 </div>
                 <img src="/storage/{{$designs->img1}}" class="aboutImg" height="417px;" alt="hero-img">
