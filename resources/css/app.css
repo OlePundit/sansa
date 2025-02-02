@@ -8382,6 +8382,9 @@
     .lp .section-who h2{
         margin-top: 5%;
     }
+    .lp .mobileBack{
+        background:#2c96e2!important;
+    }
  }
  .lp .section-more .custom-card .card-body button:hover {
     border-radius: 8px;

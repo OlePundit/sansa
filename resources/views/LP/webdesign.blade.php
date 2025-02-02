@@ -2,7 +2,7 @@
 
 @section('content')
 <div id="app" class="about lp">
-    <div style="background-image:url({{url("/storage/about.png")}});background-repeat: no-repeat;  background-size: cover;height:70%" >
+    <div style="background-image:url({{url("/storage/about.png")}});background-repeat: no-repeat;  background-size: cover;height:70%" class="mobileBack" >
 
         <nav class="navbar navbar-expand-md navbar-light shadow-sm">
         <div class="container">
