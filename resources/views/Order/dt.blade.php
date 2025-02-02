@@ -179,16 +179,19 @@
 @endsection
 @section('scripts')
 <script>
-    function generateRandomString(length) {
-        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-        let result = '';
-        for (let i = 0; i < length; i++) {
-        result += characters.charAt(Math.floor(Math.random() * characters.length));
+    document.addEventListener("DOMContentLoaded", function() {
+        function generateRandomString(length) {
+            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            let result = '';
+            for (let i = 0; i < length; i++) {
+                result += characters.charAt(Math.floor(Math.random() * characters.length));
+            }
+            return result;
         }
-        return result;
-    }
 
-    // Set the value of the hidden input
-    document.getElementById('orderID').value = generateRandomString(10); // Change '10' to the desired string length
+        // Set the value of the hidden input
+        document.getElementById('orderID').value = generateRandomString(10);
+    });
+
 </script>
 @endsection

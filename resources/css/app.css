@@ -8290,6 +8290,10 @@
  .lp .section-packages{
     margin-bottom: 15%;
  }
+ .lp .section-who{
+    margin-bottom: 15%;
+
+ }
  .lp .section-packages h2{
     text-align: center;;
  }
@@ -8356,9 +8360,6 @@
   .lp .digital-heading{
     color:#fff!important;
     font-size:1.1rem;
-    display:flex;
-    justify-content: center;
-    flex-direction: column;
  }
  .lp .about-banner .digitalImg{
     width:100%;
@@ -8378,13 +8379,14 @@
         flex-direction: column-reverse;
     }
     .lp .info .btn,.lp .resp .btn,.lp .how .btn {
-        margin-bottom: 5%;
+        margin-bottom: 15%;
     }
     .lp .section-who h2{
         margin-top: 5%;
     }
     .lp .mobileBack{
         background:#2c96e2!important;
+        height:auto!important;
     }
     .lp h2{
         margin-top: 5%;
@@ -8392,11 +8394,20 @@
     .lp .aboutImg2{
         width:100%
     }
+    .lp .about-banner {
+      height: fit-content;
+      overflow: visible;
+    }
+    .lp .about-banner .btn{
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
  }
  @media(min-width:769px){
     .lp .aboutImg2{
         display:none;   
     }
+    
  }
  .lp .section-more .custom-card .card-body button:hover {
     border-radius: 8px;
