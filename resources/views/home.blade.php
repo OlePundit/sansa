@@ -3,14 +3,6 @@
 @section('content')
 <div id="app">
     <div style="background: radial-gradient(104.85% 104.85% at 50% 0%, rgba(23, 23, 23, 0.00) 61%, #171717 90.5%), url('{{url("/storage/header.png")}}') center center / cover no-repeat;height:100vh;" >
-        <div class="self-banner fadeInDown" style="background: #2c96e2;">
-            <div class="self-banner-wrap align-items-center justify-content-center fadeInRight" style="padding:10px 0;">
-                <h3 class="text-white">Check Out Our New Self-serve Platform</h3>
-                <a href="https://self.sansadigital.com">
-                    <img src="/storage/logo-B_0u2T60.png" alt="Sansa Digital 2.0" width="250">
-                </a>
-            </div>
-        </div>
         <nav class="navbar navbar-expand-md navbar-light shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="{{ url('/') }}">
