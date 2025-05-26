@@ -28,6 +28,14 @@ class HomeController extends Controller
         $digitals = Package::where('category','digital marketing')->get();
         return view('home',compact('services','webs','digitals'));
     }
+    public function privacy()
+    {
+        return view('Salama.privacy');
+    }
+    public function deletion()
+    {
+        return view('Salama.deletion');
+    }
     public function about()
     {
         $services = Service::all();

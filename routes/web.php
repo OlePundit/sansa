@@ -17,6 +17,8 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/salama-smart-safe/privacy-policy', [App\Http\Controllers\HomeController::class, 'privacy'])->name('privacy');
+Route::get('/salama-smart-safe/account-deletion', [App\Http\Controllers\HomeController::class, 'deletion'])->name('deletion');
 Route::get('/about', [App\Http\Controllers\HomeController::class, 'about'])->name('about');
 Route::get('/lps/webdesign', [App\Http\Controllers\LPController::class, 'webdesign'])->name('webdesign');
 Route::get('/lps/digital-training', [App\Http\Controllers\LPController::class, 'digitalmarketing'])->name('digitalmarketing');
