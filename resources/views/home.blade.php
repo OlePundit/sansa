@@ -236,7 +236,7 @@
                             </div>
                             <div class="col-lg-4 col-md-6 col-sm-6">
                                 <div class="service-box wow fadeInDown">
-                                    <img class="icon-box" src="/storage/seo.webp" alt="seo">
+                                    <img class="icon-box" src="/storage/mobile.webp" alt="seo">
                                     <h4>Mobile development</h4>
                                     <div style="display:flex;flex-direction:column;height:65%;justify-content:space-between;">
                                         <ul>
@@ -297,7 +297,7 @@
                             </div>
                             <div class="col-lg-4 col-md-6 col-sm-6">
                                 <div class="service-box wow fadeInDown">
-                                    <img class="icon-box" src="/storage/seo.webp" alt="seo">
+                                    <img class="icon-box" src="/storage/it.webp" alt="seo">
                                     <h4>IT Support & Help Desk</h4>
                                     <div style="display:flex;flex-direction:column;height:65%;justify-content:space-between;">
                                         <ul>
@@ -319,7 +319,7 @@
                             </div>
                             <div class="col-lg-4 col-md-6 col-sm-6">
                                 <div class="service-box wow fadeInDown">
-                                    <img class="icon-box" src="/storage/seo.webp" alt="seo">
+                                    <img class="icon-box" src="/storage/webhosting.webp" alt="seo">
                                     <h4>Web hosting</h4>
                                     <div style="display:flex;flex-direction:column;height:65%;justify-content:space-between;">
                                         <ul>
