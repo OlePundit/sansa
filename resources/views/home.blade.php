@@ -343,6 +343,9 @@
 
                                     </div>
                                     <div class="swiper-slide">
+                                        <img src="/storage/chenaniah-logo.webp" alt="logo" width="100px">
+                                    </div>
+                                    <div class="swiper-slide">
                                         <img src="/storage/ictalogo.webp" alt="logo" width="100px">
 
                                     </div>
@@ -431,12 +434,12 @@
                             <div class="portfolio-item box-2">
                                 <a href="https://kimuzi.com">
 
-                                    <img src="/storage/blogk.webp" alt="portfolio-item-1" width="100%">
+                                    <img src="/storage/chenaniah.webp" alt="portfolio-item-1" width="100%">
                                 </a>
                                 <div class="text-2">
                                     <div>
                                         <h4>Web Design</h4>
-                                        <h5>Kimuzi.com</h5>
+                                        <h5>Chenaniah Solutions</h5>
                                     </div>
                                     <i class="fa-solid fa-arrow-right"></i>
 
