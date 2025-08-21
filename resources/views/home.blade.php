@@ -343,7 +343,7 @@
 
                                     </div>
                                     <div class="swiper-slide">
-                                        <img src="/storage/chenaniah-logo.webp" alt="logo" width="100px">
+                                        <img src="/storage/chenaniah-logo.png" alt="logo" width="100px">
                                     </div>
                                     <div class="swiper-slide">
                                         <img src="/storage/ictalogo.webp" alt="logo" width="100px">
