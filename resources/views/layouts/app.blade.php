@@ -238,6 +238,14 @@ swiper2.initialize();
     "target":"https://sansadigital.com"
   }, 
   {
+    "@type": "ReadAction",
+    "target":"https://sansadigital.com/about"
+  }, 
+  {
+    "@type": "ReadAction",
+    "target":"https://sansadigital.com/blogs"
+  }, 
+  {
     "@type": "FillAction",
     "target":"https://sansadigital.com/contact"
   } 
