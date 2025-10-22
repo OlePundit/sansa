@@ -1,0 +1,12 @@
+{
+  "/_not-found/page": "/_not-found",
+  "/admin/blogs/[id]/page": "/admin/blogs/[id]",
+  "/admin/blogs/page": "/admin/blogs",
+  "/admin/contacts/page": "/admin/contacts",
+  "/admin/orders/page": "/admin/orders",
+  "/admin/packages/page": "/admin/packages",
+  "/admin/page": "/admin",
+  "/admin/services/[id]/page": "/admin/services/[id]",
+  "/admin/services/page": "/admin/services",
+  "/page": "/"
+}
