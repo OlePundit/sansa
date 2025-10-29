@@ -42,7 +42,6 @@ class StoreLpRequest extends FormRequest
             'slug' => '',   
             'benefits' => '',   
             'benefits2' => '',   
-            
         ];
     }
 }
