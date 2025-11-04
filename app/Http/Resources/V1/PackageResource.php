@@ -20,6 +20,7 @@ class PackageResource extends JsonResource
             'tier'=>$this->tier,
             'features'=>$this->features,
             'price'=>$this->price,
+            'service'=>ServiceResource::collection($this->whenLoaded('service')),
         ];    
     }
 }
