@@ -881,3 +881,19 @@ swiper2.initialize();
 
 </script>
 @endsection
+
+
+
+
+
+'use client';
+import { useState } from 'react';
+import Link from 'next/link';
+
+export default function Header({ services = [] }) {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  return (
+
+  );
+}

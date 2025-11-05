@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Resources\V1\PackageCollection;
 use App\Models\Package;
+use App\Models\Service;
 
 class HomeController extends Controller
 {
