@@ -1,16 +1,24 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 
 export default function HomeClient({ services, packages }) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsVisible(true), 100);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <div>
+      {/* Hero Section with fade + zoom effect */}
       <div
-        className="relative h-screen bg-cover bg-center"
+        className={`relative h-screen bg-cover bg-center transition-all duration-[2000ms] ease-in-out transform ${
+          isVisible ? 'opacity-100 scale-105' : 'opacity-0 scale-100'
+        }`}
         style={{
           backgroundImage: `
             radial-gradient(104.85% 104.85% at 50% 0%, rgba(23,23,23,0) 61%, #171717 90.5%),
@@ -19,7 +27,7 @@ export default function HomeClient({ services, packages }) {
         }}
       >
         {/* Navbar */}
-        <nav className="bg-transparent shadow-sm">
+        <nav className="bg-transparent shadow-sm pt-6"> {/* added top padding */}
           <div className="container mx-auto flex flex-wrap items-center justify-between px-4 py-3">
             <Link href="/" className="flex items-center">
               <img src="/storage/whiteai.png" alt="logo" width="200" className="mx-2" />
@@ -37,18 +45,32 @@ export default function HomeClient({ services, packages }) {
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
               </svg>
             </button>
 
             {/* Menu */}
-            <div className={`w-full md:flex md:items-center md:w-auto ${menuOpen ? 'block' : 'hidden'}`}>
-              <ul className="flex flex-col md:flex-row md:space-x-6 text-white text-lg font-light">
+            <div
+              className={`w-full md:flex md:items-center md:w-auto ${
+                menuOpen ? 'block' : 'hidden'
+              }`}
+            >
+              <ul className="flex flex-col md:flex-row md:space-x-8 text-white text-lg font-light pt-4 md:pt-0">
+                {/* ↑ added pt-4 for small screens, keeps spacing nice */}
                 <li>
-                  <Link href="/" className="block py-2 hover:text-gray-300">Home</Link>
+                  <Link href="/" className="block py-2 hover:text-gray-300">
+                    Home
+                  </Link>
                 </li>
                 <li>
-                  <Link href="/about" className="block py-2 hover:text-gray-300">About</Link>
+                  <Link href="/about" className="block py-2 hover:text-gray-300">
+                    About
+                  </Link>
                 </li>
 
                 {/* Services Dropdown */}
@@ -86,10 +108,14 @@ export default function HomeClient({ services, packages }) {
                 </li>
 
                 <li>
-                  <Link href="/contact" className="block py-2 hover:text-gray-300">Contact</Link>
+                  <Link href="/contact" className="block py-2 hover:text-gray-300">
+                    Contact
+                  </Link>
                 </li>
                 <li>
-                  <Link href="/blogs" className="block py-2 hover:text-gray-300">Blog</Link>
+                  <Link href="/blogs" className="block py-2 hover:text-gray-300">
+                    Blog
+                  </Link>
                 </li>
                 <li>
                   <Link
