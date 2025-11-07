@@ -11,7 +11,6 @@ export default function InfoSection() {
       strings: ["Solutions"], // words to type
       typeSpeed: 50,
       showCursor: false,
-      cursorChar: "|",
       loop: false, // optional
     });
 
@@ -100,7 +99,7 @@ export default function InfoSection() {
       {/* Right column with info */}
       <div className="w-full lg:w-6/12 flex flex-col justify-center items-start text-left mb-12 lg:mb-0 ml-10">
         <h2 className="text-4xl lg:text-4xl font-bold leading-snug mb-4">
-          We Provide <span ref={el} className="text-[#2c96e2]"></span> To Your Problems
+          We Provide <span ref={el} className="text-[#2f976b]"></span> To Your Problems
         </h2>
         <p className="mb-6 text-xl">
           We are a team of experts from different technical and creative
@@ -109,7 +108,7 @@ export default function InfoSection() {
         </p>
         <a
           href="/#section-services"
-          className="bg-[#2c96e2] text-white text-xl font-bold px-6 py-2 rounded-md shadow hover:bg-blue-700 transition"
+          className="bg-[#2c96e2] text-white text-xl font-bold px-6 py-2 rounded-md shadow hover:bg-[#2f976b] transition"
         >
           Learn More
         </a>

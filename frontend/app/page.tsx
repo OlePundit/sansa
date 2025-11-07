@@ -19,7 +19,7 @@ export default async function Home() {
       {/* Optional: if HomeClient handles client-only features (e.g. animations, interactivity) */}
       <HomeClient services={services} packages={packages} />
 
-      <main className="flex flex-col justify-center items-center w-full lg:w-3/4 mx-auto">
+      <main className="flex flex-col justify-center items-center w-full lg:w-2/3 mx-auto">
         <InfoSection />
         <ServicesSection services={services} />
         <PricesSection />
