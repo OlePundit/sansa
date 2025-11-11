@@ -1,40 +1,96 @@
-'use client';
-import { Package } from '@/types/home';
+"use client";
 
-interface PackagesSectionProps {
-  webs: Package[];
-  digitals: Package[];
+import React from "react";
+import { CheckCircle } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
+
+interface PackageItem {
+  id: number;
+  tier: string;
+  price: number;
+  features: string[];
 }
 
-export default function PackagesSection({ webs, digitals }: PackagesSectionProps) {
-  const renderPackageCard = (pkg: Package) => (
-    <div
-      key={pkg.id}
-      className="bg-white p-6 rounded-2xl shadow hover:shadow-xl transition hover:-translate-y-2"
-    >
-      <h4 className="text-xl font-bold mb-2">{pkg.title}</h4>
-      <p className="text-gray-600 mb-4">{pkg.description}</p>
-      <p className="text-blue-600 font-semibold text-lg">${pkg.price}</p>
-    </div>
-  );
+interface PackagesSectionProps {
+  webs: PackageItem[];
+  digitals: PackageItem[];
+}
 
+export const PackagesSection: React.FC<PackagesSectionProps> = ({ webs, digitals }) => {
   return (
-    <section id="section-packages" className="py-20 bg-gray-100">
-      <div className="container mx-auto px-6">
-        <h2 className="text-3xl font-bold text-center mb-12">Our Packages</h2>
+    <section id="section-packages" className="py-20 flex flex-col items-center text-white">
+      <h3 className="text-3xl md:text-4xl font-semibold">Packages</h3>
 
-        <div>
-          <h3 className="text-2xl font-semibold mb-6 text-gray-800">Web Design Packages</h3>
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mb-12">
-            {webs.map(renderPackageCard)}
-          </div>
+      {/* Web Design Packages */}
+      <div className="w-full flex flex-col items-center">
+        <h4 className="text-2xl font-montserrat text-[#2c96e2] mt-5 mb-8 text-center">Web Design Packages</h4>
+        <div className="flex flex-wrap justify-center gap-6">
+          {webs.map((web) => (
+            <div
+              key={web.id}
+              className="bg-[#193155] p-6 rounded-2xl flex flex-col justify-between hover:-translate-y-4 transition-transform duration-300 w-72"
+            >
+              <h5 className="text-xl text-[#2f976b] font-semibold mb-3">{web.tier} Package</h5>
+              <ul className="mb-4 list-none mt-3 mb-3 space-y-2">
+                {web.features.map((feature, i) => (
+                  <li
+                    key={i}
+                    className="flex relative text-white"
+                  >
+                    <CheckCircle className="text-[#2f976b] w-5 h-5 flex-shrink-0 mr-3" />
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+                <a
+                  href={`/order/${web.id}`}
+                  className="group flex items-center justify-between bg-[#2c96e2] text-white font-serif text-lg px-4 py-2 rounded-md hover:bg-[#2f976b] hover:text-[#193155] transition-colors duration-300"
+                >
+                  Ksh {web.price}
+                  <ArrowUpRight
+                    className="w-6 h-6 transform transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+                  />
+                </a>
 
-          <h3 className="text-2xl font-semibold mb-6 text-gray-800">Digital Marketing Packages</h3>
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {digitals.map(renderPackageCard)}
-          </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Digital Marketing Packages */}
+      <div className="w-full flex flex-col items-center mt-16">
+        <h4 className="text-3xl font-medium text-[#2c96e2] mb-8 text-center">Digital Marketing Packages</h4>
+        <div className="flex flex-wrap justify-center gap-6">
+          {digitals.map((digital) => (
+            <div
+              key={digital.id}
+              className="bg-[#193155] p-6 rounded-2xl flex flex-col justify-between hover:-translate-y-4 transition-transform duration-300 w-72"
+            >
+              <h5 className="text-xl text-[#2f976b] font-semibold mb-3">{digital.tier} Package</h5>
+              <ul className="mb-4 list-none space-y-2">
+                {digital.features.map((feature, i) => (
+                  <li
+                    key={i}
+                    className="flex relative text-white before:absolute before:left-0 before:top-1/2 before:w-4 before:h-4 before:-translate-y-1/2 before:bg-[url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2216%22 height=%2216%22 fill=%22%232c96e2%22 viewBox=%220 0 16 16%22><path d=%22M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16%22/><path d=%22m10.97 4.97-.02.022-3.473 4.425-2.093-2.094a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05%22/></svg>')] before:bg-contain before:bg-no-repeat"
+                  >
+                    <CheckCircle className="text-[#2f976b] w-5 h-5 flex-shrink-0 mr-3" />
+                    <span>{feature}</span>                  
+                  </li>
+                ))}
+              </ul>
+              <a
+                href={`/order/${digital.id}`}
+                className="group flex items-center justify-between bg-[#2c96e2] text-white font-serif text-lg px-4 py-2 rounded-md hover:bg-[#2f976b] hover:text-[#193155] transition-colors duration-300"
+              >
+                Ksh {digital.price}
+                <ArrowUpRight
+                  className="w-6 h-6 transform transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+                />
+              </a>
+            </div>
+          ))}
         </div>
       </div>
     </section>
   );
-}
+};

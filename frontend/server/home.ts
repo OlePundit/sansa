@@ -10,7 +10,7 @@ export const getHomeData = async (filters?: { webs?: boolean; digitals?: boolean
     const baseUrl = process.env.APP_URL || 'http://127.0.0.1:8000';
     const url = `${baseUrl}/api/home${params.toString() ? `?${params.toString()}` : ''}`;
 
-    console.log('Fetching from:', url); // Debug log
+    console.log('Fetching from:', url);
 
     const response = await fetch(url, {
       method: 'GET',
@@ -21,22 +21,30 @@ export const getHomeData = async (filters?: { webs?: boolean; digitals?: boolean
       cache: 'no-store',
     });
 
-    console.log('Response status:', response.status); // Debug log
-
     if (!response.ok) {
-      // Get more error details
       const errorText = await response.text();
       console.error('Error response:', errorText);
       throw new Error(`Failed to fetch home data: ${response.status} - ${errorText}`);
     }
 
     const json = await response.json();
-    console.log('Response data:', json); // Debug log
+    console.log('Response data:', json);
+
+    // FIX: Use the new API response structure
+    // Parse features from string to array for both webs and digitals
+    const parseFeatures = (pkg: any) => ({
+      ...pkg,
+      features: typeof pkg.features === 'string' ? JSON.parse(pkg.features) : pkg.features
+    });
+
+    const webs = (json.webs || []).map(parseFeatures);
+    const digitals = (json.digitals || []).map(parseFeatures);
 
     return {
-      packages: json.packages?.data || [],
+      webs: webs,
+      digitals: digitals,
       services: json.services || [],
-      meta: json.packages?.meta || null,
+      meta: json.meta || null,
     };
   } catch (error) {
     console.error('Error in getHomeData:', error);

@@ -4,21 +4,22 @@ import InfoSection from '@/components/InfoSection';
 import ServicesSection from '@/components/ServicesSection';
 import PricesSection from '@/components/PricesSection';
 import ProjectsSection from '@/components/ProjectsSection';
-import PortfolioSection from '@/components/PortfolioSection';
-import PackagesSection from '@/components/PackagesSection';
+import { PortfolioSection } from '@/components/PortfolioSection';
+import { PackagesSection } from '@/components/PackagesSection';
 import TestimonialsSection from '@/components/TestimonialSection';
 
 export default async function Home() {
-  const { packages, services } = await getHomeData({ webs: true });
+  const { webs, digitals, services } = await getHomeData();
 
-  const webs = packages.filter(pkg => pkg.category === 'web design');
-  const digitals = packages.filter(pkg => pkg.category === 'digital marketing');
+  // Debug: Check what we're actually getting
+  console.log('Web packages after filtering:', webs);
+  console.log('Digital packages after filtering:', digitals);
+  console.log('Services:', services);
 
   return (
     <>
-      {/* Optional: if HomeClient handles client-only features (e.g. animations, interactivity) */}
-      <HomeClient services={services} packages={packages} />
-
+      <HomeClient services={services} packages={[...webs, ...digitals]} />
+      
       <main className="flex flex-col justify-center items-center w-full lg:w-2/3 mx-auto">
         <InfoSection />
         <ServicesSection services={services} />
