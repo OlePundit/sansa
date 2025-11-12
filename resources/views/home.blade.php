@@ -653,7 +653,6 @@
                                         <a href="/contact">CONTACT</a>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>

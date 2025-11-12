@@ -16,7 +16,7 @@ class HomeController extends Controller
 
         $webs = $request->query('webs');
         $digitals = $request->query('digitals');
-        $services = Service::all(); // include services from your other function
+        $services = Service::all();
 
         if ($webs) {
             $packages = $query->where('category', 'web design')->paginate();
@@ -26,11 +26,21 @@ class HomeController extends Controller
             $packages = $query->paginate();
         }
 
-        // Include services in the response
+        // Separate packages by category
+        $allPackages = $packages->getCollection();
+        $webPackages = $allPackages->where('category', 'web design')->values();
+        $digitalPackages = $allPackages->where('category', 'digital marketing')->values();
+
         return response()->json([
-            'packages' => new PackageCollection($packages),
-            'services' => $services
+            'webs' => $webPackages,
+            'digitals' => $digitalPackages,
+            'services' => $services,
+            'meta' => [
+                'current_page' => $packages->currentPage(),
+                'last_page' => $packages->lastPage(),
+                'per_page' => $packages->perPage(),
+                'total' => $packages->total(),
+            ]
         ]);
     }
-
 }

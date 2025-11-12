@@ -7,6 +7,8 @@ import ProjectsSection from '@/components/ProjectsSection';
 import { PortfolioSection } from '@/components/PortfolioSection';
 import { PackagesSection } from '@/components/PackagesSection';
 import TestimonialsSection from '@/components/TestimonialSection';
+import QuoteSection from '@/components/QuoteSection';
+import NewsletterSection from '@/components/NewsletterSection';
 
 export default async function Home() {
   const { webs, digitals, services } = await getHomeData();
@@ -28,6 +30,8 @@ export default async function Home() {
         <PortfolioSection />
         <PackagesSection webs={webs} digitals={digitals} />
         <TestimonialsSection />
+        <QuoteSection />
+        <NewsletterSection />
       </main>
     </>
   );
