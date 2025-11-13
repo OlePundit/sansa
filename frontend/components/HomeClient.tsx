@@ -140,7 +140,7 @@ export default function HomeClient({ services, packages }) {
                 As a leading tech and creative agency, our aim is to help brands bring their ideas to life.
               </p>
               <Link href="#section-info">
-                <button className="bg-white text-black font-medium px-6 py-3 rounded-lg shadow hover:bg-gray-200 transition">
+                <button className="bg-[#2f976b] text-xl font-bold px-6 py-3 rounded-lg shadow hover:bg-white hover:text-[#193155] transition">
                   Learn More
                 </button>
               </Link>
