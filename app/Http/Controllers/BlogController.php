@@ -15,7 +15,7 @@ class BlogController extends Controller
         $blogs = Blog::all();
         return view('Blog.index', compact('blogs','services'));
     }
-    public function blog(Blog $slug)
+    public function blog(Blog $blog)
     {
         $services = Service::all();
         $moreServices = Service::inRandomOrder()->limit(3)->get();

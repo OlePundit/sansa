@@ -29,17 +29,17 @@ Route::middleware('auth:sanctum')->group(function() {
     Route::post('/logout', [AuthController::class, 'logout']);
     Route::get('/validate-token', [AuthController::class, 'validateToken']);
     Route::apiResource('/newsletter',NewsletterController::class);
-    Route::apiResource('/about',AboutController::class)->only(['index']);
     Route::apiResource('/services',ServiceController::class)->only(['show','index']);
     Route::apiResource('/contact',ContactController::class)->only(['store']);
-    Route::apiResource('/blogs',BlogController::class)->only(['index','show','store','destroy']);
     Route::apiResource('/lps',LpController::class)->only(['index','show']);
     Route::post('/pay', [PaymentController::class, 'redirectToGateway'])->name('pay');
     Route::get('cancel', [PaymentController::class, 'cancel'])->name('cancel');
 
 });
+Route::apiResource('/blogs',BlogController::class);
 Route::apiResource('/users', AuthController::class);
 Route::apiResource('/home',HomeController::class)->only(['index']);
+Route::apiResource('/about',AboutController::class)->only(['index']);
 
 Route::post('/signup', [AuthController::class, 'signup']);
 Route::post('/login', [AuthController::class, 'login']);

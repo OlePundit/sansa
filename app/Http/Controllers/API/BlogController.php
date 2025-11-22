@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Blog;
+use App\Models\Service;
 use App\Http\Resources\V1\BlogResource;
 use App\Http\Resources\V1\BlogCollection;
 use App\Http\Requests\V1\StoreBlogRequest;
@@ -16,11 +17,27 @@ class BlogController extends Controller
     public function index(Request $request)
     {
         $query = Blog::query();
+
         $blogs = $query->paginate();
 
-        return (new BlogCollection($blogs))
+        // If you ever want to separate categories, you can do it here:
+        $allBlogs = $blogs->getCollection();
+        $services = Service::all();
+
+        return response()->json([
+            'blogs' => $allBlogs,
+            'services' => $services,
+            'meta' => [
+                'current_page' => $blogs->currentPage(),
+                'last_page' => $blogs->lastPage(),
+                'per_page' => $blogs->perPage(),
+                'total' => $blogs->total(),
+            ]
+        ]);
     }
-    public function show(Blog $blog)
+
+    // In BlogController.php
+    public function show(Blog $blog) // ← Change parameter name to match resource
     {
         return new BlogResource($blog);
     }

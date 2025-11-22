@@ -11,8 +11,10 @@ class AboutController extends Controller
 {
     public function index(Request $request)
     {
-        $query = Service::query();
+        $services = Service::all();
 
-        return new ServiceCollection($query->paginate());
+        return response()->json([
+            'services' => $services
+        ]);
     }
 }
