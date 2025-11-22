@@ -14,7 +14,7 @@ export const getBlogData = async () => {
     });
 
     if (!response.ok) {
-      throw new Error(`Failed to fetch about data: ${response.status} ${response.statusText}`);
+      throw new Error(`Failed to fetch blog data: ${response.status} ${response.statusText}`);
     }
 
     const data = await response.json();
@@ -25,10 +25,10 @@ export const getBlogData = async () => {
       meta: data.meta ?? null,
     };
   } catch (error) {
-    console.error('[getAboutData] Fetch error:', error);
+    console.error('[getBlogData] Fetch error:', error);
     return {
       blogs: [],
-    services: [],
+        services: [],
       meta: null,
       error: (error as Error).message,
     };

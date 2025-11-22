@@ -16,7 +16,7 @@ export default function BlogGrid({ blogs }) {
           />
 
           <div className="bg-[#193155] p-5 rounded-b-[22px]">
-            <h4 className="text-white font-ebGaramond text-2xl font-bold">
+            <h4 className="text-white font-semibold text-2xl">
               {blog.title}
             </h4>
 
@@ -24,7 +24,7 @@ export default function BlogGrid({ blogs }) {
               {blog.excerpt ?? ""}
             </p>
 
-            <button className="mt-4 border border-[#2c96e2] text-white font-ebGaramond text-[20px] font-semibold px-4 py-2 rounded-md hover:bg-[#2c96e2] transition">
+            <button className="mt-4 border border-[#2c96e2] font-ebGaramond text-[20px] font-semibold px-4 py-2 rounded-md hover:bg-[#2c96e2] transition">
               Read More
             </button>
           </div>
