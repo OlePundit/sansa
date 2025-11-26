@@ -41,7 +41,7 @@ Route::apiResource('/users', AuthController::class);
 Route::apiResource('/home',HomeController::class)->only(['index']);
 Route::apiResource('/about',AboutController::class)->only(['index']);
 Route::apiResource('/services',ServiceController::class)->only(['show','index']);
-Route::apiResource('/lps',LpController::class)->only(['index','show']);
+Route::apiResource('/lps',LpController::class);
 
 Route::post('/signup', [AuthController::class, 'signup']);
 Route::post('/login', [AuthController::class, 'login']);
