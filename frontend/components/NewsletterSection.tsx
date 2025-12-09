@@ -21,7 +21,7 @@ export default function NewsletterSection() {
             />
             <button 
               type="submit"
-              className="bg-[#2c96e2] px-6 py-2 rounded-md font-bold text-white mt-4 text-xl hover:bg-[#2f976b] hover:text-[#193155] transition-colors duration-200"
+              className="bg-[#2c96e2] px-6 py-2 cursor-pointer rounded-md font-bold text-white mt-4 text-xl hover:bg-[#2f976b] hover:text-[#193155] transition-colors duration-200"
             >
               submit
             </button>

@@ -16,7 +16,7 @@ export default function HomeClient({ services, packages }) {
     <div>
       {/* Hero Section with fade + zoom effect */}
       <div
-        className={`relative h-screen bg-cover bg-center transition-all duration-[2000ms] ease-in-out transform ${
+        className={`relative h-screen bg-cover  bg-no-repeat bg-center transition-all duration-[2000ms] ease-in-out transform ${
           isVisible ? 'opacity-100 scale-105' : 'opacity-0 scale-100'
         }`}
         style={{
@@ -133,14 +133,14 @@ export default function HomeClient({ services, packages }) {
 
         {/* Header Banner */}
         <div className="container mx-auto text-white px-4 py-20">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
             <div>
               <h1 className="text-5xl font-bold mb-4">Sansa Digital</h1>
-              <p className="text-lg mb-6">
+              <p className="text-2xl font-semibold mb-6">
                 As a leading tech and creative agency, our aim is to help brands bring their ideas to life.
               </p>
               <Link href="#section-info">
-                <button className="bg-[#2f976b] text-xl font-bold px-6 py-3 rounded-lg shadow hover:bg-white hover:text-[#193155] transition">
+                <button className="cursor-pointer bg-[#2f976b] text-xl font-bold px-6 py-3 rounded-lg shadow hover:bg-white hover:text-[#193155] transition">
                   Learn More
                 </button>
               </Link>

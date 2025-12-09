@@ -164,7 +164,7 @@ export default function ServicesSection() {
       <div className="flex justify-center mt-12">
         <a
           href="/services"
-          className="bg-[#2c96e2] hover:bg-[#2f976b] text-xl text-white px-6 py-3 rounded-lg font-semibold transition"
+          className="bg-[#2c96e2] cursor-pointer hover:bg-[#2f976b] text-xl text-white px-6 py-3 rounded-lg font-semibold transition"
         >
           More Services
         </a>

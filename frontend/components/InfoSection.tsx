@@ -108,7 +108,7 @@ export default function InfoSection() {
         </p>
         <a
           href="/#section-services"
-          className="bg-[#2c96e2] text-white text-xl font-bold px-6 py-2 rounded-md shadow hover:bg-[#2f976b] transition"
+          className="bg-[#2c96e2] cursor-pointer text-white text-xl font-bold px-6 py-2 rounded-md shadow hover:bg-[#2f976b] transition"
         >
           Learn More
         </a>

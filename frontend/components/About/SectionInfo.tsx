@@ -56,7 +56,7 @@ export default function SectionInfo() {
 
         <Link href="/blogs">
           <button
-            className="mt-3 rounded-md bg-[#2c96e2] px-4 py-2 text-xl font-bold font-bold text-white hover:bg-[#2f976b] transition-all duration-300"
+            className="mt-3 rounded-md bg-[#2c96e2] px-4 py-2 text-xl font-bold font-bold text-white hover:bg-[#2f976b] cursor-pointer transition-all duration-300"
           >
             Learn More
           </button>

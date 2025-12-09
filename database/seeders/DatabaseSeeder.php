@@ -11,8 +11,11 @@ class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
-        Package::factory(10)->create();
-        Blog::factory(10)->create();
-        LP::factory(10)->create();
+        $this->call([
+            UserSeeder::class,
+        ]);
+        //Package::factory(10)->create();
+        //Blog::factory(10)->create();
+        //LP::factory(10)->create();
     }
 }

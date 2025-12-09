@@ -28,7 +28,7 @@ export default function QuoteSection() {
           </p>
           <Link
             href="/contact"
-            className="text-[#2c96e2] text-[24px] font-serif font-bold bg-white rounded-lg py-2 px-6 transition-all duration-300 hover:bg-[#193155] hover:text-white"
+            className="text-[#2c96e2] text-[24px] cursor-pointer font-serif font-bold bg-white rounded-lg py-2 px-6 transition-all duration-300 hover:bg-[#193155] hover:text-white"
           >
             CONTACT
           </Link>

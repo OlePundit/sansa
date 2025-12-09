@@ -26,7 +26,7 @@ export default function InfoSection({ img2, title1, benefits }) {
 
         <a
           href="/contact"
-          className="inline-block bg-[#2c96e2] text-white font-semibold px-6 py-3 rounded-lg hover:bg-[#2f976b] transition"
+          className="inline-block bg-[#2c96e2] text-white font-semibold px-6 py-3 cursor-pointer rounded-lg hover:bg-[#2f976b] transition"
         >
           Learn More
         </a>

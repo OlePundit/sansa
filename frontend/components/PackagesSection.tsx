@@ -80,7 +80,7 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({ webs, digitals
               </ul>
               <a
                 href={`/order/${digital.id}`}
-                className="group flex items-center justify-between bg-[#2c96e2] text-white font-serif text-lg px-4 py-2 rounded-md hover:bg-[#2f976b] hover:text-[#193155] transition-colors duration-300"
+                className="group flex items-center cursor-pointer justify-between bg-[#2c96e2] text-white font-serif text-lg px-4 py-2 rounded-md hover:bg-[#2f976b] hover:text-[#193155] transition-colors duration-300"
               >
                 Ksh {digital.price}
                 <ArrowUpRight

@@ -55,7 +55,7 @@ export const PortfolioSection: React.FC = () => {
             href={item.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="relative w-[350px] hover:w-[450px] transition-all duration-300 cursor-pointer group overflow-hidden rounded-2xl shadow-lg"
+            className="relative w-[350px] hover:w-[450px] cursor-pointer transition-all duration-300 cursor-pointer group overflow-hidden rounded-2xl shadow-lg"
           >
             {/* Image */}
             <img
