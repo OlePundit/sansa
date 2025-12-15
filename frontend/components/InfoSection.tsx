@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 import Typed from "typed.js";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
 export default function InfoSection() {
   const el = useRef(null);
@@ -21,8 +21,8 @@ export default function InfoSection() {
     };
   }, []);
 
-  // Container variants for staggering
-  const containerVariants = {
+  // Container variants
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -32,8 +32,8 @@ export default function InfoSection() {
     },
   };
 
-  // Card variants
-  const cardVariants = {
+  // Card variants with properly typed cubic bezier
+  const cardVariants: Variants = {
     hidden: {
       opacity: 0,
       y: 30,
@@ -45,7 +45,7 @@ export default function InfoSection() {
       scale: 1,
       transition: {
         duration: 0.5,
-        ease: [0.25, 0.1, 0.25, 1],
+        ease: [0.25, 0.1, 0.25, 1.0] as const, // Add "as const" to fix the type
       },
     },
   };

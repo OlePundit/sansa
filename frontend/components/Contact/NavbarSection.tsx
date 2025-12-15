@@ -5,8 +5,9 @@ import Link from "next/link";
 import { useState, useEffect } from 'react';
 import { ChevronUp } from "lucide-react";
 import { MessageCircle, Phone } from "lucide-react"; // Standard WhatsApp-style icon
+import { Service, NavbarSectionProps } from '@/types'; // Import shared types
 
-export default function NavbarSection({ services }) { // Add default value
+export default function NavbarSection({ services }: NavbarSectionProps) { // Add default value
   const [menuOpen, setMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
 

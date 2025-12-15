@@ -1,6 +1,8 @@
 'use server';
 
-export const getServices = async () => {
+import { Service, ApiResponse } from '@/types';
+
+export const getServices = async (): Promise<Service[]> => {
   const baseUrl = process.env.APP_URL ?? "http://127.0.0.1:8000";
   const url = `${baseUrl}/api/services`;
 
@@ -17,9 +19,9 @@ export const getServices = async () => {
       throw new Error(`Failed to fetch services: ${response.status}`);
     }
 
-    const data = await response.json();
+    const data: ApiResponse<Service[]> = await response.json();
 
-    // Your Laravel API returns: { data: [...] }
+    // Assuming your API returns { data: [...] }
     return Array.isArray(data.data) ? data.data : [];
 
   } catch (error) {

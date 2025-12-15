@@ -5,11 +5,10 @@ import ProjectsSection from "@/components/ProjectsSection";
 import QuoteSection from "@/components/About/QuoteSection";
 import StatsSection from "@/components/About/StatsSection";
 import Footer from "@/components/Footer";
-
-import { getAboutData } from "@/server/about";
+import { getServices } from "@/server/services";
 
 export default async function AboutPage() {
-    const { services } = await getAboutData();
+    const services = await getServices();
     return (
         <div>
             <NavbarSection services={services} />

@@ -1,21 +1,21 @@
 'use client';
 import { createContact } from "@/server/contact";
-import { useState } from "react";
+import { useState, FormEvent, ChangeEvent } from "react";
 import { useRouter } from 'next/navigation';
 
 export default function ContactSection() {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
-  const [isLoading, setIsLoading] = useState(false); // ✅ New loading state
+  const [name, setName] = useState<string>('');
+  const [email, setEmail] = useState<string>('');
+  const [message, setMessage] = useState<string>('');
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const router = useRouter();
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     
-    if (isLoading) return; // Prevent multiple submissions
+    if (isLoading) return;
     
-    setIsLoading(true); // Start loading
+    setIsLoading(true);
     
     try {
       const res = await createContact({
@@ -25,17 +25,20 @@ export default function ContactSection() {
       });
       
       if (res) {
-        // Redirect to the success page
         router.push('/thanks');
       }
       console.log(res);
     } catch (error) {
       console.error('Error submitting form:', error);
-      // Optionally show an error message to the user
     } finally {
-      setIsLoading(false); // Stop loading regardless of success/error
+      setIsLoading(false);
     }
   };
+
+  // Optional: Add type for change handlers
+  const handleNameChange = (e: ChangeEvent<HTMLInputElement>) => setName(e.target.value);
+  const handleEmailChange = (e: ChangeEvent<HTMLInputElement>) => setEmail(e.target.value);
+  const handleMessageChange = (e: ChangeEvent<HTMLTextAreaElement>) => setMessage(e.target.value);
   
   return (
     <div className="contact w-[90%] mx-auto">
@@ -69,9 +72,9 @@ export default function ContactSection() {
               <input
                 type="text"
                 value={name}
-                onChange={(e) => setName(e.target.value)}
+                onChange={handleNameChange} // Use typed handler
                 placeholder="name"
-                disabled={isLoading} // ✅ Disable during loading
+                disabled={isLoading}
                 className="w-full h-14 border border-[#aeabab] bg-transparent rounded-2xl mb-6 p-3 text-white disabled:opacity-50"
                 required
               />
@@ -79,10 +82,10 @@ export default function ContactSection() {
               <input
                 type="email"
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={handleEmailChange} // Use typed handler
                 name="email"
                 placeholder="email"
-                disabled={isLoading} // ✅ Disable during loading
+                disabled={isLoading}
                 className="w-full h-14 border border-[#aeabab] bg-transparent rounded-2xl mb-6 p-3 text-white disabled:opacity-50"
                 required
               />
@@ -90,21 +93,20 @@ export default function ContactSection() {
               <textarea
                 name="message"
                 value={message}
-                onChange={(e) => setMessage(e.target.value)}
+                onChange={handleMessageChange} // Use typed handler
                 placeholder="message"
-                disabled={isLoading} // ✅ Disable during loading
+                disabled={isLoading}
                 className="w-full h-40 border border-[#aeabab] bg-transparent rounded-2xl mb-6 p-3 text-white disabled:opacity-50"
                 required
               ></textarea>
 
               <button 
                 type="submit"
-                disabled={isLoading} // ✅ Disable button during loading
+                disabled={isLoading}
                 className="w-full xl:w-[556px] bg-[#2c96e2] hover:bg-[#2f976b] text-white text-center cursor-pointer text-xl font-semibold rounded-lg py-3 mt-5 flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
               >
                 {isLoading ? (
                   <>
-                    {/* White circular loading spinner */}
                     <svg 
                       className="animate-spin h-5 w-5 text-white" 
                       xmlns="http://www.w3.org/2000/svg" 

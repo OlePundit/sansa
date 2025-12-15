@@ -1,6 +1,7 @@
 import Link from "next/link";
+import { Blog, BlogGridProps } from '@/types';
 
-export default function BlogGrid({ blogs }) {
+export default function BlogGrid({ blogs }: BlogGridProps ) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-20 sm:py-50 gap-6">
       {blogs?.map((blog) => (

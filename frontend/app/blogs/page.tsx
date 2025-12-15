@@ -2,9 +2,12 @@ import NavbarSection from "@/components/Blog/NavbarSection";
 import BlogGrid from "@/components/Blog/BlogGrid";
 import Footer from "@/components/Footer";
 import { getBlogData } from "@/server/blog";
+import { getServices } from "@/server/services";
 
 export default async function BlogPage() {
-    const { blogs, services } = await getBlogData();
+    const services = await getServices();
+    
+    const blogs = await getBlogData();
     return (
         <div>
             <NavbarSection services={services} />

@@ -5,15 +5,17 @@ import Link from "next/link";
 import { useState, useEffect } from 'react';
 import { MessageCircle, Phone } from "lucide-react"; // Standard WhatsApp-style icon
 import { motion } from "framer-motion";
+import { Service, NavbarSectionProps } from '@/types'; // Import shared types
 
-export default function NavbarSection({ services }) {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
+  export default function NavbarSection({ services }: NavbarSectionProps) {
+    const [menuOpen, setMenuOpen] = useState(false);
+    const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(true), 100);
     return () => clearTimeout(timer);
   }, []);
+    
   return (
     <div
         className={`relative w-full h-screen bg-cover  bg-no-repeat bg-center transition-all duration-[2000ms] ease-in-out transform ${

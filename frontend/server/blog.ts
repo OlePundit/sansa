@@ -1,6 +1,8 @@
 'use server';
 
-export const getBlogData = async () => {
+import { Blog, ApiResponse } from '@/types';
+
+export const getBlogData = async (): Promise<Blog[]> => {
   const baseUrl = process.env.APP_URL ?? 'http://127.0.0.1:8000';
   const url = `${baseUrl}/api/blogs`;
 
@@ -17,20 +19,12 @@ export const getBlogData = async () => {
       throw new Error(`Failed to fetch blog data: ${response.status} ${response.statusText}`);
     }
 
-    const data = await response.json();
+    const data: ApiResponse<Blog[]> = await response.json();
 
-    return {
-      blogs: Array.isArray(data.blogs) ? data.blogs : [],
-      services: Array.isArray(data.services) ? data.services : [],
-      meta: data.meta ?? null,
-    };
+    return Array.isArray(data.data) ? data.data : [];
+
   } catch (error) {
     console.error('[getBlogData] Fetch error:', error);
-    return {
-      blogs: [],
-        services: [],
-      meta: null,
-      error: (error as Error).message,
-    };
+    return []
   }
 };

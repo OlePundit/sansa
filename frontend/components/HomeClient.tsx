@@ -4,8 +4,9 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { MessageCircle, Phone } from "lucide-react"; // Standard WhatsApp-style icon
 import { motion } from "framer-motion";
+import { Service, NavbarSectionProps } from '@/types'; // Import shared types
 
-export default function HomeClient({ services, packages }) {
+export default function HomeClient({ services }: NavbarSectionProps) {
   const whatsappColors = {
     green: "#25D366",     // Main green
     lightGreen: "#128C7E", // Darker green for hover

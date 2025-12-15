@@ -2,11 +2,13 @@
 
 import { Disclosure } from "@headlessui/react";
 import { ChevronRight } from "lucide-react";
+import { FaqSectionProps } from '@/types';
+
 
 export default function FaqSection({
   faq1, faq2, faq3, faq4, faq5,
   ans1, ans2, ans3, ans4, ans5
-}) {
+}: FaqSectionProps) {
 
   // Convert props → array
   const faqs = [
