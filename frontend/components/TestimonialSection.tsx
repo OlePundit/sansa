@@ -1,7 +1,7 @@
-"use client"; // if using Next 13+ App Router
+"use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion"; // optional for bounce-in animations
+import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
 
 const testimonials = [
@@ -10,44 +10,85 @@ const testimonials = [
     name: "Peter Okata",
     image: "/storage/author.webp",
     text: "I cannot recommend Sansa Digital enough! Their team has been instrumental in managing my website and social media.",
-    animation: { initial: { x: -100, opacity: 0 }, animate: { x: 0, opacity: 1 }, transition: { duration: 0.8 } },
   },
   {
     id: 2,
     name: "Augustine Bundi",
     image: "/storage/author1.webp",
     text: "What they were able to accomplish, four other previous developers had failed",
-    animation: { initial: { y: -100, opacity: 0 }, animate: { y: 0, opacity: 1 }, transition: { duration: 0.8 } },
   },
   {
     id: 3,
     name: "Emmanuel Msagha",
     image: "/storage/author2.webp",
     text: "Working with Sansa Digital was the best decision I could ever make in my journey as an entrepreneur",
-    animation: { initial: { x: 100, opacity: 0 }, animate: { x: 0, opacity: 1 }, transition: { duration: 0.8 } },
   },
 ];
 
 export default function Testimonials() {
-  return (
-    <section className="flex flex-col items-center justify-center w-full pt-40 px-4">
-      <h3 className="text-3xl md:text-4xl font-semibold">
-        Testimonials
-      </h3>
+  // Container variants for staggering
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  };
 
-      <div className="flex flex-wrap justify-center gap-8 w-full max-w-[1400px] mt-40">
+  // Card variants for animation
+  const cardVariants = {
+    hidden: {
+      opacity: 0,
+      y: 30,
+      scale: 0.95,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.5,
+        ease: [0.25, 0.1, 0.25, 1],
+      },
+    },
+  };
+
+  return (
+    <section className="flex flex-col items-center justify-center w-full pt-40 px-4 py-10">
+      <motion.h3 
+        className="text-3xl md:text-4xl font-bold"
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
+        Testimonials
+      </motion.h3>
+
+      <motion.div
+        className="flex flex-wrap justify-center gap-8 w-full max-w-[1400px] mt-20 md:mt-40"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.1 }}
+      >
         {testimonials.map((t, idx) => {
-          // Find the middle testimonial
           const middleIndex = Math.floor(testimonials.length / 2);
           const isMiddle = idx === middleIndex;
 
           return (
             <motion.div
               key={t.id}
-              initial={t.animation.initial}
-              animate={t.animation.animate}
-              transition={t.animation.transition}
-              className={`relative bg-[#193155] shadow-lg rounded-lg flex flex-col items-center pt-16 pb-10 px-10 w-full sm:w-[45%] lg:w-[30%] transform hover:-translate-y-5 transition-transform duration-300
+              variants={cardVariants}
+              whileHover={{
+                y: -12,
+                scale: 1.02,
+                boxShadow: "0 20px 40px rgba(0, 0, 0, 0.3)",
+                transition: { duration: 0.3, ease: "easeOut" }
+              }}
+              className={`relative bg-[#193155] shadow-lg rounded-lg flex flex-col items-center pt-16 pb-10 px-10 mb-10 md:mb-0 w-full sm:w-[45%] lg:w-[30%] transform transition-all duration-300
                 ${isMiddle ? 'lg:-translate-y-15' : ''}`} // lift the center one
             >
               {/* Floating Image */}
@@ -71,8 +112,7 @@ export default function Testimonials() {
             </motion.div>
           );
         })}
-      </div>
+      </motion.div>
     </section>
-
   );
 }

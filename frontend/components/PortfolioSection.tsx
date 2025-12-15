@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { motion } from "framer-motion";
 
 interface PortfolioItem {
   title: string;
@@ -37,31 +38,74 @@ const portfolioItems: PortfolioItem[] = [
 ];
 
 export const PortfolioSection: React.FC = () => {
+  // Container variants for staggering
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  };
+
+  // Card variants for animation
+  const cardVariants = {
+    hidden: {
+      opacity: 0,
+      y: 30,
+      scale: 0.95,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.5,
+        ease: [0.25, 0.1, 0.25, 1],
+      },
+    },
+  };
+
   return (
     <section
       id="section-portfolio"
-      className="py-20 flex flex-col items-center text-white"
+      className="py-10 md:py-16 flex flex-col items-center text-white"
     >
       {/* Section title */}
-      <h3 className="text-3xl md:text-4xl font-semibold">
+      <h3 className="text-3xl md:text-4xl font-bold">
         Portfolio
       </h3>
 
-      {/* Portfolio items */}
-      <div className="flex flex-wrap justify-center gap-8 py-16">
+      {/* Portfolio items container with stagger animation */}
+      <motion.div
+        className="flex flex-wrap justify-center gap-8 py-16"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.1 }}
+      >
         {portfolioItems.map((item, index) => (
-          <a
+          <motion.a
             key={index}
             href={item.link}
             target="_blank"
             rel="noopener noreferrer"
+            variants={cardVariants}
+            whileHover={{
+              scale: 1.02,
+              transition: { duration: 0.3, ease: "easeOut" }
+            }}
             className="relative w-[350px] hover:w-[450px] cursor-pointer transition-all duration-300 cursor-pointer group overflow-hidden rounded-2xl shadow-lg"
           >
+            {/* Animated shine effect */}
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out z-20 pointer-events-none" />
+
             {/* Image */}
             <img
               src={item.image}
               alt={`${item.title}-${index}`}
-              className="w-full h-auto object-cover"
+              className="w-full h-auto object-cover relative z-10"
             />
 
             {/* Gradient overlay */}
@@ -76,9 +120,9 @@ export const PortfolioSection: React.FC = () => {
               <h5 className="text-sm">{item.subtitle}</h5>
             </div>
 
-          </a>
+          </motion.a>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 };

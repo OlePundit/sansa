@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
-import { CheckCircle } from "lucide-react";
-import { ArrowUpRight } from "lucide-react";
+import { CheckCircle, ArrowUpRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 interface PackageItem {
   id: number;
@@ -17,18 +17,60 @@ interface PackagesSectionProps {
 }
 
 export const PackagesSection: React.FC<PackagesSectionProps> = ({ webs, digitals }) => {
+  // Animation variants for cards only
+  const cardVariants = {
+    hidden: {
+      opacity: 0,
+      y: 30,
+      scale: 0.95,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.5,
+        ease: [0.25, 0.1, 0.25, 1],
+      },
+    },
+  };
+
+  // Container variants for staggering
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  };
+
   return (
-    <section id="section-packages" className="py-20 flex flex-col items-center text-white">
+    <section id="section-packages" className="py-6 md:py-16 flex flex-col items-center text-white">
       <h3 className="text-3xl md:text-4xl font-semibold">Packages</h3>
 
       {/* Web Design Packages */}
       <div className="w-full flex flex-col items-center">
         <h4 className="text-2xl font-montserrat text-[#2c96e2] mt-5 mb-8 text-center">Web Design Packages</h4>
-        <div className="flex flex-wrap justify-center gap-6">
-          {webs.map((web) => (
-            <div
+        <motion.div 
+          className="flex flex-wrap justify-center gap-6"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+        >
+          {webs.map((web, index) => (
+            <motion.div
               key={web.id}
-              className="bg-[#193155] p-6 rounded-2xl flex flex-col justify-between hover:-translate-y-4 transition-transform duration-300 w-72"
+              variants={cardVariants}
+              whileHover={{
+                y: -8,
+                scale: 1.03,
+                boxShadow: "0 20px 40px rgba(0, 0, 0, 0.3)",
+                transition: { duration: 0.3, ease: "easeOut" }
+              }}
+              className="bg-[#193155] p-6 rounded-2xl flex flex-col justify-between w-72 cursor-pointer"
             >
               <h5 className="text-xl text-[#2f976b] font-semibold mb-3">{web.tier} Package</h5>
               <ul className="mb-4 list-none mt-3 mb-3 space-y-2">
@@ -52,19 +94,32 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({ webs, digitals
                   />
                 </a>
 
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
 
       {/* Digital Marketing Packages */}
       <div className="w-full flex flex-col items-center mt-16">
         <h4 className="text-3xl font-medium text-[#2c96e2] mb-8 text-center">Digital Marketing Packages</h4>
-        <div className="flex flex-wrap justify-center gap-6">
-          {digitals.map((digital) => (
-            <div
+        <motion.div 
+          className="flex flex-wrap justify-center gap-6"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+        >
+          {digitals.map((digital, index) => (
+            <motion.div
               key={digital.id}
-              className="bg-[#193155] p-6 rounded-2xl flex flex-col justify-between hover:-translate-y-4 transition-transform duration-300 w-72"
+              variants={cardVariants}
+              whileHover={{
+                y: -8,
+                scale: 1.03,
+                boxShadow: "0 20px 40px rgba(0, 0, 0, 0.3)",
+                transition: { duration: 0.3, ease: "easeOut" }
+              }}
+              className="bg-[#193155] p-6 rounded-2xl flex flex-col justify-between w-72 cursor-pointer"
             >
               <h5 className="text-xl text-[#2f976b] font-semibold mb-3">{digital.tier} Package</h5>
               <ul className="mb-4 list-none space-y-2">
@@ -87,9 +142,9 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({ webs, digitals
                   className="w-6 h-6 transform transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
                 />
               </a>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

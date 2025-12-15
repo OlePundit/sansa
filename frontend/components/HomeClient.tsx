@@ -2,8 +2,16 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { MessageCircle, Phone } from "lucide-react"; // Standard WhatsApp-style icon
+import { motion } from "framer-motion";
 
 export default function HomeClient({ services, packages }) {
+  const whatsappColors = {
+    green: "#25D366",     // Main green
+    lightGreen: "#128C7E", // Darker green for hover
+    teal: "#075E54",      // Dark teal
+    blue: "#34B7F1",      // Light blue (for some accents)
+  };
   const [menuOpen, setMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -16,8 +24,8 @@ export default function HomeClient({ services, packages }) {
     <div>
       {/* Hero Section with fade + zoom effect */}
       <div
-        className={`relative h-screen bg-cover  bg-no-repeat bg-center transition-all duration-[2000ms] ease-in-out transform ${
-          isVisible ? 'opacity-100 scale-105' : 'opacity-0 scale-100'
+        className={`relative w-full h-screen bg-cover  bg-no-repeat bg-center transition-all duration-[2000ms] ease-in-out transform ${
+          isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
         }`}
         style={{
           backgroundImage: `
@@ -92,7 +100,7 @@ export default function HomeClient({ services, packages }) {
                 </li>
 
                 {/* Solutions Dropdown */}
-                <li className="relative group">
+                {/*<li className="relative group">
                   <span className="block py-2 cursor-pointer hover:text-gray-300">
                     Solutions
                   </span>
@@ -105,7 +113,7 @@ export default function HomeClient({ services, packages }) {
                       Sansa Digital 2.0
                     </Link>
                   </div>
-                </li>
+                </li>*/}
 
                 <li>
                   <Link href="/contact" className="block py-2 hover:text-gray-300">
@@ -123,7 +131,10 @@ export default function HomeClient({ services, packages }) {
                     target="_blank"
                     className="block py-2 hover:text-gray-300 flex items-center"
                   >
-                    <i className="fab fa-whatsapp mr-2"></i>Always online
+                    <div className="relative mx-2 p-1 bg-gradient-to-br from-[#25D366] to-[#128C7E] rounded-full">
+                    <MessageCircle className="w-5 h-5 text-white" />
+                    <Phone className="w-2 h-2 text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
+                    </div>Always online
                   </Link>
                 </li>
               </ul>
@@ -132,19 +143,30 @@ export default function HomeClient({ services, packages }) {
         </nav>
 
         {/* Header Banner */}
-        <div className="container mx-auto text-white px-4 py-20">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-            <div>
-              <h1 className="text-5xl font-bold mb-4">Sansa Digital</h1>
-              <p className="text-2xl font-semibold mb-6">
+        <div className="container mx-auto text-white px-4 py-10 sm:py-20">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1] }}
+            >
+              <h1 className="text-3xl sm:text-5xl font-bold mb-4">Sansa Digital</h1>
+              <p className="text-xl font-medium sm:text-2xl sm:font-semibold mb-6">
                 As a leading tech and creative agency, our aim is to help brands bring their ideas to life.
               </p>
               <Link href="#section-info">
-                <button className="cursor-pointer bg-[#2f976b] text-xl font-bold px-6 py-3 rounded-lg shadow hover:bg-white hover:text-[#193155] transition">
+                <motion.button
+                  whileHover={{ 
+                    scale: 1.05,
+                    transition: { duration: 0.7 }
+                  }}
+                  className="cursor-pointer bg-[#2f976b] text-xl font-bold px-6 py-3 rounded-lg shadow hover:bg-white hover:text-[#193155] transition-colors duration-300"
+                >
                   Learn More
-                </button>
+                </motion.button>
               </Link>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

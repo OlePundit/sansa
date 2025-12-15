@@ -9,6 +9,7 @@ import { PackagesSection } from '@/components/PackagesSection';
 import TestimonialsSection from '@/components/TestimonialSection';
 import QuoteSection from '@/components/QuoteSection';
 import NewsletterSection from '@/components/NewsletterSection';
+import Footer from '@/components/Footer';
 
 export default async function Home() {
   const { webs, digitals, services } = await getHomeData();
@@ -20,19 +21,23 @@ export default async function Home() {
 
   return (
     <>
+    <div className="w-full">
       <HomeClient services={services} packages={[...webs, ...digitals]} />
       
-      <main className="flex flex-col justify-center items-center w-full lg:w-2/3 mx-auto">
+      <main className="flex flex-col justify-center items-center w-full lg:w-3/4 mx-auto">
         <InfoSection />
         <ServicesSection services={services} />
         <PricesSection />
         <ProjectsSection />
         <PortfolioSection />
-        <PackagesSection webs={webs} digitals={digitals} />
+        {/* <PackagesSection webs={webs} digitals={digitals} /> */}
         <TestimonialsSection />
         <QuoteSection />
         <NewsletterSection />
       </main>
+      <Footer />
+    </div>
+
     </>
   );
 }

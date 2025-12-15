@@ -3,6 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from 'react';
+import { ChevronUp } from "lucide-react";
+import { MessageCircle, Phone } from "lucide-react"; // Standard WhatsApp-style icon
 
 export default function NavbarSection({ services }) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -13,10 +15,16 @@ export default function NavbarSection({ services }) {
     return () => clearTimeout(timer);
   }, []);
   return (
-    <div
-      className="relative bg-cover bg-no-repeat h-[60vh]"
-      style={{ backgroundImage: "url('/storage/blog.png')" }}
-    >
+      <div
+        className={`relative w-full h-screen bg-cover  bg-no-repeat bg-center transition-all duration-[2000ms] ease-in-out transform ${
+          isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+        }`}
+        style={{
+          backgroundImage: `
+            url('/storage/citadel2.png')
+          `,
+        }}
+      >
       {/* Navbar */}
         <nav className="bg-transparent shadow-sm pt-6"> {/* added top padding */}
           <div className="container mx-auto flex flex-wrap items-center justify-between px-4 py-3">
@@ -82,7 +90,7 @@ export default function NavbarSection({ services }) {
                   </div>
                 </li>
 
-                {/* Solutions Dropdown */}
+                {/* Solutions Dropdown
                 <li className="relative group">
                   <span className="block py-2 cursor-pointer hover:text-gray-300">
                     Solutions
@@ -96,7 +104,7 @@ export default function NavbarSection({ services }) {
                       Sansa Digital 2.0
                     </Link>
                   </div>
-                </li>
+                </li> */}
 
                 <li>
                   <Link href="/contact" className="block py-2 hover:text-gray-300">
@@ -114,7 +122,10 @@ export default function NavbarSection({ services }) {
                     target="_blank"
                     className="block py-2 hover:text-gray-300 flex items-center"
                   >
-                    <i className="fab fa-whatsapp mr-2"></i>Always online
+                    <div className="relative mx-2 p-1 bg-gradient-to-br from-[#25D366] to-[#128C7E] rounded-full">
+                    <MessageCircle className="w-5 h-5 text-white" />
+                    <Phone className="w-2 h-2 text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
+                    </div>Always online
                   </Link>
                 </li>
               </ul>
@@ -126,10 +137,29 @@ export default function NavbarSection({ services }) {
       <div className="relative mt-40">
         <div className="flex flex-col md:flex-row items-center md:px-20 lg:px-50 justify-center">
           <div className="max-w-lg z-20 items-center">
-            <h1 className="text-5xl text-[#193155] text-center font-bold mb-10">Blogs</h1>
+            <h1 className="text-5xl text-center font-bold mb-10">Blogs</h1>
             <p className="text-[#2f976b] text-2xl font-semibold text-center mb-6">
              home // blogs
             </p>
+            {/* Animated Scroll Up Indicator */}
+            <div className="flex flex-col items-center justify-center mt-12">
+              <div className="text-white text-sm mb-2 animate-pulse">
+                Scroll Up
+              </div>
+              
+              {/* Two animated chevrons */}
+              <div className="relative h-16 flex flex-col items-center">
+                {/* First chevron */}
+                <div className="absolute animate-bounce">
+                  <ChevronUp className="w-10 h-10 text-white/80" />
+                </div>
+                
+                {/* Second chevron with delay */}
+                <div className="absolute animate-bounce" style={{ animationDelay: '0.2s' }}>
+                  <ChevronUp className="w-10 h-10 text-white/60" />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function InfoSection2({ img3, title2, benefits2 }) {
   return (
-    <div className="flex flex-wrap justify-center items-center my-12 px-4">
+    <div className="w-full flex flex-wrap justify-center items-center my-12 px-4">
       
       {/* Left Image */}
     <div className="w-full md:w-1/2 lg:w-1/2 px-6">

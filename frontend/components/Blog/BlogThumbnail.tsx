@@ -13,7 +13,7 @@ export default function BlogThumbnail({
 }){
   return (
     <div
-    className="relative bg-cover bg-no-repeat h-[60vh]"
+    className="relative w-full bg-cover bg-no-repeat h-[60vh]"
     style={{ backgroundImage: `url('${thumbnail}')` }}
     >
 

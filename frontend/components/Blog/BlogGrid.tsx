@@ -2,12 +2,12 @@ import Link from "next/link";
 
 export default function BlogGrid({ blogs }) {
   return (
-    <div className="flex justify-center items-center mt-[300px] mb-[150px] flex-wrap gap-9">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-20 sm:py-50 gap-6">
       {blogs?.map((blog) => (
         <Link
           key={blog.id}
           href={`/blogs/${blog.slug}`}
-          className="w-[344px] h-[520px] rounded-[22px] m-9 bg-transparent custom-card overflow-hidden"
+          className="px-6 rounded-[22px] bg-transparent custom-card overflow-hidden"
         >
           <img
             src={`/storage/${blog.thumbnail}`}

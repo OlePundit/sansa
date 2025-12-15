@@ -59,16 +59,21 @@ const StatsSection = () => {
   ];
 
   return (
-    <div className="section-stats">
-      <h2 className="text-center mt-[275px] text-white text-shadow-lg font-bold font-bold text-3xl md:text-4xl mb-10">
+    <div className="section-stats py-10 sm:py-16" >
+      <h2 className="text-center text-white text-shadow-lg font-bold font-bold text-3xl md:text-4xl mb-10">
         Let Our <br />
         <span ref={el} className="text-[#2f976b]"></span> Do The <span ref={eb} className="text-[#2f976b]"></span>
       </h2>
-      
-      <div className="stat-wrap mt-5 flex items-center justify-center mx-auto space-x-8 lg:space-x-16">
+      <div
+        className="
+          stat-wrap mt-5 mx-auto
+          flex flex-col items-center justify-center space-y-10
+          md:flex-row md:space-y-0 md:space-x-12
+        "
+      >
         {stats.map((stat, index) => (
           <div key={index} className="flex flex-col items-center justify-center">
-            <div className="w-32 h-32 lg:w-40 lg:h-40">
+            <div className="w-32 h-32 mx-3 lg:w-40 lg:h-40">
               <CircularProgressbar
                 value={stat.value}
                 text={`${stat.value}%`}
@@ -77,7 +82,7 @@ const StatsSection = () => {
                   pathColor: stat.color,
                   textColor: '#ffffff',
                   trailColor: 'rgba(255, 255, 255, 0.2)',
-                  pathTransitionDuration: ANIMATION_DURATION / 1000, // Convert to seconds
+                  pathTransitionDuration: ANIMATION_DURATION / 1000,
                   pathTransition: 'easeInOut',
                 })}
               />
@@ -88,6 +93,7 @@ const StatsSection = () => {
           </div>
         ))}
       </div>
+
     </div>
   );
 };

@@ -30,7 +30,7 @@ export default function ServicesSection() {
       img: "/storage/mobile.webp",
       title: "Mobile development",
       list: ["iOS", "Android", "Cross platform"],
-      link: "https://sansadigital.com/services/mobile-development-services-in-kenya",
+      link: "https://sansadigital.com/lps/mobile-development-services-in-kenya",
     },
     {
       img: "/storage/seo.webp",
@@ -47,7 +47,7 @@ export default function ServicesSection() {
       img: "/storage/graphic.webp",
       title: "Graphic Design",
       desc: "Posters, banners, publications, flyers, and social media content. We shall create graphics that tell a story.",
-      link: "https://sansadigital.com/services/graphic-design-in-kenya",
+      link: "https://sansadigital.com/lps/graphic-design-in-kenya",
     },
     {
       img: "/storage/it.webp",
@@ -64,52 +64,67 @@ export default function ServicesSection() {
       img: "/storage/webhosting.webp",
       title: "Web Hosting",
       list: ["Affordable prices", "Free domain", "Free SSL", "Managed hosting"],
-      link: "https://sansadigital.com/services/affordable-webhosting-services-in-kenya",
+      link: "https://sansadigital.com/lps/affordable-webhosting-services-in-kenya",
     },
   ];
 
-  const directions = [
-    { x: -100, y: 0 }, // top left
-    { x: 0, y: -100 }, // top center
-    { x: 100, y: 0 },  // top right
-    { x: -100, y: 0 }, // bottom left
-    { x: 0, y: 100 },  // bottom center
-    { x: 100, y: 0 },  // bottom right
-  ];
+  // Staggered animation with fade and slide up
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1, // Stagger the children animations
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: {
+      opacity: 0,
+      y: 20, // Start slightly lower for a natural slide-up effect
+      scale: 0.95, // Slight scale for depth
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.5,
+        ease: [0.25, 0.1, 0.25, 1], // Smooth easing curve
+      },
+    },
+  };
 
   return (
-    <section id="section-services" className="py-16 text-white">
+    <section id="section-services" className="py-10 md:py-16 text-white sm:w-3/4">
       <div id="section-placeholder-2"></div>
 
       {/* Title */}
       <div className="text-center mb-12">
-        <h3 className="text-3xl md:text-4xl font-semibold">
+        <h3 className="text-3xl md:text-4xl font-bold">
           Our <span ref={el} className="text-[#2f976b]"></span>
         </h3>
       </div>
 
       {/* Services grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6 lg:px-16">
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.1 }} // Start animation when 10% of container is visible
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+      >
         {services.map((service, index) => (
           <motion.div
             key={index}
-            initial={{
-              opacity: 0,
-              x: directions[index].x,
-              y: directions[index].y,
+            variants={itemVariants}
+            whileHover={{
+              y: -8,
+              scale: 1.02,
+              transition: { duration: 0.2 },
             }}
-            whileInView={{
-              opacity: 1,
-              x: 0,
-              y: 0,
-            }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{
-              duration: 0.6,
-              delay: index * 0.15,
-              ease: "easeOut",
-            }}
-            className="flex flex-col justify-between bg-[#193155] rounded-2xl shadow-lg overflow-hidden hover:-translate-y-2 transition-all duration-500 p-5"
+            className="flex flex-col justify-between bg-[#193155] rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 p-5"
           >
             <div>
               <Image
@@ -141,6 +156,8 @@ export default function ServicesSection() {
             <a
               href={service.link}
               className="group flex items-center justify-center w-1/6 aspect-square border border-[#2f976b] rounded-md hover:bg-[#2f976b] transition-colors duration-300"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -158,17 +175,23 @@ export default function ServicesSection() {
             </a>
           </motion.div>
         ))}
-      </div>
+      </motion.div>
 
       {/* More Services button */}
-      <div className="flex justify-center mt-12">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.6 }}
+        className="flex justify-center mt-12"
+      >
         <a
           href="/services"
-          className="bg-[#2c96e2] cursor-pointer hover:bg-[#2f976b] text-xl text-white px-6 py-3 rounded-lg font-semibold transition"
+          className="bg-[#2c96e2] cursor-pointer hover:bg-[#2f976b] text-xl text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-300 transform hover:scale-105"
         >
           More Services
         </a>
-      </div>
+      </motion.div>
     </section>
   );
 }

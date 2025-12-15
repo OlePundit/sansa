@@ -32,7 +32,7 @@ export default function ProjectsSection() {
   const el = useRef(null);
   useEffect(() => {
   const typed = new Typed(el.current, {
-    strings: ["Solutions"], // words to type
+    strings: ["Clients"], // words to type
     typeSpeed: 50,
     showCursor: false,
     loop: false, // optional
@@ -63,9 +63,9 @@ export default function ProjectsSection() {
   }, [emblaApi, onSelect]);
 
   return (
-    <div className="section-projects" id="section-projects">
+    <div className="section-projects py-10 w-full" id="section-projects">
       <div className="text-center mb-8">
-        <h3 className="text-3xl md:text-4xl font-semibold">
+        <h3 className="text-3xl md:text-4xl font-bold">
           Our <span ref={el} className="text-[#2f976b]"></span>
         </h3>
       </div>

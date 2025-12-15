@@ -21,32 +21,21 @@ export default function SectionInfo() {
   return (
     <section
       id="section-info"
-      className="about-section-info flex flex-col lg:flex-row justify-center items-center w-full mx-auto text-white px-6 lg:px-12"
+      className="about-section-info flex flex-col lg:flex-row justify-center items-center w-full mx-auto text-white py-10 sm:py-16"
     >
-      {/* Left column - Image */}
-      <div className="w-full lg:w-1/2 flex justify-center">
-        <Image
-          src="/storage/person.png"
-          alt="person"
-          width={500}
-          height={500}
-          className="ml-[20%] object-contain"
-        />
-      </div>
-
-      {/* Right column - Text */}
-      <div className="w-full lg:w-1/2 mt-10 lg:mt-0">
+      {/* Right column - Text - First on mobile */}
+      <div className="w-full lg:w-1/2 mt-10 lg:mt-0 mb-30 sm:mb-0 px-6 order-1 lg:order-2">
         <h2 className="text-3xl md:text-4xl font-semibold mb-10">
           Our <span ref={el} className="text-[#2f976b]"></span>
         </h2>
 
-        <p className="text-[20px] font-[Montserrat] font-normal text-white leading-normal mb-6 mr-[30%]">
+        <p className="text-[20px] font-normal text-white leading-normal mb-6 mr-0">
           We discovered that there was a gap in the market, in terms of access to creative and ICT
           services to small and medium business, despite the fact that they are still in need of the
           same services.
         </p>
 
-        <p className="text-[20px] font-[Montserrat] font-normal text-white leading-normal mb-6 mr-[30%]">
+        <p className="text-[20px] font-normal text-white leading-normal mb-6 mr-0">
           Client relationship training, branding and marketing are just but some of the services
           that they lack due to affordability — these businesses cannot afford to procure the
           services of big marketing or digital agencies. So our aim was to specifically target SMEs
@@ -61,6 +50,17 @@ export default function SectionInfo() {
             Learn More
           </button>
         </Link>
+      </div>
+
+      {/* Left column - Image - Second on mobile */}
+      <div className="w-full lg:w-1/2 flex justify-center order-2 lg:order-1 px-6">
+        <Image
+          src="/storage/person.jpg"
+          alt="person"
+          width={500}
+          height={500}
+          className="object-contain rounded-lg"
+        />
       </div>
     </section>
   );

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from 'react';
+import { MessageCircle, Phone } from "lucide-react"; // Standard WhatsApp-style icon
 
 export default function NavbarSection({ services, thumbnail, title, intro }) {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -14,7 +15,7 @@ export default function NavbarSection({ services, thumbnail, title, intro }) {
     }, []);
   return (
     <div
-      className="relative bg-cover bg-no-repeat h-[60vh]"
+      className="w-full relative bg-cover bg-no-repeat h-[60vh]"
       style={{ backgroundImage: "url('/storage/lp.png')" }}
     >
       {/* Navbar */}
@@ -114,7 +115,10 @@ export default function NavbarSection({ services, thumbnail, title, intro }) {
                     target="_blank"
                     className="block py-2 hover:text-gray-300 flex items-center"
                   >
-                    <i className="fab fa-whatsapp mr-2"></i>Always online
+                    <div className="relative mx-2 p-1 bg-gradient-to-br from-[#25D366] to-[#128C7E] rounded-full">
+                    <MessageCircle className="w-5 h-5 text-white" />
+                    <Phone className="w-2 h-2 text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
+                    </div>Always online
                   </Link>
                 </li>
               </ul>
@@ -127,7 +131,7 @@ export default function NavbarSection({ services, thumbnail, title, intro }) {
         <div className="flex flex-col md:flex-row items-center md:px-20 justify-between">
 
           <div className="max-w-lg z-20">
-            <h1 className="text-white text-5xl font-bold mb-4">{title}</h1>
+            <h1 className="text-white text-3xl sm:text-5xl font-bold mb-4">{title}</h1>
             <p className="text-white mb-6">
               {intro}
             </p>

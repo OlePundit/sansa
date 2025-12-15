@@ -40,7 +40,7 @@ export default function ContactSection() {
   return (
     <div className="contact w-[90%] mx-auto">
       <div className="section-contact flex items-center justify-center my-24">
-        <div className="contact-wrap border border-[#aeabab] p-8 rounded-3xl flex flex-col xl:flex-row">
+        <div className="w-full contact-wrap border border-[#aeabab] p-3 md:p-8 rounded-3xl flex flex-col xl:flex-row">
           
           {/* LEFT MAP */}
           <div className="map xl:mr-16 xl:pr-12 xl:border-r border-[#aeabab] mb-10 xl:mb-0">
@@ -64,7 +64,7 @@ export default function ContactSection() {
             <form
               method="POST"
               onSubmit={handleSubmit}
-              className="flex flex-col items-center justify-center"
+              className="flex flex-col items-center justify-center w-full"
             >
               <input
                 type="text"
@@ -134,7 +134,7 @@ export default function ContactSection() {
             </form>
 
             {/* CONTACT LINKS */}
-            <ul className="flex items-center justify-center mt-8 space-x-6">
+            <ul className="flex flex-col lg:flex-row items-center justify-center mt-8 space-x-6">
               <li className="flex flex-col items-center text-center text-white">
                 <a href="tel:+254112128055" className="text-[20px]">
                   <i className="fas fa-phone"></i> +254112128055

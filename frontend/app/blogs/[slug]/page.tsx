@@ -2,7 +2,7 @@ import Image from "next/image";
 import BlogThumbnail from "@/components/Blog/BlogThumbnail";
 import { getServices } from "@/server/services";
 import { getBlog } from "@/server/blogDetail";
-
+import Footer from "@/components/Footer";
 
 export default async function BlogPage({ params }: { params: Promise<{ slug: string }> }) {
   // Await the params promise
@@ -28,8 +28,8 @@ export default async function BlogPage({ params }: { params: Promise<{ slug: str
         )}
 
         <main className="flex flex-col justify-center items-center w-full lg:w-2/3 mx-auto">
-          <div className="flex justify-start items-start mx-auto">
-            <div className="lg:w-9/12 w-full flex flex-col text-white font-montserrat text-[20px] mt-[100px] ml-[50px]">
+          <div className="w-full flex justify-start items-start mx-auto">
+            <div className="lg:w-9/12 w-full flex flex-col text-white font-montserrat text-[20px] mt-[100px] px-6">
 
               <h1 className="text-4xl font-ebGaramond font-bold mb-6">
                 {blog.title}
@@ -72,6 +72,7 @@ export default async function BlogPage({ params }: { params: Promise<{ slug: str
             </div>
           </div>
         </main>
+        <Footer />
 
         
         {/* Additional about page content can go here */}

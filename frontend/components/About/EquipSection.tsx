@@ -30,16 +30,16 @@ const EquipSection = () => {
     return () => typedB.destroy();
     }, []);
   return (
-    <div className="flex justify-center items-center mx-auto mb-[275px]">
-      <div className="flex flex-col lg:flex-row w-full max-w-7xl">
+
+      <div className="flex lex flex-col lg:flex-row justify-center items-center w-full mx-auto text-white py-10 sm:py-16">
         {/* Text Content */}
-        <div className="lg:w-5/12 md:w-full p-4 lg:pr-8">
-          <h2 className="mt-[275px] text-3xl md:text-4xl font-semibold mb-10">
+        <div className="lg:w-1/2 md:w-full p-4">
+          <h2 className="mt-20 text-3xl md:text-4xl font-semibold mb-10">
             We Equip Leaders With<br />
             <span ref={el} className="text-[#2f976b]"></span> & <span ref={eb} className="text-[#2f976b]"></span>
           </h2>
           
-          <p className="text-white font-sans text-xl font-normal leading-normal mb-6">
+          <p className="text-white text-xl font-normal leading-normal mb-6">
             We also realised that professionals within the space are grossly mistreated, with strict timelines, underpayment or nonpayment. They also lack auxilliary skills such as communication and project management. The clients are not that safe either, with various malpractices in the industry such as fraud and non-performance of services.
           </p>
           
@@ -47,24 +47,25 @@ const EquipSection = () => {
             What We Do Different
           </h3>
           
-          <p className="text-white font-sans text-xl font-normal leading-normal">
+          <p className="text-white text-xl font-normal leading-normal">
             We, therefore, aim to change the landscape by bringing together professionals from various fields within the creative sector, and relieving them of the burden of dealing with clients so that they can focus on their work. As for clients, we also are relieving them of the burden of dealing with creatives and techies, especially if they are not from a technical or creative background, so that they can focus on growing their businesses.
           </p>
         </div>
         
         {/* Image */}
-        <div className="lg:w-1/2 md:w-full flex justify-center lg:justify-end">
-          <div className="w-full h-[790px] mt-[300px] mr-[10%] relative">
+        <div className="lg:w-1/2 md:w-full flex justify-center lg:justify-end mt-20">
+          <div className="w-full px-6 relative">
             <Image 
-              src="/storage/equip.png" 
+              src="/storage/equip.jpg" 
               alt="equip" 
-              fill
-              className="object-cover"
+              width={500}
+              height={500}
+              className="object-cover rounded-lg"
             />
           </div>
         </div>
       </div>
-    </div>
+
   );
 };
 

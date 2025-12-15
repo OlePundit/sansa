@@ -1,6 +1,6 @@
 import NavbarSection from "@/components/Blog/NavbarSection";
 import BlogGrid from "@/components/Blog/BlogGrid";
-
+import Footer from "@/components/Footer";
 import { getBlogData } from "@/server/blog";
 
 export default async function BlogPage() {
@@ -12,7 +12,7 @@ export default async function BlogPage() {
             <BlogGrid blogs={blogs} />
             </main>
 
-            
+            <Footer />
             {/* Additional about page content can go here */}
         </div>
     );

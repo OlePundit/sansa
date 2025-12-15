@@ -3,9 +3,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from 'react';
+import { ChevronUp } from "lucide-react";
+import { MessageCircle, Phone } from "lucide-react"; // Standard WhatsApp-style icon
 
-
-export default function NavbarSection({ services }) {
+export default function NavbarSection({ services }) { // Add default value
   const [menuOpen, setMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -13,10 +14,11 @@ export default function NavbarSection({ services }) {
     const timer = setTimeout(() => setIsVisible(true), 100);
     return () => clearTimeout(timer);
   }, []);
+  
   return (
     <div
-      className="relative bg-cover bg-no-repeat h-[60vh]"
-      style={{ backgroundImage: "url('/storage/blog.png')" }}
+      className="relative bg-cover bg-center bg-no-repeat h-[100vh]"
+      style={{ backgroundImage: "url('/storage/contact.png')" }}
     >
       {/* Navbar */}
         <nav className="bg-transparent shadow-sm pt-6"> {/* added top padding */}
@@ -71,15 +73,22 @@ export default function NavbarSection({ services }) {
                     Services
                   </span>
                   <div className="absolute left-0 hidden group-hover:block bg-gray-800 rounded-lg mt-2 min-w-[200px] shadow-lg">
-                    {services.map((service) => (
-                      <Link
-                        key={service.slug}
-                        href={`/services/${service.slug}`}
-                        className="block px-4 py-2 text-white hover:bg-gray-700"
-                      >
-                        {service.title}
-                      </Link>
-                    ))}
+                    {/* Add conditional check here */}
+                    {services && services.length > 0 ? (
+                      services.map((service) => (
+                        <Link
+                          key={service.slug}
+                          href={`/services/${service.slug}`}
+                          className="block px-4 py-2 text-white hover:bg-gray-700"
+                        >
+                          {service.title}
+                        </Link>
+                      ))
+                    ) : (
+                      <div className="px-4 py-2 text-gray-400">
+                        No services available
+                      </div>
+                    )}
                   </div>
                 </li>
 
@@ -92,7 +101,7 @@ export default function NavbarSection({ services }) {
                     <Link
                       href="https://self.sansadigital.com"
                       target="_blank"
-                      className="block px-4 py-2 text-white hover:bg-gray-700"
+                      className="bloapck px-4 py-2 text-white hover:bg-gray-700"
                     >
                       Sansa Digital 2.0
                     </Link>
@@ -115,7 +124,10 @@ export default function NavbarSection({ services }) {
                     target="_blank"
                     className="block py-2 hover:text-gray-300 flex items-center"
                   >
-                    <i className="fab fa-whatsapp mr-2"></i>Always online
+                    <div className="relative mx-2 p-1 bg-gradient-to-br from-[#25D366] to-[#128C7E] rounded-full">
+                    <MessageCircle className="w-5 h-5 text-white" />
+                    <Phone className="w-2 h-2 text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
+                    </div>Always online
                   </Link>
                 </li>
               </ul>
@@ -125,13 +137,33 @@ export default function NavbarSection({ services }) {
 
 
       {/* Banner Section */}
-      <div className="relative mt-40">
+      <div className="relative mt-70">
         <div className="flex flex-col md:flex-row items-center md:px-20 lg:px-50 justify-center">
           <div className="max-w-lg z-20 items-center">
-            <h1 className="text-5xl text-[#193155] text-center font-bold mb-10">Contact Us</h1>
+            <h1 className="text-5xl text-center font-bold mb-10">Contact Us</h1>
             <p className="text-[#2f976b] text-2xl font-semibold text-center mb-6">
              We are here to respond to your queries around the clock.
             </p>
+            
+            {/* Animated Scroll Up Indicator */}
+            <div className="flex flex-col items-center justify-center mt-12">
+              <div className="text-white text-sm mb-2 animate-pulse">
+                Scroll Up
+              </div>
+              
+              {/* Two animated chevrons */}
+              <div className="relative h-16 flex flex-col items-center">
+                {/* First chevron */}
+                <div className="absolute animate-bounce">
+                  <ChevronUp className="w-10 h-10 text-white/80" />
+                </div>
+                
+                {/* Second chevron with delay */}
+                <div className="absolute animate-bounce" style={{ animationDelay: '0.2s' }}>
+                  <ChevronUp className="w-10 h-10 text-white/60" />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

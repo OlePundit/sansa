@@ -5,6 +5,7 @@ import { getServices } from "@/server/services";
 import InfoSection from "@/components/LP/InfoSection";
 import InfoSection2 from "@/components/LP/InfoSection2";
 import FaqSection from "@/components/LP/FaqSection";
+import Footer from "@/components/Footer";
 
 export default async function LPPage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
@@ -30,7 +31,7 @@ export default async function LPPage({ params }: { params: Promise<{ slug: strin
                 intro={lp.intro}
             />
 
-            <main className="flex flex-col justify-center items-center w-full lg:w-2/3 mx-auto">
+            <main className="flex flex-col justify-center items-center w-full lg:w-3/4 mx-auto">
                 <InfoSection
                     img2={lp.img2 || "/default-info-image.png"}
                     title1={lp.title1}
@@ -55,6 +56,7 @@ export default async function LPPage({ params }: { params: Promise<{ slug: strin
                     ans5={lp.ans5}      
                 />
             </main>
+            <Footer />
         </div>
     );
 }
