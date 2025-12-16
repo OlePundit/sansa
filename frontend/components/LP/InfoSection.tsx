@@ -1,6 +1,12 @@
 import Image from "next/image";
 
-export default function InfoSection({ img2, title1, benefits }) {
+interface InfoSectionProps {
+  img2: string;
+  title1: string;
+  benefits: string;
+}
+
+export default function InfoSection({ img2, title1, benefits }: InfoSectionProps) {
   return (
     <div className="w-full flex flex-wrap justify-center items-center my-12 px-4">
       

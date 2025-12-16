@@ -29,26 +29,29 @@ const logos = [
 ];
 
 export default function ProjectsSection() {
-  const el = useRef(null);
+  const el = useRef<HTMLSpanElement>(null);
   useEffect(() => {
-  const typed = new Typed(el.current, {
-    strings: ["Clients"], // words to type
-    typeSpeed: 50,
-    showCursor: false,
-    loop: false, // optional
-  });
+    if (!el.current) return;
+    
+    const typed = new Typed(el.current, {
+      strings: ["Clients"],
+      typeSpeed: 50,
+      showCursor: false,
+      loop: false,
+    });
 
-  return () => {
-    typed.destroy(); // cleanup on unmount
-  };
-}, []);
+    return () => {
+      typed.destroy();
+    };
+  }, []);
+
   const [emblaRef, emblaApi] = useEmblaCarousel(
     { loop: true, align: 'center', skipSnaps: false },
     [Autoplay({ delay: 3000 })]
   );
 
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const [scrollSnaps, setScrollSnaps] = useState([]);
+  const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
 
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
@@ -85,7 +88,8 @@ export default function ProjectsSection() {
                 height="120"
                 style={{ objectFit: 'contain' }}
                 onError={(e) => {
-                  e.target.style.display = 'none';
+                  const target = e.target as HTMLImageElement;
+                  target.style.display = 'none';
                   console.warn('Failed to load:', logo);
                 }}
               />

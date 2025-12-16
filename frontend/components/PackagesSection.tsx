@@ -2,7 +2,7 @@
 
 import React from "react";
 import { CheckCircle, ArrowUpRight } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
 interface PackageItem {
   id: number;
@@ -18,7 +18,7 @@ interface PackagesSectionProps {
 
 export const PackagesSection: React.FC<PackagesSectionProps> = ({ webs, digitals }) => {
   // Animation variants for cards only
-  const cardVariants = {
+  const cardVariants: Variants = {
     hidden: {
       opacity: 0,
       y: 30,
@@ -30,13 +30,13 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({ webs, digitals
       scale: 1,
       transition: {
         duration: 0.5,
-        ease: [0.25, 0.1, 0.25, 1],
+        ease: [0.25, 0.1, 0.25, 1] as const, // Add "as const" here
       },
     },
   };
 
   // Container variants for staggering
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,

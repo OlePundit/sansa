@@ -2,8 +2,20 @@
 
 import { Disclosure } from "@headlessui/react";
 import { ChevronRight } from "lucide-react";
-import { FaqSectionProps } from '@/types';
 
+// Define the props interface
+interface FaqSectionProps {
+  faq1?: string;
+  faq2?: string;
+  faq3?: string;
+  faq4?: string;
+  faq5?: string;
+  ans1?: string;
+  ans2?: string;
+  ans3?: string;
+  ans4?: string;
+  ans5?: string;
+}
 
 export default function FaqSection({
   faq1, faq2, faq3, faq4, faq5,
@@ -17,47 +29,33 @@ export default function FaqSection({
     { question: faq3, answer: ans3 },
     { question: faq4, answer: ans4 },
     { question: faq5, answer: ans5 },
-  ].filter(f => f.question); // remove empty ones
+  ].filter(f => f.question);
 
   return (
-    <div className="lp w-full my-24 flex flex-col items-center px-4">
-      <h2 className="text-3xl font-bold text-center mb-10">FAQs</h2>
-
-      <div className="w-full max-w-3xl">
-        {faqs.map((item, index) => (
+    <section className="w-full py-10 md:py-16">
+      <h3 className="text-3xl md:text-4xl font-semibold text-center mb-10">
+        Frequently Asked Questions
+      </h3>
+      
+      <div className="max-w-3xl mx-auto px-4">
+        {faqs.map((faq, index) => (
           <Disclosure key={index}>
-            {({ open }) => (
-              <div className="accordion-item mb-6 bg-[#2c96e2] rounded-lg overflow-hidden text-white">
-
-                {/* Button */}
-                <Disclosure.Button
-                  className={`accordion-button flex w-full justify-between items-center px-5 py-4 text-left font-semibold text-lg transition
-                    ${open ? "bg-[#2c96e2]" : "bg-[#2c96e2]/80"}
-                  `}
-                >
-                  <span>{item.question}</span>
-
-                  {/* Rotating Arrow */}
-                  <ChevronRight
-                    className={`h-6 w-6 text-white transition-transform ${
-                      open ? "rotate-180" : "rotate-90"
-                    }`}
+            {({ open }: { open: boolean }) => (
+              <div className="mb-4">
+                <Disclosure.Button className="flex justify-between items-center w-full p-4 bg-[#193155] rounded-lg text-left hover:bg-[#1e3a5e] transition-colors duration-200">
+                  <span className="font-semibold text-lg">{faq.question}</span>
+                  <ChevronRight 
+                    className={`w-5 h-5 transition-transform duration-200 ${open ? 'rotate-90' : ''}`}
                   />
                 </Disclosure.Button>
-
-                {/* Panel */}
-                <Disclosure.Panel className="px-5 py-4 bg-white text-black">
-                  <div
-                    className="prose max-w-none"
-                    dangerouslySetInnerHTML={{ __html: item.answer }}
-                  />
+                <Disclosure.Panel className="px-4 pt-4 pb-2 bg-[#1a2b44] rounded-b-lg">
+                  <p className="text-gray-300">{faq.answer}</p>
                 </Disclosure.Panel>
-
               </div>
             )}
           </Disclosure>
         ))}
       </div>
-    </div>
+    </section>
   );
 }

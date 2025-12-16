@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion"; // Import Variants
 
 interface PortfolioItem {
   title: string;
@@ -39,7 +39,7 @@ const portfolioItems: PortfolioItem[] = [
 
 export const PortfolioSection: React.FC = () => {
   // Container variants for staggering
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -50,7 +50,7 @@ export const PortfolioSection: React.FC = () => {
   };
 
   // Card variants for animation
-  const cardVariants = {
+  const cardVariants: Variants = {
     hidden: {
       opacity: 0,
       y: 30,
@@ -62,7 +62,7 @@ export const PortfolioSection: React.FC = () => {
       scale: 1,
       transition: {
         duration: 0.5,
-        ease: [0.25, 0.1, 0.25, 1],
+        ease: [0.25, 0.1, 0.25, 1] as const, // Add "as const" here
       },
     },
   };

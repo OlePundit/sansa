@@ -3,12 +3,14 @@
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 import Typed from "typed.js";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
 export default function ServicesSection() {
-  const el = useRef(null);
+  const el = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
+    if (!el.current) return;
+    
     const typed = new Typed(el.current, {
       strings: ["Services"],
       typeSpeed: 100,
@@ -69,21 +71,21 @@ export default function ServicesSection() {
   ];
 
   // Staggered animation with fade and slide up
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1, // Stagger the children animations
+        staggerChildren: 0.1,
       },
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: {
       opacity: 0,
-      y: 20, // Start slightly lower for a natural slide-up effect
-      scale: 0.95, // Slight scale for depth
+      y: 20,
+      scale: 0.95,
     },
     visible: {
       opacity: 1,
@@ -91,7 +93,7 @@ export default function ServicesSection() {
       scale: 1,
       transition: {
         duration: 0.5,
-        ease: [0.25, 0.1, 0.25, 1], // Smooth easing curve
+        ease: "easeOut",
       },
     },
   };
@@ -112,7 +114,7 @@ export default function ServicesSection() {
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.1 }} // Start animation when 10% of container is visible
+        viewport={{ once: true, amount: 0.1 }}
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
       >
         {services.map((service, index) => (
