@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "NEXT_PUBLIC_VERCEL_ALLOW_UNSAFE=true next build",
     "start": "NODE_ENV=production node server.js",
     "lint": "eslint"
   },
