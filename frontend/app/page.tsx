@@ -11,30 +11,47 @@ import QuoteSection from '@/components/QuoteSection';
 import NewsletterSection from '@/components/NewsletterSection';
 import Footer from '@/components/Footer';
 import { getServices } from "@/server/services";
+import { Suspense } from 'react';
+import ErrorBoundary from '@/components/ErrorBoundary';
+import Loading from '@/components/Loading';
 
 export default async function Home() {
-  const services = await getServices();
-
-
-  return (
-    <>
-    <div className="w-full">
-      <HomeClient services={services} />
-      
-      <main className="flex flex-col justify-center items-center w-full lg:w-3/4 mx-auto">
-        <InfoSection />
-        <ServicesSection />
-        <PricesSection />
-        <ProjectsSection />
-        <PortfolioSection />
-        {/* <PackagesSection webs={webs} digitals={digitals} /> */}
-        <TestimonialsSection />
-        <QuoteSection />
-        <NewsletterSection />
-      </main>
-      <Footer />
-    </div>
-
-    </>
-  );
+  try {
+    const services = await getServices();
+    
+    return (
+      <>
+        <div className="w-full">
+          <Suspense fallback={<Loading />}>
+            <HomeClient services={services} />
+          </Suspense>
+          
+          <main className="flex flex-col justify-center items-center w-full lg:w-3/4 mx-auto">
+            {/* Your sections */}
+          </main>
+          <Footer />
+        </div>
+      </>
+    );
+  } catch (error) {
+    console.error('Failed to fetch services:', error);
+    // Return a fallback UI
+    return (
+      <div className="w-full">
+        <HomeClient services={[]} />
+          <main className="flex flex-col justify-center items-center w-full lg:w-3/4 mx-auto">
+          <InfoSection />
+          <ServicesSection />
+          <PricesSection />
+          <ProjectsSection />
+          <PortfolioSection />
+          {/* <PackagesSection webs={webs} digitals={digitals} /> */}
+          <TestimonialsSection />
+          <QuoteSection />
+          <NewsletterSection />
+        </main>
+        <Footer />
+      </div>
+    );
+  }
 }
