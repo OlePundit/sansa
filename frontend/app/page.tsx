@@ -16,42 +16,52 @@ import ErrorBoundary from '@/components/ErrorBoundary';
 import Loading from '@/components/Loading';
 
 export default async function Home() {
-  try {
-    const services = await getServices();
-    
-    return (
-      <>
-        <div className="w-full">
-          <Suspense fallback={<Loading />}>
-            <HomeClient services={services} />
-          </Suspense>
-          
-          <main className="flex flex-col justify-center items-center w-full lg:w-3/4 mx-auto">
-            {/* Your sections */}
-          </main>
-          <Footer />
-        </div>
-      </>
-    );
-  } catch (error) {
+  // Fetch services with error handling at the data level
+  const services = await getServices().catch((error) => {
     console.error('Failed to fetch services:', error);
-    // Return a fallback UI
-    return (
-      <div className="w-full">
-        <HomeClient services={[]} />
-          <main className="flex flex-col justify-center items-center w-full lg:w-3/4 mx-auto">
-          <InfoSection />
-          <ServicesSection />
-          <PricesSection />
-          <ProjectsSection />
-          <PortfolioSection />
-          {/* <PackagesSection webs={webs} digitals={digitals} /> */}
-          <TestimonialsSection />
-          <QuoteSection />
-          <NewsletterSection />
-        </main>
-        <Footer />
-      </div>
-    );
-  }
+    return []; // Return empty array as fallback
+  });
+  
+  return (
+    <div className="w-full">
+      <ErrorBoundary 
+        fallback={
+          <div>
+            {/* Fallback content when HomeClient fails */}
+            <HomeClient services={[]} />
+            <main className="flex flex-col justify-center items-center w-full lg:w-3/4 mx-auto">
+              <InfoSection />
+              <ServicesSection />
+              <PricesSection />
+              <ProjectsSection />
+              <PortfolioSection />
+              <TestimonialsSection />
+              <QuoteSection />
+              <NewsletterSection />
+            </main>
+            <Footer />
+          </div>
+        }
+      >
+        <Suspense fallback={<Loading />}>
+          <HomeClient services={services} />
+        </Suspense>
+      </ErrorBoundary>
+      
+      <main className="flex flex-col justify-center items-center w-full lg:w-3/4 mx-auto">
+        <InfoSection />
+        <ServicesSection />
+        <PricesSection />
+        <ProjectsSection />
+        <PortfolioSection />
+        {/*
+          <PackagesSection webs={[]} digitals={[]} />
+        */}
+        <TestimonialsSection />
+        <QuoteSection />
+        <NewsletterSection />
+      </main>
+      <Footer />
+    </div>
+  );
 }

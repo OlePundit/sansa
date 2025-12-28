@@ -2,6 +2,7 @@
 import { createContact } from "@/server/contact";
 import { useState, FormEvent, ChangeEvent } from "react";
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 export default function ContactSection() {
   const [name, setName] = useState<string>('');
@@ -138,21 +139,21 @@ export default function ContactSection() {
             {/* CONTACT LINKS */}
             <ul className="flex flex-col lg:flex-row items-center justify-center mt-8 space-x-6">
               <li className="flex flex-col items-center text-center text-white">
-                <a href="tel:+254112128055" className="text-[20px]">
+                <Link href="tel:+254112128055" className="text-[20px]">
                   <i className="fas fa-phone"></i> +254112128055
-                </a>
+                </Link>
               </li>
 
               <li className="flex flex-col items-center text-center text-white">
-                <a href="mailto:info@sansadigital.com" className="text-[20px]">
+                <Link href="mailto:info@sansadigital.com" className="text-[20px]">
                   <i className="fas fa-envelope"></i> info@sansadigital.com
-                </a>
+                </Link>
               </li>
 
               <li className="flex flex-col items-center text-center text-white">
-                <a href="https://wa.me/+254112128055" className="text-[20px]">
+                <Link href="https://wa.me/+254112128055" className="text-[20px]">
                   <i className="fab fa-whatsapp"></i> online
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
