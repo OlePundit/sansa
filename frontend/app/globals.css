@@ -1,56 +1,21 @@
-<<<<<<< HEAD
-@import "tailwindcss";
-=======
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
->>>>>>> eaa606a95c18e97417951e5d3112476be20bc2c1
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0a0a;
+  --foreground: #ededed;
 }
 
-<<<<<<< HEAD
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-
-  /* Define font families for Tailwind utilities */
-  --font-family-montserrat: var(--font-montserrat);
-
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #171717;
-=======
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
->>>>>>> eaa606a95c18e97417951e5d3112476be20bc2c1
     --foreground: #ededed;
   }
 }
 
 body {
-<<<<<<< HEAD
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Helvetica ,Arial, sans-serif;
-}
-
-/* Create Tailwind utility classes for custom fonts */
-@layer utilities {
-  .font-montserrat {
-    font-family: var(--font-montserrat);
-  }
-}
-=======
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
->>>>>>> eaa606a95c18e97417951e5d3112476be20bc2c1
