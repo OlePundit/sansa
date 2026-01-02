@@ -1,10 +1,17 @@
+<<<<<<< HEAD
 @import "tailwindcss";
+=======
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+>>>>>>> eaa606a95c18e97417951e5d3112476be20bc2c1
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
 }
 
+<<<<<<< HEAD
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -19,11 +26,17 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #171717;
+=======
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+>>>>>>> eaa606a95c18e97417951e5d3112476be20bc2c1
     --foreground: #ededed;
   }
 }
 
 body {
+<<<<<<< HEAD
   background: var(--background);
   color: var(--foreground);
   font-family: Helvetica ,Arial, sans-serif;
@@ -35,3 +48,9 @@ body {
     font-family: var(--font-montserrat);
   }
 }
+=======
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+>>>>>>> eaa606a95c18e97417951e5d3112476be20bc2c1
