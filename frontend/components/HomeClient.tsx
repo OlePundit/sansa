@@ -87,7 +87,7 @@ export default function HomeClient({ services }: NavbarSectionProps) {
                   <span className="block py-2 cursor-pointer hover:text-gray-300">
                     Services
                   </span>
-                  <div className="absolute left-0 hidden group-hover:block bg-gray-800 rounded-lg mt-2 min-w-[200px] shadow-lg">
+                  <div className="absolute left-0 hidden group-hover:block bg-gray-800 rounded-lg mt-2 min-w-[320px] shadow-lg">
                     {services.map((service) => (
                       <Link
                         key={service.slug}
