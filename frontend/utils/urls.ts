@@ -1,36 +1,41 @@
 // utils/urls.ts
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://api.nexl.sansadigital.com';
+// Always ensure full URL
+const API_URL = process.env.NEXT_PUBLIC_API_URL 
+  ? process.env.NEXT_PUBLIC_API_URL.startsWith('http')
+    ? process.env.NEXT_PUBLIC_API_URL
+    : `https://${process.env.NEXT_PUBLIC_API_URL}`
+  : 'https://api.nexl.sansadigital.com';
+
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL || 'https://sansadigital.com';
 
+console.log('API_URL configured as:', API_URL); // Debug log
+
 export const urls = {
-  // Backend URLs
   api: {
     base: API_URL,
-    storage: (path: string) => `${API_URL}/storage${path.startsWith('/') ? path : `/${path}`}`,
-    endpoint: (endpoint: string) => `${API_URL}/api${endpoint.startsWith('/') ? endpoint : `/${endpoint}`}`,
+    storage: (path: string) => {
+      if (!path) return '';
+      
+      // Remove any prefixes
+      let cleanPath = path.trim();
+      
+      // Remove various possible prefixes
+      if (cleanPath.startsWith('/api/storage/')) {
+        cleanPath = cleanPath.substring(13);
+      } else if (cleanPath.startsWith('/storage/')) {
+        cleanPath = cleanPath.substring(9);
+      } else if (cleanPath.startsWith('storage/')) {
+        cleanPath = cleanPath.substring(8);
+      }
+      
+      // Remove leading slash
+      if (cleanPath.startsWith('/')) {
+        cleanPath = cleanPath.substring(1);
+      }
+      
+      return `${API_URL}/storage/${cleanPath}`;
+    },
   },
   
-  // Frontend URLs
-  app: {
-    base: APP_URL,
-    page: (path: string) => `${APP_URL}${path.startsWith('/') ? path : `/${path}`}`,
-  },
-  
-  // Transform any URL from frontend to backend domain
-  toBackendUrl: (url: string): string => {
-    if (!url) return '';
-    
-    // Replace any frontend domain with backend domain
-    return url
-      .replace('https://www.sansadigital.com', API_URL)
-      .replace('https://sansadigital.com', API_URL);
-  },
-  
-  // Transform any URL from backend to frontend domain
-  toFrontendUrl: (url: string): string => {
-    if (!url) return '';
-    
-    // Replace backend domain with frontend domain
-    return url.replace(API_URL, APP_URL);
-  },
+  // ... rest of your utility
 };
