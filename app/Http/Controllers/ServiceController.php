@@ -19,4 +19,5 @@ class ServiceController extends Controller
         $services = Service::all();
         return view('Services.index', compact('services'));
     }
+    public
 }

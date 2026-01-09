@@ -3,7 +3,7 @@ export interface Service {
   id: number;
   slug: string;
   title: string;
-  body?: string;
+  body: string;
   thumbnail?: string;
   created_at?: string;
   updated_at?: string;
