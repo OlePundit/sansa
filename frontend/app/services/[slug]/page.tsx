@@ -1,21 +1,21 @@
 import Image from "next/image";
 import BlogThumbnail from "@/components/Blog/BlogThumbnail";
 import { getServices } from "@/server/services";
-import { getBlog } from "@/server/blogDetail";
+import { getService } from "@/server/serviceDetail";
 import Footer from "@/components/Footer";
 
-export default async function BlogPage({ params }: { params: Promise<{ slug: string }> }) {
+export default async function ServicePage({ params }: { params: Promise<{ slug: string }> }) {
   // Await the params promise
   const { slug } = await params;
   console.log('🔍 Slug:', slug);
   
-  const blog = await getBlog(slug);
+  const service = await getService(slug);
   const services = await getServices();
 
-  if (!blog) {
+  if (!service) {
     return (
       <div className="container mx-auto py-16">
-        <p className="text-red-500 text-xl">Blog not found</p>
+        <p className="text-red-500 text-xl">Service not found</p>
         <p className="text-gray-500">Slug: {slug}</p>
       </div>
     );
@@ -23,8 +23,8 @@ export default async function BlogPage({ params }: { params: Promise<{ slug: str
 
   return (
     <div>
-        {blog.thumbnail && (
-          <BlogThumbnail thumbnail={blog.thumbnail} title={blog.title} services={services} />
+        {service.thumbnail && (
+          <BlogThumbnail thumbnail={service.thumbnail} title={service.title} services={services} />
         )}
 
         <main className="flex flex-col justify-center items-center w-full lg:w-2/3 mx-auto">
@@ -32,11 +32,11 @@ export default async function BlogPage({ params }: { params: Promise<{ slug: str
             <div className="lg:w-9/12 w-full flex flex-col text-white font-montserrat text-[20px] mt-[100px] px-6">
 
               <h1 className="text-4xl font-ebGaramond font-bold mb-6">
-                {blog.title}
+                {service.title}
               </h1>
 
               <div
-                dangerouslySetInnerHTML={{ __html: blog.body }}
+                dangerouslySetInnerHTML={{ __html: service.body }}
               />
 
               <div className="mt-10 flex">

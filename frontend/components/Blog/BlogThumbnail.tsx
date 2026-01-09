@@ -1,6 +1,7 @@
 'use client'
 import Image from "next/image";
 import Link from "next/link";
+import { urls } from '@/utils/urls'; // Import the helper utility
 
 // Define a type for the service object
 interface Service {
@@ -18,10 +19,13 @@ export default function BlogThumbnail({
   title: string;
   services: Service[];   // Use the defined interface instead of 'any'
 }) {
+  const thumbnailUrl = thumbnail 
+    ? urls.api.storage(thumbnail)
+    : null;
   return (
     <div
       className="relative w-full bg-cover bg-no-repeat h-[60vh]"
-      style={{ backgroundImage: `url('${thumbnail}')` }}
+      style={{ backgroundImage: `url('${thumbnailUrl}')` }}
     >
       {/* Navbar */}
       <nav className="navbar flex justify-between items-center px-6 py-4 bg-transparent shadow-sm">
