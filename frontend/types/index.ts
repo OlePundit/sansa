@@ -14,6 +14,7 @@ export interface Blog {
   slug: string;
   title: string;
   body: string;
+  description?: string; // Add this line - description is optional
   excerpt?: string;  // Add this line - excerpt is optional
   thumbnail?: string;
   created_at?: string;
