@@ -1,7 +1,7 @@
 import NavbarSection from "@/components/Contact/NavbarSection";
 import SuccessMessage from "@/components/Contact/SuccessMessage";
 import { getServices } from "@/server/services";
-import Metadata from "next";
+import { Metadata } from "next";
 
 
 export const metadata: Metadata = {
