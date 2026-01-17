@@ -3,6 +3,75 @@ import BlogThumbnail from "@/components/Blog/BlogThumbnail";
 import { getServices } from "@/server/services";
 import { getBlog } from "@/server/blogDetail";
 import Footer from "@/components/Footer";
+import type { Metadata, ResolvingMetadata } from 'next';
+
+const BASE_URL = 'https://sansadigital.com';
+
+interface BlogPageProps {
+  params: Promise<{ slug: string }>;
+}
+
+// Generate dynamic metadata for the blog post
+export async function generateMetadata(
+  { params }: BlogPageProps,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const { slug } = await params;
+  const blog = await getBlog(slug);
+  
+  if (!blog) {
+    return {
+      title: 'Blog Not Found',
+      description: 'The requested blog post could not be found.',
+    };
+  }
+
+  // Previous metadata
+  const previousImages = (await parent).openGraph?.images || [];
+  
+  // Construct image URL
+  const imageUrl = blog.thumbnail 
+    ? `${BASE_URL}/storage/${blog.thumbnail}`
+    : `${BASE_URL}/storage/twitter.png`; // Fallback image
+  
+  // Construct page URL
+  const pageUrl = `${BASE_URL}/blogs/${blog.slug}`;
+  
+  return {
+    title: blog.title,
+    description: blog.description || blog.title,
+    robots: 'index, follow',
+    
+    // Open Graph
+    openGraph: {
+      type: 'article',
+      title: blog.title,
+      description: blog.description || blog.title,
+      images: [imageUrl, ...previousImages],
+      url: pageUrl,
+      siteName: 'Sansa Digital',
+      publishedTime: blog.created_at || new Date().toISOString(),
+      authors: [blog.author || 'Sansa Digital'],
+      tags: blog.tags ? blog.tags.split(',') : [],
+    },
+    
+    // Twitter
+    twitter: {
+      card: 'summary_large_image',
+      title: blog.title,
+      description: blog.title,
+      images: [imageUrl],
+      site: '@sansadigital',
+      creator: '@salvacar_ke',
+    },
+    
+    // Additional metadata
+    alternates: {
+      canonical: pageUrl,
+    },
+    
+  };
+}
 
 export default async function BlogPage({ params }: { params: Promise<{ slug: string }> }) {
   // Await the params promise
