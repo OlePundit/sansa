@@ -51,8 +51,6 @@ export async function generateMetadata(
       url: pageUrl,
       siteName: 'Sansa Digital',
       publishedTime: blog.created_at || new Date().toISOString(),
-      authors: [blog.author || 'Sansa Digital'],
-      tags: blog.tags ? blog.tags.split(',') : [],
     },
     
     // Twitter
