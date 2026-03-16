@@ -32,7 +32,7 @@ export default function ServicesSection() {
       img: "/storage/mobile.webp",
       title: "Mobile development",
       list: ["iOS", "Android", "Cross platform"],
-      link: "https://sansadigital.com/lps/mobile-development-services-in-kenya",
+      link: "https://sansadigital.com/services/mobile-development-services-in-kenya",
     },
     {
       img: "/storage/seo.webp",
@@ -49,7 +49,7 @@ export default function ServicesSection() {
       img: "/storage/graphic.webp",
       title: "Graphic Design",
       desc: "Posters, banners, publications, flyers, and social media content. We shall create graphics that tell a story.",
-      link: "https://sansadigital.com/lps/graphic-design-in-kenya",
+      link: "https://sansadigital.com/services/graphic-design-in-kenya",
     },
     {
       img: "/storage/it.webp",
@@ -66,7 +66,7 @@ export default function ServicesSection() {
       img: "/storage/webhosting.webp",
       title: "Web Hosting",
       list: ["Affordable prices", "Free domain", "Free SSL", "Managed hosting"],
-      link: "https://sansadigital.com/lps/affordable-webhosting-services-in-kenya",
+      link: "https://sansadigital.com/services/affordable-webhosting-services-in-kenya",
     },
   ];
 
