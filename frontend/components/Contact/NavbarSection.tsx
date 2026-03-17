@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from 'react';
-import { ChevronUp } from "lucide-react";
+import { ChevronUp, ChevronDown } from "lucide-react";
 import { MessageCircle, Phone } from "lucide-react"; // Standard WhatsApp-style icon
 import { Service, NavbarSectionProps } from '@/types'; // Import shared types
 
@@ -70,8 +70,8 @@ export default function NavbarSection({ services }: NavbarSectionProps) { // Add
 
                 {/* Services Dropdown */}
                 <li className="relative group">
-                  <span className="block py-2 cursor-pointer hover:text-gray-300">
-                    Services
+                  <span className="flex items-center gap-1 py-2 cursor-pointer hover:text-gray-300">
+                    Services <ChevronDown className="w-4 h-4" />
                   </span>
                   <div className="absolute left-0 hidden group-hover:block bg-gray-800 rounded-lg mt-2 min-w-[200px] shadow-lg">
                     {/* Add conditional check here */}
@@ -95,8 +95,8 @@ export default function NavbarSection({ services }: NavbarSectionProps) { // Add
 
                 {/* Solutions Dropdown */}
                 <li className="relative group">
-                  <span className="block py-2 cursor-pointer hover:text-gray-300">
-                    Solutions
+                  <span className="flex items-center gap-1 py-2 cursor-pointer hover:text-gray-300">
+                    Solutions <ChevronDown className="w-4 h-4" />
                   </span>
                   <div className="absolute left-0 hidden group-hover:block bg-gray-800 rounded-lg mt-2 min-w-[200px] shadow-lg">
                     <Link

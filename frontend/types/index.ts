@@ -9,6 +9,29 @@ export interface Service {
   updated_at?: string;
   // Add other fields as needed based on your API response
 }
+export interface LP {
+  id: number;
+  slug: string;
+  title: string;
+  title1?: string;
+  title2?: string;
+  title3?: string;
+  img1?: string;
+  img2?: string;
+  img3?: string;
+  faq1?: string;
+  faq2?: string;
+  faq3?: string;
+  faq4?: string;
+  faq5?: string;
+  ans1?: string;
+  ans2?: string;
+  ans3?: string;
+  ans4?: string;
+  ans5?: string;
+  benefits?: string;
+  benefits2?: string;
+}
 export interface Blog {
   id: number;
   slug: string;
