@@ -69,7 +69,7 @@ export default async function LPPage({ params }: { params: Promise<{ slug: strin
         <div>
             <NavbarSection
                 services={services}
-                thumbnail={lp.thumbnail || "/default-image.png"}
+                thumbnail= "/default-image.png"
                 title={lp.title}
                 intro={lp.intro}
             />
