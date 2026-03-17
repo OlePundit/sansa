@@ -16,6 +16,7 @@ class LpResource extends JsonResource
     {
         return [
             'id'=>$this->id,
+            'intro'=>$this->intro,
             'title'=>$this->title,
             'title1'=>$this->title1,
             'title2'=>$this->title2,

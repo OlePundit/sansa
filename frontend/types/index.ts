@@ -11,6 +11,7 @@ export interface Service {
 }
 export interface LP {
   id: number;
+  intro:string;
   slug: string;
   title: string;
   title1?: string;
