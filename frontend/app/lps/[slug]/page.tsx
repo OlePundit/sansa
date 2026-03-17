@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { getLp } from "@/server/lpDetail";
+import { getLP } from "@/server/lpDetail";
 import NavbarSection from "@/components/LP/NavbarSection";
 import { getServices } from "@/server/services";
 import InfoSection from "@/components/LP/InfoSection";
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
 export default async function LPPage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
 
-    const lp = await getLp(slug);
+    const lp = await getLP(slug);
     const services = await getServices();
 
     if (!lp) {
