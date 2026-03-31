@@ -37,6 +37,8 @@ class LpResource extends JsonResource
             'slug'=>$this->slug,
             'benefits'=>$this->benefits,
             'benefits2'=>$this->benefits2,
-        ];    
+            'category'=>$this->category,
+            'created_at'=>$this->created_at,
+        ];
     }
 }

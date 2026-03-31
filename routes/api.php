@@ -16,37 +16,53 @@ use App\Http\Controllers\API\HomeController;
 |--------------------------------------------------------------------------
 | API Routes
 |--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "api" middleware group. Make something great!
-|
 */
-Route::middleware('auth:sanctum')->group(function() {
+
+// Public read routes
+Route::get('/blogs', [BlogController::class, 'index']);
+Route::get('/blogs/{blog}', [BlogController::class, 'show']);
+Route::get('/services', [ServiceController::class, 'index']);
+Route::get('/services/{service}', [ServiceController::class, 'show']);
+Route::get('/lps', [LpController::class, 'index']);
+Route::get('/lps/{lp}', [LpController::class, 'show']);
+Route::get('/home', [HomeController::class, 'index']);
+Route::get('/about', [AboutController::class, 'index']);
+Route::post('/contact', [ContactController::class, 'store']);
+Route::apiResource('/users', AuthController::class)->only(['index', 'show']);
+
+// Auth
+Route::post('/signup', [AuthController::class, 'signup']);
+Route::post('/login', [AuthController::class, 'login']);
+Route::post('/forgot-password', [AuthController::class, 'sendResetLink']);
+Route::post('/reset-password', [AuthController::class, 'resetPassword']);
+Route::get('/success', [PaymentController::class, 'success'])->name('success');
+Route::get('/callback', [PaymentController::class, 'handleGatewayCallback'])->name('callback');
+
+// Protected routes (require auth token)
+Route::middleware('auth:sanctum')->group(function () {
     Route::get('/user', function (Request $request) {
         return $request->user();
     });
     Route::post('/logout', [AuthController::class, 'logout']);
     Route::get('/validate-token', [AuthController::class, 'validateToken']);
-    Route::apiResource('/newsletter',NewsletterController::class);
-    Route::apiResource('/lps',LpController::class)->only(['index','show']);
+
+    // Admin: Blog CRUD
+    Route::post('/blogs', [BlogController::class, 'store']);
+    Route::put('/blogs/{blog}', [BlogController::class, 'update']);
+    Route::patch('/blogs/{blog}', [BlogController::class, 'update']);
+    Route::delete('/blogs/{blog}', [BlogController::class, 'destroy']);
+
+    // Admin: LP CRUD
+    Route::post('/lps', [LpController::class, 'store']);
+    Route::put('/lps/{lp}', [LpController::class, 'update']);
+    Route::patch('/lps/{lp}', [LpController::class, 'update']);
+    Route::delete('/lps/{lp}', [LpController::class, 'destroy']);
+
+    // Admin: View contact submissions
+    Route::get('/contact', [ContactController::class, 'index']);
+
+    // Newsletter & payments
+    Route::apiResource('/newsletter', NewsletterController::class);
     Route::post('/pay', [PaymentController::class, 'redirectToGateway'])->name('pay');
-    Route::get('cancel', [PaymentController::class, 'cancel'])->name('cancel');
-
+    Route::get('/cancel', [PaymentController::class, 'cancel'])->name('cancel');
 });
-Route::apiResource('/contact',ContactController::class)->only(['store']);
-Route::apiResource('/services',ServiceController::class)->only(['show','index']);
-Route::apiResource('/blogs',BlogController::class);
-Route::apiResource('/users', AuthController::class);
-Route::apiResource('/home',HomeController::class)->only(['index']);
-Route::apiResource('/about',AboutController::class)->only(['index']);
-Route::apiResource('/services',ServiceController::class)->only(['show','index']);
-Route::apiResource('/lps',LpController::class);
-
-Route::post('/signup', [AuthController::class, 'signup']);
-Route::post('/login', [AuthController::class, 'login']);
-
-Route::post('/forgot-password', [AuthController::class, 'sendResetLink']);
-Route::post('/reset-password', [AuthController::class, 'resetPassword']);
-Route::get('success', [PaymentController::class, 'success'])->name('success');
-Route::get('/callback', [PaymentController::class, 'handleGatewayCallback'])->name('callback');

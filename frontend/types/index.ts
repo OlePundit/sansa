@@ -4,10 +4,10 @@ export interface Service {
   slug: string;
   title: string;
   body: string;
+  description?: string;
   thumbnail?: string;
   created_at?: string;
   updated_at?: string;
-  // Add other fields as needed based on your API response
 }
 export interface LP {
   id: number;

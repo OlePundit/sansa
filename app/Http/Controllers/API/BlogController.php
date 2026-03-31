@@ -9,6 +9,7 @@ use App\Models\Service;
 use App\Http\Resources\V1\BlogResource;
 use App\Http\Resources\V1\BlogCollection;
 use App\Http\Requests\V1\StoreBlogRequest;
+use App\Http\Requests\V1\UpdateBlogRequest;
 
 use Illuminate\Support\Facades\Auth;
 
@@ -20,7 +21,6 @@ class BlogController extends Controller
 
         $blogs = $query->paginate();
 
-        // If you ever want to separate categories, you can do it here:
         $allBlogs = $blogs->getCollection();
         $services = Service::all();
 
@@ -36,20 +36,25 @@ class BlogController extends Controller
         ]);
     }
 
-    // In BlogController.php
-    public function show(Blog $blog) // ← Change parameter name to match resource
+    public function show(Blog $blog)
     {
         return new BlogResource($blog);
     }
+
     public function store(StoreBlogRequest $request)
     {
-        if (!Auth::check()) {
-            return response()->json(['message' => 'Unauthenticated'], 401);
-        }
-        $blog = Blog::create($request->all());
+        $blog = Blog::create($request->validated());
 
         return new BlogResource($blog);
     }
+
+    public function update(UpdateBlogRequest $request, Blog $blog)
+    {
+        $blog->update($request->validated());
+
+        return new BlogResource($blog);
+    }
+
     public function destroy(Blog $blog)
     {
         $blog->delete();

@@ -1,59 +1,84 @@
-import Image from "next/image";
 import BlogThumbnail from "@/components/Blog/BlogThumbnail";
 import { getServices } from "@/server/services";
 import { getService } from "@/server/serviceDetail";
 import Footer from "@/components/Footer";
-import { Metadata } from "next";
+import type { Metadata, ResolvingMetadata } from 'next';
 
-export const metadata: Metadata = {
-  title: 'Sansa Digital',
-  description: 'We are the #1 web development, web design, graphic design, SEO, content and social media marketing company in Kenya.',
-  keywords: ['web development', 'web design', 'graphic design', 'SEO', 'digital marketing', 'Kenya'],
-  authors: [{ name: 'Sansa Digital' }],
-  robots: 'index, follow',
-  
-  // Open Graph
-  openGraph: {
-    type: 'website',
-    title: 'Sansa Digital',
-    description: 'We are the #1 web development, web design, graphic design, SEO, content and social media marketing company in Kenya.',
-    images: [
-      {
-        url: 'https://sansadigital.com/storage/twitter.png',
-        width: 1200,
-        height: 630,
-        alt: 'Sansa Digital',
-      },
-    ],
-    url: 'https://sansadigital.com',
-    siteName: 'Sansa Digital',
-  },
-  
-  // Twitter
-  twitter: {
-    card: 'summary_large_image',
-    site: 'sansadigital.com',
-    creator: '@salvacar_ke',
-    title: 'Sansa Digital',
-    description: 'We are the #1 web development, web design, graphic design, SEO, content and social media marketing company in Kenya.',
-    images: ['https://sansadigital.com/storage/twitter.png'],
-  },
-  
-  // Additional metadata
-  metadataBase: new URL('https://sansadigital.com'),
-  alternates: {
-    canonical: '/',
-  },
-  viewport: 'width=device-width, initial-scale=1',
-};
+const BASE_URL = 'https://sansadigital.com';
+
+interface ServicePageProps {
+  params: Promise<{ slug: string }>;
+}
+
+// Generate dynamic metadata for the service page
+export async function generateMetadata(
+  { params }: ServicePageProps,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const { slug } = await params;
+  const service = await getService(slug);
+
+  if (!service) {
+    return {
+      title: 'Service Not Found',
+      description: 'The requested service could not be found.',
+    };
+  }
+
+  // Previous metadata (optional, if you want to inherit parent images)
+  const previousImages = (await parent).openGraph?.images || [];
+
+  // Construct image URL
+  const imageUrl = service.thumbnail
+    ? `${BASE_URL}/storage/${service.thumbnail}`
+    : `${BASE_URL}/storage/twitter.png`; // Fallback image
+
+  // Construct page URL
+  const pageUrl = `${BASE_URL}/services/${service.slug}`;
+
+  return {
+    title: service.title,
+    description: service.description || service.title,
+    robots: 'index, follow',
+
+    // Open Graph
+    openGraph: {
+      type: 'article', // or 'website' – adjust based on content type
+      title: service.title,
+      description: service.description || service.title,
+      images: [imageUrl, ...previousImages],
+      url: pageUrl,
+      siteName: 'Sansa Digital',
+      publishedTime: service.created_at || new Date().toISOString(),
+    },
+
+    // Twitter
+    twitter: {
+      card: 'summary_large_image',
+      title: service.title,
+      description: service.description || service.title,
+      images: [imageUrl],
+      site: '@sansadigital',
+      creator: '@salvacar_ke',
+    },
+
+    // Additional metadata
+    alternates: {
+      canonical: pageUrl,
+    },
+  };
+}
 
 export default async function ServicePage({ params }: { params: Promise<{ slug: string }> }) {
   // Await the params promise
   const { slug } = await params;
   console.log('🔍 Slug:', slug);
-  
-  const service = await getService(slug);
-  const services = await getServices();
+
+  // Parallel data fetching
+  const [service, services] = await Promise.all([
+    getService(slug),
+    getServices(),
+  ]);
 
   if (!service) {
     return (
@@ -66,50 +91,47 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
 
   return (
     <div>
-        {service.thumbnail && (
-          <BlogThumbnail thumbnail={service.thumbnail} title={service.title} services={services} />
-        )}
+      {service.thumbnail && (
+        <BlogThumbnail thumbnail={service.thumbnail} title={service.title} services={services} />
+      )}
 
-        <main className="flex flex-col justify-center items-center w-full lg:w-2/3 mx-auto">
-          <div className="w-full flex justify-start items-start mx-auto">
-            <div className="lg:w-9/12 w-full flex flex-col text-white font-montserrat text-[20px] mt-[100px] px-6">
+      <main className="flex flex-col justify-center items-center w-full lg:w-2/3 mx-auto">
+        <div className="w-full flex justify-start items-start mx-auto">
+          <div className="lg:w-9/12 w-full flex flex-col text-white font-montserrat text-[20px] mt-[100px] px-6">
+            <h1 className="text-4xl font-ebGaramond font-bold mb-6">
+              {service.title}
+            </h1>
 
-              <h1 className="text-4xl font-ebGaramond font-bold mb-6">
-                {service.title}
-              </h1>
+            <div dangerouslySetInnerHTML={{ __html: service.body }} />
 
-              <div
-                dangerouslySetInnerHTML={{ __html: service.body }}
-              />
-
-              <div className="mt-10 flex">
-                <button
-                  className="
-                    bg-[#2c96e2]
-                    text-white
-                    font-bold
-                    text-xl
-                    rounded-md
-                    mt-[100px]
-                    mb-[100px]
-                    px-6 
-                    py-2
-                    hover:bg-[#2f976b]
-                    transition
-                  "
-                >
-                  Request Quotation
-                </button>
-              </div>
-
+            <div className="mt-10 flex">
+              {/* TODO: Add actual link or action for the quotation button */}
+              <button
+                className="
+                  bg-[#2c96e2]
+                  text-white
+                  font-bold
+                  text-xl
+                  rounded-md
+                  mt-[100px]
+                  mb-[100px]
+                  px-6 
+                  py-2
+                  hover:bg-[#2f976b]
+                  transition
+                "
+                onClick={() => {
+                  // Example: open contact modal or navigate to contact page
+                  window.location.href = '/contact';
+                }}
+              >
+                Request Quotation
+              </button>
             </div>
           </div>
-        </main>
-        <Footer />
-
-        
-        {/* Additional about page content can go here */}
+        </div>
+      </main>
+      <Footer />
     </div>
-
   );
 }

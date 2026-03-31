@@ -11,7 +11,7 @@ class StoreLpRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -39,9 +39,11 @@ class StoreLpRequest extends FormRequest
             'ans3' => '',   
             'ans4' => '',   
             'ans5' => '',   
-            'slug' => '',   
-            'benefits' => '',   
-            'benefits2' => '',   
+            'slug' => '',
+            'benefits' => '',
+            'benefits2' => '',
+            'intro' => '',
+            'category' => '',
         ];
     }
 }

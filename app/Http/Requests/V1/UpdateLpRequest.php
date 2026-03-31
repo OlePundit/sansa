@@ -11,7 +11,7 @@ class UpdateLpRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -39,9 +39,11 @@ class UpdateLpRequest extends FormRequest
             'ans3' => 'sometimes',   
             'ans4' => 'sometimes',   
             'ans5' => 'sometimes',   
-            'slug' => 'sometimes',   
-            'benefits' => 'sometimes',   
-            'benefits2' => 'sometimes',  
+            'slug' => 'sometimes',
+            'benefits' => 'sometimes',
+            'benefits2' => 'sometimes',
+            'intro' => 'sometimes',
+            'category' => 'sometimes',
         ];
     }
 }

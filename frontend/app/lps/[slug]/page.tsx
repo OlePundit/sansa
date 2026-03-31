@@ -77,14 +77,14 @@ export default async function LPPage({ params }: { params: Promise<{ slug: strin
             <main className="flex flex-col justify-center items-center w-full lg:w-3/4 mx-auto">
                 <InfoSection
                     img2={lp.img2 || "/default-info-image.png"}
-                    title1={lp.title1}
-                    benefits={lp.benefits}
+                    title1={lp.title1 || ""}
+                    benefits={lp.benefits || ""}
                 />
 
                 <InfoSection2
                     img3={lp.img3 || "/default-info-image.png"}
-                    title2={lp.title2}
-                    benefits2={lp.benefits2}
+                    title2={lp.title2 || ""}
+                    benefits2={lp.benefits2 || ""}
                 />
                 <FaqSection 
                     faq1={lp.faq1}

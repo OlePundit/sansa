@@ -11,7 +11,7 @@ class StoreBlogRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,9 +23,11 @@ class StoreBlogRequest extends FormRequest
     {
         return [
             'title' => 'required',
-            'slug'=>'',  
+            'slug' => '',
             'body' => 'required',
             'thumbnail' => '',
+            'description' => '',
+            'category' => '',
         ];
     }
 }
