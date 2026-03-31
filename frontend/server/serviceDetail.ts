@@ -43,7 +43,6 @@ export const getServiceData = async (): Promise<Service[]> => {
 export const getService = async (slug: string): Promise<Service | null> => {
   const baseUrl = process.env.APP_URL ?? 'http://127.0.0.1:8000';
   const url = `${baseUrl}/api/services/${slug}`;
-
   try {
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), 10000);
