@@ -2,6 +2,7 @@ import BlogThumbnail from "@/components/Blog/BlogThumbnail";
 import { getServices } from "@/server/services";
 import { getService } from "@/server/serviceDetail";
 import Footer from "@/components/Footer";
+import QuoteButton from "@/components/QuoteButton";
 import type { Metadata, ResolvingMetadata } from 'next';
 
 const BASE_URL = 'https://sansadigital.com';
@@ -105,28 +106,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             <div dangerouslySetInnerHTML={{ __html: service.body }} />
 
             <div className="mt-10 flex">
-              {/* TODO: Add actual link or action for the quotation button */}
-              <button
-                className="
-                  bg-[#2c96e2]
-                  text-white
-                  font-bold
-                  text-xl
-                  rounded-md
-                  mt-[100px]
-                  mb-[100px]
-                  px-6 
-                  py-2
-                  hover:bg-[#2f976b]
-                  transition
-                "
-                onClick={() => {
-                  // Example: open contact modal or navigate to contact page
-                  window.location.href = '/contact';
-                }}
-              >
-                Request Quotation
-              </button>
+              <QuoteButton />
             </div>
           </div>
         </div>
