@@ -44,6 +44,7 @@ class StoreLpRequest extends FormRequest
             'benefits2' => '',
             'intro' => '',
             'category' => '',
+            'meta_description' => '',
         ];
     }
 }

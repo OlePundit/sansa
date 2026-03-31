@@ -39,14 +39,14 @@ export async function generateMetadata(
 
   return {
     title: service.title,
-    description: service.description || service.title,
+    description: service.meta_description || service.description || service.title,
     robots: 'index, follow',
 
     // Open Graph
     openGraph: {
       type: 'article', // or 'website' – adjust based on content type
       title: service.title,
-      description: service.description || service.title,
+      description: service.meta_description || service.description || service.title,
       images: [imageUrl, ...previousImages],
       url: pageUrl,
       siteName: 'Sansa Digital',
@@ -57,7 +57,7 @@ export async function generateMetadata(
     twitter: {
       card: 'summary_large_image',
       title: service.title,
-      description: service.description || service.title,
+      description: service.meta_description || service.description || service.title,
       images: [imageUrl],
       site: '@sansadigital',
       creator: '@salvacar_ke',

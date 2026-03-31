@@ -33,13 +33,13 @@ export async function generateMetadata(
 
   return {
     title: lp.title ?? 'Sansa Digital',
-    description: lp.intro ?? 'We are the #1 web development, web design, graphic design, SEO, content and social media marketing company in Kenya.',
+    description: lp.meta_description ?? lp.intro ?? 'We are the #1 web development, web design, graphic design, SEO, content and social media marketing company in Kenya.',
     robots: 'index, follow',
 
     openGraph: {
       type: 'website',
       title: lp.title ?? 'Sansa Digital',
-      description: lp.intro ?? '',
+      description: lp.meta_description ?? lp.intro ?? '',
       images: [`${BASE_URL}/storage/twitter.png`, ...previousImages],
       url: pageUrl,
       siteName: 'Sansa Digital',
@@ -50,7 +50,7 @@ export async function generateMetadata(
       site: 'sansadigital.com',
       creator: '@salvacar_ke',
       title: lp.title ?? 'Sansa Digital',
-      description: lp.intro ?? '',
+      description: lp.meta_description ?? lp.intro ?? '',
       images: [`${BASE_URL}/storage/twitter.png`],
     },
 

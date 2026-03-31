@@ -23,9 +23,10 @@ class UpdateBlogRequest extends FormRequest
     {
         return [
             'title' => ['sometimes', 'required'],
-            'slug'=>'sometimes',  
+            'slug'=>'sometimes',
             'body' => ['sometimes', 'required'],
             'thumbnail' => 'sometimes',
+            'meta_description' => 'sometimes',
         ];
     }
 }

@@ -139,6 +139,7 @@ export interface Blog {
   title: string;
   body: string;
   description?: string;
+  meta_description?: string;
   thumbnail?: string;
   category?: string;
   created_at?: string;
@@ -169,6 +170,7 @@ export interface LP {
   benefits2?: string;
   intro?: string;
   category?: string;
+  meta_description?: string;
   created_at?: string;
 }
 

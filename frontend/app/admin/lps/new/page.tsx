@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import { createLP } from '@/lib/adminApi';
 
 const EMPTY = {
-  title: '', slug: '', category: '', intro: '',
+  title: '', slug: '', category: '', intro: '', meta_description: '',
   title1: '', title2: '', title3: '',
   img1: '', img2: '', img3: '',
   faq1: '', faq2: '', faq3: '', faq4: '', faq5: '',
@@ -55,6 +55,7 @@ export default function NewLPPage() {
           </div>
           <Field label="Category" value={form.category} onChange={(v) => set('category', v)} />
           <Textarea label="Intro / Hero Text" value={form.intro} onChange={(v) => set('intro', v)} rows={3} />
+          <Textarea label="Meta Description" value={form.meta_description} onChange={(v) => set('meta_description', v)} rows={2} />
         </Section>
 
         {/* Section Titles */}

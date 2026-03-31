@@ -5,6 +5,7 @@ export interface Service {
   title: string;
   body: string;
   description?: string;
+  meta_description?: string;
   thumbnail?: string;
   created_at?: string;
   updated_at?: string;
@@ -32,18 +33,19 @@ export interface LP {
   ans5?: string;
   benefits?: string;
   benefits2?: string;
+  meta_description?: string;
 }
 export interface Blog {
   id: number;
   slug: string;
   title: string;
   body: string;
-  description?: string; // Add this line - description is optional
-  excerpt?: string;  // Add this line - excerpt is optional
+  description?: string;
+  meta_description?: string;
+  excerpt?: string;
   thumbnail?: string;
   created_at?: string;
   updated_at?: string;
-  // Add other fields as needed based on your API response
 }
 export interface ApiResponse<T> {
   data: T;

@@ -53,6 +53,7 @@ export default function EditBlogPage() {
       <form onSubmit={handleSubmit} className="space-y-5 bg-white rounded-xl p-6 shadow-sm border border-gray-100">
         <Field label="Title" value={form.title || ''} onChange={(v) => set('title', v)} required />
         <Field label="Description (excerpt)" value={form.description || ''} onChange={(v) => set('description', v)} />
+        <Field label="Meta Description" value={form.meta_description || ''} onChange={(v) => set('meta_description', v)} placeholder="SEO meta description (150–160 chars recommended)" />
         <Field label="Thumbnail URL" value={form.thumbnail || ''} onChange={(v) => set('thumbnail', v)} placeholder="https://..." />
         <Field label="Category" value={form.category || ''} onChange={(v) => set('category', v)} />
 

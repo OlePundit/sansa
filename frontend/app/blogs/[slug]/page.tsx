@@ -39,14 +39,14 @@ export async function generateMetadata(
   
   return {
     title: blog.title,
-    description: blog.description || blog.title,
+    description: blog.meta_description || blog.description || blog.title,
     robots: 'index, follow',
     
     // Open Graph
     openGraph: {
       type: 'article',
       title: blog.title,
-      description: blog.description || blog.title,
+      description: blog.meta_description || blog.description || blog.title,
       images: [imageUrl, ...previousImages],
       url: pageUrl,
       siteName: 'Sansa Digital',

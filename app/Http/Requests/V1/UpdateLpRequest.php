@@ -44,6 +44,7 @@ class UpdateLpRequest extends FormRequest
             'benefits2' => 'sometimes',
             'intro' => 'sometimes',
             'category' => 'sometimes',
+            'meta_description' => 'sometimes',
         ];
     }
 }

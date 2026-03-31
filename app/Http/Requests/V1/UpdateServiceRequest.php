@@ -23,9 +23,10 @@ class UpdateServiceRequest extends FormRequest
     {
         return [
             'title' => ['required','sometimes'],
-            'slug'=>['required','sometimes'],  
-            'body'=>['required','sometimes'],  
-            'thumbnail'=>'sometimes',  
+            'slug'=>['required','sometimes'],
+            'body'=>['required','sometimes'],
+            'thumbnail'=>'sometimes',
+            'meta_description' => 'sometimes',
         ];
     }
 }

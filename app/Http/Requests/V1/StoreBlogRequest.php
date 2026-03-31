@@ -27,6 +27,7 @@ class StoreBlogRequest extends FormRequest
             'body' => 'required',
             'thumbnail' => '',
             'description' => '',
+            'meta_description' => '',
             'category' => '',
         ];
     }

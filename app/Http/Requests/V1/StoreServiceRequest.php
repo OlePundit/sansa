@@ -23,9 +23,10 @@ class StoreServiceRequest extends FormRequest
     {
         return [
             'title' => 'required',
-            'slug'=>'required',  
-            'body'=>'required',  
-            'thumbnail'=>'',  
+            'slug'=>'required',
+            'body'=>'required',
+            'thumbnail'=>'',
+            'meta_description' => '',
         ];
     }
 }

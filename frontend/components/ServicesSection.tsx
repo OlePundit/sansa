@@ -26,7 +26,7 @@ export default function ServicesSection() {
       img: "/storage/web.webp",
       title: "Web design and development",
       desc: "We shall create a responsive and modern website for your business to help you interact with prospective online customers.",
-      link: "https://sansadigital.com/lps/webdesign",
+      link: "https://sansadigital.com/lps/web-design-and-development-in-kenya",
     },
     {
       img: "/storage/mobile.webp",
@@ -60,7 +60,7 @@ export default function ServicesSection() {
         "Consultancy",
         "Training",
       ],
-      link: "https://sansadigital.com/lps/it-support-and-help-desk",
+      link: "https://sansadigital.com/lps/it-support-services-and-help-desk-in-kenya",
     },
     {
       img: "/storage/webhosting.webp",

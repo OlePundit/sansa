@@ -59,6 +59,7 @@ export default function EditLPPage() {
           </div>
           <Field label="Category" value={form.category || ''} onChange={(v) => set('category', v)} />
           <Textarea label="Intro / Hero Text" value={form.intro || ''} onChange={(v) => set('intro', v)} rows={3} />
+          <Textarea label="Meta Description" value={form.meta_description || ''} onChange={(v) => set('meta_description', v)} rows={2} />
         </Section>
 
         {/* Section Titles */}

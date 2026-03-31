@@ -38,6 +38,7 @@ class LpResource extends JsonResource
             'benefits'=>$this->benefits,
             'benefits2'=>$this->benefits2,
             'category'=>$this->category,
+            'meta_description'=>$this->meta_description,
             'created_at'=>$this->created_at,
         ];
     }
