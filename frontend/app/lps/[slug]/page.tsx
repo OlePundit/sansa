@@ -71,6 +71,14 @@ export async function generateMetadata(
   };
 }
 
+const API_URL = process.env.APP_URL ?? 'http://127.0.0.1:8000';
+
+function toAbsolute(path?: string): string {
+  if (!path) return '/default-image.png';
+  if (path.startsWith('http')) return path;
+  return `${API_URL}/storage/${path}`;
+}
+
 export default async function LPPage({ params }: LPPageProps) {
   const { slug } = await params;
   console.log('🔍 Slug:', slug);
@@ -93,20 +101,20 @@ export default async function LPPage({ params }: LPPageProps) {
     <div>
       <NavbarSection
         services={services}
-        thumbnail="/default-image.png"
+        thumbnail={toAbsolute(lp.thumbnail)}
         title={lp.title ?? ''}
         intro={lp.intro ?? ''}
       />
 
       <main className="flex flex-col justify-center items-center w-full lg:w-3/4 mx-auto">
         <InfoSection
-          img2={lp.img2 || "/default-info-image.png"}
+          img2={toAbsolute(lp.img2)}
           title1={lp.title1 || ""}
           benefits={lp.benefits || ""}
         />
 
         <InfoSection2
-          img3={lp.img3 || "/default-info-image.png"}
+          img3={toAbsolute(lp.img3)}
           title2={lp.title2 || ""}
           benefits2={decodeHtml(lp.benefits2 || "")}
         />
