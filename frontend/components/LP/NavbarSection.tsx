@@ -2,25 +2,13 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { MessageCircle, Phone, ChevronDown } from "lucide-react"; // Standard WhatsApp-style icon
 import { Service, LPNavbarSectionProps } from '@/types'; // Import shared types
 
 export default function NavbarSection({ services, img1, title, intro }: LPNavbarSectionProps) {
     const [menuOpen, setMenuOpen] = useState(false);
-    const [servicesOpen, setServicesOpen] = useState(false);
     const [isVisible, setIsVisible] = useState(false);
-    const servicesRef = useRef<HTMLLIElement>(null);
-
-    useEffect(() => {
-      function handleClickOutside(e: MouseEvent) {
-        if (servicesRef.current && !servicesRef.current.contains(e.target as Node)) {
-          setServicesOpen(false);
-        }
-      }
-      document.addEventListener('mousedown', handleClickOutside);
-      return () => document.removeEventListener('mousedown', handleClickOutside);
-    }, []);
   
     useEffect(() => {
       const timer = setTimeout(() => setIsVisible(true), 100);
@@ -79,27 +67,21 @@ export default function NavbarSection({ services, img1, title, intro }: LPNavbar
                 </li>
 
                 {/* Services Dropdown */}
-                <li className="relative" ref={servicesRef}>
-                  <span
-                    className="flex items-center gap-1 py-2 cursor-pointer hover:text-gray-300"
-                    onClick={() => setServicesOpen(o => !o)}
-                  >
-                    Services <ChevronDown className={`w-4 h-4 transition-transform ${servicesOpen ? 'rotate-180' : ''}`} />
+                <li className="relative group">
+                  <span className="flex items-center gap-1 py-2 cursor-pointer hover:text-gray-300">
+                    Services <ChevronDown className="w-4 h-4" />
                   </span>
-                  {servicesOpen && (
-                    <div className="absolute left-0 bg-gray-800 rounded-lg mt-2 min-w-[200px] shadow-lg z-50">
-                      {services.map((service) => (
-                        <Link
-                          key={service.slug}
-                          href={`/services/${service.slug}`}
-                          className="block px-4 py-2 text-white hover:bg-gray-700"
-                          onClick={() => setServicesOpen(false)}
-                        >
-                          {service.title}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
+                  <div className="absolute left-0 hidden group-hover:block bg-gray-800 rounded-lg mt-2 min-w-[200px] shadow-lg">
+                    {services.map((service) => (
+                      <Link
+                        key={service.slug}
+                        href={`/services/${service.slug}`}
+                        className="block px-4 py-2 text-white hover:bg-gray-700"
+                      >
+                        {service.title}
+                      </Link>
+                    ))}
+                  </div>
                 </li>
 
                 {/* Solutions Dropdown */}
@@ -107,7 +89,7 @@ export default function NavbarSection({ services, img1, title, intro }: LPNavbar
                   <span className="flex items-center gap-1 py-2 cursor-pointer hover:text-gray-300">
                     Solutions <ChevronDown className="w-4 h-4" />
                   </span>
-                  <div className="absolute left-0 hidden group-hover:block bg-gray-800 rounded-lg mt-2 min-w-[200px] shadow-lg z-50">
+                  <div className="absolute left-0 hidden group-hover:block bg-gray-800 rounded-lg mt-2 min-w-[200px] shadow-lg">
                     <Link
                       href="https://self.sansadigital.com"
                       target="_blank"
