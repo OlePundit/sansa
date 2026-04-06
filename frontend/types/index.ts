@@ -33,6 +33,7 @@ export interface LP {
   ans5?: string;
   benefits?: string;
   benefits2?: string;
+  thumbnail?: string;
   meta_description?: string;
 }
 export interface Blog {
