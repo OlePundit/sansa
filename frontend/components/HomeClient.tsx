@@ -41,7 +41,6 @@ export default function HomeClient({ services }: NavbarSectionProps) {
 
   return (
     <div>
-      {/* Hero Section with fade + zoom effect */}
       <div
         className={`relative w-full h-screen bg-cover bg-no-repeat bg-center transition-all duration-[2000ms] ease-in-out transform ${
           isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
@@ -53,14 +52,12 @@ export default function HomeClient({ services }: NavbarSectionProps) {
           `,
         }}
       >
-        {/* Navbar */}
         <nav className="bg-transparent shadow-sm pt-6">
           <div className="container mx-auto flex flex-wrap items-center justify-between px-4 py-3">
             <Link href="/" className="flex items-center">
               <img src="/storage/whiteai.png" alt="logo" width="200" className="mx-2" />
             </Link>
 
-            {/* Toggle Button */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
               className="text-white md:hidden focus:outline-none"
@@ -70,13 +67,12 @@ export default function HomeClient({ services }: NavbarSectionProps) {
               </svg>
             </button>
 
-            {/* Menu */}
             <div className={`w-full md:flex md:items-center md:w-auto ${menuOpen ? 'block' : 'hidden'}`}>
               <ul className="flex flex-col md:flex-row md:space-x-8 text-white text-lg font-light pt-4 md:pt-0">
                 <li><Link href="/" className="block py-2 hover:text-gray-300">Home</Link></li>
                 <li><Link href="/about" className="block py-2 hover:text-gray-300">About</Link></li>
 
-                {/* Services Dropdown - Fixed for desktop & mobile */}
+                {/* Services Dropdown - Fixed version */}
                 <li className="relative" ref={dropdownRef}>
                   <span
                     onClick={toggleServices}
@@ -86,19 +82,19 @@ export default function HomeClient({ services }: NavbarSectionProps) {
                     Services <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${servicesOpen ? 'rotate-180' : ''}`} />
                   </span>
                   
-                  {/* Dropdown menu - responsive width */}
                   <div
                     onMouseLeave={() => window.innerWidth >= 768 && setServicesOpen(false)}
                     className={`
+                      absolute left-0 z-50 mt-2 bg-gray-800 rounded-lg shadow-lg
                       transition-all duration-200 origin-top
-                      ${servicesOpen ? 'opacity-100 scale-100 visible' : 'opacity-0 scale-95 invisible'}
-                      
-                      /* Mobile styles (default) */
-                      relative w-full mt-2 bg-gray-800 rounded-lg shadow-lg
-                      
-                      /* Desktop styles (md and up) */
-                      md:absolute md:left-0 md:mt-2 md:w-auto md:min-w-[320px]
+                      ${servicesOpen ? 'opacity-100 scale-100 visible' : 'opacity-0 scale-95 invisible pointer-events-none'}
+                      w-[calc(100vw-2rem)] md:w-auto md:min-w-[320px]
+                      max-w-[calc(100vw-2rem)] md:max-w-none
                     `}
+                    style={{
+                      left: '50%',
+                      transform: `translateX(-50%) ${servicesOpen ? 'scale(1)' : 'scale(0.95)'}`,
+                    }}
                   >
                     {services.map((service) => (
                       <Link
@@ -129,7 +125,6 @@ export default function HomeClient({ services }: NavbarSectionProps) {
           </div>
         </nav>
 
-        {/* Header Banner */}
         <div className="container mx-auto text-white px-4 py-10 sm:py-20">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 items-center">
             <motion.div
