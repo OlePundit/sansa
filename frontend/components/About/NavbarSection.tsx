@@ -2,18 +2,30 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { MessageCircle, Phone, ChevronDown } from "lucide-react"; // Standard WhatsApp-style icon
 import { motion } from "framer-motion";
 import { Service, NavbarSectionProps } from '@/types'; // Import shared types
 
   export default function NavbarSection({ services }: NavbarSectionProps) {
     const [menuOpen, setMenuOpen] = useState(false);
+    const [servicesOpen, setServicesOpen] = useState(false);
     const [isVisible, setIsVisible] = useState(false);
+    const dropdownRef = useRef<HTMLLIElement>(null);
 
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(true), 100);
     return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setServicesOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
     
   return (
@@ -62,8 +74,7 @@ import { Service, NavbarSectionProps } from '@/types'; // Import shared types
                 menuOpen ? 'block' : 'hidden'
               }`}
             >
-              <ul className="flex flex-col md:flex-row md:space-x-8 text-white text-lg font-light pt-4 md:pt-0">
-                {/* ↑ added pt-4 for small screens, keeps spacing nice */}
+              <ul className="flex flex-col md:flex-row md:space-x-8 text-white text-lg font-light pt-4 md:pt-0 md:bg-transparent bg-black/70 backdrop-blur-sm rounded-xl px-4 pb-4 md:px-0 md:pb-0">
                 <li>
                   <Link href="/" className="block py-2 hover:text-gray-300">
                     Home
@@ -76,21 +87,27 @@ import { Service, NavbarSectionProps } from '@/types'; // Import shared types
                 </li>
 
                 {/* Services Dropdown */}
-                <li className="relative group">
-                  <span className="flex items-center gap-1 py-2 cursor-pointer hover:text-gray-300">
-                    Services <ChevronDown className="w-4 h-4" />
+                <li className="relative" ref={dropdownRef}>
+                  <span
+                    onClick={() => setServicesOpen(o => !o)}
+                    className="flex items-center gap-1 py-2 cursor-pointer hover:text-gray-300"
+                  >
+                    Services <ChevronDown className={`w-4 h-4 transition-transform ${servicesOpen ? 'rotate-180' : ''}`} />
                   </span>
-                  <div className="absolute left-0 hidden group-hover:block bg-gray-800 rounded-lg mt-2 min-w-[200px] shadow-lg">
-                    {services.map((service) => (
-                      <Link
-                        key={service.slug}
-                        href={`/services/${service.slug}`}
-                        className="block px-4 py-2 text-white hover:bg-gray-700"
-                      >
-                        {service.title}
-                      </Link>
-                    ))}
-                  </div>
+                  {servicesOpen && (
+                    <div className="absolute left-0 z-50 bg-gray-800 rounded-lg mt-2 min-w-[200px] shadow-lg">
+                      {services.map((service) => (
+                        <Link
+                          key={service.slug}
+                          href={`/services/${service.slug}`}
+                          className="block px-4 py-2 text-white hover:bg-gray-700"
+                          onClick={() => setServicesOpen(false)}
+                        >
+                          {service.title}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
                 </li>
 
                 {/* Solutions Dropdown 

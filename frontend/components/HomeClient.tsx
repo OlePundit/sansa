@@ -68,7 +68,7 @@ export default function HomeClient({ services }: NavbarSectionProps) {
             </button>
 
             <div className={`w-full md:flex md:items-center md:w-auto ${menuOpen ? 'block' : 'hidden'}`}>
-              <ul className="flex flex-col md:flex-row md:space-x-8 text-white text-lg font-light pt-4 md:pt-0">
+              <ul className="flex flex-col md:flex-row md:space-x-8 text-white text-lg font-light pt-4 md:pt-0 md:bg-transparent bg-black/70 backdrop-blur-sm rounded-xl px-4 pb-4 md:px-0 md:pb-0">
                 <li><Link href="/" className="block py-2 hover:text-gray-300">Home</Link></li>
                 <li><Link href="/about" className="block py-2 hover:text-gray-300">About</Link></li>
 

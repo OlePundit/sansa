@@ -2,18 +2,30 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { ChevronUp, ChevronDown } from "lucide-react";
 import { MessageCircle, Phone } from "lucide-react"; // Standard WhatsApp-style icon
 import { Service, NavbarSectionProps } from '@/types'; // Import shared types
 
-export default function NavbarSection({ services }: NavbarSectionProps) { // Add default value
+export default function NavbarSection({ services }: NavbarSectionProps) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const dropdownRef = useRef<HTMLLIElement>(null);
 
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(true), 100);
     return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setServicesOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
   
   return (
@@ -55,8 +67,7 @@ export default function NavbarSection({ services }: NavbarSectionProps) { // Add
                 menuOpen ? 'block' : 'hidden'
               }`}
             >
-              <ul className="flex flex-col md:flex-row md:space-x-8 text-white text-lg font-light pt-4 md:pt-0">
-                {/* ↑ added pt-4 for small screens, keeps spacing nice */}
+              <ul className="flex flex-col md:flex-row md:space-x-8 text-white text-lg font-light pt-4 md:pt-0 md:bg-transparent bg-black/70 backdrop-blur-sm rounded-xl px-4 pb-4 md:px-0 md:pb-0">
                 <li>
                   <Link href="/" className="block py-2 hover:text-gray-300">
                     Home
@@ -69,28 +80,27 @@ export default function NavbarSection({ services }: NavbarSectionProps) { // Add
                 </li>
 
                 {/* Services Dropdown */}
-                <li className="relative group">
-                  <span className="flex items-center gap-1 py-2 cursor-pointer hover:text-gray-300">
-                    Services <ChevronDown className="w-4 h-4" />
+                <li className="relative" ref={dropdownRef}>
+                  <span
+                    onClick={() => setServicesOpen(o => !o)}
+                    className="flex items-center gap-1 py-2 cursor-pointer hover:text-gray-300"
+                  >
+                    Services <ChevronDown className={`w-4 h-4 transition-transform ${servicesOpen ? 'rotate-180' : ''}`} />
                   </span>
-                  <div className="absolute left-0 hidden group-hover:block bg-gray-800 rounded-lg mt-2 min-w-[200px] shadow-lg">
-                    {/* Add conditional check here */}
-                    {services && services.length > 0 ? (
-                      services.map((service) => (
+                  {servicesOpen && (
+                    <div className="absolute left-0 z-50 bg-gray-800 rounded-lg mt-2 min-w-[200px] shadow-lg">
+                      {services.map((service) => (
                         <Link
                           key={service.slug}
                           href={`/services/${service.slug}`}
                           className="block px-4 py-2 text-white hover:bg-gray-700"
+                          onClick={() => setServicesOpen(false)}
                         >
                           {service.title}
                         </Link>
-                      ))
-                    ) : (
-                      <div className="px-4 py-2 text-gray-400">
-                        No services available
-                      </div>
-                    )}
-                  </div>
+                      ))}
+                    </div>
+                  )}
                 </li>
 
                 {/* Solutions Dropdown */}
@@ -98,11 +108,11 @@ export default function NavbarSection({ services }: NavbarSectionProps) { // Add
                   <span className="flex items-center gap-1 py-2 cursor-pointer hover:text-gray-300">
                     Solutions <ChevronDown className="w-4 h-4" />
                   </span>
-                  <div className="absolute left-0 hidden group-hover:block bg-gray-800 rounded-lg mt-2 min-w-[200px] shadow-lg">
+                  <div className="absolute left-0 hidden group-hover:block bg-gray-800 rounded-lg mt-2 min-w-[200px] shadow-lg z-50">
                     <Link
                       href="https://self.sansadigital.com"
                       target="_blank"
-                      className="bloapck px-4 py-2 text-white hover:bg-gray-700"
+                      className="block px-4 py-2 text-white hover:bg-gray-700"
                     >
                       Sansa Digital 2.0
                     </Link>
