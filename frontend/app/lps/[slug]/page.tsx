@@ -1,5 +1,14 @@
 import { getLP } from "@/server/lpDetail";
-import he from "he";
+
+function decodeHtml(str: string): string {
+  return str
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#039;/g, "'")
+    .replace(/&nbsp;/g, ' ');
+}
 import NavbarSection from "@/components/LP/NavbarSection";
 import { getServices } from "@/server/services";
 import InfoSection from "@/components/LP/InfoSection";
@@ -99,20 +108,20 @@ export default async function LPPage({ params }: LPPageProps) {
         <InfoSection2
           img3={lp.img3 || "/default-info-image.png"}
           title2={lp.title2 || ""}
-          benefits2={he.decode(lp.benefits2 || "")}
+          benefits2={decodeHtml(lp.benefits2 || "")}
         />
 
         <FaqSection
           faq1={lp.faq1}
-          ans1={he.decode(lp.ans1 || "")}
+          ans1={decodeHtml(lp.ans1 || "")}
           faq2={lp.faq2}
-          ans2={he.decode(lp.ans2 || "")}
+          ans2={decodeHtml(lp.ans2 || "")}
           faq3={lp.faq3}
-          ans3={he.decode(lp.ans3 || "")}
+          ans3={decodeHtml(lp.ans3 || "")}
           faq4={lp.faq4}
-          ans4={he.decode(lp.ans4 || "")}
+          ans4={decodeHtml(lp.ans4 || "")}
           faq5={lp.faq5}
-          ans5={he.decode(lp.ans5 || "")}
+          ans5={decodeHtml(lp.ans5 || "")}
         />
 
         <div className="mt-10 flex mb-10">
