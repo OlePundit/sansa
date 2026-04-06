@@ -85,17 +85,26 @@ export default function HomeClient({ services }: NavbarSectionProps) {
                   >
                     Services <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${servicesOpen ? 'rotate-180' : ''}`} />
                   </span>
+                  
+                  {/* Dropdown menu - responsive width */}
                   <div
                     onMouseLeave={() => window.innerWidth >= 768 && setServicesOpen(false)}
-                    className={`absolute left-0 z-50 bg-gray-800 rounded-lg mt-2 min-w-[320px] shadow-lg transition-all duration-200 origin-top ${
-                      servicesOpen ? 'opacity-100 scale-100 visible' : 'opacity-0 scale-95 invisible'
-                    }`}
+                    className={`
+                      transition-all duration-200 origin-top
+                      ${servicesOpen ? 'opacity-100 scale-100 visible' : 'opacity-0 scale-95 invisible'}
+                      
+                      /* Mobile styles (default) */
+                      relative w-full mt-2 bg-gray-800 rounded-lg shadow-lg
+                      
+                      /* Desktop styles (md and up) */
+                      md:absolute md:left-0 md:mt-2 md:w-auto md:min-w-[320px]
+                    `}
                   >
                     {services.map((service) => (
                       <Link
                         key={service.slug}
                         href={`/services/${service.slug}`}
-                        className="block px-4 py-2 text-white hover:bg-gray-700 whitespace-nowrap"
+                        className="block px-4 py-2 text-white hover:bg-gray-700 whitespace-normal break-words"
                         onClick={() => setServicesOpen(false)}
                       >
                         {service.title}
