@@ -133,9 +133,7 @@ export default function NavbarSection({ services, thumbnail, title, intro }: LPN
 
           <div className="max-w-lg z-20">
             <h1 className="text-white text-3xl sm:text-5xl font-bold mb-4">{title}</h1>
-            <p className="text-white mb-6">
-              {intro}
-            </p>
+            <div className="text-white mb-6" dangerouslySetInnerHTML={{ __html: intro }} />
             <Link href="#section-info">
               <button className="bg-[#2c96e2] cursor-pointer text-xl font-bold px-6 py-3 rounded-lg shadow hover:bg-white hover:text-[#193155] transition">
                 Learn More

@@ -49,7 +49,7 @@ export default function FaqSection({
                   />
                 </Disclosure.Button>
                 <Disclosure.Panel className="px-4 pt-4 pb-2 bg-[#1a2b44] rounded-b-lg">
-                  <p className="text-gray-300">{faq.answer}</p>
+                  <div className="text-gray-300" dangerouslySetInnerHTML={{ __html: faq.answer ?? '' }} />
                 </Disclosure.Panel>
               </div>
             )}

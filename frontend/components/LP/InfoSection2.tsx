@@ -14,7 +14,7 @@ export default function InfoSection2({ img3, title2, benefits2 }: InfoSection2Pr
     <div className="w-full md:w-1/2 lg:w-1/2 px-6">
         <h2 className="text-3xl font-bold mb-4">{title2}</h2>
 
-        <div className="prose max-w-none mb-6">{benefits2}</div>
+        <div className="prose max-w-none mb-6" dangerouslySetInnerHTML={{ __html: benefits2 }} />
 
         <a
           href="/contact"
