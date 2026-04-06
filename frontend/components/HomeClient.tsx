@@ -17,7 +17,7 @@ export default function HomeClient({ services }: NavbarSectionProps) {
     return () => clearTimeout(timer);
   }, []);
 
-  // Close dropdown when clicking outside
+  // Close dropdown when clicking outside (desktop)
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
@@ -28,7 +28,20 @@ export default function HomeClient({ services }: NavbarSectionProps) {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  // Handle escape key
+  // Close mobile menu when clicking outside the menu container
+  useEffect(() => {
+    if (!menuOpen) return;
+    const handleOutsideClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      // Don't close if clicking the hamburger button or inside the mobile menu
+      if (target.closest('.mobile-menu-container') || target.closest('.hamburger-button')) return;
+      setMenuOpen(false);
+    };
+    document.addEventListener('click', handleOutsideClick);
+    return () => document.removeEventListener('click', handleOutsideClick);
+  }, [menuOpen]);
+
+  // Handle escape key for both dropdown and mobile menu
   useEffect(() => {
     const handleEsc = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
@@ -64,10 +77,10 @@ export default function HomeClient({ services }: NavbarSectionProps) {
               <img src="/storage/whiteai.png" alt="logo" width="200" className="mx-2" />
             </Link>
 
-            {/* Hamburger button */}
+            {/* Hamburger button - with class for outside click detection */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="text-white md:hidden focus:outline-none z-30 relative"
+              className="text-white md:hidden focus:outline-none z-30 relative hamburger-button"
               aria-label="Toggle menu"
             >
               {menuOpen ? <X className="w-6 h-6" /> : 
@@ -129,11 +142,11 @@ export default function HomeClient({ services }: NavbarSectionProps) {
           </div>
         </nav>
 
-        {/* Mobile Menu Overlay - fixed position, dark background, high z-index */}
+        {/* Mobile Menu Overlay - fixed, dark background (70% opaque), high z-index */}
         <div
           className={`
-            fixed inset-0 z-40 bg-black/95 backdrop-blur-sm transition-all duration-300
-            md:hidden
+            fixed inset-0 z-40 bg-black/70 backdrop-blur-sm transition-all duration-300
+            md:hidden mobile-menu-container
             ${menuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}
           `}
         >
@@ -142,7 +155,7 @@ export default function HomeClient({ services }: NavbarSectionProps) {
               <li><Link href="/" onClick={closeMenu} className="hover:text-gray-300">Home</Link></li>
               <li><Link href="/about" onClick={closeMenu} className="hover:text-gray-300">About</Link></li>
               
-              {/* Mobile Services Dropdown - inside overlay */}
+              {/* Mobile Services Dropdown - fully clickable */}
               <li className="relative w-full text-center">
                 <button
                   onClick={toggleServices}
