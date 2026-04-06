@@ -87,7 +87,7 @@ export default async function LPPage({ params }: LPPageProps) {
     getLP(slug),
     getServices(),
   ]);
-
+console.log('📦 Raw LP from API:', JSON.stringify(lp, null, 2));
   if (!lp) {
     return (
       <div className="container mx-auto py-16">
@@ -101,7 +101,7 @@ export default async function LPPage({ params }: LPPageProps) {
     <div>
       <NavbarSection
         services={services}
-        thumbnail={toAbsolute(lp.thumbnail)}
+        img1={toAbsolute(lp.img1)}
         title={lp.title ?? ''}
         intro={lp.intro ?? ''}
       />

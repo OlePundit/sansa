@@ -72,7 +72,7 @@ export interface NavbarSectionProps {
 
 export interface LPNavbarSectionProps {
   services: Service[];
-  thumbnail: string;
+  img1: string;
   title: string;
   intro: string;
 }
