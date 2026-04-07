@@ -12,6 +12,7 @@ use App\Http\Requests\V1\StoreBlogRequest;
 use App\Http\Requests\V1\UpdateBlogRequest;
 
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class BlogController extends Controller
 {
@@ -43,14 +44,29 @@ class BlogController extends Controller
 
     public function store(StoreBlogRequest $request)
     {
-        $blog = Blog::create($request->validated());
+        $data = $request->validated();
+
+        if ($request->hasFile('thumbnail')) {
+            $data['thumbnail'] = $request->file('thumbnail')->store('blogs', 'public');
+        }
+
+        $blog = Blog::create($data);
 
         return new BlogResource($blog);
     }
 
     public function update(UpdateBlogRequest $request, Blog $blog)
     {
-        $blog->update($request->validated());
+        $data = $request->validated();
+
+        if ($request->hasFile('thumbnail')) {
+            if ($blog->thumbnail) {
+                Storage::disk('public')->delete($blog->thumbnail);
+            }
+            $data['thumbnail'] = $request->file('thumbnail')->store('blogs', 'public');
+        }
+
+        $blog->update($data);
 
         return new BlogResource($blog);
     }

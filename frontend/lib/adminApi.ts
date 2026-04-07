@@ -76,7 +76,28 @@ export async function createBlog(payload: Partial<Blog>) {
   return request('/blogs', { method: 'POST', body: JSON.stringify(payload) });
 }
 
-export async function updateBlog(slug: string, payload: Partial<Blog>) {
+export async function updateBlog(slug: string, payload: Partial<Blog>, thumbnailFile?: File) {
+  if (thumbnailFile) {
+    const token = typeof window !== 'undefined' ? localStorage.getItem('admin_token') : null;
+    const form = new FormData();
+    Object.entries(payload).forEach(([k, v]) => {
+      if (v !== undefined && v !== null && k !== 'thumbnail') form.append(k, String(v));
+    });
+    form.append('thumbnail', thumbnailFile);
+    const res = await fetch(`${API_URL}/blogs/${slug}`, {
+      method: 'PATCH',
+      headers: {
+        Accept: 'application/json',
+        ...(token ? { Authorization: `Bearer ${token}` } : {}),
+      },
+      body: form,
+    });
+    if (!res.ok) {
+      const text = await res.text();
+      throw new Error(text || `Request failed: ${res.status}`);
+    }
+    return res.json();
+  }
   return request(`/blogs/${slug}`, {
     method: 'PUT',
     body: JSON.stringify(payload),

@@ -25,7 +25,7 @@ class UpdateBlogRequest extends FormRequest
             'title' => ['sometimes', 'required'],
             'slug'=>'sometimes',
             'body' => ['sometimes', 'required'],
-            'thumbnail' => 'sometimes',
+            'thumbnail' => ['sometimes', 'image', 'mimes:jpeg,png,jpg,gif,webp', 'max:4096'],
             'meta_description' => 'sometimes',
         ];
     }
