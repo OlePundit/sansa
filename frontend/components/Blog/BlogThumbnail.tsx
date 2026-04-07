@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { ChevronDown } from "lucide-react";
 import { MessageCircle, Phone } from "lucide-react";
 import { urls } from '@/utils/urls';
@@ -22,6 +22,30 @@ export default function BlogThumbnail({
   services: Service[];
 }) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const dropdownRef = useRef<HTMLLIElement>(null);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setServicesOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  // Handle escape key
+  useEffect(() => {
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setServicesOpen(false);
+    };
+    document.addEventListener('keydown', handleEsc);
+    return () => document.removeEventListener('keydown', handleEsc);
+  }, []);
+
+  const toggleServices = () => setServicesOpen(prev => !prev);
 
   // If thumbnail is already a full URL, use it directly
   const thumbnailUrl = thumbnail
@@ -75,7 +99,7 @@ export default function BlogThumbnail({
               menuOpen ? 'block' : 'hidden'
             }`}
           >
-            <ul className="flex flex-col md:flex-row md:space-x-8 text-white text-lg font-light pt-4 md:pt-0">
+            <ul className="flex flex-col md:flex-row md:space-x-8 text-white text-lg font-light pt-4 md:pt-0 md:bg-transparent bg-black/70 backdrop-blur-sm rounded-xl px-4 pb-4 md:px-0 md:pb-0">
               <li>
                 <Link href="/" className="block py-2 hover:text-gray-300">
                   Home
@@ -88,16 +112,35 @@ export default function BlogThumbnail({
               </li>
 
               {/* Services Dropdown */}
-              <li className="relative group">
-                <span className="flex items-center gap-1 py-2 cursor-pointer hover:text-gray-300">
-                  Services <ChevronDown className="w-4 h-4" />
+              <li className="relative" ref={dropdownRef}>
+                <span
+                  onClick={toggleServices}
+                  onMouseEnter={() => window.innerWidth >= 768 && setServicesOpen(true)}
+                  className="flex items-center gap-1 py-2 cursor-pointer hover:text-gray-300 select-none"
+                >
+                  Services <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${servicesOpen ? 'rotate-180' : ''}`} />
                 </span>
-                <div className="absolute left-0 hidden group-hover:block bg-gray-800 rounded-lg mt-2 min-w-[320px] shadow-lg z-50">
+
+                <div
+                  onMouseLeave={() => window.innerWidth >= 768 && setServicesOpen(false)}
+                  className={`
+                    absolute left-0 z-50 mt-2 bg-gray-800 rounded-lg shadow-lg
+                    transition-all duration-200 origin-top
+                    ${servicesOpen ? 'opacity-100 scale-100 visible' : 'opacity-0 scale-95 invisible pointer-events-none'}
+                    w-[calc(100vw-2rem)] md:w-auto md:min-w-[320px]
+                    max-w-[calc(100vw-2rem)] md:max-w-none
+                  `}
+                  style={{
+                    left: '50%',
+                    transform: `translateX(-50%) ${servicesOpen ? 'scale(1)' : 'scale(0.95)'}`,
+                  }}
+                >
                   {services.map((service) => (
                     <Link
                       key={service.slug}
                       href={`/services/${service.slug}`}
-                      className="block px-4 py-2 text-white hover:bg-gray-700"
+                      className="block px-4 py-2 text-white hover:bg-gray-700 whitespace-normal break-words"
+                      onClick={() => setServicesOpen(false)}
                     >
                       {service.title}
                     </Link>
