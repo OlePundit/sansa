@@ -124,7 +124,7 @@ export default function BlogThumbnail({
                 <div
                   onMouseLeave={() => window.innerWidth >= 768 && setServicesOpen(false)}
                   className={`
-                    absolute left-0 z-50 mt-2 bg-gray-800 rounded-lg shadow-lg
+                    absolute left-0 z-[9999] mt-2 bg-gray-800 rounded-lg shadow-lg
                     transition-all duration-200 origin-top
                     ${servicesOpen ? 'opacity-100 scale-100 visible' : 'opacity-0 scale-95 invisible pointer-events-none'}
                     w-[calc(100vw-2rem)] md:w-auto md:min-w-[320px]

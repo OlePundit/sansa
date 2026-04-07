@@ -88,7 +88,7 @@ export default function NavbarSection({ services }: NavbarSectionProps) {
                     Services <ChevronDown className={`w-4 h-4 transition-transform ${servicesOpen ? 'rotate-180' : ''}`} />
                   </span>
                   {servicesOpen && (
-                    <div className="absolute left-0 z-50 bg-gray-800 rounded-lg mt-2 min-w-[200px] shadow-lg">
+                    <div className="absolute left-0 z-[9999] bg-gray-800 rounded-lg mt-2 min-w-[200px] shadow-lg">
                       {services.map((service) => (
                         <Link
                           key={service.slug}
