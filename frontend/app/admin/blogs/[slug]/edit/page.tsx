@@ -76,7 +76,26 @@ export default function EditBlogPage() {
       <form onSubmit={handleSubmit} className="space-y-5 bg-white rounded-xl p-6 shadow-sm border border-gray-100">
         <Field label="Title" value={form.title || ''} onChange={(v) => set('title', v)} required />
         <Field label="Description (excerpt)" value={form.description || ''} onChange={(v) => set('description', v)} />
-        <Field label="Meta Description" value={form.meta_description || ''} onChange={(v) => set('meta_description', v)} placeholder="SEO meta description (150–160 chars recommended)" />
+        {/* Meta Description with char count */}
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">Meta Description</label>
+          <textarea
+            value={form.meta_description || ''}
+            onChange={(e) => set('meta_description', e.target.value)}
+            placeholder="SEO meta description (150–160 chars recommended)"
+            rows={3}
+            className="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
+          />
+          <p className={`text-xs mt-1 ${
+            (form.meta_description?.length ?? 0) > 160
+              ? 'text-red-500'
+              : (form.meta_description?.length ?? 0) >= 150
+              ? 'text-green-600'
+              : 'text-gray-400'
+          }`}>
+            {form.meta_description?.length ?? 0} / 160 characters
+          </p>
+        </div>
         {/* Thumbnail upload */}
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">Thumbnail</label>
