@@ -100,9 +100,10 @@ export async function updateBlog(slug: string, payload: Partial<Blog>, thumbnail
     }
     return res.json();
   }
+  const { thumbnail: _thumbnail, ...rest } = payload;
   return request(`/blogs/${slug}`, {
     method: 'PUT',
-    body: JSON.stringify(payload),
+    body: JSON.stringify(rest),
   });
 }
 
