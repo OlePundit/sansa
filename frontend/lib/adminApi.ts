@@ -1,5 +1,5 @@
 const API_URL =
-  process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000/api';
+  process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:8000/api';
 
 function getToken(): string | null {
   if (typeof window === 'undefined') return null;

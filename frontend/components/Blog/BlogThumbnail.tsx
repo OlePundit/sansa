@@ -25,7 +25,6 @@ export default function BlogThumbnail({
   const [servicesOpen, setServicesOpen] = useState(false);
   const dropdownRef = useRef<HTMLLIElement>(null);
 
-  // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
@@ -36,7 +35,6 @@ export default function BlogThumbnail({
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  // Handle escape key
   useEffect(() => {
     const handleEsc = (e: KeyboardEvent) => {
       if (e.key === 'Escape') setServicesOpen(false);
@@ -46,8 +44,6 @@ export default function BlogThumbnail({
   }, []);
 
   const toggleServices = () => setServicesOpen(prev => !prev);
-
-  // If thumbnail is already a full URL, use it directly
   const thumbnailUrl = thumbnail
     ? thumbnail.startsWith('http')
       ? thumbnail
@@ -55,12 +51,13 @@ export default function BlogThumbnail({
     : null;
 
   return (
+    // Removed z-10 from this wrapper – it was limiting stacking
     <div
       className="relative w-full bg-cover bg-no-repeat h-[60vh]"
       style={{ backgroundImage: thumbnailUrl ? `url('${thumbnailUrl}')` : undefined }}
     >
-      {/* Navbar */}
-      <nav className="bg-transparent shadow-sm pt-6">
+      {/* Navbar – now has relative + higher z-index */}
+      <nav className="relative z-30 bg-transparent shadow-sm pt-6">
         <div className="container mx-auto flex flex-wrap items-center justify-between px-4 py-3">
           <Link href="/" className="flex items-center">
             <Image
@@ -72,46 +69,20 @@ export default function BlogThumbnail({
             />
           </Link>
 
-          {/* Hamburger — mobile */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             className="text-white md:hidden focus:outline-none"
           >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </button>
 
-          {/* Menu */}
-          <div
-            className={`w-full md:flex md:items-center md:w-auto ${
-              menuOpen ? 'block' : 'hidden'
-            }`}
-          >
+          <div className={`w-full md:flex md:items-center md:w-auto ${menuOpen ? 'block' : 'hidden'}`}>
             <ul className="flex flex-col md:flex-row md:space-x-8 text-white text-lg font-light pt-4 md:pt-0 md:bg-transparent bg-black/70 backdrop-blur-sm rounded-xl px-4 pb-4 md:px-0 md:pb-0">
-              <li>
-                <Link href="/" className="block py-2 hover:text-gray-300">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" className="block py-2 hover:text-gray-300">
-                  About
-                </Link>
-              </li>
+              <li><Link href="/" className="block py-2 hover:text-gray-300">Home</Link></li>
+              <li><Link href="/about" className="block py-2 hover:text-gray-300">About</Link></li>
 
-              {/* Services Dropdown */}
               <li className="relative" ref={dropdownRef}>
                 <span
                   onClick={toggleServices}
@@ -148,23 +119,10 @@ export default function BlogThumbnail({
                 </div>
               </li>
 
+              <li><Link href="/contact" className="block py-2 hover:text-gray-300">Contact</Link></li>
+              <li><Link href="/blogs" className="block py-2 hover:text-gray-300">Blog</Link></li>
               <li>
-                <Link href="/contact" className="block py-2 hover:text-gray-300">
-                  Contact
-                </Link>
-              </li>
-              <li>
-                <Link href="/blogs" className="block py-2 hover:text-gray-300">
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="https://wa.me/+254112128055"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block py-2 hover:text-gray-300 flex items-center"
-                >
+                <Link href="https://wa.me/+254112128055" target="_blank" rel="noopener noreferrer" className="block py-2 hover:text-gray-300 flex items-center">
                   <div className="relative mx-2 p-1 bg-gradient-to-br from-[#25D366] to-[#128C7E] rounded-full">
                     <MessageCircle className="w-5 h-5 text-white" />
                     <Phone className="w-2 h-2 text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
@@ -177,10 +135,10 @@ export default function BlogThumbnail({
         </div>
       </nav>
 
-      {/* Banner */}
-      <div className="relative mt-40">
+      {/* Banner – stays below the navbar */}
+      <div className="relative mt-40 z-0">
         <div className="flex flex-col md:flex-row items-center md:px-20 lg:px-50 justify-center">
-          <div className="max-w-lg z-20 items-center">
+          <div className="max-w-lg items-center">
             <h1 className="text-5xl text-white text-center font-bold mb-10">{title}</h1>
             <p className="text-[#2f976b] text-2xl font-semibold text-center mb-6">
               home // blogs

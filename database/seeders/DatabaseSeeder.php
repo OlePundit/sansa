@@ -19,6 +19,6 @@ class DatabaseSeeder extends Seeder
         //Package::factory(10)->create();
         //Blog::factory(10)->create();
         //LP::factory(10)->create();
-        Service::factory(10)->create();
+        //Service::factory(10)->create();
     }
 }
