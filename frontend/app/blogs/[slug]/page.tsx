@@ -13,7 +13,8 @@ interface BlogPageProps {
 
 // Generate dynamic metadata for the blog post
 export async function generateMetadata(
-  { params }: BlogPageProps,
+  { params }
+  : BlogPageProps,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   const { slug } = await params;
@@ -75,7 +76,7 @@ export default async function BlogPage({ params }: { params: Promise<{ slug: str
   // Await the params promise
   const { slug } = await params;
   console.log('🔍 Slug:', slug);
-  
+
   const blog = await getBlog(slug);
   const services = await getServices();
 
@@ -88,8 +89,34 @@ export default async function BlogPage({ params }: { params: Promise<{ slug: str
     );
   }
 
+  const breadcrumbItems: { name: string; url: string }[] = [
+    { name: 'Home', url: BASE_URL },
+    { name: 'Blog', url: `${BASE_URL}/blogs` },
+  ];
+  if (blog.category && blog.sub_category) {
+    breadcrumbItems.push({ name: `${blog.category} > ${blog.sub_category}`, url: `${BASE_URL}/blogs?category=${encodeURIComponent(blog.category)}&sub_category=${encodeURIComponent(blog.sub_category)}` });
+  } else if (blog.category) {
+    breadcrumbItems.push({ name: blog.category, url: `${BASE_URL}/blogs?category=${encodeURIComponent(blog.category)}` });
+  }
+  breadcrumbItems.push({ name: blog.title, url: `${BASE_URL}/blogs/${blog.slug}` });
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: breadcrumbItems.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.name,
+      item: item.url,
+    })),
+  };
+
   return (
     <div>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         {blog.thumbnail && (
           <BlogThumbnail thumbnail={blog.thumbnail} title={blog.title} services={services} />
         )}

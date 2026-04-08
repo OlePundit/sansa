@@ -58,15 +58,35 @@ export const metadata: Metadata = {
   viewport: 'width=device-width, initial-scale=1',
 };
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Sansa Digital',
+  description: 'We are the #1 web development, web design, graphic design, SEO, content, and social media marketing company in Kenya.',
+  image: 'https://sansadigital.com/storage/header.png',
+  logo: 'https://sansadigital.com/whiteai.png',
+  url: 'https://sansadigital.com',
+  potentialAction: [
+    { '@type': 'ReadAction', target: 'https://sansadigital.com' },
+    { '@type': 'ReadAction', target: 'https://sansadigital.com/about' },
+    { '@type': 'ReadAction', target: 'https://sansadigital.com/blogs' },
+    { '@type': 'FillAction', target: 'https://sansadigital.com/contact' },
+  ],
+};
+
 export default async function Home() {
   // Fetch services with error handling at the data level
   const services = await getServices().catch((error) => {
     console.error('Failed to fetch services:', error);
     return []; // Return empty array as fallback
   });
-  
+
   return (
     <div className="w-full">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <ErrorBoundary 
         fallback={
           <div>

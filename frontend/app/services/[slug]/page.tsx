@@ -90,8 +90,34 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
     );
   }
 
+  const breadcrumbItems: { name: string; url: string }[] = [
+    { name: 'Home', url: BASE_URL },
+    { name: 'Services', url: `${BASE_URL}/services` },
+  ];
+  if (service.category && service.sub_category) {
+    breadcrumbItems.push({ name: `${service.category} > ${service.sub_category}`, url: `${BASE_URL}/services?category=${encodeURIComponent(service.category)}&sub_category=${encodeURIComponent(service.sub_category)}` });
+  } else if (service.category) {
+    breadcrumbItems.push({ name: service.category, url: `${BASE_URL}/services?category=${encodeURIComponent(service.category)}` });
+  }
+  breadcrumbItems.push({ name: service.title, url: `${BASE_URL}/services/${service.slug}` });
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: breadcrumbItems.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.name,
+      item: item.url,
+    })),
+  };
+
   return (
     <div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {service.thumbnail && (
         <BlogThumbnail thumbnail={service.thumbnail} title={service.title} services={services} />
       )}

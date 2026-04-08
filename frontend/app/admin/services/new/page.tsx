@@ -19,6 +19,7 @@ export default function NewServicePage() {
   const [thumbnailFile, setThumbnailFile] = useState<File | null>(null);
   const [error, setError] = useState('');
   const [saving, setSaving] = useState(false);
+  const [wordCount, setWordCount] = useState(0);
 
   const editor = useEditor({
     immediatelyRender: false,
@@ -32,6 +33,10 @@ export default function NewServicePage() {
       attributes: {
         class: 'min-h-[300px] px-3 py-2.5 text-sm text-gray-500 focus:outline-none',
       },
+    },
+    onUpdate: ({ editor }) => {
+      const text = editor.getText();
+      setWordCount(text.trim() ? text.trim().split(/\s+/).length : 0);
     },
   });
 
@@ -66,7 +71,25 @@ export default function NewServicePage() {
         <Field label="Title" value={form.title} onChange={(v) => set('title', v)} required />
         <Field label="Category" value={form.category} onChange={(v) => set('category', v)} placeholder="e.g. Web Design, SEO" />
         <Field label="Sub Category" value={form.sub_category} onChange={(v) => set('sub_category', v)} placeholder="e.g. Branding, E-commerce" />
-        <Field label="Meta Description" value={form.meta_description} onChange={(v) => set('meta_description', v)} placeholder="SEO meta description (150–160 chars recommended)" />
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">Meta Description</label>
+          <textarea
+            value={form.meta_description}
+            onChange={(e) => set('meta_description', e.target.value)}
+            placeholder="SEO meta description (150–160 chars recommended)"
+            rows={3}
+            className="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
+          />
+          <p className={`text-xs mt-1 ${
+            form.meta_description.length > 160
+              ? 'text-red-500'
+              : form.meta_description.length >= 150
+              ? 'text-green-600'
+              : 'text-gray-400'
+          }`}>
+            {form.meta_description.length} / 160 characters
+          </p>
+        </div>
 
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">Thumbnail</label>
@@ -134,6 +157,9 @@ export default function NewServicePage() {
               </ToolbarButton>
             </div>
             <EditorContent editor={editor} />
+            <div className="px-3 py-1.5 border-t border-gray-200 bg-gray-50 text-xs text-gray-400 text-right">
+              {wordCount} {wordCount === 1 ? 'word' : 'words'}
+            </div>
           </div>
         </div>
 

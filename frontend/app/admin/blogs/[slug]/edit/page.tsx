@@ -18,6 +18,7 @@ export default function EditBlogPage() {
   const [saving, setSaving] = useState(false);
   const [thumbnailFile, setThumbnailFile] = useState<File | null>(null);
   const [thumbnailPreview, setThumbnailPreview] = useState<string | null>(null);
+  const [wordCount, setWordCount] = useState(0);
 
   const editor = useEditor({
     immediatelyRender: false,
@@ -32,6 +33,10 @@ export default function EditBlogPage() {
         class: 'min-h-[300px] px-3 py-2.5 text-sm text-gray-500 focus:outline-none',
       },
     },
+    onUpdate: ({ editor }) => {
+      const text = editor.getText();
+      setWordCount(text.trim() ? text.trim().split(/\s+/).length : 0);
+    },
   });
 
   useEffect(() => {
@@ -39,6 +44,8 @@ export default function EditBlogPage() {
       .then((blog) => {
         setForm(blog);
         editor?.commands.setContent(blog.body || '');
+        const text = editor?.getText() ?? '';
+        setWordCount(text.trim() ? text.trim().split(/\s+/).length : 0);
         setLoading(false);
       })
       .catch(() => setLoading(false));
@@ -192,6 +199,9 @@ export default function EditBlogPage() {
               </ToolbarButton>
             </div>
             <EditorContent editor={editor} />
+            <div className="px-3 py-1.5 border-t border-gray-200 bg-gray-50 text-xs text-gray-400 text-right">
+              {wordCount} {wordCount === 1 ? 'word' : 'words'}
+            </div>
           </div>
         </div>
 
