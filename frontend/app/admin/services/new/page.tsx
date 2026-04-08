@@ -2,6 +2,10 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { useEditor, EditorContent } from '@tiptap/react';
+import StarterKit from '@tiptap/starter-kit';
+import LinkExt from '@tiptap/extension-link';
+import Underline from '@tiptap/extension-underline';
 import { createService } from '@/lib/adminApi';
 
 export default function NewServicePage() {
@@ -11,11 +15,25 @@ export default function NewServicePage() {
     category: '',
     sub_category: '',
     meta_description: '',
-    body: '',
   });
   const [thumbnailFile, setThumbnailFile] = useState<File | null>(null);
   const [error, setError] = useState('');
   const [saving, setSaving] = useState(false);
+
+  const editor = useEditor({
+    immediatelyRender: false,
+    extensions: [
+      StarterKit,
+      Underline,
+      LinkExt.configure({ openOnClick: false }),
+    ],
+    content: '',
+    editorProps: {
+      attributes: {
+        class: 'min-h-[300px] px-3 py-2.5 text-sm text-gray-500 focus:outline-none',
+      },
+    },
+  });
 
   function set(field: string, value: string) {
     setForm((f) => ({ ...f, [field]: value }));
@@ -26,7 +44,7 @@ export default function NewServicePage() {
     setSaving(true);
     setError('');
     try {
-      await createService(form, thumbnailFile ?? undefined);
+      await createService({ ...form, body: editor?.getHTML() ?? '' }, thumbnailFile ?? undefined);
       router.push('/admin/services');
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Failed to create service.');
@@ -64,14 +82,59 @@ export default function NewServicePage() {
           <label className="block text-sm font-medium text-gray-700 mb-1">
             Body <span className="text-red-500">*</span>
           </label>
-          <textarea
-            value={form.body}
-            onChange={(e) => set('body', e.target.value)}
-            required
-            rows={14}
-            placeholder="Write your service content here. HTML is supported."
-            className="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono resize-y"
-          />
+          <div className="border border-gray-300 rounded-lg overflow-hidden focus-within:ring-2 focus-within:ring-blue-500">
+            <div className="flex flex-wrap gap-1 border-b border-gray-200 bg-gray-50 px-2 py-1.5">
+              <ToolbarButton onClick={() => editor?.chain().focus().toggleBold().run()} active={editor?.isActive('bold')} title="Bold">
+                <strong>B</strong>
+              </ToolbarButton>
+              <ToolbarButton onClick={() => editor?.chain().focus().toggleItalic().run()} active={editor?.isActive('italic')} title="Italic">
+                <em>I</em>
+              </ToolbarButton>
+              <ToolbarButton onClick={() => editor?.chain().focus().toggleUnderline().run()} active={editor?.isActive('underline')} title="Underline">
+                <span className="underline">U</span>
+              </ToolbarButton>
+              <div className="w-px bg-gray-300 mx-1" />
+              <ToolbarButton onClick={() => editor?.chain().focus().toggleHeading({ level: 2 }).run()} active={editor?.isActive('heading', { level: 2 })} title="Heading 2">
+                H2
+              </ToolbarButton>
+              <ToolbarButton onClick={() => editor?.chain().focus().toggleHeading({ level: 3 }).run()} active={editor?.isActive('heading', { level: 3 })} title="Heading 3">
+                H3
+              </ToolbarButton>
+              <div className="w-px bg-gray-300 mx-1" />
+              <ToolbarButton onClick={() => editor?.chain().focus().toggleBulletList().run()} active={editor?.isActive('bulletList')} title="Bullet list">
+                &#8226; List
+              </ToolbarButton>
+              <ToolbarButton onClick={() => editor?.chain().focus().toggleOrderedList().run()} active={editor?.isActive('orderedList')} title="Ordered list">
+                1. List
+              </ToolbarButton>
+              <div className="w-px bg-gray-300 mx-1" />
+              <ToolbarButton onClick={() => editor?.chain().focus().toggleBlockquote().run()} active={editor?.isActive('blockquote')} title="Blockquote">
+                &ldquo;&rdquo;
+              </ToolbarButton>
+              <ToolbarButton onClick={() => editor?.chain().focus().toggleCode().run()} active={editor?.isActive('code')} title="Inline code">
+                &lt;/&gt;
+              </ToolbarButton>
+              <div className="w-px bg-gray-300 mx-1" />
+              <ToolbarButton
+                onClick={() => {
+                  const url = window.prompt('Enter URL');
+                  if (url) editor?.chain().focus().setLink({ href: url }).run();
+                  else editor?.chain().focus().unsetLink().run();
+                }}
+                active={editor?.isActive('link')}
+                title="Link"
+              >
+                Link
+              </ToolbarButton>
+              <ToolbarButton onClick={() => editor?.chain().focus().undo().run()} title="Undo">
+                ↩
+              </ToolbarButton>
+              <ToolbarButton onClick={() => editor?.chain().focus().redo().run()} title="Redo">
+                ↪
+              </ToolbarButton>
+            </div>
+            <EditorContent editor={editor} />
+          </div>
         </div>
 
         <div className="flex gap-3 pt-2">
@@ -92,6 +155,31 @@ export default function NewServicePage() {
         </div>
       </form>
     </div>
+  );
+}
+
+function ToolbarButton({
+  onClick,
+  active,
+  title,
+  children,
+}: {
+  onClick: () => void;
+  active?: boolean;
+  title?: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      title={title}
+      className={`px-2 py-1 rounded text-xs font-medium transition-colors ${
+        active ? 'bg-blue-100 text-blue-700' : 'text-gray-600 hover:bg-gray-200'
+      }`}
+    >
+      {children}
+    </button>
   );
 }
 
