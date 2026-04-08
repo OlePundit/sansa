@@ -41,6 +41,7 @@ export default function AdminBlogsPage() {
               <tr>
                 <th className="text-left px-6 py-3 font-medium text-gray-500">Title</th>
                 <th className="text-left px-6 py-3 font-medium text-gray-500">Category</th>
+                <th className="text-left px-6 py-3 font-medium text-gray-500">Sub Category</th>
                 <th className="text-left px-6 py-3 font-medium text-gray-500">Date</th>
                 <th className="px-6 py-3 w-32" />
               </tr>
@@ -48,7 +49,7 @@ export default function AdminBlogsPage() {
             <tbody className="divide-y divide-gray-50">
               {blogs.length === 0 && (
                 <tr>
-                  <td colSpan={4} className="px-6 py-10 text-center text-gray-400">
+                  <td colSpan={5} className="px-6 py-10 text-center text-gray-400">
                     No blog posts yet.{' '}
                     <Link href="/admin/blogs/new" className="text-blue-600 hover:underline">
                       Create one
@@ -67,6 +68,7 @@ export default function AdminBlogsPage() {
                     )}
                   </td>
                   <td className="px-6 py-4 text-gray-500">{blog.category || '—'}</td>
+                  <td className="px-6 py-4 text-gray-500">{blog.sub_category || '—'}</td>
                   <td className="px-6 py-4 text-gray-400 whitespace-nowrap">
                     {blog.created_at
                       ? new Date(blog.created_at).toLocaleDateString()

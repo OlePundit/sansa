@@ -29,6 +29,7 @@ class StoreBlogRequest extends FormRequest
             'description' => '',
             'meta_description' => '',
             'category' => '',
+            'sub_category' => '',
         ];
     }
 }

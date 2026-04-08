@@ -20,6 +20,7 @@ class BlogResource extends JsonResource
             'slug'=>$this->slug,
             'body'=>$this->body,
             'category'=>$this->category,
+            'sub_category'=>$this->sub_category,
             'description'=>$this->description,
             'meta_description'=>$this->meta_description,
             'thumbnail'=>$this->thumbnail,

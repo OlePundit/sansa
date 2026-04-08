@@ -34,6 +34,23 @@ export default function BlogGrid({ blogs }: BlogGridProps ) {
             />
             
             <div className="bg-[#193155] p-5 rounded-b-[22px]">
+              {(blog.category || blog.sub_category) && (
+                <div className="flex gap-2 mb-2">
+                  {blog.category && (
+                    <span className="text-xs font-medium text-[#2c96e2] uppercase tracking-wide">
+                      {blog.category}
+                    </span>
+                  )}
+                  {blog.category && blog.sub_category && (
+                    <span className="text-xs text-gray-400">›</span>
+                  )}
+                  {blog.sub_category && (
+                    <span className="text-xs font-medium text-gray-300 uppercase tracking-wide">
+                      {blog.sub_category}
+                    </span>
+                  )}
+                </div>
+              )}
               <h4 className="text-white font-semibold text-2xl">
                 {blog.title}
               </h4>

@@ -43,6 +43,8 @@ export interface Blog {
   body: string;
   description?: string;
   meta_description?: string;
+  category?: string;
+  sub_category?: string;
   excerpt?: string;
   thumbnail?: string;
   created_at?: string;

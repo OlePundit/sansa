@@ -132,6 +132,7 @@ export default function EditBlogPage() {
           <p className="mt-1 text-xs text-gray-400">Leave empty to keep the current thumbnail.</p>
         </div>
         <Field label="Category" value={form.category || ''} onChange={(v) => set('category', v)} />
+        <Field label="Sub Category" value={form.sub_category || ''} onChange={(v) => set('sub_category', v)} placeholder="e.g. SEO, Branding" />
 
         {/* Rich Text Body */}
         <div>

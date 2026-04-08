@@ -1,7 +1,7 @@
 const BASE_URL =
   process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
 
-const API_URL = `${BASE_URL}/api`;
+const API_URL = BASE_URL.endsWith('/api') ? BASE_URL : `${BASE_URL}/api`;
 
 function getToken(): string | null {
   if (typeof window === 'undefined') return null;
@@ -238,6 +238,7 @@ export interface Blog {
   meta_description?: string;
   thumbnail?: string;
   category?: string;
+  sub_category?: string;
   created_at?: string;
   updated_at?: string;
 }

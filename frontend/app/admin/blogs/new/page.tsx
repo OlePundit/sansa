@@ -12,6 +12,7 @@ export default function NewBlogPage() {
     meta_description: '',
     thumbnail: '',
     category: '',
+    sub_category: '',
     body: '',
   });
   const [error, setError] = useState('');
@@ -50,6 +51,7 @@ export default function NewBlogPage() {
         <Field label="Meta Description" value={form.meta_description} onChange={(v) => set('meta_description', v)} placeholder="SEO meta description (150–160 chars recommended)" />
         <Field label="Thumbnail URL" value={form.thumbnail} onChange={(v) => set('thumbnail', v)} placeholder="https://..." />
         <Field label="Category" value={form.category} onChange={(v) => set('category', v)} placeholder="e.g. Tech, Marketing" />
+        <Field label="Sub Category" value={form.sub_category} onChange={(v) => set('sub_category', v)} placeholder="e.g. SEO, Branding" />
 
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">
