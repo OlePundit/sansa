@@ -25,7 +25,7 @@ export default function ServicesSection() {
     {
       img: "/storage/mvp.webp",
       title: "Minimum Viable Products (MVPs)",
-      desc: "Posters, banners, publications, flyers, and social media content. We shall create graphics that tell a story.",
+      desc: "We can help your bring your idea to life, by developing a Minimum Viable Product that will beat industry standards.",
       link: "https://www.sansadigital.com/services/minimum-viable-platforms",
     },
     {
