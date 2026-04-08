@@ -140,6 +140,78 @@ export async function deleteLP(slug: string) {
   return request(`/lps/${slug}`, { method: 'DELETE' });
 }
 
+// ─── Services ────────────────────────────────────────────────────────────────
+
+export async function getServices(): Promise<Service[]> {
+  const data = await request<Record<string, unknown>>('/services');
+  if (Array.isArray(data)) return data as unknown as Service[];
+  if (Array.isArray((data as { data?: Service[] }).data)) return (data as { data: Service[] }).data;
+  return [];
+}
+
+export async function getService(slug: string): Promise<Service> {
+  const data = await request<{ data?: Service } | Service>(`/services/${slug}`);
+  return (data as { data?: Service }).data ?? (data as Service);
+}
+
+export async function createService(payload: Partial<Service>, thumbnailFile?: File) {
+  if (thumbnailFile) {
+    const token = typeof window !== 'undefined' ? localStorage.getItem('admin_token') : null;
+    const form = new FormData();
+    Object.entries(payload).forEach(([k, v]) => {
+      if (v !== undefined && v !== null && k !== 'thumbnail') form.append(k, String(v));
+    });
+    form.append('thumbnail', thumbnailFile);
+    const res = await fetch(`${API_URL}/services`, {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        ...(token ? { Authorization: `Bearer ${token}` } : {}),
+      },
+      body: form,
+    });
+    if (!res.ok) {
+      const text = await res.text();
+      throw new Error(text || `Request failed: ${res.status}`);
+    }
+    return res.json();
+  }
+  return request('/services', { method: 'POST', body: JSON.stringify(payload) });
+}
+
+export async function updateService(slug: string, payload: Partial<Service>, thumbnailFile?: File) {
+  if (thumbnailFile) {
+    const token = typeof window !== 'undefined' ? localStorage.getItem('admin_token') : null;
+    const form = new FormData();
+    Object.entries(payload).forEach(([k, v]) => {
+      if (v !== undefined && v !== null && k !== 'thumbnail') form.append(k, String(v));
+    });
+    form.append('thumbnail', thumbnailFile);
+    const res = await fetch(`${API_URL}/services/${slug}`, {
+      method: 'PATCH',
+      headers: {
+        Accept: 'application/json',
+        ...(token ? { Authorization: `Bearer ${token}` } : {}),
+      },
+      body: form,
+    });
+    if (!res.ok) {
+      const text = await res.text();
+      throw new Error(text || `Request failed: ${res.status}`);
+    }
+    return res.json();
+  }
+  const { thumbnail: _thumbnail, ...rest } = payload;
+  return request(`/services/${slug}`, {
+    method: 'PUT',
+    body: JSON.stringify(rest),
+  });
+}
+
+export async function deleteService(slug: string) {
+  return request(`/services/${slug}`, { method: 'DELETE' });
+}
+
 // ─── Contacts ────────────────────────────────────────────────────────────────
 
 export async function getContacts(): Promise<Contact[]> {
@@ -196,6 +268,17 @@ export interface LP {
   category?: string;
   meta_description?: string;
   created_at?: string;
+}
+
+export interface Service {
+  id: number;
+  slug: string;
+  title: string;
+  body: string;
+  thumbnail?: string;
+  meta_description?: string;
+  created_at?: string;
+  updated_at?: string;
 }
 
 export interface Contact {

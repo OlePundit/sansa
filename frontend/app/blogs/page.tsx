@@ -54,7 +54,7 @@ export default async function BlogPage() {
     return (
         <div>
             <NavbarSection services={services} />
-            <main className="flex flex-col justify-center items-center w-full lg:w-2/3 mx-auto">
+            <main className="flex flex-col justify-center items-center w-full xl:w-3/4 mx-auto">
             <BlogGrid blogs={blogs} />
             </main>
 

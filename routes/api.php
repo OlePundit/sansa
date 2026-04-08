@@ -58,6 +58,12 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::patch('/lps/{lp}', [LpController::class, 'update']);
     Route::delete('/lps/{lp}', [LpController::class, 'destroy']);
 
+    // Admin: Service CRUD
+    Route::post('/services', [ServiceController::class, 'store']);
+    Route::put('/services/{service}', [ServiceController::class, 'update']);
+    Route::patch('/services/{service}', [ServiceController::class, 'update']);
+    Route::delete('/services/{service}', [ServiceController::class, 'destroy']);
+
     // Admin: View contact submissions
     Route::get('/contact', [ContactController::class, 'index']);
 

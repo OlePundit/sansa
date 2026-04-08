@@ -11,7 +11,7 @@ class UpdateServiceRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,11 +22,11 @@ class UpdateServiceRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => ['required','sometimes'],
-            'slug'=>['required','sometimes'],
-            'body'=>['required','sometimes'],
-            'thumbnail'=>'sometimes',
-            'meta_description' => 'sometimes',
+            'title' => 'sometimes',
+            'slug' => 'sometimes|nullable',
+            'body' => 'sometimes',
+            'thumbnail' => 'sometimes|image|mimes:jpeg,png,jpg,gif,webp|max:4096',
+            'meta_description' => 'sometimes|nullable',
         ];
     }
 }
