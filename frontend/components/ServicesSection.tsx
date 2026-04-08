@@ -23,16 +23,22 @@ export default function ServicesSection() {
 
   const services = [
     {
-      img: "/storage/web.webp",
-      title: "Web design and development",
-      desc: "We shall create a responsive and modern website for your business to help you interact with prospective online customers.",
-      link: "https://sansadigital.com/lps/web-design-and-development-in-kenya",
+      img: "/storage/mvp.webp",
+      title: "Minimum Viable Products (MVPs)",
+      desc: "Posters, banners, publications, flyers, and social media content. We shall create graphics that tell a story.",
+      link: "https://www.sansadigital.com/services/minimum-viable-platforms",
     },
     {
       img: "/storage/mobile.webp",
       title: "Mobile development",
       list: ["iOS", "Android", "Cross platform"],
       link: "https://sansadigital.com/services/mobile-development-services-in-kenya",
+    },
+    {
+      img: "/storage/web.webp",
+      title: "Web design and development",
+      desc: "We shall create a responsive and modern website for your business to help you interact with prospective online customers.",
+      link: "https://sansadigital.com/lps/web-design-and-development-in-kenya",
     },
     {
       img: "/storage/seo.webp",
@@ -45,12 +51,7 @@ export default function ServicesSection() {
       ],
       link: "https://sansadigital.com/lps/digitalmarketing",
     },
-    {
-      img: "/storage/graphic.webp",
-      title: "Graphic Design",
-      desc: "Posters, banners, publications, flyers, and social media content. We shall create graphics that tell a story.",
-      link: "https://sansadigital.com/services/graphic-design-in-kenya",
-    },
+
     {
       img: "/storage/it.webp",
       title: "IT Support & Help Desk",
