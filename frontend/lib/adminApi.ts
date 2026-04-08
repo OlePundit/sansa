@@ -277,6 +277,8 @@ export interface Service {
   title: string;
   body: string;
   thumbnail?: string;
+  category?: string;
+  sub_category?: string;
   meta_description?: string;
   created_at?: string;
   updated_at?: string;

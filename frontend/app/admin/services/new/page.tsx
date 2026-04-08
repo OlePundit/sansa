@@ -8,6 +8,8 @@ export default function NewServicePage() {
   const router = useRouter();
   const [form, setForm] = useState({
     title: '',
+    category: '',
+    sub_category: '',
     meta_description: '',
     body: '',
   });
@@ -44,6 +46,8 @@ export default function NewServicePage() {
 
       <form onSubmit={handleSubmit} className="space-y-5 bg-white rounded-xl p-6 shadow-sm border border-gray-100">
         <Field label="Title" value={form.title} onChange={(v) => set('title', v)} required />
+        <Field label="Category" value={form.category} onChange={(v) => set('category', v)} placeholder="e.g. Web Design, SEO" />
+        <Field label="Sub Category" value={form.sub_category} onChange={(v) => set('sub_category', v)} placeholder="e.g. Branding, E-commerce" />
         <Field label="Meta Description" value={form.meta_description} onChange={(v) => set('meta_description', v)} placeholder="SEO meta description (150–160 chars recommended)" />
 
         <div>

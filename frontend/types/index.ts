@@ -5,6 +5,8 @@ export interface Service {
   title: string;
   body: string;
   description?: string;
+  category?: string;
+  sub_category?: string;
   meta_description?: string;
   thumbnail?: string;
   created_at?: string;

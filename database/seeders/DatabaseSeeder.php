@@ -20,5 +20,6 @@ class DatabaseSeeder extends Seeder
         //Blog::factory(10)->create();
         //LP::factory(10)->create();
         //Service::factory(10)->create();
+        
     }
 }

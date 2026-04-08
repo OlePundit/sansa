@@ -75,6 +75,8 @@ export default function EditServicePage() {
 
       <form onSubmit={handleSubmit} className="space-y-5 bg-white rounded-xl p-6 shadow-sm border border-gray-100">
         <Field label="Title" value={form.title || ''} onChange={(v) => set('title', v)} required />
+        <Field label="Category" value={form.category || ''} onChange={(v) => set('category', v)} placeholder="e.g. Web Design, SEO" />
+        <Field label="Sub Category" value={form.sub_category || ''} onChange={(v) => set('sub_category', v)} placeholder="e.g. Branding, E-commerce" />
 
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">Meta Description</label>

@@ -20,6 +20,8 @@ class ServiceResource extends JsonResource
             'slug'=>$this->slug,
             'body'=>$this->body,
             'thumbnail'=>$this->thumbnail,
+            'category'=>$this->category,
+            'sub_category'=>$this->sub_category,
             'meta_description'=>$this->meta_description,
             'created_at'=>$this->created_at,
             'updated_at'=>$this->updated_at,

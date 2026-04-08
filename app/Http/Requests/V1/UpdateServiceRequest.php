@@ -26,6 +26,8 @@ class UpdateServiceRequest extends FormRequest
             'slug' => 'sometimes|nullable',
             'body' => 'sometimes',
             'thumbnail' => 'sometimes|image|mimes:jpeg,png,jpg,gif,webp|max:4096',
+            'category' => 'sometimes|nullable',
+            'sub_category' => 'sometimes|nullable',
             'meta_description' => 'sometimes|nullable',
         ];
     }

@@ -40,6 +40,8 @@ export default function AdminServicesPage() {
             <thead className="bg-gray-50 border-b border-gray-100">
               <tr>
                 <th className="text-left px-6 py-3 font-medium text-gray-500">Title</th>
+                <th className="text-left px-6 py-3 font-medium text-gray-500">Category</th>
+                <th className="text-left px-6 py-3 font-medium text-gray-500">Sub Category</th>
                 <th className="text-left px-6 py-3 font-medium text-gray-500">Date</th>
                 <th className="px-6 py-3 w-32" />
               </tr>
@@ -47,7 +49,7 @@ export default function AdminServicesPage() {
             <tbody className="divide-y divide-gray-50">
               {services.length === 0 && (
                 <tr>
-                  <td colSpan={3} className="px-6 py-10 text-center text-gray-400">
+                  <td colSpan={5} className="px-6 py-10 text-center text-gray-400">
                     No services yet.{' '}
                     <Link href="/admin/services/new" className="text-blue-600 hover:underline">
                       Create one
@@ -58,6 +60,8 @@ export default function AdminServicesPage() {
               {services.map((service) => (
                 <tr key={service.id} className="hover:bg-gray-50">
                   <td className="px-6 py-4 font-medium text-gray-900">{service.title}</td>
+                  <td className="px-6 py-4 text-gray-500">{service.category || '—'}</td>
+                  <td className="px-6 py-4 text-gray-500">{service.sub_category || '—'}</td>
                   <td className="px-6 py-4 text-gray-400 whitespace-nowrap">
                     {service.created_at
                       ? new Date(service.created_at).toLocaleDateString()

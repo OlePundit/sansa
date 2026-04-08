@@ -26,6 +26,8 @@ class StoreServiceRequest extends FormRequest
             'slug' => 'nullable',
             'body' => 'required',
             'thumbnail' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:4096',
+            'category' => 'nullable',
+            'sub_category' => 'nullable',
             'meta_description' => 'nullable',
         ];
     }
