@@ -130,6 +130,7 @@ export default async function BlogPage({ params }: { params: Promise<{ slug: str
               </h1>
 
               <div
+                className="rich-content"
                 dangerouslySetInnerHTML={{ __html: blog.body }}
               />
 

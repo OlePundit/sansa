@@ -129,7 +129,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
               {service.title}
             </h1>
 
-            <div dangerouslySetInnerHTML={{ __html: service.body }} />
+            <div className="rich-content" dangerouslySetInnerHTML={{ __html: service.body }} />
 
             <div className="mt-10 flex">
               <QuoteButton />
