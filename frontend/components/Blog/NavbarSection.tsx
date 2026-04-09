@@ -1,184 +1,51 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import Link from "next/link";
-import { useState, useEffect, useRef } from 'react';
-import { ChevronUp, ChevronDown } from "lucide-react";
-import { MessageCircle, Phone } from "lucide-react"; // Standard WhatsApp-style icon
-import { Service, NavbarSectionProps } from '@/types'; // Import shared types
+import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import { NavbarSectionProps } from '@/types';
+import SharedNavbar from '@/components/SharedNavbar';
 
 export default function NavbarSection({ services }: NavbarSectionProps) {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [servicesOpen, setServicesOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
-  const dropdownRef = useRef<HTMLLIElement>(null);
 
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(true), 100);
     return () => clearTimeout(timer);
   }, []);
 
-  useEffect(() => {
-    const handleClickOutside = (e: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
-        setServicesOpen(false);
-      }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
   return (
+    <div>
+      <SharedNavbar services={services} />
+
+      {/* Hero */}
       <div
-        className={`relative w-full h-screen bg-cover  bg-no-repeat bg-center transition-all duration-[2000ms] ease-in-out transform ${
-          isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+        className={`relative w-full min-h-[60vh] bg-cover bg-no-repeat bg-center flex items-center justify-center transition-all duration-[2000ms] ease-in-out ${
+          isVisible ? 'opacity-100' : 'opacity-0'
         }`}
         style={{
           backgroundImage: `
+            radial-gradient(104.85% 104.85% at 50% 0%, rgba(23,23,23,0) 61%, #171717 90.5%),
+            linear-gradient(to bottom, rgba(13,26,45,0.7) 0%, rgba(13,26,45,0.3) 100%),
             url('/storage/citadel2.png')
           `,
         }}
       >
-      {/* Navbar */}
-        <nav className="bg-transparent shadow-sm pt-6"> {/* added top padding */}
-          <div className="container mx-auto flex flex-wrap items-center justify-between px-4 py-3">
-            <Link href="/" className="flex items-center">
-              <img src="/storage/whiteai.png" alt="logo" width="200" className="mx-2" />
-            </Link>
-
-            {/* Toggle Button */}
-            <button
-              onClick={() => setMenuOpen(!menuOpen)}
-              className="text-white md:hidden focus:outline-none"
-            >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-            </button>
-
-            {/* Menu */}
-            <div
-              className={`w-full md:flex md:items-center md:w-auto ${
-                menuOpen ? 'block' : 'hidden'
-              }`}
-            >
-              <ul className="flex flex-col md:flex-row md:space-x-8 text-white text-lg font-light pt-4 md:pt-0 md:bg-transparent bg-black/70 backdrop-blur-sm rounded-xl px-4 pb-4 md:px-0 md:pb-0">
-                <li>
-                  <Link href="/" className="block py-2 hover:text-gray-300">
-                    Home
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/about" className="block py-2 hover:text-gray-300">
-                    About
-                  </Link>
-                </li>
-
-                {/* Services Dropdown */}
-                <li className="relative" ref={dropdownRef}>
-                  <span
-                    onClick={() => setServicesOpen(o => !o)}
-                    className="flex items-center gap-1 py-2 cursor-pointer hover:text-gray-300"
-                  >
-                    Services <ChevronDown className={`w-4 h-4 transition-transform ${servicesOpen ? 'rotate-180' : ''}`} />
-                  </span>
-                  {servicesOpen && (
-                    <div className="absolute left-0 z-[9999] bg-gray-800 rounded-lg mt-2 min-w-[200px] shadow-lg">
-                      {services.map((service) => (
-                        <Link
-                          key={service.slug}
-                          href={`/services/${service.slug}`}
-                          className="block px-4 py-2 text-white hover:bg-gray-700"
-                          onClick={() => setServicesOpen(false)}
-                        >
-                          {service.title}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </li>
-
-                {/* Solutions Dropdown
-                <li className="relative group">
-                  <span className="block py-2 cursor-pointer hover:text-gray-300">
-                    Solutions
-                  </span>
-                  <div className="absolute left-0 hidden group-hover:block bg-gray-800 rounded-lg mt-2 min-w-[200px] shadow-lg">
-                    <Link
-                      href="https://self.sansadigital.com"
-                      target="_blank"
-                      className="block px-4 py-2 text-white hover:bg-gray-700"
-                    >
-                      Sansa Digital 2.0
-                    </Link>
-                  </div>
-                </li> */}
-
-                <li>
-                  <Link href="/contact" className="block py-2 hover:text-gray-300">
-                    Contact
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/blogs" className="block py-2 hover:text-gray-300">
-                    Blog
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="https://wa.me/+254112128055"
-                    target="_blank"
-                    className="block py-2 hover:text-gray-300 flex items-center"
-                  >
-                    <div className="relative mx-2 p-1 bg-gradient-to-br from-[#25D366] to-[#128C7E] rounded-full">
-                    <MessageCircle className="w-5 h-5 text-white" />
-                    <Phone className="w-2 h-2 text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
-                    </div>Always online
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-
-      {/* Banner Section */}
-      <div className="relative mt-40">
-        <div className="flex flex-col md:flex-row items-center md:px-20 lg:px-50 justify-center">
-          <div className="max-w-lg z-20 items-center">
-            <h1 className="text-5xl text-center font-bold mb-10">Blogs</h1>
-            <p className="text-[#2f976b] text-2xl font-semibold text-center mb-6">
-             home // blogs
+        <div className="container mx-auto px-4 sm:px-6 pt-24 pb-16 flex flex-col items-center text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1], delay: 0.2 }}
+          >
+            <p className="text-[#2f976b] text-sm font-semibold tracking-widest uppercase mb-4">
+              Home &nbsp;/&nbsp; Blogs
             </p>
-            {/* Animated Scroll Up Indicator */}
-            <div className="flex flex-col items-center justify-center mt-12">
-              <div className="text-white text-sm mb-2 animate-pulse">
-                Scroll Up
-              </div>
-              
-              {/* Two animated chevrons */}
-              <div className="relative h-16 flex flex-col items-center">
-                {/* First chevron */}
-                <div className="absolute animate-bounce">
-                  <ChevronUp className="w-10 h-10 text-white/80" />
-                </div>
-                
-                {/* Second chevron with delay */}
-                <div className="absolute animate-bounce" style={{ animationDelay: '0.2s' }}>
-                  <ChevronUp className="w-10 h-10 text-white/60" />
-                </div>
-              </div>
-            </div>
-          </div>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)]">
+              Our Blog
+            </h1>
+            <p className="mt-4 text-gray-300 text-base sm:text-lg max-w-md mx-auto">
+              Insights, guides, and news from the Sansa Digital team.
+            </p>
+          </motion.div>
         </div>
       </div>
     </div>

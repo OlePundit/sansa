@@ -1,175 +1,79 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import Link from "next/link";
-import { useState, useEffect, useRef } from 'react';
-import { MessageCircle, Phone, ChevronDown } from "lucide-react"; // Standard WhatsApp-style icon
-import { Service, LPNavbarSectionProps } from '@/types'; // Import shared types
+import Image from 'next/image';
+import Link from 'next/link';
+import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import { LPNavbarSectionProps } from '@/types';
+import SharedNavbar from '@/components/SharedNavbar';
 
 export default function NavbarSection({ services, img1, title, intro }: LPNavbarSectionProps) {
-    const [menuOpen, setMenuOpen] = useState(false);
-    const [servicesOpen, setServicesOpen] = useState(false);
-    const [isVisible, setIsVisible] = useState(false);
-    const dropdownRef = useRef<HTMLLIElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
 
-    useEffect(() => {
-      const timer = setTimeout(() => setIsVisible(true), 100);
-      return () => clearTimeout(timer);
-    }, []);
+  useEffect(() => {
+    const timer = setTimeout(() => setIsVisible(true), 100);
+    return () => clearTimeout(timer);
+  }, []);
 
-    useEffect(() => {
-      const handleClickOutside = (e: MouseEvent) => {
-        if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
-          setServicesOpen(false);
-        }
-      };
-      document.addEventListener('mousedown', handleClickOutside);
-      return () => document.removeEventListener('mousedown', handleClickOutside);
-    }, []);
   return (
-    <div
-      className="w-full relative bg-cover bg-no-repeat h-[60vh]"
-      style={{ backgroundImage: "url('/storage/lp.png')" }}
-    >
-      {/* Navbar */}
-        <nav className="bg-transparent shadow-sm pt-6"> {/* added top padding */}
-          <div className="container mx-auto flex flex-wrap items-center justify-between px-4 py-3">
-            <Link href="/" className="flex items-center">
-              <img src="/storage/whiteai.png" alt="logo" width="200" className="mx-2" />
-            </Link>
+    <div>
+      <SharedNavbar services={services} />
 
-            {/* Toggle Button */}
-            <button
-              onClick={() => setMenuOpen(!menuOpen)}
-              className="text-white md:hidden focus:outline-none"
+      {/* Hero */}
+      <div
+        className={`relative w-full min-h-[65vh] bg-cover bg-no-repeat bg-center flex items-center transition-all duration-[2000ms] ease-in-out ${
+          isVisible ? 'opacity-100' : 'opacity-0'
+        }`}
+        style={{
+          backgroundImage: `
+            linear-gradient(to right, rgba(13,26,45,0.88) 0%, rgba(13,26,45,0.5) 55%, rgba(13,26,45,0.1) 100%),
+            url('/storage/lp.png')
+          `,
+        }}
+      >
+        <div className="container mx-auto px-4 sm:px-6 pt-24 pb-16">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-10">
+            {/* Left — copy */}
+            <motion.div
+              className="max-w-lg z-20"
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.2 }}
             >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-            </button>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-5 leading-tight drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)]">
+                {title}
+              </h1>
+              <div
+                className="text-white text-base sm:text-lg font-semibold mb-8 leading-relaxed drop-shadow-[0_1px_8px_rgba(0,0,0,0.9)]"
+                dangerouslySetInnerHTML={{ __html: intro }}
+              />
+              <Link href="#section-info">
+                <motion.button
+                  whileHover={{ scale: 1.04 }}
+                  whileTap={{ scale: 0.97 }}
+                  className="cursor-pointer bg-[#2c96e2] text-white text-base font-semibold px-8 py-3.5 rounded-xl shadow-lg shadow-[#2c96e2]/25 hover:bg-[#2f976b] transition-colors duration-300"
+                >
+                  Learn More
+                </motion.button>
+              </Link>
+            </motion.div>
 
-            {/* Menu */}
-            <div
-              className={`w-full md:flex md:items-center md:w-auto ${
-                menuOpen ? 'block' : 'hidden'
-              }`}
+            {/* Right — image */}
+            <motion.div
+              className="relative w-full md:w-[420px] h-[240px] md:h-[320px] flex-shrink-0"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.4 }}
             >
-              <ul className="flex flex-col md:flex-row md:space-x-8 text-white text-lg font-light pt-4 md:pt-0 md:bg-transparent bg-black/70 backdrop-blur-sm rounded-xl px-4 pb-4 md:px-0 md:pb-0">
-                <li>
-                  <Link href="/" className="block py-2 hover:text-gray-300">
-                    Home
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/about" className="block py-2 hover:text-gray-300">
-                    About
-                  </Link>
-                </li>
-
-                {/* Services Dropdown */}
-                <li className="relative" ref={dropdownRef}>
-                  <span
-                    onClick={() => setServicesOpen(o => !o)}
-                    className="flex items-center gap-1 py-2 cursor-pointer hover:text-gray-300"
-                  >
-                    Services <ChevronDown className={`w-4 h-4 transition-transform ${servicesOpen ? 'rotate-180' : ''}`} />
-                  </span>
-                  {servicesOpen && (
-                    <div className="absolute left-0 z-[9999] bg-gray-800 rounded-lg mt-2 min-w-[200px] shadow-lg">
-                      {services.map((service) => (
-                        <Link
-                          key={service.slug}
-                          href={`/services/${service.slug}`}
-                          className="block px-4 py-2 text-white hover:bg-gray-700"
-                          onClick={() => setServicesOpen(false)}
-                        >
-                          {service.title}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </li>
-
-                {/* Solutions Dropdown */}
-                <li className="relative group">
-                  <span className="flex items-center gap-1 py-2 cursor-pointer hover:text-gray-300">
-                    Solutions <ChevronDown className="w-4 h-4" />
-                  </span>
-                  <div className="absolute left-0 hidden group-hover:block bg-gray-800 rounded-lg mt-2 min-w-[200px] shadow-lg">
-                    <Link
-                      href="https://self.sansadigital.com"
-                      target="_blank"
-                      className="block px-4 py-2 text-white hover:bg-gray-700"
-                    >
-                      Sansa Digital 2.0
-                    </Link>
-                  </div>
-                </li>
-
-                <li>
-                  <Link href="/contact" className="block py-2 hover:text-gray-300">
-                    Contact
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/blogs" className="block py-2 hover:text-gray-300">
-                    Blog
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="https://wa.me/+254112128055"
-                    target="_blank"
-                    className="block py-2 hover:text-gray-300 flex items-center"
-                  >
-                    <div className="relative mx-2 p-1 bg-gradient-to-br from-[#25D366] to-[#128C7E] rounded-full">
-                    <MessageCircle className="w-5 h-5 text-white" />
-                    <Phone className="w-2 h-2 text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
-                    </div>Always online
-                  </Link>
-                </li>
-              </ul>
-            </div>
+              <Image
+                src={img1}
+                alt={title}
+                fill
+                className="object-contain drop-shadow-2xl"
+                priority
+              />
+            </motion.div>
           </div>
-        </nav>
-
-      {/* Banner */}
-      <div className="relative mt-10">
-        <div className="flex flex-col md:flex-row items-center md:px-20 justify-between">
-
-          <div className="max-w-lg z-20">
-            <h1 className="text-white text-3xl sm:text-5xl font-bold mb-4">{title}</h1>
-            <div className="text-white mb-6" dangerouslySetInnerHTML={{ __html: intro }} />
-            <Link href="#section-info">
-              <button className="bg-[#2c96e2] cursor-pointer text-xl font-bold px-6 py-3 rounded-lg shadow hover:bg-white hover:text-[#193155] transition">
-                Learn More
-              </button>
-            </Link>
-          </div>
-
-          {/* thumbnail image */}
-          <div className="relative w-full h-[250px] flex items-center justify-center">
-            <Image
-              src={img1}
-              alt="About"
-              width={700}
-              height={500}
-              className="object-contain"
-              priority
-            />
-          </div>
-
         </div>
       </div>
     </div>

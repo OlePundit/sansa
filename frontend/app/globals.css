@@ -15,10 +15,16 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Rich content rendering (frontend blog/service pages) */
@@ -95,6 +101,79 @@ body {
 
 .rich-content a:hover {
   color: #2f976b;
+}
+
+/* LP benefits list — checkmark bullet styling */
+.lp-benefits ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 1rem;
+}
+
+.lp-benefits ul li {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 0.6rem;
+  line-height: 1.7;
+}
+
+.lp-benefits ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.25em;
+  width: 1.1rem;
+  height: 1.1rem;
+  background-color: rgba(47, 151, 107, 0.15);
+  border: 1.5px solid rgba(47, 151, 107, 0.4);
+  border-radius: 50%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none' stroke='%232f976b' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='2,6 5,9 10,3'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 65%;
+}
+
+.lp-benefits ol {
+  list-style: none;
+  padding-left: 0;
+  counter-reset: lp-counter;
+  margin-bottom: 1rem;
+}
+
+.lp-benefits ol li {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 0.6rem;
+  line-height: 1.7;
+  counter-increment: lp-counter;
+}
+
+.lp-benefits ol li::before {
+  content: counter(lp-counter);
+  position: absolute;
+  left: 0;
+  top: 0.15em;
+  width: 1.2rem;
+  height: 1.2rem;
+  background-color: rgba(44, 150, 226, 0.15);
+  border: 1.5px solid rgba(44, 150, 226, 0.4);
+  border-radius: 50%;
+  color: #2c96e2;
+  font-size: 0.65rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lp-benefits p {
+  margin-bottom: 0.75rem;
+  line-height: 1.75;
+}
+
+.lp-benefits strong {
+  font-weight: 700;
+  color: #fff;
 }
 
 /* Tiptap rich text editor styles */

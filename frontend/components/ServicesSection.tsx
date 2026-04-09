@@ -49,7 +49,7 @@ export default function ServicesSection() {
         "Social Media Marketing",
         "Search Engine Marketing",
       ],
-      link: "https://sansadigital.com/lps/digitalmarketing",
+      link: "https://www.sansadigital.com/services/google-display-and-search-advertising",
     },
 
     {
@@ -100,7 +100,7 @@ export default function ServicesSection() {
   };
 
   return (
-    <section id="section-services" className="py-10 md:py-16 text-white sm:w-3/4">
+    <section id="section-services" className="py-10 md:py-16 text-white w-full px-4 sm:px-6">
       <div id="section-placeholder-2"></div>
 
       {/* Title */}
@@ -135,7 +135,7 @@ export default function ServicesSection() {
                 alt={service.title}
                 width={600}
                 height={400}
-                className="w-1/6 rounded-md h-auto object-cover"
+                className="w-12 h-12 rounded-xl object-cover"
               />
               <div className="pt-5 flex flex-col justify-between h-[65%]">
                 <h4 className="text-2xl text-[#2f976b] font-semibold mb-2">
@@ -158,22 +158,13 @@ export default function ServicesSection() {
 
             <a
               href={service.link}
-              className="group flex items-center justify-center w-1/6 aspect-square border border-[#2f976b] rounded-md hover:bg-[#2f976b] transition-colors duration-300"
+              className="group inline-flex items-center gap-2 text-[#2f976b] text-sm font-semibold border border-[#2f976b]/50 rounded-lg px-4 py-2 hover:bg-[#2f976b] hover:text-white transition-all duration-300 w-fit"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="14"
-                viewBox="0 0 30 16"
-                fill="none"
-                className="text-[#2f976b] group-hover:text-[#0f172a] transition-colors duration-300"
-              >
-                <path
-                  d="M29.7071 8.70711C30.0976 8.31658 30.0976 7.68342 29.7071 7.29289L23.3431 0.928932C22.9526 0.538408 22.3195 0.538408 21.9289 0.928932C21.5384 1.31946 21.5384 1.95262 21.9289 2.34315L27.5858 8L21.9289 13.6569C21.5384 14.0474 21.5384 14.6805 21.9289 15.0711C22.3195 15.4616 22.9526 15.4616 23.3431 15.0711L29.7071 8.70711ZM0 9L29 9V7L0 7L0 9Z"
-                  fill="currentColor"
-                />
+              Learn More
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="10" viewBox="0 0 30 16" fill="none" className="transition-transform duration-200 group-hover:translate-x-1">
+                <path d="M29.7071 8.70711C30.0976 8.31658 30.0976 7.68342 29.7071 7.29289L23.3431 0.928932C22.9526 0.538408 22.3195 0.538408 21.9289 0.928932C21.5384 1.31946 21.5384 1.95262 21.9289 2.34315L27.5858 8L21.9289 13.6569C21.5384 14.0474 21.5384 14.6805 21.9289 15.0711C22.3195 15.4616 22.9526 15.4616 23.3431 15.0711L29.7071 8.70711ZM0 9L29 9V7L0 7L0 9Z" fill="currentColor" />
               </svg>
             </a>
           </motion.div>

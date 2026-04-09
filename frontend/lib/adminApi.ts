@@ -221,6 +221,19 @@ export async function getContacts(): Promise<Contact[]> {
   return [];
 }
 
+// ─── Newsletter ───────────────────────────────────────────────────────────────
+
+export async function getNewsletters(): Promise<NewsletterSubscriber[]> {
+  const data = await request<Record<string, unknown>>('/newsletter');
+  if (Array.isArray(data)) return data as unknown as NewsletterSubscriber[];
+  if (Array.isArray((data as { data?: NewsletterSubscriber[] }).data)) return (data as { data: NewsletterSubscriber[] }).data;
+  return [];
+}
+
+export async function deleteNewsletter(id: number) {
+  return request(`/newsletter/${id}`, { method: 'DELETE' });
+}
+
 // ─── Types ───────────────────────────────────────────────────────────────────
 
 export interface AdminUser {
@@ -289,5 +302,11 @@ export interface Contact {
   name: string;
   email: string;
   message: string;
+  created_at?: string;
+}
+
+export interface NewsletterSubscriber {
+  id: number;
+  email: string;
   created_at?: string;
 }

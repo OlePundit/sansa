@@ -106,7 +106,7 @@ console.log('📦 Raw LP from API:', JSON.stringify(lp, null, 2));
         intro={lp.intro ?? ''}
       />
 
-      <main className="flex flex-col justify-center items-center w-full lg:w-3/4 mx-auto">
+      <main className="flex flex-col w-full max-w-7xl mx-auto">
         <InfoSection
           img2={toAbsolute(lp.img2)}
           title1={lp.title1 || ""}
@@ -132,7 +132,7 @@ console.log('📦 Raw LP from API:', JSON.stringify(lp, null, 2));
           ans5={decodeHtml(lp.ans5 || "")}
         />
 
-        <div className="mt-10 flex mb-10">
+        <div className="flex justify-center pb-16">
           <QuoteButton />
         </div>
       </main>

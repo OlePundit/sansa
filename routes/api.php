@@ -28,6 +28,7 @@ Route::get('/lps/{lp}', [LpController::class, 'show']);
 Route::get('/home', [HomeController::class, 'index']);
 Route::get('/about', [AboutController::class, 'index']);
 Route::post('/contact', [ContactController::class, 'store']);
+Route::post('/newsletter', [NewsletterController::class, 'store']);
 Route::apiResource('/users', AuthController::class)->only(['index', 'show']);
 
 // Auth

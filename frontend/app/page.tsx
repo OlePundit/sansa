@@ -92,16 +92,16 @@ export default async function Home() {
           <div>
             {/* Fallback content when HomeClient fails */}
             <HomeClient services={[]} />
-            <main className="flex flex-col justify-center items-center w-full lg:w-3/4 mx-auto">
+            <main className="flex flex-col justify-center items-center w-full max-w-7xl mx-auto">
               <InfoSection />
               <ServicesSection />
-              <PricesSection />
               <ProjectsSection />
               <PortfolioSection />
               <TestimonialsSection />
               <QuoteSection />
               <NewsletterSection />
             </main>
+            <PricesSection />
             <Footer />
           </div>
         }
@@ -111,10 +111,9 @@ export default async function Home() {
         </Suspense>
       </ErrorBoundary>
       
-      <main className="flex flex-col justify-center items-center w-full lg:w-3/4 mx-auto">
+      <main className="flex flex-col justify-center items-center w-full max-w-7xl mx-auto">
         <InfoSection />
         <ServicesSection />
-        <PricesSection />
         <ProjectsSection />
         <PortfolioSection />
         {/*
@@ -124,6 +123,7 @@ export default async function Home() {
         <QuoteSection />
         <NewsletterSection />
       </main>
+      <PricesSection />
       <Footer />
     </div>
   );

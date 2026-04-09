@@ -11,6 +11,7 @@ const NAV = [
   { href: '/admin/lps', label: 'Landing Pages' },
   { href: '/admin/services', label: 'Services' },
   { href: '/admin/contacts', label: 'Contacts' },
+  { href: '/admin/newsletters', label: 'Newsletter' },
 ];
 
 export default function AdminLayout({

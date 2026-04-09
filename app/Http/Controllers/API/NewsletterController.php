@@ -4,28 +4,32 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Requests\StoreNewsletterRequest;
+use App\Http\Requests\V1\StoreNewsletterRequest;
 use App\Models\Newsletter;
-use Illuminate\Support\Facades\Auth;
 
 class NewsletterController extends Controller
 {
     public function index(Request $request)
     {
-        $query = Newsletter::query();
-
-        return new NewsletterCollection($query->paginate());
-
+        $newsletters = Newsletter::latest()->paginate(50);
+        return response()->json($newsletters);
     }
+
     public function store(StoreNewsletterRequest $request)
     {
-        if (!Auth::check()) {
-            return response()->json(['message' => 'Unauthenticated'], 401);
+        // Check for duplicate email
+        if (Newsletter::where('email', $request->email)->exists()) {
+            return response()->json(['message' => 'Already subscribed'], 200);
         }
 
-        $data = $request->all();
+        $newsletter = Newsletter::create($request->validated());
 
-        return new NewsletterResource(Newsletter::create($data));
+        return response()->json(['message' => 'Subscribed successfully', 'data' => $newsletter], 201);
+    }
 
+    public function destroy($id)
+    {
+        Newsletter::findOrFail($id)->delete();
+        return response()->json(['message' => 'Deleted'], 200);
     }
 }

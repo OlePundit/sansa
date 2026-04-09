@@ -52,8 +52,8 @@ export default async function ContactPage() {
     return (
         <div>
             <NavbarSection services={services} />
-            <main className="flex flex-col justify-center items-center w-full lg:w-2/3 mx-auto">
-            <ContactSection />
+            <main className="flex flex-col items-center w-full max-w-7xl mx-auto">
+              <ContactSection />
             </main>
             <Footer />
             

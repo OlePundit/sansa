@@ -1,9 +1,8 @@
 'use client';
 
-import React, { useCallback, useEffect, useState, useRef } from 'react';
-import useEmblaCarousel from 'embla-carousel-react';
-import Autoplay from 'embla-carousel-autoplay';
+import { useEffect, useRef } from 'react';
 import Typed from "typed.js";
+import { motion, Variants } from "framer-motion";
 
 const logos = [
   '/storage/gov-logo.webp',
@@ -28,88 +27,87 @@ const logos = [
   '/storage/safari.png',
 ];
 
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.04 },
+  },
+};
+
+const itemVariants: Variants = {
+  hidden: { opacity: 0, scale: 0.85 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.4, ease: 'easeOut' },
+  },
+};
+
 export default function ProjectsSection() {
   const el = useRef<HTMLSpanElement>(null);
+
   useEffect(() => {
     if (!el.current) return;
-    
     const typed = new Typed(el.current, {
       strings: ["Clients"],
       typeSpeed: 50,
       showCursor: false,
       loop: false,
     });
-
-    return () => {
-      typed.destroy();
-    };
+    return () => typed.destroy();
   }, []);
 
-  const [emblaRef, emblaApi] = useEmblaCarousel(
-    { loop: true, align: 'center', skipSnaps: false },
-    [Autoplay({ delay: 3000 })]
-  );
-
-  const [selectedIndex, setSelectedIndex] = useState(0);
-  const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
-
-  const onSelect = useCallback(() => {
-    if (!emblaApi) return;
-    setSelectedIndex(emblaApi.selectedScrollSnap());
-  }, [emblaApi]);
-
-  useEffect(() => {
-    if (!emblaApi) return;
-    setScrollSnaps(emblaApi.scrollSnapList());
-    emblaApi.on('select', onSelect);
-    onSelect();
-  }, [emblaApi, onSelect]);
-
   return (
-    <div className="section-projects py-10 w-full" id="section-projects">
-      <div className="text-center mb-8">
-        <h3 className="text-3xl md:text-4xl font-bold">
-          Our <span ref={el} className="text-[#2f976b]"></span>
-        </h3>
+    <section className="w-full py-16 sm:py-20 px-4 sm:px-6" id="section-projects">
+      {/* Heading */}
+      <div className="text-center mb-12">
+        <motion.p
+          className="text-xs font-semibold tracking-widest uppercase text-gray-500 mb-3"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          Trusted by
+        </motion.p>
+        <motion.h3
+          className="text-3xl sm:text-4xl font-bold text-white"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          Our <span ref={el} className="text-[#2f976b]" />
+        </motion.h3>
       </div>
 
-      {/* Carousel */}
-      <div className="overflow-hidden" ref={emblaRef}>
-        <div className="flex">
-          {logos.map((logo, index) => (
-            <div
-              className="flex-[0_0_80%] sm:flex-[0_0_40%] md:flex-[0_0_25%] p-4 flex justify-center items-center"
-              key={index}
-            >
-              <img
-                src={logo}
-                alt={`logo-${index}`}
-                width="120"
-                height="120"
-                style={{ objectFit: 'contain' }}
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement;
-                  target.style.display = 'none';
-                  console.warn('Failed to load:', logo);
-                }}
-              />
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Pagination Dots */}
-      <div className="flex justify-center mt-4 gap-2">
-        {scrollSnaps.map((_, index) => (
-          <button
+      {/* Logo wall */}
+      <motion.div
+        className="flex flex-wrap justify-center items-center gap-4 sm:gap-6 max-w-5xl mx-auto"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.1 }}
+      >
+        {logos.map((logo, index) => (
+          <motion.div
             key={index}
-            onClick={() => emblaApi && emblaApi.scrollTo(index)}
-            className={`w-5 h-1.5 rounded-md transition-colors ${
-              index === selectedIndex ? 'bg-[#2f976b]' : 'bg-gray-300'
-            }`}
-          />
+            variants={itemVariants}
+            whileHover={{ scale: 1.08, transition: { duration: 0.2 } }}
+            className="flex items-center justify-center w-24 h-16 sm:w-28 sm:h-20 rounded-xl bg-white/4 border border-white/6 hover:border-white/15 hover:bg-white/8 transition-all duration-200 p-3"
+          >
+            <img
+              src={logo}
+              alt={`client-${index}`}
+              className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100"
+              onError={(e) => {
+                (e.target as HTMLImageElement).parentElement!.style.display = 'none';
+              }}
+            />
+          </motion.div>
         ))}
-      </div>
-    </div>
+      </motion.div>
+    </section>
   );
 }

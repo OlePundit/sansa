@@ -54,18 +54,14 @@ export default async function AboutPage() {
     return (
         <div>
             <NavbarSection services={services} />
-            <main className="flex flex-col justify-center items-center w-full lg:w-3/4 mx-auto">
-
-            <SectionInfo />
-            <EquipSection />
-            <ProjectsSection />
-            <StatsSection />
-            <QuoteSection />
+            <main className="flex flex-col justify-center items-center w-full max-w-7xl mx-auto">
+                <SectionInfo />
+                <EquipSection />
+                <StatsSection />
+                <ProjectsSection />
+                <QuoteSection />
             </main>
             <Footer />
-
-            
-            {/* Additional about page content can go here */}
         </div>
     );
 }

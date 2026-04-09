@@ -53,11 +53,11 @@ export default function InfoSection() {
   return (
     <section
       id="section-info"
-      className="flex flex-col-reverse lg:flex-row justify-between items-center md:py-16 py-10 px-4 lg:px-12 mt-10"
+      className="flex flex-col-reverse lg:flex-row justify-between items-center md:py-20 py-14 px-4 lg:px-12 mt-6 gap-12 lg:gap-0"
     >
       {/* Left column with cards */}
       <motion.div
-        className="w-full lg:w-6/12 md:w-3/4 grid grid-cols-1 md:grid-cols-2 gap-6"
+        className="w-full lg:w-7/12 grid grid-cols-2 gap-4 sm:gap-6"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -161,14 +161,26 @@ export default function InfoSection() {
       </motion.div>
 
       {/* Right column with info */}
-      <div className="w-full lg:w-6/12 md:w-3/4 flex flex-col justify-center items-start text-left mb-12 mb-30 lg:mb-0 lg:ml-10">
-        <h2 className="text-4xl lg:text-4xl font-bold leading-snug mb-4">
-          We Provide <span ref={el} className="text-[#2f976b]"></span> To Your Problems
+      <motion.div
+        className="w-full lg:w-5/12 flex flex-col justify-center items-start text-left lg:ml-12"
+        initial={{ opacity: 0, x: 40 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+      >
+        <span className="inline-flex items-center gap-2 bg-[#2f976b]/10 border border-[#2f976b]/25 text-[#2f976b] rounded-full px-4 py-1 text-xs font-medium mb-5">
+          <span className="w-1.5 h-1.5 bg-[#2f976b] rounded-full" />
+          Who We Are
+        </span>
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-5">
+          We Provide{" "}
+          <span ref={el} className="text-[#2f976b]" />{" "}
+          To Your Problems
         </h2>
-        <p className="mb-6 text-xl">
+        <p className="mb-8 text-base sm:text-lg text-gray-300 leading-relaxed">
           We are a team of experts from different technical and creative
           backgrounds, with one goal in mind — to change the competitive
-          landscape in the space.
+          landscape in the digital space.
         </p>
         <motion.a
           href="/#section-services"
@@ -176,11 +188,12 @@ export default function InfoSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.6 }}
-          className="inline-block bg-[#2c96e2] cursor-pointer text-white text-xl font-bold px-6 py-2 rounded-md shadow hover:bg-[#2f976b] transition-colors duration-300 transform hover:scale-105"
+          whileHover={{ scale: 1.04 }}
+          className="inline-flex items-center gap-2 bg-[#2c96e2] cursor-pointer text-white text-base font-semibold px-7 py-3.5 rounded-xl shadow-lg shadow-[#2c96e2]/20 hover:bg-[#2f976b] transition-colors duration-300"
         >
           Learn More
         </motion.a>
-      </div>
+      </motion.div>
     </section>
   );
 }

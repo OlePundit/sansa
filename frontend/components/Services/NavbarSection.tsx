@@ -17,7 +17,6 @@ export default function NavbarSection({ services }: NavbarSectionProps) {
     <div>
       <SharedNavbar services={services} />
 
-      {/* Hero */}
       <div
         className={`relative w-full min-h-[60vh] bg-cover bg-no-repeat bg-center flex items-center justify-center transition-all duration-[2000ms] ease-in-out ${
           isVisible ? 'opacity-100' : 'opacity-0'
@@ -25,8 +24,8 @@ export default function NavbarSection({ services }: NavbarSectionProps) {
         style={{
           backgroundImage: `
             radial-gradient(104.85% 104.85% at 50% 0%, rgba(23,23,23,0) 61%, #171717 90.5%),
-            linear-gradient(to bottom, rgba(13,26,45,0.7) 0%, rgba(13,26,45,0.3) 100%),
-            url('/storage/contact.png')
+            linear-gradient(to bottom, rgba(13,26,45,0.75) 0%, rgba(13,26,45,0.35) 100%),
+            url('/storage/header.png')
           `,
         }}
       >
@@ -36,21 +35,14 @@ export default function NavbarSection({ services }: NavbarSectionProps) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1], delay: 0.2 }}
           >
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="inline-flex items-center gap-2 bg-white/8 backdrop-blur-sm border border-white/15 rounded-full px-4 py-1.5 text-xs sm:text-sm text-white mb-6"
-            >
-              <span className="w-2 h-2 bg-[#2f976b] rounded-full animate-pulse" />
-              We're always available
-            </motion.div>
-
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4 drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)]">
-              Contact Us
+            <p className="text-[#2f976b] text-xs font-semibold tracking-widest uppercase mb-4">
+              Home &nbsp;/&nbsp; Services
+            </p>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)]">
+              Our Services
             </h1>
-            <p className="text-[#2f976b] text-lg sm:text-xl font-semibold drop-shadow-[0_1px_8px_rgba(0,0,0,0.9)]">
-              We are here to respond to your queries around the clock.
+            <p className="mt-4 text-gray-300 text-base sm:text-lg max-w-md mx-auto">
+              Full-stack digital solutions tailored to help your business grow.
             </p>
           </motion.div>
         </div>
