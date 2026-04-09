@@ -49,7 +49,7 @@ export default function ServicesSection() {
         "Social Media Marketing",
         "Search Engine Marketing",
       ],
-      link: "https://www.sansadigital.com/services/google-display-and-search-advertising",
+      link: "https://www.sansadigital.com/services/digital-marketing-in-kenya",
     },
 
     {

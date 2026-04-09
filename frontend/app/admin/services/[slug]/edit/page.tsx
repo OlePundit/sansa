@@ -159,6 +159,9 @@ export default function EditServicePage() {
               <ToolbarButton onClick={() => editor?.chain().focus().toggleHeading({ level: 3 }).run()} active={editor?.isActive('heading', { level: 3 })} title="Heading 3">
                 H3
               </ToolbarButton>
+              <ToolbarButton onClick={() => editor?.chain().focus().toggleHeading({ level: 4 }).run()} active={editor?.isActive('heading', { level: 4 })} title="Heading 4">
+                H4
+              </ToolbarButton>
               <div className="w-px bg-gray-300 mx-1" />
               <ToolbarButton onClick={() => editor?.chain().focus().toggleBulletList().run()} active={editor?.isActive('bulletList')} title="Bullet list">
                 &#8226; List

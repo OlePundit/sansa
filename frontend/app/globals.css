@@ -44,6 +44,14 @@ body {
   line-height: 1.4;
 }
 
+.rich-content h4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-top: 1.25rem;
+  margin-bottom: 0.4rem;
+  line-height: 1.5;
+}
+
 .rich-content p {
   margin-bottom: 1rem;
   line-height: 1.8;
@@ -190,6 +198,14 @@ body {
   font-weight: 600;
   margin-top: 1rem;
   margin-bottom: 0.5rem;
+  color: #111827;
+}
+
+.ProseMirror h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 0.75rem;
+  margin-bottom: 0.4rem;
   color: #111827;
 }
 

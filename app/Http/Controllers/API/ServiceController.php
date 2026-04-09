@@ -14,7 +14,7 @@ class ServiceController extends Controller
 {
     public function index()
     {
-        $services = Service::all();
+        $services = Service::latest()->get();
         return ServiceResource::collection($services);
     }
 

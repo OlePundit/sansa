@@ -12,6 +12,12 @@ interface PortfolioItem {
 
 const portfolioItems: PortfolioItem[] = [
   {
+    title: "MVP Development",
+    subtitle: "Millfield Runda LMS",
+    link: "https://edu.millfield.ac",
+    image: "/storage/millfield.webp",
+  },
+  {
     title: "Web Design",
     subtitle: "Allure Essence Spa",
     link: "https://allureessencespa.com",
