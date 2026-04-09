@@ -8,7 +8,7 @@ export const getServices = async (): Promise<Service[]> => {
   console.log('[getServices] APP_URL:', process.env.APP_URL);
   
   const baseUrl = process.env.APP_URL ?? 'http://127.0.0.1:8000';
-  const url = `${baseUrl}/services`;
+  const url = `${baseUrl}/api/services`;
   
   console.log('[getServices] Fetching from:', url);
 
@@ -88,7 +88,7 @@ export const getServices = async (): Promise<Service[]> => {
 // Test function to verify API endpoint
 export const testServicesEndpoint = async () => {
   const baseUrl = process.env.APP_URL ?? 'http://127.0.0.1:8000';
-  const url = `${baseUrl}/services`;
+  const url = `${baseUrl}/api/services`;
   
   try {
     const response = await fetch(url, { cache: 'no-store' });
@@ -113,7 +113,7 @@ export const testServicesEndpoint = async () => {
 // Optional: Get single service by slug
 export const getServiceBySlug = async (slug: string): Promise<Service | null> => {
   const baseUrl = process.env.APP_URL ?? 'http://127.0.0.1:8000';
-  const url = `${baseUrl}/services/${slug}`;
+  const url = `${baseUrl}/api/services/${slug}`;
   
   try {
     const response = await fetch(url, {

@@ -5,7 +5,7 @@ import { LP, ApiResponse } from '@/types';
 // Get all LPs
 export const getLPData = async (): Promise<LP[]> => {
   const baseUrl = process.env.APP_URL ?? 'http://127.0.0.1:8000';
-  const url = `${baseUrl}/lps`;
+  const url = `${baseUrl}/api/lps`;
 
   try {
     const controller = new AbortController();
@@ -42,7 +42,7 @@ export const getLPData = async (): Promise<LP[]> => {
 // Get single lp by slug
 export const getLP = async (slug: string): Promise<LP | null> => {
   const baseUrl = process.env.APP_URL ?? 'http://127.0.0.1:8000';
-  const url = `${baseUrl}/lps/${slug}`;
+  const url = `${baseUrl}/api/lps/${slug}`;
 
   try {
     const controller = new AbortController();
@@ -82,7 +82,7 @@ export const getLP = async (slug: string): Promise<LP | null> => {
 // Get related lps (optional)
 export const getRelatedLPs = async (currentSlug: string, category?: string): Promise<LP[]> => {
   const baseUrl = process.env.APP_URL ?? 'http://127.0.0.1:8000';
-  const url = `${baseUrl}/lps/related/${currentSlug}${category ? `?category=${category}` : ''}`;
+  const url = `${baseUrl}/api/lps/related/${currentSlug}${category ? `?category=${category}` : ''}`;
 
   try {
     const response = await fetch(url, {

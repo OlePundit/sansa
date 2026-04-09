@@ -1,6 +1,6 @@
 export const subscribeNewsletter = async (email: string): Promise<{ ok: boolean; message: string }> => {
   const baseUrl = process.env.NEXT_PUBLIC_API_URL ?? 'http://127.0.0.1:8000';
-  const url = `${baseUrl}/newsletter`;
+  const url = `${baseUrl}/api/newsletter`;
 
   try {
     const response = await fetch(url, {
