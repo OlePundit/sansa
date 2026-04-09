@@ -42,17 +42,24 @@ export default function ContactSection() {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const router = useRouter();
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (isLoading) return;
     setIsLoading(true);
+    setError(null);
     try {
       const res = await createContact({ name, email, message });
-      if (res) router.push('/thanks');
+      if (res) {
+        router.push('/thanks');
+      } else {
+        setError('Something went wrong. Please try again or contact us directly.');
+      }
     } catch (error) {
       console.error('Error submitting form:', error);
+      setError('Something went wrong. Please try again or contact us directly.');
     } finally {
       setIsLoading(false);
     }
@@ -162,6 +169,13 @@ export default function ContactSection() {
                 className="w-full bg-white/5 border border-white/10 focus:border-[#2f976b]/60 rounded-xl px-4 py-3 text-white placeholder-gray-600 focus:outline-none transition-colors duration-200 disabled:opacity-50 resize-none text-sm"
               />
             </div>
+
+            {error && (
+              <div className="flex items-center gap-2 bg-red-500/10 border border-red-500/30 text-red-400 rounded-xl px-4 py-3 text-sm">
+                <span className="w-1.5 h-1.5 bg-red-400 rounded-full flex-shrink-0" />
+                {error}
+              </div>
+            )}
 
             <motion.button
               type="submit"
