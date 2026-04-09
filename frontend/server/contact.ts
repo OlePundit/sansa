@@ -8,7 +8,7 @@ interface ContactFormData {
 
 export const createContact = async (formData: ContactFormData) => {
   const baseUrl = process.env.NEXT_PUBLIC_API_URL ?? "http://127.0.0.1:8000";
-  const url = `${baseUrl}/contact`;
+  const url = `${baseUrl}/api/contact`;
 
   try {
     const response = await fetch(url, {
