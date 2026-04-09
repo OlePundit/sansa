@@ -9,6 +9,7 @@ import { Service, NavbarSectionProps } from '@/types';
 export default function HomeClient({ services }: NavbarSectionProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [solutionsOpen, setSolutionsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -26,7 +27,7 @@ export default function HomeClient({ services }: NavbarSectionProps) {
 
   useEffect(() => {
     const handleEsc = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') { setServicesOpen(false); setMenuOpen(false); }
+      if (e.key === 'Escape') { setServicesOpen(false); setSolutionsOpen(false); setMenuOpen(false); }
     };
     document.addEventListener('keydown', handleEsc);
     return () => document.removeEventListener('keydown', handleEsc);
@@ -89,6 +90,36 @@ export default function HomeClient({ services }: NavbarSectionProps) {
                       {service.title}
                     </Link>
                   ))}
+                </div>
+              </div>
+            </li>
+
+            {/* Solutions dropdown — hover on desktop */}
+            <li
+              className="relative"
+              onMouseEnter={() => setSolutionsOpen(true)}
+              onMouseLeave={() => setSolutionsOpen(false)}
+            >
+              <span className="flex items-center gap-1 py-1 cursor-pointer hover:text-[#2f976b] transition-colors select-none">
+                Solutions
+                <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${solutionsOpen ? 'rotate-180' : ''}`} />
+              </span>
+              <div className={`absolute left-1/2 -translate-x-1/2 top-full pt-2 z-[999] min-w-[300px] transition-all duration-200 origin-top ${solutionsOpen ? 'opacity-100 scale-100 visible' : 'opacity-0 scale-95 invisible pointer-events-none'}`}>
+                <div className="bg-[#0d1a2d]/95 backdrop-blur-md border border-white/10 rounded-xl shadow-2xl py-2">
+                  <a
+                    href="https://www.sansadigital.com/services/artificial-intelligence-ai-and-machine-learning-solutions"
+                    className="block px-5 py-2.5 text-sm text-gray-200 hover:bg-[#2f976b]/15 hover:text-[#2f976b] transition-colors"
+                    onClick={() => setSolutionsOpen(false)}
+                  >
+                    AI & Machine Learning Solutions
+                  </a>
+                  <a
+                    href="https://www.sansadigital.com/services/management-information-systems"
+                    className="block px-5 py-2.5 text-sm text-gray-200 hover:bg-[#2f976b]/15 hover:text-[#2f976b] transition-colors"
+                    onClick={() => setSolutionsOpen(false)}
+                  >
+                    Management Information Systems
+                  </a>
                 </div>
               </div>
             </li>
@@ -175,6 +206,43 @@ export default function HomeClient({ services }: NavbarSectionProps) {
                             {service.title}
                           </Link>
                         ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </li>
+
+                {/* Solutions accordion */}
+                <li>
+                  <button
+                    onClick={() => setSolutionsOpen(p => !p)}
+                    className="w-full flex items-center justify-between py-2.5 border-b border-white/5 hover:text-[#2f976b] transition-colors"
+                  >
+                    Solutions
+                    <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${solutionsOpen ? 'rotate-180' : ''}`} />
+                  </button>
+                  <AnimatePresence>
+                    {solutionsOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.2 }}
+                        className="overflow-hidden pl-4"
+                      >
+                        <a
+                          href="https://www.sansadigital.com/services/artificial-intelligence-ai-and-machine-learning-solutions"
+                          className="block py-2 text-sm text-gray-300 hover:text-[#2f976b] transition-colors"
+                          onClick={() => { setMenuOpen(false); setSolutionsOpen(false); }}
+                        >
+                          AI & Machine Learning Solutions
+                        </a>
+                        <a
+                          href="https://www.sansadigital.com/services/management-information-systems"
+                          className="block py-2 text-sm text-gray-300 hover:text-[#2f976b] transition-colors"
+                          onClick={() => { setMenuOpen(false); setSolutionsOpen(false); }}
+                        >
+                          Management Information Systems
+                        </a>
                       </motion.div>
                     )}
                   </AnimatePresence>

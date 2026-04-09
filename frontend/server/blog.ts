@@ -7,7 +7,7 @@ export const getBlogData = async (): Promise<Blog[]> => {
   console.log('[getBlogData] APP_URL:', process.env.APP_URL);
   
   const baseUrl = process.env.APP_URL ?? 'http://127.0.0.1:8000';
-  const url = `${baseUrl}/api/blogs`;
+  const url = `${baseUrl}/blogs`;
   
   console.log('[getBlogData] Fetching from:', url);
 
@@ -106,7 +106,7 @@ export const getBlogData = async (): Promise<Blog[]> => {
 // Test function to verify API endpoint
 export const testApiEndpoint = async () => {
   const baseUrl = process.env.APP_URL ?? 'http://127.0.0.1:8000';
-  const url = `${baseUrl}/api/blogs`;
+  const url = `${baseUrl}/blogs`;
   
   console.log('[testApiEndpoint] Testing:', url);
   

@@ -2,7 +2,7 @@
 
 export const getAboutData = async () => {
   const baseUrl = process.env.APP_URL ?? 'http://127.0.0.1:8000';
-  const url = `${baseUrl}/api/about`;
+  const url = `${baseUrl}/about`;
 
   try {
     const response = await fetch(url, {

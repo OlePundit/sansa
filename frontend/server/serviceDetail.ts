@@ -5,7 +5,7 @@ import { Service, ApiResponse } from '@/types';
 // Get all Services
 export const getServiceData = async (): Promise<Service[]> => {
   const baseUrl = process.env.APP_URL ?? 'http://127.0.0.1:8000';
-  const url = `${baseUrl}/api/services`;
+  const url = `${baseUrl}/services`;
 
   try {
     const controller = new AbortController();
@@ -42,7 +42,7 @@ export const getServiceData = async (): Promise<Service[]> => {
 // Get single service by slug
 export const getService = async (slug: string): Promise<Service | null> => {
   const baseUrl = process.env.APP_URL ?? 'http://127.0.0.1:8000';
-  const url = `${baseUrl}/api/services/${slug}`;
+  const url = `${baseUrl}/services/${slug}`;
   try {
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), 10000);
@@ -81,7 +81,7 @@ export const getService = async (slug: string): Promise<Service | null> => {
 // Get related services (optional)
 export const getRelatedServices = async (currentSlug: string, category?: string): Promise<Service[]> => {
   const baseUrl = process.env.APP_URL ?? 'http://127.0.0.1:8000';
-  const url = `${baseUrl}/api/services/related/${currentSlug}${category ? `?category=${category}` : ''}`;
+  const url = `${baseUrl}/services/related/${currentSlug}${category ? `?category=${category}` : ''}`;
 
   try {
     const response = await fetch(url, {

@@ -8,7 +8,7 @@ export const getHomeData = async (filters?: { webs?: boolean; digitals?: boolean
     if (filters?.digitals) params.append('digitals', 'true');
 
     const baseUrl = process.env.APP_URL || 'http://127.0.0.1:8000';
-    const url = `${baseUrl}/api/home${params.toString() ? `?${params.toString()}` : ''}`;
+    const url = `${baseUrl}/home${params.toString() ? `?${params.toString()}` : ''}`;
 
     console.log('Fetching from:', url);
 

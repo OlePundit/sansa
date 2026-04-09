@@ -5,7 +5,7 @@ import { Blog, ApiResponse } from '@/types';
 // Get all blogs
 export const getBlogData = async (): Promise<Blog[]> => {
   const baseUrl = process.env.APP_URL ?? 'http://127.0.0.1:8000';
-  const url = `${baseUrl}/api/blogs`;
+  const url = `${baseUrl}/blogs`;
 
   try {
     const controller = new AbortController();
@@ -42,7 +42,7 @@ export const getBlogData = async (): Promise<Blog[]> => {
 // Get single blog by slug
 export const getBlog = async (slug: string): Promise<Blog | null> => {
   const baseUrl = process.env.APP_URL ?? 'http://127.0.0.1:8000';
-  const url = `${baseUrl}/api/blogs/${slug}`;
+  const url = `${baseUrl}/blogs/${slug}`;
 
   try {
     const controller = new AbortController();
@@ -82,7 +82,7 @@ export const getBlog = async (slug: string): Promise<Blog | null> => {
 // Get related blogs (optional)
 export const getRelatedBlogs = async (currentSlug: string, category?: string): Promise<Blog[]> => {
   const baseUrl = process.env.APP_URL ?? 'http://127.0.0.1:8000';
-  const url = `${baseUrl}/api/blogs/related/${currentSlug}${category ? `?category=${category}` : ''}`;
+  const url = `${baseUrl}/blogs/related/${currentSlug}${category ? `?category=${category}` : ''}`;
 
   try {
     const response = await fetch(url, {
