@@ -7,7 +7,8 @@ import StarterKit from '@tiptap/starter-kit';
 import LinkExt from '@tiptap/extension-link';
 import Underline from '@tiptap/extension-underline';
 import ImageExt from '@tiptap/extension-image';
-import { getService, updateService, uploadBodyImage, Service } from '@/lib/adminApi';
+import { getService, updateService, Service } from '@/lib/adminApi';
+import ImageUploadModal from '@/components/RichTextEditor/ImageUploadModal';
 import { urls } from '@/utils/urls';
 
 export default function EditServicePage() {
@@ -21,7 +22,7 @@ export default function EditServicePage() {
   const [thumbnailPreview, setThumbnailPreview] = useState<string | null>(null);
   const [wordCount, setWordCount] = useState(0);
   const [, forceRender] = useState(0);
-  const [imageUploading, setImageUploading] = useState(false);
+  const [pendingImageFile, setPendingImageFile] = useState<File | null>(null);
   const imageInputRef = useRef<HTMLInputElement>(null);
 
   const editor = useEditor({
@@ -78,6 +79,14 @@ export default function EditServicePage() {
 
   return (
     <div className="p-8 max-w-3xl">
+      {pendingImageFile && editor && (
+        <ImageUploadModal
+          file={pendingImageFile}
+          editor={editor}
+          onClose={() => setPendingImageFile(null)}
+          onError={setError}
+        />
+      )}
       <h1 className="text-2xl font-bold text-gray-900 mb-6">Edit Service</h1>
 
       {error && (
@@ -206,26 +215,17 @@ export default function EditServicePage() {
                 title="Insert image"
                 active={false}
               >
-                {imageUploading ? '...' : 'Img'}
+                Img
               </ToolbarButton>
               <input
                 ref={imageInputRef}
                 type="file"
                 accept="image/jpeg,image/png,image/jpg,image/gif,image/webp"
                 className="hidden"
-                onChange={async (e) => {
+                onChange={(e) => {
                   const file = e.target.files?.[0];
                   e.target.value = '';
-                  if (!file) return;
-                  setImageUploading(true);
-                  try {
-                    const url = await uploadBodyImage(file);
-                    editor?.chain().focus().setImage({ src: url }).run();
-                  } catch {
-                    setError('Image upload failed.');
-                  } finally {
-                    setImageUploading(false);
-                  }
+                  if (file) setPendingImageFile(file);
                 }}
               />
             </div>

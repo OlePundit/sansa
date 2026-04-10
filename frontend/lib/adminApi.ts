@@ -274,7 +274,8 @@ export async function uploadBodyImage(file: File): Promise<string> {
     throw new Error(text || `Upload failed: ${res.status}`);
   }
   const data: { path: string } = await res.json();
-  return `${BASE_URL}/storage/${data.path}`;
+  const storageBase = BASE_URL.endsWith('/api') ? BASE_URL.slice(0, -4) : BASE_URL;
+  return `${storageBase}/storage/${data.path}`;
 }
 
 // ─── Types ───────────────────────────────────────────────────────────────────
