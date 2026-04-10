@@ -30,8 +30,11 @@ export const getBlogData = async (): Promise<Blog[]> => {
       return [];
     }
 
-    const data: ApiResponse<Blog[]> = await response.json();
-    return Array.isArray(data.data) ? data.data : [];
+    const data = await response.json();
+    if (Array.isArray(data)) return data;
+    if (Array.isArray(data.blogs)) return data.blogs;
+    if (Array.isArray(data.data)) return data.data;
+    return [];
 
   } catch (error) {
     console.error('[getBlogData] Fetch error:', error);
