@@ -1,12 +1,13 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useRouter, useParams } from 'next/navigation';
 import { useEditor, EditorContent } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 import Link from '@tiptap/extension-link';
 import Underline from '@tiptap/extension-underline';
-import { getBlog, updateBlog, Blog } from '@/lib/adminApi';
+import ImageExt from '@tiptap/extension-image';
+import { getBlog, updateBlog, uploadBodyImage, Blog } from '@/lib/adminApi';
 import { urls } from '@/utils/urls';
 
 export default function EditBlogPage() {
@@ -19,6 +20,9 @@ export default function EditBlogPage() {
   const [thumbnailFile, setThumbnailFile] = useState<File | null>(null);
   const [thumbnailPreview, setThumbnailPreview] = useState<string | null>(null);
   const [wordCount, setWordCount] = useState(0);
+  const [, forceRender] = useState(0);
+  const [imageUploading, setImageUploading] = useState(false);
+  const imageInputRef = useRef<HTMLInputElement>(null);
 
   const editor = useEditor({
     immediatelyRender: false,
@@ -26,17 +30,19 @@ export default function EditBlogPage() {
       StarterKit,
       Underline,
       Link.configure({ openOnClick: false }),
+      ImageExt,
     ],
     content: '',
     editorProps: {
       attributes: {
-        class: 'min-h-[300px] px-3 py-2.5 text-sm text-gray-500 focus:outline-none',
+        class: 'min-h-[300px] px-3 py-2.5 text-sm text-gray-500 focus:outline-none prose max-w-none',
       },
     },
     onUpdate: ({ editor }) => {
       const text = editor.getText();
       setWordCount(text.trim() ? text.trim().split(/\s+/).length : 0);
     },
+    onSelectionUpdate: () => forceRender(n => n + 1),
   });
 
   useEffect(() => {
@@ -146,9 +152,9 @@ export default function EditBlogPage() {
           <label className="block text-sm font-medium text-gray-700 mb-1">
             Body <span className="text-red-500">*</span>
           </label>
-          <div className="border border-gray-300 rounded-lg overflow-hidden focus-within:ring-2 focus-within:ring-blue-500">
+          <div className="border border-gray-300 rounded-lg focus-within:ring-2 focus-within:ring-blue-500">
             {/* Toolbar */}
-            <div className="flex flex-wrap gap-1 border-b border-gray-200 bg-gray-50 px-2 py-1.5">
+            <div className="flex flex-wrap gap-1 border-b border-gray-200 bg-gray-50 px-2 py-1.5 sticky top-0 z-10 rounded-t-lg">
               <ToolbarButton onClick={() => editor?.chain().focus().toggleBold().run()} active={editor?.isActive('bold')} title="Bold">
                 <strong>B</strong>
               </ToolbarButton>
@@ -200,6 +206,34 @@ export default function EditBlogPage() {
               <ToolbarButton onClick={() => editor?.chain().focus().redo().run()} title="Redo">
                 ↪
               </ToolbarButton>
+              <div className="w-px bg-gray-300 mx-1" />
+              <ToolbarButton
+                onClick={() => imageInputRef.current?.click()}
+                title="Insert image"
+                active={false}
+              >
+                {imageUploading ? '...' : 'Img'}
+              </ToolbarButton>
+              <input
+                ref={imageInputRef}
+                type="file"
+                accept="image/jpeg,image/png,image/jpg,image/gif,image/webp"
+                className="hidden"
+                onChange={async (e) => {
+                  const file = e.target.files?.[0];
+                  e.target.value = '';
+                  if (!file) return;
+                  setImageUploading(true);
+                  try {
+                    const url = await uploadBodyImage(file);
+                    editor?.chain().focus().setImage({ src: url }).run();
+                  } catch {
+                    setError('Image upload failed.');
+                  } finally {
+                    setImageUploading(false);
+                  }
+                }}
+              />
             </div>
             <EditorContent editor={editor} />
             <div className="px-3 py-1.5 border-t border-gray-200 bg-gray-50 text-xs text-gray-400 text-right">

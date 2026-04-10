@@ -74,7 +74,28 @@ export async function getBlog(slug: string): Promise<Blog> {
   return (data as { data?: Blog }).data ?? (data as Blog);
 }
 
-export async function createBlog(payload: Partial<Blog>) {
+export async function createBlog(payload: Partial<Blog>, thumbnailFile?: File) {
+  if (thumbnailFile) {
+    const token = typeof window !== 'undefined' ? localStorage.getItem('admin_token') : null;
+    const form = new FormData();
+    Object.entries(payload).forEach(([k, v]) => {
+      if (v !== undefined && v !== null && k !== 'thumbnail') form.append(k, String(v));
+    });
+    form.append('thumbnail', thumbnailFile);
+    const res = await fetch(`${API_URL}/blogs`, {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        ...(token ? { Authorization: `Bearer ${token}` } : {}),
+      },
+      body: form,
+    });
+    if (!res.ok) {
+      const text = await res.text();
+      throw new Error(text || `Request failed: ${res.status}`);
+    }
+    return res.json();
+  }
   return request('/blogs', { method: 'POST', body: JSON.stringify(payload) });
 }
 
@@ -232,6 +253,28 @@ export async function getNewsletters(): Promise<NewsletterSubscriber[]> {
 
 export async function deleteNewsletter(id: number) {
   return request(`/newsletter/${id}`, { method: 'DELETE' });
+}
+
+// ─── Body Image Upload ────────────────────────────────────────────────────────
+
+export async function uploadBodyImage(file: File): Promise<string> {
+  const token = typeof window !== 'undefined' ? localStorage.getItem('admin_token') : null;
+  const form = new FormData();
+  form.append('image', file);
+  const res = await fetch(`${API_URL}/upload-image`, {
+    method: 'POST',
+    headers: {
+      Accept: 'application/json',
+      ...(token ? { Authorization: `Bearer ${token}` } : {}),
+    },
+    body: form,
+  });
+  if (!res.ok) {
+    const text = await res.text();
+    throw new Error(text || `Upload failed: ${res.status}`);
+  }
+  const data: { path: string } = await res.json();
+  return `${BASE_URL}/storage/${data.path}`;
 }
 
 // ─── Types ───────────────────────────────────────────────────────────────────

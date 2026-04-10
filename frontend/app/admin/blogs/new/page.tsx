@@ -1,8 +1,13 @@
 'use client';
 
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { createBlog } from '@/lib/adminApi';
+import { useEditor, EditorContent } from '@tiptap/react';
+import StarterKit from '@tiptap/starter-kit';
+import Link from '@tiptap/extension-link';
+import Underline from '@tiptap/extension-underline';
+import ImageExt from '@tiptap/extension-image';
+import { createBlog, uploadBodyImage } from '@/lib/adminApi';
 
 export default function NewBlogPage() {
   const router = useRouter();
@@ -10,13 +15,37 @@ export default function NewBlogPage() {
     title: '',
     description: '',
     meta_description: '',
-    thumbnail: '',
     category: '',
     sub_category: '',
-    body: '',
   });
+  const [thumbnailFile, setThumbnailFile] = useState<File | null>(null);
   const [error, setError] = useState('');
   const [saving, setSaving] = useState(false);
+  const [wordCount, setWordCount] = useState(0);
+  const [, forceRender] = useState(0);
+  const [imageUploading, setImageUploading] = useState(false);
+  const imageInputRef = useRef<HTMLInputElement>(null);
+
+  const editor = useEditor({
+    immediatelyRender: false,
+    extensions: [
+      StarterKit,
+      Underline,
+      Link.configure({ openOnClick: false }),
+      ImageExt,
+    ],
+    content: '',
+    editorProps: {
+      attributes: {
+        class: 'min-h-[300px] px-3 py-2.5 text-sm text-gray-500 focus:outline-none prose max-w-none',
+      },
+    },
+    onUpdate: ({ editor }) => {
+      const text = editor.getText();
+      setWordCount(text.trim() ? text.trim().split(/\s+/).length : 0);
+    },
+    onSelectionUpdate: () => forceRender(n => n + 1),
+  });
 
   function set(field: string, value: string) {
     setForm((f) => ({ ...f, [field]: value }));
@@ -27,7 +56,7 @@ export default function NewBlogPage() {
     setSaving(true);
     setError('');
     try {
-      await createBlog(form);
+      await createBlog({ ...form, body: editor?.getHTML() ?? '' }, thumbnailFile ?? undefined);
       router.push('/admin/blogs');
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Failed to create post.');
@@ -48,8 +77,37 @@ export default function NewBlogPage() {
       <form onSubmit={handleSubmit} className="space-y-5 bg-white rounded-xl p-6 shadow-sm border border-gray-100">
         <Field label="Title" value={form.title} onChange={(v) => set('title', v)} required />
         <Field label="Description (excerpt)" value={form.description} onChange={(v) => set('description', v)} />
-        <Field label="Meta Description" value={form.meta_description} onChange={(v) => set('meta_description', v)} placeholder="SEO meta description (150–160 chars recommended)" />
-        <Field label="Thumbnail URL" value={form.thumbnail} onChange={(v) => set('thumbnail', v)} placeholder="https://..." />
+
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">Meta Description</label>
+          <textarea
+            value={form.meta_description}
+            onChange={(e) => set('meta_description', e.target.value)}
+            placeholder="SEO meta description (150–160 chars recommended)"
+            rows={3}
+            className="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
+          />
+          <p className={`text-xs mt-1 ${
+            form.meta_description.length > 160
+              ? 'text-red-500'
+              : form.meta_description.length >= 150
+              ? 'text-green-600'
+              : 'text-gray-400'
+          }`}>
+            {form.meta_description.length} / 160 characters
+          </p>
+        </div>
+
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-2">Thumbnail</label>
+          <input
+            type="file"
+            accept="image/jpeg,image/png,image/jpg,image/gif,image/webp"
+            onChange={(e) => setThumbnailFile(e.target.files?.[0] ?? null)}
+            className="w-full text-sm text-gray-500 file:mr-3 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
+          />
+        </div>
+
         <Field label="Category" value={form.category} onChange={(v) => set('category', v)} placeholder="e.g. Tech, Marketing" />
         <Field label="Sub Category" value={form.sub_category} onChange={(v) => set('sub_category', v)} placeholder="e.g. SEO, Branding" />
 
@@ -57,14 +115,93 @@ export default function NewBlogPage() {
           <label className="block text-sm font-medium text-gray-700 mb-1">
             Body <span className="text-red-500">*</span>
           </label>
-          <textarea
-            value={form.body}
-            onChange={(e) => set('body', e.target.value)}
-            required
-            rows={14}
-            placeholder="Write your blog content here. HTML is supported."
-            className="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono resize-y"
-          />
+          <div className="border border-gray-300 rounded-lg focus-within:ring-2 focus-within:ring-blue-500">
+            <div className="flex flex-wrap gap-1 border-b border-gray-200 bg-gray-50 px-2 py-1.5 sticky top-0 z-10 rounded-t-lg">
+              <ToolbarButton onClick={() => editor?.chain().focus().toggleBold().run()} active={editor?.isActive('bold')} title="Bold">
+                <strong>B</strong>
+              </ToolbarButton>
+              <ToolbarButton onClick={() => editor?.chain().focus().toggleItalic().run()} active={editor?.isActive('italic')} title="Italic">
+                <em>I</em>
+              </ToolbarButton>
+              <ToolbarButton onClick={() => editor?.chain().focus().toggleUnderline().run()} active={editor?.isActive('underline')} title="Underline">
+                <span className="underline">U</span>
+              </ToolbarButton>
+              <div className="w-px bg-gray-300 mx-1" />
+              <ToolbarButton onClick={() => editor?.chain().focus().toggleHeading({ level: 2 }).run()} active={editor?.isActive('heading', { level: 2 })} title="Heading 2">
+                H2
+              </ToolbarButton>
+              <ToolbarButton onClick={() => editor?.chain().focus().toggleHeading({ level: 3 }).run()} active={editor?.isActive('heading', { level: 3 })} title="Heading 3">
+                H3
+              </ToolbarButton>
+              <ToolbarButton onClick={() => editor?.chain().focus().toggleHeading({ level: 4 }).run()} active={editor?.isActive('heading', { level: 4 })} title="Heading 4">
+                H4
+              </ToolbarButton>
+              <div className="w-px bg-gray-300 mx-1" />
+              <ToolbarButton onClick={() => editor?.chain().focus().toggleBulletList().run()} active={editor?.isActive('bulletList')} title="Bullet list">
+                &#8226; List
+              </ToolbarButton>
+              <ToolbarButton onClick={() => editor?.chain().focus().toggleOrderedList().run()} active={editor?.isActive('orderedList')} title="Ordered list">
+                1. List
+              </ToolbarButton>
+              <div className="w-px bg-gray-300 mx-1" />
+              <ToolbarButton onClick={() => editor?.chain().focus().toggleBlockquote().run()} active={editor?.isActive('blockquote')} title="Blockquote">
+                &ldquo;&rdquo;
+              </ToolbarButton>
+              <ToolbarButton onClick={() => editor?.chain().focus().toggleCode().run()} active={editor?.isActive('code')} title="Inline code">
+                &lt;/&gt;
+              </ToolbarButton>
+              <div className="w-px bg-gray-300 mx-1" />
+              <ToolbarButton
+                onClick={() => {
+                  const url = window.prompt('Enter URL');
+                  if (url) editor?.chain().focus().setLink({ href: url }).run();
+                  else editor?.chain().focus().unsetLink().run();
+                }}
+                active={editor?.isActive('link')}
+                title="Link"
+              >
+                Link
+              </ToolbarButton>
+              <ToolbarButton onClick={() => editor?.chain().focus().undo().run()} title="Undo">
+                ↩
+              </ToolbarButton>
+              <ToolbarButton onClick={() => editor?.chain().focus().redo().run()} title="Redo">
+                ↪
+              </ToolbarButton>
+              <div className="w-px bg-gray-300 mx-1" />
+              <ToolbarButton
+                onClick={() => imageInputRef.current?.click()}
+                title="Insert image"
+                active={false}
+              >
+                {imageUploading ? '...' : 'Img'}
+              </ToolbarButton>
+              <input
+                ref={imageInputRef}
+                type="file"
+                accept="image/jpeg,image/png,image/jpg,image/gif,image/webp"
+                className="hidden"
+                onChange={async (e) => {
+                  const file = e.target.files?.[0];
+                  e.target.value = '';
+                  if (!file) return;
+                  setImageUploading(true);
+                  try {
+                    const url = await uploadBodyImage(file);
+                    editor?.chain().focus().setImage({ src: url }).run();
+                  } catch {
+                    setError('Image upload failed.');
+                  } finally {
+                    setImageUploading(false);
+                  }
+                }}
+              />
+            </div>
+            <EditorContent editor={editor} />
+            <div className="px-3 py-1.5 border-t border-gray-200 bg-gray-50 text-xs text-gray-400 text-right">
+              {wordCount} {wordCount === 1 ? 'word' : 'words'}
+            </div>
+          </div>
         </div>
 
         <div className="flex gap-3 pt-2">
@@ -85,6 +222,31 @@ export default function NewBlogPage() {
         </div>
       </form>
     </div>
+  );
+}
+
+function ToolbarButton({
+  onClick,
+  active,
+  title,
+  children,
+}: {
+  onClick: () => void;
+  active?: boolean;
+  title?: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      title={title}
+      className={`px-2 py-1 rounded text-xs font-medium transition-colors ${
+        active ? 'bg-blue-100 text-blue-700' : 'text-gray-600 hover:bg-gray-200'
+      }`}
+    >
+      {children}
+    </button>
   );
 }
 

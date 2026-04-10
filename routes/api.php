@@ -11,6 +11,7 @@ use App\Http\Controllers\API\PaymentController;
 use App\Http\Controllers\API\LpController;
 use App\Http\Controllers\API\BlogController;
 use App\Http\Controllers\API\HomeController;
+use App\Http\Controllers\API\UploadController;
 
 /*
 |--------------------------------------------------------------------------
@@ -64,6 +65,9 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::put('/services/{service}', [ServiceController::class, 'update']);
     Route::patch('/services/{service}', [ServiceController::class, 'update']);
     Route::delete('/services/{service}', [ServiceController::class, 'destroy']);
+
+    // Admin: Body image upload
+    Route::post('/upload-image', [UploadController::class, 'store']);
 
     // Admin: View contact submissions
     Route::get('/contact', [ContactController::class, 'index']);
