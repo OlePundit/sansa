@@ -6,9 +6,9 @@ import { useEditor, EditorContent } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 import LinkExt from '@tiptap/extension-link';
 import Underline from '@tiptap/extension-underline';
-import ImageExt from '@tiptap/extension-image';
 import { createService } from '@/lib/adminApi';
 import ImageUploadModal from '@/components/RichTextEditor/ImageUploadModal';
+import { CustomImage } from '@/components/RichTextEditor/CustomImage';
 
 export default function NewServicePage() {
   const router = useRouter();
@@ -32,7 +32,7 @@ export default function NewServicePage() {
       StarterKit,
       Underline,
       LinkExt.configure({ openOnClick: false }),
-      ImageExt,
+      CustomImage,
     ],
     content: '',
     editorProps: {

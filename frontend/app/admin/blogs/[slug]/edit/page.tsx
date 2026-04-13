@@ -6,9 +6,9 @@ import { useEditor, EditorContent } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 import Link from '@tiptap/extension-link';
 import Underline from '@tiptap/extension-underline';
-import ImageExt from '@tiptap/extension-image';
 import { getBlog, updateBlog, Blog } from '@/lib/adminApi';
 import ImageUploadModal from '@/components/RichTextEditor/ImageUploadModal';
+import { CustomImage } from '@/components/RichTextEditor/CustomImage';
 import { urls } from '@/utils/urls';
 
 export default function EditBlogPage() {
@@ -31,7 +31,7 @@ export default function EditBlogPage() {
       StarterKit,
       Underline,
       Link.configure({ openOnClick: false }),
-      ImageExt,
+      CustomImage,
     ],
     content: '',
     editorProps: {

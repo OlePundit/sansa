@@ -6,9 +6,9 @@ import { useEditor, EditorContent } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 import Link from '@tiptap/extension-link';
 import Underline from '@tiptap/extension-underline';
-import ImageExt from '@tiptap/extension-image';
 import { createBlog } from '@/lib/adminApi';
 import ImageUploadModal from '@/components/RichTextEditor/ImageUploadModal';
+import { CustomImage } from '@/components/RichTextEditor/CustomImage';
 
 export default function NewBlogPage() {
   const router = useRouter();
@@ -33,7 +33,7 @@ export default function NewBlogPage() {
       StarterKit,
       Underline,
       Link.configure({ openOnClick: false }),
-      ImageExt,
+      CustomImage,
     ],
     content: '',
     editorProps: {
