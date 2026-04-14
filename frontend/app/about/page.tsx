@@ -11,7 +11,7 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: 'Sansa Digital',
   description: 'We are the #1 web development, web design, graphic design, SEO, content and social media marketing company in Kenya.',
-  keywords: ['web development', 'web design', 'graphic design', 'SEO', 'digital marketing', 'Kenya'],
+  keywords: ['web development', 'web design', 'SEO', 'digital marketing', 'Kenya'],
   authors: [{ name: 'Sansa Digital' }],
   robots: 'index, follow',
   
