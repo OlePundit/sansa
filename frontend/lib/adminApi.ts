@@ -235,29 +235,23 @@ export async function deleteService(slug: string) {
 
 // ─── Contacts ────────────────────────────────────────────────────────────────
 
-export async function getContacts(page = 1): Promise<{
+// Original – returns array (compatible with dashboard)
+export async function getContacts(): Promise<Contact[]> {
+  const data = await request<Record<string, unknown>>('/contact?paginate=false');
+  // If your backend can accept ?paginate=false, great.
+  // Otherwise, fetch all contacts manually (not ideal).
+  if (Array.isArray(data)) return data as Contact[];
+  if (Array.isArray((data as { data?: Contact[] }).data)) return (data as { data: Contact[] }).data;
+  return [];
+}
+
+// New – returns paginated object (for admin contacts page)
+export async function getContactsPaginated(page = 1): Promise<{
   data: Contact[];
-  meta: {
-    current_page: number;
-    last_page: number;
-    per_page: number;
-    total: number;
-  };
-  links: {
-    first: string;
-    last: string;
-    prev: string | null;
-    next: string | null;
-  };
+  meta: { current_page: number; last_page: number; per_page: number; total: number };
+  links: { first: string; last: string; prev: string | null; next: string | null };
 }> {
-  const response = await request<{
-    data: Contact[];
-    meta: any;
-    links: any;
-  }>(`/contact?page=${page}`);
-  
-  // The request() function returns the whole JSON object.
-  // Make sure it matches what the backend sends.
+  const response = await request<any>(`/contact?page=${page}`);
   return {
     data: response.data,
     meta: response.meta,

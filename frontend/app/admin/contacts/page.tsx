@@ -1,7 +1,7 @@
 'use client';
 
 import { Fragment, useEffect, useState } from 'react';
-import { getContacts, Contact } from '@/lib/adminApi';
+import { getContactsPaginated, Contact } from '@/lib/adminApi';
 
 export default function AdminContactsPage() {
   const [contacts, setContacts] = useState<Contact[]>([]);
@@ -14,7 +14,7 @@ export default function AdminContactsPage() {
   const fetchContacts = async (page: number) => {
     setLoading(true);
     try {
-      const res = await getContacts(page);
+      const res = await getContactsPaginated(page);
       setContacts(res.data);
       setCurrentPage(res.meta.current_page);
       setLastPage(res.meta.last_page);
