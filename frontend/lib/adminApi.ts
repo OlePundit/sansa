@@ -235,11 +235,34 @@ export async function deleteService(slug: string) {
 
 // ─── Contacts ────────────────────────────────────────────────────────────────
 
-export async function getContacts(): Promise<Contact[]> {
-  const data = await request<Record<string, unknown>>('/contact');
-  if (Array.isArray(data)) return data as unknown as Contact[];
-  if (Array.isArray((data as { data?: Contact[] }).data)) return (data as { data: Contact[] }).data;
-  return [];
+export async function getContacts(page = 1): Promise<{
+  data: Contact[];
+  meta: {
+    current_page: number;
+    last_page: number;
+    per_page: number;
+    total: number;
+  };
+  links: {
+    first: string;
+    last: string;
+    prev: string | null;
+    next: string | null;
+  };
+}> {
+  const response = await request<{
+    data: Contact[];
+    meta: any;
+    links: any;
+  }>(`/contact?page=${page}`);
+  
+  // The request() function returns the whole JSON object.
+  // Make sure it matches what the backend sends.
+  return {
+    data: response.data,
+    meta: response.meta,
+    links: response.links,
+  };
 }
 
 // ─── Newsletter ───────────────────────────────────────────────────────────────

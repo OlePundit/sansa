@@ -15,7 +15,11 @@ class ContactController extends Controller
 {
     public function index(Request $request)
     {
-        $contacts = Contact::paginate();
+        $query=Contact::orderBy('created_at', 'desc');
+
+        // Pagination
+        $perPage = $request->input('per_page', 15);
+        $contacts = $query->paginate($perPage);
 
         return new ContactCollection($contacts);
     }
