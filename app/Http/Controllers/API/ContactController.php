@@ -24,7 +24,7 @@ class ContactController extends Controller
     {
         $contact = Contact::create($request->validated());
 
-        //Mail::to('glennomondi@gmail.com')->send(new NewContactMail($contact));
+        Mail::to('glennomondi@gmail.com')->send(new NewContactMail($contact));
         return new ContactResource($contact);
     }
 }
