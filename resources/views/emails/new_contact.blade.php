@@ -31,22 +31,6 @@
             margin-bottom:20px;
 
         }
-        a{
-            width: fit-content;
-            float: left;
-            font-size: 16px;
-            color: #e63534;
-            text-align: center;
-            padding: 5px 12px;
-            border-radius: 20px;
-            border: 1px solid #E1C17E;
-            font-weight: 600;
-            margin-bottom:15px;
-        }
-        a:hover{
-            color: #000!important;
-            background-color: #E1C17E;
-        }
         a button{
             background:none;
             border:none;
