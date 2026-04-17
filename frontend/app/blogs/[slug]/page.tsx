@@ -83,9 +83,13 @@ export default async function BlogPage({ params }: { params: Promise<{ slug: str
     ],
   };
 
-  const formattedDate = blog.created_at
-    ? new Date(blog.created_at).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
-    : null;
+const formattedDate = blog.created_at
+  ? new Date(blog.created_at).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
+  : null;
+
+const formattedUpdatedDate = blog.updated_at && blog.updated_at !== blog.created_at
+  ? new Date(blog.updated_at).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
+  : null;
 
   return (
     <div className="min-h-screen bg-[#171717]">
@@ -129,7 +133,13 @@ export default async function BlogPage({ params }: { params: Promise<{ slug: str
           {formattedDate && (
             <span className="flex items-center gap-1.5 text-gray-500 text-xs">
               <Clock className="w-3.5 h-3.5" />
-              {formattedDate}
+              Published: {formattedDate}
+            </span>
+          )}
+          {formattedUpdatedDate && (
+            <span className="flex items-center gap-1.5 text-gray-500 text-xs ml-0 sm:ml-2">
+              <Clock className="w-3.5 h-3.5" />
+              Updated: {formattedUpdatedDate}
             </span>
           )}
         </div>
