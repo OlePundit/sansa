@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { createLP } from '@/lib/adminApi';
+import RichTextField from '@/components/RichTextEditor/RichTextField';
 
 const EMPTY = {
   title: '', slug: '', category: '', intro: '', meta_description: '',
@@ -95,8 +96,8 @@ export default function NewLPPage() {
 
         {/* Benefits */}
         <Section title="Benefits">
-          <Textarea label="Benefits (primary)" value={form.benefits} onChange={(v) => set('benefits', v)} rows={4} />
-          <Textarea label="Benefits (secondary)" value={form.benefits2} onChange={(v) => set('benefits2', v)} rows={4} />
+          <RichTextField label="Benefits (primary)" value={form.benefits} onChange={(v) => set('benefits', v)} />
+          <RichTextField label="Benefits (secondary)" value={form.benefits2} onChange={(v) => set('benefits2', v)} />
         </Section>
 
         {/* FAQs */}

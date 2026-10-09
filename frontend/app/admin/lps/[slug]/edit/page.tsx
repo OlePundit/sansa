@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useRouter, useParams } from 'next/navigation';
 import { getLP, updateLP, LP } from '@/lib/adminApi';
+import RichTextField from '@/components/RichTextEditor/RichTextField';
 
 export default function EditLPPage() {
   const router = useRouter();
@@ -78,8 +79,8 @@ export default function EditLPPage() {
 
         {/* Benefits */}
         <Section title="Benefits">
-          <Textarea label="Benefits (primary)" value={form.benefits || ''} onChange={(v) => set('benefits', v)} rows={4} />
-          <Textarea label="Benefits (secondary)" value={form.benefits2 || ''} onChange={(v) => set('benefits2', v)} rows={4} />
+          <RichTextField label="Benefits (primary)" value={form.benefits || ''} onChange={(v) => set('benefits', v)} />
+          <RichTextField label="Benefits (secondary)" value={form.benefits2 || ''} onChange={(v) => set('benefits2', v)} />
         </Section>
 
         {/* FAQs */}
