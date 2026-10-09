@@ -13,14 +13,35 @@ const EMPTY = {
   benefits: '', benefits2: '',
 };
 
+function slugify(text: string) {
+  return text
+    .toLowerCase()
+    .normalize('NFKD')
+    .replace(/[̀-ͯ]/g, '')
+    .replace(/&/g, ' and ')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
 export default function NewLPPage() {
   const router = useRouter();
   const [form, setForm] = useState(EMPTY);
   const [error, setError] = useState('');
   const [saving, setSaving] = useState(false);
+  // Slug follows the title until the user edits it by hand; clearing it re-enables auto-fill.
+  const [slugEdited, setSlugEdited] = useState(false);
 
   function set(field: string, value: string) {
     setForm((f) => ({ ...f, [field]: value }));
+  }
+
+  function setTitle(value: string) {
+    setForm((f) => ({ ...f, title: value, ...(slugEdited ? {} : { slug: slugify(value) }) }));
+  }
+
+  function setSlug(value: string) {
+    setSlugEdited(value !== '');
+    set('slug', value);
   }
 
   async function handleSubmit(e: React.FormEvent) {
@@ -50,8 +71,8 @@ export default function NewLPPage() {
         {/* Basic Info */}
         <Section title="Basic Info">
           <div className="grid grid-cols-2 gap-4">
-            <Field label="Title" value={form.title} onChange={(v) => set('title', v)} />
-            <Field label="Slug" value={form.slug} onChange={(v) => set('slug', v)} placeholder="e.g. web-design" />
+            <Field label="Title" value={form.title} onChange={setTitle} />
+            <Field label="Slug" value={form.slug} onChange={setSlug} placeholder="Auto-generated from title" />
           </div>
           <Field label="Category" value={form.category} onChange={(v) => set('category', v)} />
           <Textarea label="Intro / Hero Text" value={form.intro} onChange={(v) => set('intro', v)} rows={3} />
