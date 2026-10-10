@@ -12,6 +12,12 @@ const nextConfig: NextConfig = {
         hostname: "api.nexl.sansadigital.com", // Add this
       },
       {
+        // Cloudinary-hosted landing page images (own account only)
+        protocol: "https",
+        hostname: "res.cloudinary.com",
+        pathname: "/dj52zkarc/**",
+      },
+      {
         // Local Laravel backend (uploaded images in development)
         protocol: "http",
         hostname: "localhost",
