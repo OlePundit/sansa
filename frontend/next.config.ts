@@ -11,6 +11,12 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "api.nexl.sansadigital.com", // Add this
       },
+      {
+        // Local Laravel backend (uploaded images in development)
+        protocol: "http",
+        hostname: "localhost",
+        port: "8000",
+      },
     ],
   },
 };

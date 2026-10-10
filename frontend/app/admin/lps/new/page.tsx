@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { createLP } from '@/lib/adminApi';
 import RichTextField from '@/components/RichTextEditor/RichTextField';
+import ImageUploadField from '@/components/ImageUploadField';
 
 const EMPTY = {
   title: '', slug: '', category: '', intro: '', meta_description: '',
@@ -89,9 +90,9 @@ export default function NewLPPage() {
 
         {/* Images */}
         <Section title="Images">
-          <Field label="Image 1 URL" value={form.img1} onChange={(v) => set('img1', v)} placeholder="https://..." />
-          <Field label="Image 2 URL" value={form.img2} onChange={(v) => set('img2', v)} placeholder="https://..." />
-          <Field label="Image 3 URL" value={form.img3} onChange={(v) => set('img3', v)} placeholder="https://..." />
+          <ImageUploadField label="Image 1" value={form.img1} onChange={(v) => set('img1', v)} />
+          <ImageUploadField label="Image 2" value={form.img2} onChange={(v) => set('img2', v)} />
+          <ImageUploadField label="Image 3" value={form.img3} onChange={(v) => set('img3', v)} />
         </Section>
 
         {/* Benefits */}
